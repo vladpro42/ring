@@ -11,6 +11,7 @@ import whatsapp from "../../assets/images/whatsapp.svg"
 import vk from "../../assets/images/vk.svg"
 import instagram from "../../assets/images/instagram.svg"
 import telegram from "../../assets/images/telegram.svg"
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -108,7 +109,7 @@ const Header = () => {
                     <span className="burger"></span>
                     <ul className="header__footer-list">
                         <li className="header__footer-item">
-                            <a href="#" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</a>
+                            <Link to="../catalog" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                         </li>
                         <li className="header__footer-item">
                             <a href="#" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</a>

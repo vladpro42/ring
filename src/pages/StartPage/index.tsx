@@ -13,6 +13,8 @@ import React, { useEffect, useRef } from 'react'
 import { typeDataForCart } from "../../App";
 import ProductCart from "../../components/ProductCart";
 import Footer from "../../components/footer";
+import Header from "../../components/header";
+import { Link } from "react-router-dom";
 
 
 const StartPage = ({ data }: { data: typeDataForCart }) => {
@@ -69,7 +71,7 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
 
     return (
         <>
-
+            <Header />
 
             <main className='main'>
 
@@ -94,7 +96,7 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
                         <h3 className="catalog__title">КАТАЛОГ</h3>
                         <div className="catalog__menu">
                             <div className='catalog__menu-item'>
-                                <a href="#" className="catalog__menu-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</a>
+                                <Link to="catalog" className="catalog__menu-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                             </div>
                             <div className='catalog__menu-item'>
                                 <a href="#" className="catalog__menu-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</a>
