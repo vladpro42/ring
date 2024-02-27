@@ -1,35 +1,119 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './scss/style.scss'
+
+import CatalogPage from './pages/catalog'
+import StartPage from './pages/StartPage'
+import newItemsSlider1 from "./assets/images/new-items-1.png"
+import newItemsSlider2 from "./assets/images/new-items-2.png"
+import newItemsSlider3 from "./assets/images/new-items-3.png"
+import CartPageOfProduct from './pages/CartPageOfProduct'
+import { createBrowserRouter, RouterProvider, Route, Link, createRoutesFromElements } from 'react-router-dom'
+import BasketPage from './pages/BasketPage'
+import FavoritePage from './pages/FavoritePage'
+import MakeAnOrder from './pages/MakeAnOrder'
+import HowToChoose from './pages/HowToChoose'
+import DiamondAsAGift from './pages/DiamondAsAGift'
+import ContactsPage from './pages/Contacts'
+import WearAnEngagementRing from './pages/WearAnEngagementRing'
+import AboutPage from './pages/AboutPage'
+import NotFoundPage from './pages/NotFoundPage'
+import Delivery from './pages/Delivery'
+import GuaranteePage from './pages/GaranteePage'
+
+
+
+export interface ICart {
+    id: number;
+    raiting: number;
+    imgSrc: string;
+    price: number;
+    priceSale: number;
+}
+export type typeDataForCart = ICart[]
+
+export const dataForCart: typeDataForCart = [
+    {
+        id: 1, raiting: 3, imgSrc: newItemsSlider1, price: 59600, priceSale: 57000
+    },
+    {
+        id: 2, raiting: 4.5, imgSrc: newItemsSlider2, price: 59600, priceSale: 57000
+    },
+    {
+        id: 3, raiting: 5, imgSrc: newItemsSlider3, price: 59600, priceSale: 57000
+    },
+]
+
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <StartPage data={dataForCart} />,
+    },
+    {
+        path: '/catalog',
+        element: <CatalogPage data={dataForCart} />,
+    },
+    {
+        path: '/catalog/:id',
+        element: <CartPageOfProduct />,
+    },
+    {
+        path: '/basket',
+        element: <BasketPage />
+    },
+    {
+        path: 'favorite',
+        element: <FavoritePage />
+    },
+    {
+        path: 'MakeAnOrder',
+        element: <MakeAnOrder />
+    },
+    {
+        path: 'DiamondAsAGift',
+        element: <DiamondAsAGift />
+    },
+    {
+        path: 'MakeAnOrder',
+        element: <MakeAnOrder />
+    },
+    {
+        path: 'HowToChoose',
+        element: <HowToChoose />
+    },
+    {
+        path: 'contacts',
+        element: <ContactsPage />
+    },
+    {
+        path: 'WearAnEngagementRing',
+        element: <WearAnEngagementRing />
+    },
+    {
+        path: 'AboutPage',
+        element: <AboutPage />
+    },
+    {
+        path: 'delivery',
+        element: <Delivery />
+    },
+    {
+        path: 'guarantee',
+        element: <GuaranteePage />
+    },
+    {
+        path: '/*',
+        element: <NotFoundPage />
+    },
+])
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <RouterProvider router={router} />
+    )
+
 }
 
 export default App

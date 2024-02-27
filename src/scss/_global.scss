@@ -1,0 +1,80 @@
+@import "./variable";
+
+:root {
+    --color-blue: #9EAFC2;
+    --color-black: black;
+    --color-gray: #808080;
+    --color-accent: #020F59;
+    --color-white: #fff;
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    border: none;
+}
+
+textarea {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    @extend %osr
+}
+
+.container {
+    max-width: calc(1920px - 295px - 295px + 30px);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title {}
