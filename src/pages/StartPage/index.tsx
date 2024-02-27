@@ -14,7 +14,7 @@ import { typeDataForCart } from "../../App";
 import ProductCart from "../../components/ProductCart";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const StartPage = ({ data }: { data: typeDataForCart }) => {
@@ -230,7 +230,7 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
 
 
 
-          {/*   <Outlet /> */}
+            {/*   <Outlet /> */}
 
 
         </>
