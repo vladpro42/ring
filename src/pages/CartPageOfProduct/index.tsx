@@ -17,7 +17,7 @@ import reviewImg1 from "../../assets/images/review-1.jpg"
 import reviewImg2 from "../../assets/images/review-2.jpg"
 import reviewImg3 from "../../assets/images/review-3.jpg"
 import reviewImg4 from "../../assets/images/review-4.jpg"
-import { useRef, useState } from "react"
+import { useState } from "react"
 
 function findCartForId(dataForCart: typeDataForCart, id: number): ICart {
     const [item] = dataForCart.filter(item => {

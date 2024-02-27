@@ -1,4 +1,3 @@
-import React from 'react'
 
 import heart from "../../assets/images/heart.svg"
 import map from "../../assets/images/map.svg"

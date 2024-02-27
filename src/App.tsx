@@ -7,7 +7,7 @@ import newItemsSlider1 from "./assets/images/new-items-1.png"
 import newItemsSlider2 from "./assets/images/new-items-2.png"
 import newItemsSlider3 from "./assets/images/new-items-3.png"
 import CartPageOfProduct from './pages/CartPageOfProduct'
-import { createBrowserRouter, RouterProvider, Route, Link, createRoutesFromElements } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import BasketPage from './pages/BasketPage'
 import FavoritePage from './pages/FavoritePage'
 import MakeAnOrder from './pages/MakeAnOrder'
