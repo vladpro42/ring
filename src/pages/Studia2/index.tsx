@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Studia2 = () => {
     return (
