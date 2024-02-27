@@ -340,7 +340,7 @@
         min-width: 430px;
         min-height: 430px;
         flex-direction: column;
-        cursor: grab;
+        cursor: pointer;
     }
 
     &__slide-item {
@@ -406,7 +406,7 @@
         margin-block: 7px 41px;
     }
 
-    
+
 
     &__item-ip {
         @extend %osr;

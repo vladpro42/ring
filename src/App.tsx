@@ -7,11 +7,10 @@ import newItemsSlider1 from "./assets/images/new-items-1.png"
 import newItemsSlider2 from "./assets/images/new-items-2.png"
 import newItemsSlider3 from "./assets/images/new-items-3.png"
 import CartPageOfProduct from './pages/CartPageOfProduct'
-import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Route, Link, createRoutesFromElements } from 'react-router-dom'
 import BasketPage from './pages/BasketPage'
 import FavoritePage from './pages/FavoritePage'
 import MakeAnOrder from './pages/MakeAnOrder'
-import Studia2 from './pages/Studia2'
 import HowToChoose from './pages/HowToChoose'
 import DiamondAsAGift from './pages/DiamondAsAGift'
 import ContactsPage from './pages/Contacts'
@@ -19,7 +18,6 @@ import WearAnEngagementRing from './pages/WearAnEngagementRing'
 import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Delivery from './pages/Delivery'
-import GaranteePage from './pages/GaranteePage'
 import GuaranteePage from './pages/GaranteePage'
 
 
@@ -29,37 +27,38 @@ export interface ICart {
     raiting: number;
     imgSrc: string;
     price: number;
-    priceSale: null;
+    priceSale: number;
 }
 export type typeDataForCart = ICart[]
 
-const dataForCart: typeDataForCart = [
+export const dataForCart: typeDataForCart = [
     {
-        id: 1, raiting: 3, imgSrc: newItemsSlider1, price: 59600, priceSale: null
+        id: 1, raiting: 3, imgSrc: newItemsSlider1, price: 59600, priceSale: 57000
     },
     {
-        id: 2, raiting: 4.5, imgSrc: newItemsSlider2, price: 59600, priceSale: null
+        id: 2, raiting: 4.5, imgSrc: newItemsSlider2, price: 59600, priceSale: 57000
     },
     {
-        id: 3, raiting: 5, imgSrc: newItemsSlider3, price: 59600, priceSale: null
+        id: 3, raiting: 5, imgSrc: newItemsSlider3, price: 59600, priceSale: 57000
     },
 ]
+
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <StartPage data={dataForCart} />
+        element: <StartPage data={dataForCart} />,
     },
     {
-        path: 'catalog',
-        element: <CatalogPage data={dataForCart} />
+        path: '/catalog',
+        element: <CatalogPage data={dataForCart} />,
     },
     {
-        path: 'catalog2',
-        element: <CartPageOfProduct />
+        path: '/catalog/:id',
+        element: <CartPageOfProduct />,
     },
     {
-        path: 'basket',
+        path: '/basket',
         element: <BasketPage />
     },
     {

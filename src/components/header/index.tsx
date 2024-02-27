@@ -122,9 +122,9 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="user__actions">
-                        <a href="#" className="user__actions-link">
+                        <Link to="/basket" className="user__actions-link">
                             <img src={cart} alt="" />
-                        </a>
+                        </Link>
                         <a href="#" className="user__actions-link">
                             <img src={heart} alt="" />
                         </a>

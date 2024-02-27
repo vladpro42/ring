@@ -14,7 +14,7 @@ import { typeDataForCart } from "../../App";
 import ProductCart from "../../components/ProductCart";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 const StartPage = ({ data }: { data: typeDataForCart }) => {
@@ -72,7 +72,6 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
     return (
         <>
             <Header />
-
             <main className='main'>
 
                 <section className='top'>
@@ -115,7 +114,7 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
                     <div className="container">
                         <div className=" new-items__title">НОВИНКИ</div>
                         <ul ref={ref} className="new-items__slider">
-                            {data.map((cart) => <ProductCart cart={cart} />)}
+                            {data.map((cart) => <ProductCart key={cart.id} cart={cart} />)}
                             <li className="new-items__slide">
                                 <div className="new-items__slide-item">
                                     <p className="new-items__slide-article">Арт. 019</p>
@@ -228,6 +227,11 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
                 </section>
             </main>
             <Footer />
+
+
+
+          {/*   <Outlet /> */}
+
 
         </>
     )
