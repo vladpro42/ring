@@ -82,8 +82,7 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                             </a>
                         </div>
                         <ul className="catalog-main__product-list ">
-                            {data.map((item) => <ProductCart key={item.id} cart={item} />)}
-                            {data.map((item) => <ProductCart key={item.id} cart={item} />)}
+                            {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)}
                         </ul>
                         <div className="catalog-main__pagination">
                             <button className='catalog-main__padination-btn catalog-main__padination-btn--prev'>

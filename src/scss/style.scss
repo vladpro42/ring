@@ -330,17 +330,22 @@
 
     &__slider {
         display: flex;
-        overflow-x: scroll;
     }
 
     &__slide {
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         min-width: 430px;
         min-height: 430px;
         flex-direction: column;
-        cursor: pointer;
     }
 
     &__slide-item {
@@ -372,20 +377,40 @@
         color: var(--color-black);
     }
 
-    &__range {
-        width: 100%;
-        margin-top: 50px;
-        margin-bottom: 201px;
-        height: 3px;
-        background: var(--color-blue);
+    .swiper-wrapper {
+        height: initial;
+    }
 
-        & span {
-            width: 443px;
-            height: 3px;
-            display: block;
-            cursor: grab;
-            background-color: var(--color-accent);
+    .swiper-scrollbar {
+        background: var(--color-blue);
+        height: 3px;
+        margin-block: 50px 201px;
+        position: initial !important;
+    }
+
+    .swiper-scrollbar-drag {
+        width: 443px;
+        height: 3px;
+        background-color: var(--color-accent);
+        cursor: grab;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 231px;
+
+        &::after {
+            content: "";
+            background-image: url("../assets/images/slider-prev.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 13px;
+            height: 25px;
         }
+    }
+
+    .swiper-button-prev {
+        rotate: -180deg;
     }
 }
 

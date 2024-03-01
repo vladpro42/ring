@@ -18,6 +18,7 @@ import reviewImg2 from "../../assets/images/review-2.jpg"
 import reviewImg3 from "../../assets/images/review-3.jpg"
 import reviewImg4 from "../../assets/images/review-4.jpg"
 import { useState } from "react"
+import SwiperWithScrollbar from "../../components/SwiperWithScrollbar"
 
 function findCartForId(dataForCart: typeDataForCart, id: number): ICart {
     const [item] = dataForCart.filter(item => {
@@ -260,6 +261,19 @@ const CartPageOfProduct = () => {
                             <img className="cart-page__sale-img" src={sale} alt="" />
 
                             {/* Недавно просмотренные слайдер*/}
+
+                            <section className='new-items'>
+                                <div className="container">
+                                    <h3 className="new-items__title">
+                                        НЕДАВНО ПРОСМОТРЕННЫЕ
+                                    </h3>
+                                    <ul className="new-items__slider">
+                                        <SwiperWithScrollbar />
+                                    </ul>
+                                </div>
+                            </section>
+
+
 
                         </div>
                     </div>

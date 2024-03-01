@@ -1,21 +1,18 @@
 
 
-import heart from "../../assets/images/heart.svg"
 import slide1 from "../../assets/images/top-bg.jpg"
 import Slider, { Settings } from 'react-slick'
 import briliant from "../../assets/images/briliant.svg"
 import "slick-carousel/slick/slick.css";
-import newItemsSlider1 from "../../assets/images/new-items-1.png"
-import newItemsSlider2 from "../../assets/images/new-items-2.png"
-import newItemsSlider3 from "../../assets/images/new-items-3.png"
-import star from "../../assets/images/star.svg"
 import React, { useEffect, useRef } from 'react'
 import { typeDataForCart } from "../../App";
-import ProductCart from "../../components/ProductCart";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import { Link } from "react-router-dom";
-
+import 'swiper/css/scrollbar'
+import 'swiper/css'
+import 'swiper/css/navigation';
+import SwiperWithScrollbar from "../../components/SwiperWithScrollbar";
 
 const StartPage = ({ data }: { data: typeDataForCart }) => {
 
@@ -112,127 +109,15 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
 
                 <section className='new-items'>
                     <div className="container">
-                        <div className=" new-items__title">НОВИНКИ</div>
+                        <h3 className=" new-items__title">НОВИНКИ</h3>
                         <ul ref={ref} className="new-items__slider">
-                            {data.map((cart) => <ProductCart key={cart.id} cart={cart} />)}
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider1} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider2} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider3} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider1} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider2} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
-                            <li className="new-items__slide">
-                                <div className="new-items__slide-item">
-                                    <p className="new-items__slide-article">Арт. 019</p>
-                                    <div className="raiting">
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <img className='new-items__slide-img' src={newItemsSlider3} alt="" />
-                                <div className="new-items__slide-item">
-                                    <img className='new-items__slide-favotite' src={heart} alt="" />
-                                    <div className="new-items__slide-price">59 600 ₽</div>
-                                </div>
-                            </li>
+                            <SwiperWithScrollbar />
                         </ul>
-                        <div className='new-items__range'>
-                            <span
-                                onMouseDown={handleMouseDown}
-                                ref={refSpan}
-                                onMouseUp={handleMouseUp}
-                            ></span>
-                        </div>
-                        <input type='range'
-                            step={1}
-                            max={1000}
-                            className='new-items__range' />
                     </div>
                 </section>
             </main>
+
             <Footer />
-
-
-
-            {/*   <Outlet /> */}
-
-
         </>
     )
 }
