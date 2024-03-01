@@ -1,0 +1,55 @@
+@import "../../scss/variable";
+
+.studio {
+    padding: 100px 0 0;
+
+
+
+    &__title {
+        @extend %rr;
+        font-size: 45px;
+        letter-spacing: 0.5px;
+        color: var(--color-black);
+        margin-bottom: 23px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 0 256px;
+        margin-bottom: 100px;
+    }
+
+    &__column1 {}
+
+    &__text+&__text {
+        margin-top: 10px;
+    }
+
+    &__text {
+        @extend %osr;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--color-black);
+    }
+
+    &__text--bold,
+    &__link {
+        @extend %osb;
+    }
+
+    &__link {
+        display: block;
+        margin-top: 10px;
+    }
+
+    &__slider {
+        margin-bottom: 200px;
+    }
+
+    .swiper-scrollbar {
+        position: static;
+        max-width: 1330px;
+        margin: 20px auto 0;
+    }
+}

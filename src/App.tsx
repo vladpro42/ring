@@ -19,6 +19,7 @@ import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Delivery from './pages/Delivery'
 import GuaranteePage from './pages/GaranteePage'
+import Studia2 from './pages/Studia2'
 
 
 
@@ -96,7 +97,7 @@ const router = createBrowserRouter([
         element: <MakeAnOrder />
     },
     {
-        path: 'HowToChoose',
+        path: 'how-to-choose',
         element: <HowToChoose />
     },
     {
@@ -118,6 +119,10 @@ const router = createBrowserRouter([
     {
         path: 'guarantee',
         element: <GuaranteePage />
+    },
+    {
+        path: 'studia-two',
+        element: <Studia2 />
     },
     {
         path: '/*',
