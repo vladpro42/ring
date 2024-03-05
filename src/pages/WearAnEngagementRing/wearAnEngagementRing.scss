@@ -1,0 +1,80 @@
+@import "../../scss/variable";
+
+.wear {
+    &__section {
+        margin: 50px 0 200px;
+    }
+
+    &__title {
+        @extend %rr;
+        font-size: 26px;
+        line-height: 56px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 111px;
+    }
+
+    &__text-box {
+        margin-bottom: 30px;
+        max-width: 640px;
+    }
+
+    &__img {
+        width: 399px;
+        height: 345px;
+    }
+
+    &__text,
+    &__item-text {
+        @extend %osr;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.1px;
+    }
+
+    &__text+&__text {
+        margin-top: 10px;
+    }
+
+    &__item-text+&__item-text {
+        margin-top: 10px;
+    }
+
+    &__list-text {
+        max-width: 836px;
+        padding-left: 34px;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+
+        display: flex;
+
+        span {
+            @extend %osb;
+            font-size: 24px;
+            line-height: 24px;
+            margin-right: 19px;
+            margin: 2px 19px 0 0;
+        }
+    }
+
+    &__item+&__item {
+        margin-top: 20px;
+    }
+
+    &__item {
+        /* list-style: decimal; */
+    }
+
+    &__item-text--down {
+        max-width: 870px;
+    }
+}

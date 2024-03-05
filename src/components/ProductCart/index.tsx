@@ -1,14 +1,15 @@
 
 import star from "../../assets/images/star.svg"
 import heart from "../../assets/images/heart.svg"
-import { ICart } from "../../App"
+import { ICart } from "../../types/types"
 import { Link } from "react-router-dom"
 
 
-const ProductCart = ({ cart }: { cart: ICart }) => {
+const ProductCart = ({ cart, to }: { cart: ICart, to?: number | string, }) => {
+
 
     return <li className="new-items__slide">
-        <Link to={`${cart.id}`}>
+        <Link className="new-items__link" to={`${to}` ? `${to}` : `catalog/${cart.id}`}>
             <div className="new-items__slide-item">
                 <p className="new-items__slide-article">Арт. {cart.id}</p>
                 <div className="raiting">

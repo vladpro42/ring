@@ -1,0 +1,87 @@
+@import "../../scss/variable";
+
+.main-about {
+
+
+    &__section {}
+
+    &__title {
+        @extend %rr;
+        font-size: 45px;
+        letter-spacing: 0.5px;
+        margin-bottom: 23px;
+        padding-top: 21px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 273px;
+        margin-bottom: 200px;
+    }
+
+    &__column {
+        max-width: 640px;
+
+    }
+
+    &__text {
+        @extend %osr;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &__text+&__text {
+        margin-top: 10px;
+    }
+
+    .header__bg {}
+
+    .header__bg>.container {
+        padding: 0;
+        margin: 0;
+        max-width: initial;
+    }
+
+    .header__items {
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 80px 87px 106px 50px;
+        background-color: #F8F9FD;
+        gap: 20px 0;
+        width: 410px;
+        height: 520px;
+        margin-top: -26px;
+    }
+
+    .oclock,
+    .phone {
+        position: relative;
+        margin-left: 32px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -33px;
+            top: 10px;
+            background-image: url(../../assets/images/clock.svg);
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 20px;
+        }
+    }
+
+    .phone {
+        &::before {
+            content: "";
+            background-image: url(../../assets/images/phone.svg);
+        }
+    }
+
+    .user-actions {
+        flex-direction: row;
+    }
+
+}

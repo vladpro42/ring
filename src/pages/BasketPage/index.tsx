@@ -86,7 +86,7 @@ const BasketPage = () => {
                         </table>
 
                         <div className="basket__price-box">
-                            <p className="basket__price">Итого: <span>119 200 ₽</span></p>
+                            <p className="basket__price">Итого: <span>119 &nbsp;200 ₽</span></p>
                             <button className='basket__submit'>ОФОРМИТЬ ЗАКАЗ </button>
                         </div>
                     </div>
