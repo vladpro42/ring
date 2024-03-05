@@ -20,6 +20,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import Delivery from './pages/Delivery'
 import GuaranteePage from './pages/GaranteePage'
 import Studio2Page from './pages/Studio2'
+import PoliticsPage from './pages/PoliticsPage'
 
 
 
@@ -123,6 +124,10 @@ const router = createBrowserRouter([
     {
         path: 'studio-two',
         element: <Studio2Page />
+    },
+    {
+        path: 'politics',
+        element: <PoliticsPage />
     },
     {
         path: '/*',

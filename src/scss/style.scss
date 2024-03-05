@@ -3,6 +3,9 @@
 
 .header {
 
+    margin-bottom: 50px;
+
+
     .header__bg {
         background: var(--color-blue);
     }
@@ -146,10 +149,6 @@
         @extend %osr;
         line-height: 22px;
         color: var(--color-gray);
-    }
-
-    &__footer {
-        margin-bottom: 100px;
     }
 
     &__footer-list {
