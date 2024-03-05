@@ -1,7 +1,5 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Scrollbar } from "swiper/modules"
 
 import studio1 from "../../assets/images/studio-1.jpg"
 import studio2 from "../../assets/images/studio-2.jpg"

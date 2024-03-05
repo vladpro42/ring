@@ -4,8 +4,6 @@ import slide1 from "../../assets/images/top-bg.jpg"
 import Slider, { Settings } from 'react-slick'
 import briliant from "../../assets/images/briliant.svg"
 import "slick-carousel/slick/slick.css";
-import React, { useEffect, useRef } from 'react'
-import { typeDataForCart } from "../../App";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import { Link } from "react-router-dom";
@@ -14,7 +12,7 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import SwiperWithScrollbar from "../../components/SwiperWithScrollbar";
 
-const StartPage = ({ data }: { data: typeDataForCart }) => {
+const StartPage = () => {
 
 
     const settings: Settings = {
@@ -30,41 +28,6 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
         </div >
 
     };
-
-    const maxTranslateX = 900;
-    const ref = useRef<any>(null)
-    const refSpan = useRef<any>(null)
-    const coordinate = useRef({ x: 0 })
-    let moving = false
-
-    const handleMouseDown = (e: React.MouseEvent) => {
-        moving = true
-        coordinate.current = { x: e.clientX }
-    }
-
-    const handleMouseMove = (e: any) => {
-        if (moving) {
-            const offSet = -coordinate.current.x + e.clientX;
-            refSpan.current.style.transform = `translateX(${offSet > maxTranslateX ? maxTranslateX : offSet}px)`
-        }
-    }
-
-    const handleMouseUp = (e: React.MouseEvent<HTMLElement>) => {
-        coordinate.current = { x: e.clientX }
-        moving = false
-    }
-
-    useEffect(() => {
-    })
-
-    useEffect(() => {
-        document.addEventListener('mousemove', handleMouseMove)
-
-        return () => {
-            document.removeEventListener("mousemove", handleMouseMove)
-        }
-    }, [])
-
 
     return (
         <>
@@ -110,7 +73,7 @@ const StartPage = ({ data }: { data: typeDataForCart }) => {
                 <section className='new-items'>
                     <div className="container">
                         <h3 className=" new-items__title">НОВИНКИ</h3>
-                        <ul ref={ref} className="new-items__slider">
+                        <ul className="new-items__slider">
                             <SwiperWithScrollbar />
                         </ul>
                     </div>

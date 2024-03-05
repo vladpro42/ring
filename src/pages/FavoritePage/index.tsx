@@ -5,7 +5,7 @@ import Header from "../../components/header"
 import picture from "../../assets/images/catalo-sale.jpg"
 import ProductCart from "../../components/ProductCart"
 
-import { dataForCart } from "../../App"
+import { dataForCart } from "../../data/data"
 
 import "./favoritePage.scss"
 import Pagination from "../../components/Pagination/"

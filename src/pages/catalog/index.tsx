@@ -1,6 +1,6 @@
 import Header from '../../components/header'
 import ProductCart from '../../components/ProductCart'
-import { typeDataForCart } from '../../App'
+import { typeDataForCart } from '../../types/types'
 import Footer from '../../components/footer'
 import "./catalog.scss"
 import saleImg from "../../assets/images/catalo-sale.jpg"

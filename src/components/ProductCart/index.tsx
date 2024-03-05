@@ -1,7 +1,7 @@
 
 import star from "../../assets/images/star.svg"
 import heart from "../../assets/images/heart.svg"
-import { ICart } from "../../App"
+import { ICart } from "../../types/types"
 import { Link } from "react-router-dom"
 
 

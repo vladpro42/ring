@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Navigation } from "swiper/modules";
 import ProductCart from '../ProductCart';
-import { dataForCart } from "../../App";
+import { dataForCart } from "../../data/data";
 
 import 'swiper/css/scrollbar'
 import 'swiper/css'
