@@ -428,6 +428,11 @@
         font-size: 12px;
         color: #636465;
         margin-block: 7px 41px;
+        display: inline-block;
+
+        &:hover {
+            border-bottom: 1px solid var(--color-black);
+        }
     }
 
 

@@ -48,16 +48,12 @@ const router = createBrowserRouter([
         element: <FavoritePage />
     },
     {
-        path: 'MakeAnOrder',
+        path: 'make-an-order',
         element: <MakeAnOrder />
     },
     {
         path: 'diamond-as-a-gift',
         element: <DiamondAsAGift />
-    },
-    {
-        path: 'MakeAnOrder',
-        element: <MakeAnOrder />
     },
     {
         path: 'how-to-choose',
@@ -68,7 +64,7 @@ const router = createBrowserRouter([
         element: <ContactsPage />
     },
     {
-        path: 'WearAnEngagementRing',
+        path: 'wear-an-engagement-ring',
         element: <WearAnEngagementRing />
     },
     {

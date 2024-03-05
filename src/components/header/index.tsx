@@ -23,33 +23,33 @@ const Header = () => {
                                 <img src={map} alt="" />
                                 Москва, Большой Кисловский переулок, 5-7с1
                             </a>
-                            <a href="" className="header__item-link">
+                            <a href="mailto:info@art-rings.ru" className="header__item-link">
                                 <img src={mail} alt="" />
                                 info@art-rings.ru
                             </a>
                         </li>
                         <li className="header__item oclock">
-                            <a href="" className="header__item-link">пн-пт 11:00-20:00</a>
-                            <a href="" className="header__item-link">сб, вс 11:00-17:00</a>
+                            <p className="header__item-link">пн-пт 11:00-20:00</p>
+                            <p className="header__item-link">сб, вс 11:00-17:00</p>
                         </li>
                         <li className="header__item phone">
-                            <a href="" className="header__item-link">+7 (499) 940-87-77</a>
-                            <a href="" className="header__item-link">+7 (977) 841-23-40</a>
+                            <a href="tel:+74999408777" className="header__item-link">+7 (499) 940-87-77</a>
+                            <a href="tel:+79778412340" className="header__item-link">+7 (977) 841-23-40</a>
                         </li>
                         <li className="header__item user-actions">
-                            <a href="" className="header__item-link">
+                            <a href="#" className="header__item-link">
                                 <img src={facebook} alt="" />
                             </a>
-                            <a href="" className="header__item-link">
+                            <a href="#" className="header__item-link">
                                 <img src={vk} alt="" />
                             </a>
-                            <a href="" className="header__item-link">
+                            <a href="#" className="header__item-link">
                                 <img src={whatsapp} alt="" />
                             </a>
-                            <a href="" className="header__item-link">
+                            <a href="#" className="header__item-link">
                                 <img src={instagram} alt="" />
                             </a>
-                            <a href="" className="header__item-link">
+                            <a href="#" className="header__item-link">
                                 <img src={telegram} alt="" />
                             </a>
                         </li>
@@ -58,34 +58,33 @@ const Header = () => {
             </div>
             <div className="container">
 
-
                 <div className="header__inner">
                     <nav className="header__nav">
                         <ul className="header__nav-menu">
                             <li className="header__nav-item">
-                                <a href="#" className="header__nav-link">
+                                <Link to="/studio-two" className="header__nav-link">
                                     Студия
-                                </a>
+                                </Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#" className="header__nav-link">
+                                <Link to="/about" className="header__nav-link">
                                     О нас
-                                </a>
+                                </Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#" className="header__nav-link">
+                                <Link to="/delivery" className="header__nav-link">
                                     Доставка и Оплата
-                                </a>
+                                </Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#" className="header__nav-link">
+                                <Link to="/guarantee" className="header__nav-link">
                                     Гарантии
-                                </a>
+                                </Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#" className="header__nav-link">
+                                <Link to="/" className="header__nav-link">
                                     Отзывы
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
@@ -102,31 +101,31 @@ const Header = () => {
                     <p className="header__company-subtitle">MOSCOW JEWELRY STUDIO</p>
                 </div>
                 <div className="header__footer">
-                    <a href="#" className="logo">
+                    <Link to="/" className="logo">
                         <img src={logo} alt="" />
-                    </a>
+                    </Link>
                     <span className="burger"></span>
                     <ul className="header__footer-list">
                         <li className="header__footer-item">
                             <Link to="../catalog" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                         </li>
                         <li className="header__footer-item">
-                            <a href="#" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</a>
+                            <Link to="../catalog" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
                         </li>
                         <li className="header__footer-item">
-                            <a href="#" className="header__footer-link">СВАДЕБНЫЕ ДУЭТЫ</a>
+                            <Link to="../catalog" className="header__footer-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
                         </li>
                         <li className="header__footer-item">
-                            <a href="#" className="header__footer-link">НА ЗАКАЗ</a>
+                            <Link to="../catalog" className="header__footer-link">НА ЗАКАЗ</Link>
                         </li>
                     </ul>
                     <div className="user__actions">
                         <Link to="/basket" className="user__actions-link">
                             <img src={cart} alt="" />
                         </Link>
-                        <a href="#" className="user__actions-link">
+                        <Link to="/favorite" className="user__actions-link">
                             <img src={heart} alt="" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

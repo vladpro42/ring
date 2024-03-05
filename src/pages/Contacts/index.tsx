@@ -38,44 +38,46 @@ const ContactsPage = () => {
                                 <div className="container">
                                     <ul className="header__items">
                                         <li className="header__item">
-                                            <a href="" className="header__item-link">
+                                            <a target="_blank" href="https://yandex.by/maps/213/moscow/house/bolshoy_kislovskiy_pereulok_5_7s1/Z04YcAdlTkMPQFtvfXt0dXRjZQ==/?ll=37.605768%2C55.754801&z=17" className="header__item-link">
                                                 <img src={map} alt="" />
                                                 Москва, Большой Кисловский переулок, 5-7с1
                                             </a>
-                                            <a href="" className="header__item-link">
+                                            <a href="mailto:info@art-rings.ru" className="header__item-link">
                                                 <img src={mail} alt="" />
                                                 info@art-rings.ru
                                             </a>
                                         </li>
                                         <li className="header__item oclock">
-                                            <a href="" className="header__item-link">пн-пт 11:00-20:00</a>
-                                            <a href="" className="header__item-link">сб, вс 11:00-17:00</a>
+                                            <p className="header__item-link">пн-пт 11:00-20:00</p>
+                                            <p className="header__item-link">сб, вс 11:00-17:00</p>
                                         </li>
                                         <li className="header__item phone">
-                                            <a href="" className="header__item-link">+7 (499) 940-87-77</a>
-                                            <a href="" className="header__item-link">+7 (977) 841-23-40</a>
+                                            <a href="tel:+74999408777" className="header__item-link">+7 (499) 940-87-77</a>
+                                            <a href="tel:+79778412340" className="header__item-link">+7 (977) 841-23-40</a>
                                         </li>
                                         <li className="header__item user-actions">
-                                            <a href="" className="header__item-link">
+                                            <a href="#" className="header__item-link">
                                                 <img src={facebook} alt="" />
                                             </a>
-                                            <a href="" className="header__item-link">
+                                            <a href="#" className="header__item-link">
                                                 <img src={vk} alt="" />
                                             </a>
-                                            <a href="" className="header__item-link">
+                                            <a href="#" className="header__item-link">
                                                 <img src={whatsapp} alt="" />
                                             </a>
-                                            <a href="" className="header__item-link">
+                                            <a href="#" className="header__item-link">
                                                 <img src={instagram} alt="" />
                                             </a>
-                                            <a href="" className="header__item-link">
+                                            <a href="#" className="header__item-link">
                                                 <img src={telegram} alt="" />
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <img src={mapPic} alt="" className="contact-main__img" />
+                            <a target="_blank" href="https://yandex.by/maps/213/moscow/house/bolshoy_kislovskiy_pereulok_5_7s1/Z04YcAdlTkMPQFtvfXt0dXRjZQ==/?ll=37.605768%2C55.754801&z=17">
+                                <img src={mapPic} alt="" className="contact-main__img" />
+                            </a>
                         </div>
 
                         <h2 className="contact-main__title-slider">Фото студии с улицы</h2>

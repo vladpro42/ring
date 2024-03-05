@@ -4,6 +4,7 @@ import Header from "../../components/header"
 import "./notFoundPage.scss"
 
 import pic from "../../assets/images/notFound.svg"
+import { Link } from "react-router-dom"
 
 const NotFoundPage = () => {
     return (
@@ -14,7 +15,7 @@ const NotFoundPage = () => {
                     <div className="container">
                         <img className="not-found__img" src={pic} alt="" />
                         <p className="not-found__text">Страница, которую вы ищете, устарела или не существует.</p>
-                        <button className="not-found__btn">НА ГЛАВНУЮ</button>
+                        <Link to="/" className="not-found__btn">НА ГЛАВНУЮ</Link>
                     </div>
                 </section>
             </main>

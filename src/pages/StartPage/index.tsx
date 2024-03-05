@@ -58,13 +58,13 @@ const StartPage = () => {
                                 <Link to="catalog" className="catalog__menu-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <a href="#" className="catalog__menu-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</a>
+                                <Link to="catalog" className="catalog__menu-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <a href="#" className="catalog__menu-link">СВАДЕБНЫЕ ДУЭТЫ</a>
+                                <Link to="catalog" className="catalog__menu-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <a href="#" className="catalog__menu-link">НА ЗАКАЗ</a>
+                                <Link to="catalog" className="catalog__menu-link">НА ЗАКАЗ</Link>
                             </div>
                         </div>
                     </div>
