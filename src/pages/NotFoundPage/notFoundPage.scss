@@ -1,0 +1,31 @@
+@import "../../scss/variable";
+
+.not-found {
+
+
+    &__section {
+        margin-top: 50px;
+        text-align: center
+    }
+
+    &__img {
+        width: 129px;
+        height: 70px;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        @extend %osl;
+        line-height: 25px;
+        margin-bottom: 40px;
+    }
+
+    &__btn {
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        @extend %ossb;
+        padding: 19px 171px;
+        text-transform: uppercase;
+        margin-bottom: 150px;
+    }
+}

@@ -19,7 +19,7 @@ import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Delivery from './pages/Delivery'
 import GuaranteePage from './pages/GaranteePage'
-import Studia2 from './pages/Studia2'
+import Studio2Page from './pages/Studio2'
 
 
 
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
         element: <MakeAnOrder />
     },
     {
-        path: 'DiamondAsAGift',
+        path: 'diamond-as-a-gift',
         element: <DiamondAsAGift />
     },
     {
@@ -109,7 +109,7 @@ const router = createBrowserRouter([
         element: <WearAnEngagementRing />
     },
     {
-        path: 'AboutPage',
+        path: 'about',
         element: <AboutPage />
     },
     {
@@ -121,8 +121,8 @@ const router = createBrowserRouter([
         element: <GuaranteePage />
     },
     {
-        path: 'studia-two',
-        element: <Studia2 />
+        path: 'studio-two',
+        element: <Studio2Page />
     },
     {
         path: '/*',

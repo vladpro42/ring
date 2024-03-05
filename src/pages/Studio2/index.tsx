@@ -10,8 +10,11 @@ import studio3 from "../../assets/images/studio-3.jpg"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "./studia2.scss"
+import SwiperTwo from "../../components/SwiperTwo"
 
-const Studia2 = () => {
+const Studio2Page = () => {
+
+    const images = [studio1, studio2, studio3, studio1, studio2, studio3]
     return (
         <>
             <Header />
@@ -51,38 +54,7 @@ const Studia2 = () => {
                     </div>
 
                     <ul className="studio__slider">
-                        <Swiper modules={[Scrollbar]} slidesPerView={3} scrollbar={{ draggable: true }}>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio1} alt="" />
-                                </li>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio2} alt="" />
-                                </li>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio3} alt="" />
-                                </li>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio1} alt="" />
-                                </li>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio2} alt="" />
-                                </li>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <li className="studio__slide">
-                                    <img src={studio3} alt="" />
-                                </li>
-                            </SwiperSlide>
-                        </Swiper>
+                        <SwiperTwo images={images} />
                     </ul>
                 </section>
             </main >
@@ -92,4 +64,4 @@ const Studia2 = () => {
     )
 }
 
-export default Studia2
+export default Studio2Page
