@@ -1,8 +1,8 @@
 
-import star from "../../assets/images/star.svg"
 import heart from "../../assets/images/heart.svg"
 import { ICart } from "../../types/types"
 import { Link } from "react-router-dom"
+import Raiting from "../Raiting"
 
 
 const ProductCart = ({ cart, to }: { cart: ICart, to?: number | string, }) => {
@@ -13,11 +13,11 @@ const ProductCart = ({ cart, to }: { cart: ICart, to?: number | string, }) => {
             <div className="new-items__slide-item">
                 <p className="new-items__slide-article">Арт. {cart.id}</p>
                 <div className="raiting">
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
+                    <Raiting
+                        raintingValue={3}
+                        width={15}
+                        height={15}
+                    />
                 </div>
             </div>
             <img className='new-items__slide-img' src={cart.imgSrc} alt="" />

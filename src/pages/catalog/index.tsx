@@ -5,8 +5,15 @@ import Footer from '../../components/footer'
 import "./catalog.scss"
 import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
+import { useState } from 'react'
 
 const CatalogPage = ({ data }: { data: typeDataForCart }) => {
+
+    const [isbtnActive, setIsBtnActive] = useState(false)
+
+    const handleClickBtnAnimation = () => {
+        setIsBtnActive(!isbtnActive)
+    }
     return (
         <>
             <Header />
@@ -21,14 +28,18 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                                 <p className="catalog-main__text">Эксклюзивные обручальные кольца с оригинальным дизайном от «Арт-Рингз» — отличный выбор для закрепления союза Вашей любви. В такой важный день все должно быть идеально и ключевой деталью являются обручальные кольца для «нее» и «него» — будущих счастливых супругов.</p>
 
                                 <div className="catalog-main__options">
-                                    <div className="catalog-main__btn-animation">
+                                    <div onClick={handleClickBtnAnimation} className="catalog-main__btn-animation">
                                         <div className="btn-animation">
-                                            <span></span>
+                                            <span className={isbtnActive ? "btn-animation--unactive" : ""}></span>
                                         </div>
                                         <p className="catalog-main__btn-text">Анимация</p>
                                     </div>
                                     <div className="catalog-main__show">
-                                        Показать: <span>21</span>
+                                        Показать:
+                                        <select>
+                                            <option value=""><span>21</span></option>
+                                        </select>
+
                                     </div>
                                     <div className="catalog-main__sort">
                                         Сортировать:
@@ -77,7 +88,7 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a className='catalog-main__link-sale' href="#">
                                 <img className="catalog-main__sale" src={saleImg} alt="" />
                             </a>
                         </div>
