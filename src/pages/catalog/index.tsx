@@ -6,6 +6,7 @@ import "./catalog.scss"
 import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
 import { useState } from 'react'
+import usePagination from '../../hooks/UsePagination'
 
 const CatalogPage = ({ data }: { data: typeDataForCart }) => {
 
@@ -14,6 +15,13 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
     const handleClickBtnAnimation = () => {
         setIsBtnActive(!isbtnActive)
     }
+
+    const pagination = usePagination({
+        contentPerPage: 3,
+        count: data.length
+    })
+
+    console.log(pagination, data.length)
     return (
         <>
             <Header />
@@ -93,23 +101,52 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                             </a>
                         </div>
                         <ul className="catalog-main__product-list ">
-                            {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)}
+                            {/*  {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)} */}
+
+
+                            {data
+                                .slice(pagination.firstContentIndex, pagination.lastContentIndex)
+                                .map((item) => (
+                                    <ProductCart to={`${item.id}`} key={item.id} cart={item} />
+                                ))
+                            }
+
                         </ul>
                         <div className="catalog-main__pagination">
-                            <button className='catalog-main__padination-btn catalog-main__padination-btn--prev'>
+                            <button onClick={() => pagination.prevPage()} className='catalog-main__padination-btn catalog-main__padination-btn--prev'>
                                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13 0.8L7.27692 7L1.46154 0.8" strokeWidth="2" />
                                 </svg>
                                 <span>Предыдущая</span>
                             </button>
+
                             <div className="catalog-main__links">
-                                <a className="catalog-main__link catalog-main__link--active">1</a>
-                                <a className="catalog-main__link">2</a>
-                                <a className="catalog-main__link">3</a>
-                                <a className="catalog-main__link">4</a>
-                                <a className="catalog-main__link">20</a>
+
+                                {/*   {
+                                    [...new Array(4)].map((item, index) => <button
+                                        className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
+                                    >
+                                        {index + 1}
+                                    </button>)
+                                } */}
+                                {
+                                    [...new Array(4)].map((item, index) => <button
+                                        onClick={() => pagination.setPage(index + 1)}
+                                        className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
+                                    >
+                                        {index + 1}
+                                    </button>)
+                                }
+                                <button
+                                    className={pagination.page === pagination.totalPages ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
+                                    onClick={() => pagination.setPage(pagination.totalPages)}
+                                >
+                                    {pagination.totalPages}
+
+                                </button>
                             </div>
-                            <button className='catalog-main__padination-btn'>
+
+                            <button onClick={() => pagination.nextPage()} className='catalog-main__padination-btn'>
                                 <span>Следующая</span>
                                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13 0.8L7.27692 7L1.46154 0.8" strokeWidth="2" />
@@ -124,8 +161,8 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                             Парные обручальные кольца от «Арт-Рингз» можно недорого <span>купить в Москве</span> или с удобной <span>доставкой в регионы</span>. С радостью ответим на Ваши вопросы по телефонам: +7 (499) 940-87-77.
                         </p>
                     </section>
-                </div>
-            </main>
+                </div >
+            </main >
             <Footer />
         </>
     )
