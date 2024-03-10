@@ -8,7 +8,13 @@ import NavigationText from '../../components/NavigationText'
 import { useState } from 'react'
 import usePagination from '../../hooks/UsePagination'
 
-const CatalogPage = ({ data }: { data: typeDataForCart }) => {
+type Props = {
+    data: typeDataForCart;
+    title: string;
+    subtitle: string;
+}
+
+const CatalogPage = ({ data, title, subtitle }: Props) => {
 
     const [isbtnActive, setIsBtnActive] = useState(false)
 
@@ -21,7 +27,6 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
         count: data.length
     })
 
-    console.log(pagination, data.length)
     return (
         <>
             <Header />
@@ -32,8 +37,8 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                     <section className='catalog-main__description'>
                         <div className="catalog-main__wrapper">
                             <div className="catalog-main__inner">
-                                <h2 className="catalog-main__title">обручальные кольца</h2>
-                                <p className="catalog-main__text">Эксклюзивные обручальные кольца с оригинальным дизайном от «Арт-Рингз» — отличный выбор для закрепления союза Вашей любви. В такой важный день все должно быть идеально и ключевой деталью являются обручальные кольца для «нее» и «него» — будущих счастливых супругов.</p>
+                                <h2 className="catalog-main__title">{title}</h2>
+                                <p className="catalog-main__text">{subtitle}</p>
 
                                 <div className="catalog-main__options">
                                     <div onClick={handleClickBtnAnimation} className="catalog-main__btn-animation">
@@ -130,7 +135,7 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                                     </button>)
                                 } */}
                                 {
-                                    [...new Array(4)].map((item, index) => <button
+                                    [...new Array(4)].map((_, index) => <button
                                         onClick={() => pagination.setPage(index + 1)}
                                         className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     >

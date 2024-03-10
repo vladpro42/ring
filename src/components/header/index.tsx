@@ -107,16 +107,16 @@ const Header = () => {
                     <span className="burger"></span>
                     <ul className="header__footer-list">
                         <li className="header__footer-item">
-                            <Link to="../catalog" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
+                            <Link to="../catalog-weddingRings" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                         </li>
                         <li className="header__footer-item">
-                            <Link to="../catalog" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
+                            <Link to="../catalog-engagementRings" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
                         </li>
                         <li className="header__footer-item">
-                            <Link to="../catalog" className="header__footer-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
+                            <Link to="../catalog-weddingDuets" className="header__footer-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
                         </li>
                         <li className="header__footer-item">
-                            <Link to="../catalog" className="header__footer-link">НА ЗАКАЗ</Link>
+                            <Link to="../make-an-order" className="header__footer-link">НА ЗАКАЗ</Link>
                         </li>
                     </ul>
                     <div className="user__actions">

@@ -29,7 +29,7 @@ const Raiting = (
                 </defs>
             </svg>
 
-            {new Array(5).fill(0).map((item, index) => <svg
+            {new Array(5).fill(0).map((_, index) => <svg
                 key={index}
                 className={(raintingValue >= index + 1) ? "raiting__svg raiting__svg--active" : "raiting__svg raiting__svg--passive"}
                 width={width ? width : "45"}
