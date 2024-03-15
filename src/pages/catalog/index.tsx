@@ -7,6 +7,8 @@ import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
 import { useState } from 'react'
 import usePagination from '../../hooks/UsePagination'
+import { selectRings } from '../../rings/ringsReducer'
+import { useSelector } from 'react-redux'
 
 type Props = {
     data: typeDataForCart;
@@ -14,7 +16,10 @@ type Props = {
     subtitle: string;
 }
 
-const CatalogPage = ({ data, title, subtitle }: Props) => {
+const CatalogPage = ({ title, subtitle }: Props) => {
+
+
+    const rings = useSelector(selectRings)
 
     const [isbtnActive, setIsBtnActive] = useState(false)
 
@@ -23,8 +28,8 @@ const CatalogPage = ({ data, title, subtitle }: Props) => {
     }
 
     const pagination = usePagination({
-        contentPerPage: 3,
-        count: data.length
+        contentPerPage: 6,
+        count: rings.length
     })
 
     return (
@@ -109,7 +114,7 @@ const CatalogPage = ({ data, title, subtitle }: Props) => {
                             {/*  {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)} */}
 
 
-                            {data
+                            {rings
                                 .slice(pagination.firstContentIndex, pagination.lastContentIndex)
                                 .map((item) => (
                                     <ProductCart to={`${item.id}`} key={item.id} cart={item} />
@@ -127,21 +132,21 @@ const CatalogPage = ({ data, title, subtitle }: Props) => {
 
                             <div className="catalog-main__links">
 
-                                {/*   {
-                                    [...new Array(4)].map((item, index) => <button
+                                {
+                                    [...new Array(4)].map((_, index) => <button
                                         className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     >
                                         {index + 1}
                                     </button>)
-                                } */}
-                                {
+                                }
+                                {/*    {
                                     [...new Array(4)].map((_, index) => <button
                                         onClick={() => pagination.setPage(index + 1)}
                                         className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     >
                                         {index + 1}
                                     </button>)
-                                }
+                                } */}
                                 <button
                                     className={pagination.page === pagination.totalPages ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     onClick={() => pagination.setPage(pagination.totalPages)}

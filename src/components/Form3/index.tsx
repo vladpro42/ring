@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react"
 import { Link } from "react-router-dom"
 
-const Form3 = () => {
+const Form3 = ({ onClick }: { onClick: () => void }) => {
 
     const state = {
         pending: "pending",
@@ -18,7 +18,7 @@ const Form3 = () => {
     const state2 = <>
         <h1 className='basket__send-title'>ВАША ЗАЯВКА ПРИНЯТА!</h1>
         <p className='basket__send-subtitle'>В ближайшее время с вами свяжется оператор для подтверждения заказа.</p>
-        <Link to="/catalog" className='basket__send-btn'>ВЕРНУТЬСЯ В КАТАЛОГ</Link>
+        <Link onClick={onClick} to="/catalog-weddingRings" className='basket__send-btn'>ВЕРНУТЬСЯ В КАТАЛОГ</Link>
     </>
 
     const state1 = <>
