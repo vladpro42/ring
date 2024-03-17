@@ -21,16 +21,7 @@ import { useSelector } from "react-redux"
 import { selectRings } from "../../rings/ringsReducer"
 import { useAppDispatch } from "../../hooks/redux/hooks"
 import { BasketRing, addBasketCreator } from "../../basket/basketReducer"
-
-/* function findCartForId(dataForCart: typeDataForCart, id: number): ICart {
-
-    const [item] = dataForCart.filter(item => {
-        if (item.id === id) {
-            return item
-        }
-    })
-    return item
-} */
+import SelectRing from "./components/SelectRing"
 
 
 const CartPageOfProduct = () => {
@@ -132,22 +123,9 @@ const CartPageOfProduct = () => {
 
                                 <div className="cart-page__sizes">
                                     <div className="cart-page__selects">
-                                        <div className="cart-page__size">
-                                            <span>Размер (жен.)</span>
-                                            <select>
-                                                <option value="">14.00</option>
-                                                <option value="">13.00</option>
-                                            </select>
-                                        </div>
-                                        <div className="cart-page__size">
-                                            <span>Размер (муж.)</span>
-                                            <select>
-                                                <option value="">14.00</option>
-                                                <option value="">13.00</option>
-                                            </select>
-                                        </div>
+                                        <SelectRing text="жен." />
+                                        <SelectRing text="муж." />
                                     </div>
-
 
                                     <button onClick={addBasket} className="cart-page__btn-buy">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

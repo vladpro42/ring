@@ -11,12 +11,13 @@ export type Ring = {
     imgSrc: string,
     price: number,
     priceSale: number,
+    favorite?: boolean,
 }
 
 export type RingsState = {
     status: string,
     rings: {
-        [key: string]: Ring
+        [id: number | string]: Ring
     }
 }
 
@@ -53,10 +54,34 @@ const initialState: RingsState = {
     }
 }
 
-export const ringsReducer = (state = initialState) => {
-    switch (true) {
+enum ActionTypes {
+    changeFavorite = "rings/changeFavorite",
+}
+
+type ChangeFavorite = {
+    type: ActionTypes.changeFavorite,
+    payload: number
+}
+
+type Action = ChangeFavorite
+
+export const ringsReducer = (state = initialState, action: Action) => {
+    switch (action.type) {
+
+        case ActionTypes.changeFavorite: {
+            const changedItem = { ...state.rings[action.payload] }
+            changedItem.favorite = true
+            return {
+                ...state, rings: {
+                    ...state.rings,
+                    [action.payload]: { ...state.rings[action.payload], favorite: true }
+                }
+            }
+        }
+
+
         default:
-            return state;
+            return { ...state };
     }
 }
 
@@ -68,3 +93,10 @@ export const selectRings = createSelector(selectAllRings, (rings) => Object.valu
 export const selectRingById = (state: RootState, ringId: number) => {
     return selectAllRings(state)[ringId]
 }
+
+//action creators 
+
+export const changeFavoriteCreator = (id: number): ChangeFavorite => ({
+    type: ActionTypes.changeFavorite,
+    payload: id
+})

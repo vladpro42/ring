@@ -32,6 +32,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
         count: rings.length
     })
 
+
     return (
         <>
             <Header />
@@ -111,16 +112,13 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                             </a>
                         </div>
                         <ul className="catalog-main__product-list ">
-                            {/*  {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)} */}
-
-
-                            {rings
+                            {
+                            rings
                                 .slice(pagination.firstContentIndex, pagination.lastContentIndex)
                                 .map((item) => (
                                     <ProductCart to={`${item.id}`} key={item.id} cart={item} />
                                 ))
                             }
-
                         </ul>
                         <div className="catalog-main__pagination">
                             <button onClick={() => pagination.prevPage()} className='catalog-main__padination-btn catalog-main__padination-btn--prev'>
@@ -134,25 +132,17 @@ const CatalogPage = ({ title, subtitle }: Props) => {
 
                                 {
                                     [...new Array(4)].map((_, index) => <button
+                                        key={index}
                                         className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     >
                                         {index + 1}
                                     </button>)
                                 }
-                                {/*    {
-                                    [...new Array(4)].map((_, index) => <button
-                                        onClick={() => pagination.setPage(index + 1)}
-                                        className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
-                                    >
-                                        {index + 1}
-                                    </button>)
-                                } */}
                                 <button
                                     className={pagination.page === pagination.totalPages ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                                     onClick={() => pagination.setPage(pagination.totalPages)}
                                 >
                                     {pagination.totalPages}
-
                                 </button>
                             </div>
 

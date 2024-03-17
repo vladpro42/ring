@@ -385,7 +385,12 @@
     }
 
     &__slide-favotite {
-        cursor: pointer
+        cursor: pointer;
+        fill: var(--color-blue);
+    }
+
+    &__slide-favotite--active {
+        fill: var(--color-accent)
     }
 
     &__slide-price {

@@ -5,5 +5,6 @@ export interface ICart {
     imgSrc: string;
     price: number;
     priceSale: number;
+    favorite?: boolean;
 }
 export type typeDataForCart = ICart[]
