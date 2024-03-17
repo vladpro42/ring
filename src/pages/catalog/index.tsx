@@ -1,17 +1,16 @@
 import Header from '../../components/header'
 import ProductCart from '../../components/ProductCart'
-import { typeDataForCart } from '../../types/types'
 import Footer from '../../components/footer'
 import "./catalog.scss"
 import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
 import { useState } from 'react'
 import usePagination from '../../hooks/UsePagination'
-import { selectRings } from '../../rings/ringsReducer'
+import { Ring, selectRings } from '../../redux/rings/ringsReducer'
 import { useSelector } from 'react-redux'
 
 type Props = {
-    data: typeDataForCart;
+    data: Ring[];
     title: string;
     subtitle: string;
 }
@@ -113,11 +112,11 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                         </div>
                         <ul className="catalog-main__product-list ">
                             {
-                            rings
-                                .slice(pagination.firstContentIndex, pagination.lastContentIndex)
-                                .map((item) => (
-                                    <ProductCart to={`${item.id}`} key={item.id} cart={item} />
-                                ))
+                                rings
+                                    .slice(pagination.firstContentIndex, pagination.lastContentIndex)
+                                    .map((item) => (
+                                        <ProductCart to={`${item.id}`} key={item.id} cart={item} />
+                                    ))
                             }
                         </ul>
                         <div className="catalog-main__pagination">

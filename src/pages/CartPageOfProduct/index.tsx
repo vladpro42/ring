@@ -18,9 +18,9 @@ import reviewImg4 from "../../assets/images/review-4.jpg"
 import { useState } from "react"
 import SwiperWithScrollbar from "../../components/SwiperWithScrollbar"
 import { useSelector } from "react-redux"
-import { selectRings } from "../../rings/ringsReducer"
+import { selectRings } from "../../redux/rings/ringsReducer"
 import { useAppDispatch } from "../../hooks/redux/hooks"
-import { BasketRing, addBasketCreator } from "../../basket/basketReducer"
+import { BasketRing, addBasketCreator } from "../../redux/basket/basketReducer"
 import SelectRing from "./components/SelectRing"
 
 

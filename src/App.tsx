@@ -1,4 +1,3 @@
-import './App.css'
 import './scss/style.scss'
 
 import CatalogPage from './pages/catalog'

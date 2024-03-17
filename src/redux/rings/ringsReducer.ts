@@ -1,8 +1,10 @@
 
-import newItemsSlider1 from "../assets/images/new-items-1.png"
-import newItemsSlider2 from "../assets/images/new-items-2.png"
-import newItemsSlider3 from "../assets/images/new-items-3.png"
+import newItemsSlider1 from "../../assets/images/new-items-1.png"
+import newItemsSlider2 from "../../assets/images/new-items-2.png"
+import newItemsSlider3 from "../../assets/images/new-items-3.png"
+
 import { createSelector } from "reselect";
+
 import { RootState } from "../rootReducer";
 
 export type Ring = {
@@ -69,8 +71,6 @@ export const ringsReducer = (state = initialState, action: Action) => {
     switch (action.type) {
 
         case ActionTypes.changeFavorite: {
-            const changedItem = { ...state.rings[action.payload] }
-            changedItem.favorite = true
             return {
                 ...state, rings: {
                     ...state.rings,

@@ -5,7 +5,7 @@ import Header from "../../components/header"
 import picture from "../../assets/images/catalo-sale.jpg"
 import ProductCart from "../../components/ProductCart"
 
-import { ICart } from "../../types/types"
+import { Ring } from "../../redux/rings/ringsReducer"
 
 import "./favoritePage.scss"
 import Pagination from "../../components/Pagination/"
@@ -20,7 +20,7 @@ const FavoritePage = () => {
         }
         return []
     }
-    const [rings] = useState<ICart[]>(() => getInitialStateFromLocalStorage("favoriteRings"))
+    const [rings] = useState<Ring[]>(() => getInitialStateFromLocalStorage("favoriteRings"))
 
     return (
         <>

@@ -10,7 +10,7 @@ import "./basket.scss"
 import logoBasket from "../../assets/images/logo-basket.png"
 import Form3 from '../../components/Form3'
 import React, { useState } from 'react'
-import { removeAllCreators, removeOneCreator, selectRingsFromBasket } from '../../basket/basketReducer'
+import { removeAllCreators, removeOneCreator, selectRingsFromBasket } from '../../redux/basket/basketReducer'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks'
 
 

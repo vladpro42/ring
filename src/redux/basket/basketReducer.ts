@@ -1,5 +1,7 @@
 import { Ring } from "../rings/ringsReducer"
-import basket from "../assets/images/basket-1.png"
+
+import basket from "../../assets/images/basket-1.png"
+
 import { RootState } from "../rootReducer";
 
 

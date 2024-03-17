@@ -1,10 +1,10 @@
-import { typeDataForCart } from "../types/types"
 
 import newItemsSlider1 from "../assets/images/new-items-1.png"
 import newItemsSlider2 from "../assets/images/new-items-2.png"
 import newItemsSlider3 from "../assets/images/new-items-3.png"
+import { Ring } from "../redux/rings/ringsReducer"
 
-export const dataForCart: typeDataForCart = [
+export const dataForCart: Ring[] = [
     {
         id: 1, raiting: 3, imgSrc: newItemsSlider1, price: 59600, priceSale: 57000
     },
