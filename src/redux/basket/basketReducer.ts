@@ -46,6 +46,8 @@ enum ActionsTypes {
     add = 'basket/addRing',
     removeOne = 'basket/removeRing',
     removeAll = 'basket/removeAll',
+    incrementCount = 'basket/incrementCount',
+    decrementCount = 'basket/decrementCount'
 }
 
 
@@ -63,7 +65,19 @@ type RemoveAll = {
     type: ActionsTypes.removeAll,
 }
 
-type PayloadAction = AddBasket | RemoveOne | RemoveAll
+type incrementCount = {
+    type: ActionsTypes.incrementCount;
+    payload: number
+}
+
+type decrementCount = {
+    type: ActionsTypes.decrementCount;
+    payload: number
+}
+
+
+
+type PayloadAction = AddBasket | RemoveOne | RemoveAll | incrementCount | decrementCount
 
 
 
@@ -83,6 +97,28 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
             return newState
         }
 
+        case ActionsTypes.decrementCount: {
+            const newState = state.filter(item => {
+                if (item.ring.id === action.payload) {
+                    if (item.defaultCount > 0) {
+                        item.defaultCount--
+                    }
+                }
+                return item
+            })
+            return newState
+        }
+
+        case ActionsTypes.incrementCount: {
+            const newState = state.filter(item => {
+                if (item.ring.id === action.payload) {
+                    item.defaultCount++
+                }
+                return item
+            })
+            return newState
+        }
+
         default:
             return state;
     }
@@ -96,13 +132,25 @@ export const selectRingsFromBasket = (state: RootState): BasketRing[] => state.b
 // action creators 
 
 export const addBasketCreator = (payload: BasketRing) => ({
-    type: ActionsTypes.add, payload
+    type: ActionsTypes.add,
+    payload
 })
 
 export const removeOneCreator = (payload: number) => ({
-    type: ActionsTypes.removeOne, payload,
+    type: ActionsTypes.removeOne,
+    payload,
 })
 
 export const removeAllCreators = () => ({
     type: ActionsTypes.removeAll
+})
+
+export const decrementCountCreator = (id: number): decrementCount => ({
+    type: ActionsTypes.decrementCount,
+    payload: id,
+})
+
+export const incrementCountCreator = (id: number): incrementCount => ({
+    type: ActionsTypes.incrementCount,
+    payload: id,
 })

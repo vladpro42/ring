@@ -1,16 +1,23 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import NavigationText from '../../components/NavigationText'
+import Form3 from '../../components/Form3'
+
 import basketSale from "../../assets/images/basket-sale.jpg"
 import basketDelete from "../../assets/images/basket-delete.svg"
-
+import logoBasket from "../../assets/images/logo-basket.png"
 
 import "./basket.scss"
 
-import logoBasket from "../../assets/images/logo-basket.png"
-import Form3 from '../../components/Form3'
+
 import React, { useState } from 'react'
-import { removeAllCreators, removeOneCreator, selectRingsFromBasket } from '../../redux/basket/basketReducer'
+import {
+    decrementCountCreator,
+    incrementCountCreator,
+    removeAllCreators,
+    removeOneCreator,
+    selectRingsFromBasket
+} from '../../redux/basket/basketReducer'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks'
 
 
@@ -31,6 +38,22 @@ const BasketPage = () => {
     const handleClickClosePopup = () => {
         setPopup(false)
     }
+
+    const handleClickDecrementCount = (id: number) => {
+        dispatch(decrementCountCreator(id))
+    }
+
+    const handleClickIncrementCount = (id: number) => {
+        dispatch(incrementCountCreator(id))
+    }
+
+    const totalSum = rings.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.defaultCount * currentValue.ring.priceSale,
+        0,
+    );
+
+    const resTotalSum = new Intl.NumberFormat("ru-RU").format(totalSum)
+
 
     const [popup, setPopup] = useState(false)
     const popupHtml = <div onClick={handleClickClosePopup} className="basket__popup">
@@ -72,16 +95,20 @@ const BasketPage = () => {
                             {
                                 rings?.map(ring => <tr key={ring.ring.id} className='basket__tr'>
                                     <td align='center' valign='middle' className='basket__td'>
-                                        <img src={ring.ring.imgSrc} alt="" />
+                                        <img className='basket__td-img' src={ring.ring.imgSrc} alt="" />
                                     </td>
                                     <td align='center' valign='middle' className='basket__td'>Арт. {ring.ring.id}</td>
                                     <td align='center' valign='middle' className='basket__td'>{ring.model}</td>
                                     <td align='center' valign='middle' className='basket__td '>
                                         <div className='basket__counter'>
-                                            <button className='basket__counter-btn basket__counter-btn--plus'>
+                                            <button
+                                                onClick={() => handleClickIncrementCount(ring.ring.id)}
+                                                className='basket__counter-btn basket__counter-btn--plus'>
                                             </button>
                                             <p>{ring.defaultCount}</p>
-                                            <button className='basket__counter-btn'>
+                                            <button
+                                                onClick={() => handleClickDecrementCount(ring.ring.id)}
+                                                className='basket__counter-btn'>
                                             </button>
                                         </div>
                                     </td>
@@ -96,7 +123,7 @@ const BasketPage = () => {
                         </table>
 
                         <div className="basket__price-box">
-                            <p className="basket__price">Итого: <span>119 &nbsp;200 ₽</span></p>
+                            <p className="basket__price">Итого: <span>{resTotalSum} ₽</span></p>
                             <button onClick={() => setPopup(true)} className='basket__submit'>ОФОРМИТЬ ЗАКАЗ </button>
                         </div>
                     </div>
