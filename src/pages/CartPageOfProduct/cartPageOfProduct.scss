@@ -111,25 +111,69 @@
     &__size {
         display: flex;
         flex-direction: column;
+        position: relative;
 
-
-        & select {
-            width: 180px;
-            height: 40px;
-            @extend %osr;
-            font-size: 16px;
-            line-height: 22px;
-            color: var(--color-black);
-            border-color: var(--color-blue);
-        }
-
-        & span {
-            @extend %osr;
-            font-size: 16px;
-            line-height: 22px;
-            color: var(--color-black);
+        span {
             margin-bottom: 10px;
         }
+    }
+
+    &__shape {
+        rotate: 180deg;
+        transition: rotate 300ms ease;
+    }
+
+    &__shape--active {
+        transition: rotate 300ms ease;
+    }
+
+    &__size-select {
+        border: 1px solid var(--color-blue);
+        width: 180px;
+        height: 40px;
+        color: var(--color-blue);
+        padding-inline: 15px;
+        overflow-y: scroll;
+        background-image: url(../../assets/images/shape.svg);
+        background-repeat: no-repeat;
+        background-position: 152px center;
+        appearance: none;
+    }
+
+    &__start {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__size-select--active {
+        width: 180px;
+        height: 200px;
+    }
+
+    &__size-item+&__size-item {
+        margin-top: 3px;
+    }
+
+    &__size-item {
+        cursor: pointer;
+        grid-column: 1 / 2;
+        background-color: var(--color-white);
+    }
+
+    &__size-item--active {
+        color: var(--color-accent);
+        @extend %osb;
+    }
+
+    &__size-span {
+        @extend %osr;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--color-black);
+        margin-bottom: 10px;
     }
 
     &__btn-buy,
@@ -143,12 +187,22 @@
         justify-content: center;
         gap: 0 15px;
         margin-bottom: 10px;
-        border-radius: none;
         cursor: pointer;
+        border: none;
+        transition: all 300ms ease;
 
         & span {
             @extend %ossb;
         }
+    }
+
+    &__btn-buy:hover {
+        background: var(--color-hover-accent);
+    }
+
+    &__btn-chat:hover {
+        border-color: var(--color-hover-accent);
+        color: var(--color-hover-accent);
     }
 
     &__btn-chat {
@@ -333,7 +387,8 @@
     }
 
     &__input-file {
-        background-color: var(--color-blue);
+        --color-blue-hover: #ced7e0;
+
         height: 60px;
         width: 251px;
         display: flex;
@@ -342,6 +397,12 @@
         gap: 0 10px;
         cursor: pointer;
         margin-top: auto;
+        background-color: var(--color-blue-hover);
+        transition: all 300ms ease-in;
+
+        &:hover {
+            background-color: var(--color-blue);
+        }
 
         &::before {
             content: "";
@@ -398,12 +459,18 @@
     &__form-submit {
         cursor: pointer;
         background-color: transparent;
-        border: 1px solid var(--color-blue);
+        border: 1px solid var(--color-accent);
         width: 525px;
         height: 60px;
         @extend %ossb;
         color: var(--color-accent);
         text-transform: uppercase;
+        transition: all 300ms linear;
+
+        &:hover {
+            color: var(--color-hover-accent);
+            border-color: var(--color-hover-accent);
+        }
     }
 
     &__sale-img {

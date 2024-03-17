@@ -1,4 +1,3 @@
-import './App.css'
 import './scss/style.scss'
 
 import CatalogPage from './pages/catalog'
@@ -23,6 +22,20 @@ import PoliticsPage from './pages/PoliticsPage'
 
 import { dataForCart } from './data/data'
 
+const weddingRings = {
+    title: "обручальные кольца",
+    subtitle: 'Эксклюзивные обручальные кольца с оригинальным дизайном от «Арт-Рингз» — отличный выбор для закрепления союза Вашей любви. В такой важный день все должно быть идеально и ключевой деталью являются обручальные кольца для «нее» и «него» — будущих счастливых супругов.',
+}
+
+const engagementRings = {
+    title: "Помолвочные кольца",
+    subtitle: 'В магазине «Арт-Рингз» можно выбрать идеальное помолвочное кольцо, которое выразит чувства мужчины, делающего предложение руки и сердца своей любимой. Будущей невесте может посчастливиться стать обладательницей не только лучшего мужа на свете, но и изысканного колечка, выполненного из золота и украшенного бриллиантами.',
+}
+
+const weddingDuets = {
+    title: "Помолвочные кольца",
+    subtitle: '',
+}
 
 
 
@@ -32,11 +45,27 @@ const router = createBrowserRouter([
         element: <StartPage />,
     },
     {
-        path: '/catalog',
-        element: <CatalogPage data={dataForCart} />,
+        path: '/catalog-weddingRings',
+        element: <CatalogPage {...weddingRings} data={dataForCart} />,
     },
     {
-        path: '/catalog/:id',
+        path: '/catalog-weddingRings/:id',
+        element: <CartPageOfProduct />,
+    },
+    {
+        path: '/catalog-engagementRings',
+        element: <CatalogPage {...engagementRings} data={dataForCart} />,
+    },
+    {
+        path: '/catalog-engagementRings/:id',
+        element: <CartPageOfProduct />,
+    },
+    {
+        path: '/catalog-weddingDuets',
+        element: <CatalogPage {...weddingDuets} data={dataForCart} />,
+    },
+    {
+        path: '/catalog-weddingDuets/:id',
         element: <CartPageOfProduct />,
     },
     {

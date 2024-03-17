@@ -7,9 +7,7 @@ import cartProduct3 from "../../assets/images/cart-product3.jpg"
 import cartProduct4 from "../../assets/images/cart-product4.jpg"
 import raiting from "../../assets/images/raiting.svg"
 import cart360 from "../../assets/images/cart-360.svg"
-import { dataForCart } from "../../data/data"
-import { typeDataForCart, ICart } from "../../types/types"
-import { useParams } from "react-router-dom"
+import { redirect, useParams } from "react-router-dom"
 import heart from "../../assets/images/heart.svg"
 import sale from "../../assets/images/catalo-sale.jpg"
 import "./cartPageOfProduct.scss"
@@ -19,24 +17,25 @@ import reviewImg3 from "../../assets/images/review-3.jpg"
 import reviewImg4 from "../../assets/images/review-4.jpg"
 import { useState } from "react"
 import SwiperWithScrollbar from "../../components/SwiperWithScrollbar"
-
-function findCartForId(dataForCart: typeDataForCart, id: number): ICart {
-    const [item] = dataForCart.filter(item => {
-        if (item.id === id) {
-            return item
-        }
-    })
-    return item
-}
+import { useSelector } from "react-redux"
+import { selectRings } from "../../redux/rings/ringsReducer"
+import { useAppDispatch } from "../../hooks/redux/hooks"
+import { BasketRing, addBasketCreator } from "../../redux/basket/basketReducer"
+import SelectRing from "./components/SelectRing"
 
 
 const CartPageOfProduct = () => {
-    const { id } = useParams();
-    const cart = findCartForId(dataForCart, Number(id))
 
-    const [tab, setTab] = useState('description')
+    const dispatch = useAppDispatch()
+
+    const rings = useSelector(selectRings)
+    const { id } = useParams();
+    const ring = rings.find(ring => ring.id === Number(id))
+
 
     const keyTab = { description: 'description', review: 'review' }
+    const [tab, setTab] = useState(keyTab.description)
+
 
     const handleClickDescription = (e: React.MouseEvent<HTMLButtonElement>) => {
 
@@ -54,6 +53,23 @@ const CartPageOfProduct = () => {
         setTab(keyTab.review)
     }
 
+    if (!ring) {
+        redirect('fmdksmf')
+        return
+    }
+
+    const addBasket = () => {
+
+        const payload: BasketRing = {
+            ring: ring,
+            defaultCount: 1,
+            model: 1,
+            sizeFemale: 14
+        }
+
+        dispatch(addBasketCreator(payload))
+    }
+
     return (
         <>
             <Header />
@@ -62,7 +78,7 @@ const CartPageOfProduct = () => {
                     <div className="container">
                         <NavigationText />
                         <div className="cart-page__description-product">
-                            <p className="cart-page__product-id">Арт. {cart.id}</p>
+                            <p className="cart-page__product-id">Арт. {ring.id}</p>
                             <p className="cart-page__product-raiting">
                                 <img src={raiting} alt="" />
                                 <span>1 отзыв</span>
@@ -96,35 +112,22 @@ const CartPageOfProduct = () => {
                                 </button>
                             </div>
 
-                            <img className="cart-page__image-product" src={cart.imgSrc} alt="" />
+                            <img className="cart-page__image-product" src={ring.imgSrc} alt="" />
 
                             <div className="cart-page__user-actions">
 
                                 <div className="cart-page__prices">
-                                    <p className="cart-page__price">{cart.price} ₽</p>
-                                    <p className="cart-page__price-sale">{cart.priceSale} ₽</p>
+                                    <p className="cart-page__price">{ring.price} ₽</p>
+                                    <p className="cart-page__price-sale">{ring.priceSale} ₽</p>
                                 </div>
 
                                 <div className="cart-page__sizes">
                                     <div className="cart-page__selects">
-                                        <div className="cart-page__size">
-                                            <span>Размер (жен.)</span>
-                                            <select>
-                                                <option value="">14.00</option>
-                                                <option value="">13.00</option>
-                                            </select>
-                                        </div>
-                                        <div className="cart-page__size">
-                                            <span>Размер (муж.)</span>
-                                            <select>
-                                                <option value="">14.00</option>
-                                                <option value="">13.00</option>
-                                            </select>
-                                        </div>
+                                        <SelectRing text="жен." />
+                                        <SelectRing text="муж." />
                                     </div>
 
-
-                                    <button className="cart-page__btn-buy">
+                                    <button onClick={addBasket} className="cart-page__btn-buy">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

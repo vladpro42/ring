@@ -5,12 +5,23 @@ import Header from "../../components/header"
 import picture from "../../assets/images/catalo-sale.jpg"
 import ProductCart from "../../components/ProductCart"
 
-import { dataForCart } from "../../data/data"
+import { Ring } from "../../redux/rings/ringsReducer"
 
 import "./favoritePage.scss"
 import Pagination from "../../components/Pagination/"
+import { useState } from "react"
 
 const FavoritePage = () => {
+
+    const getInitialStateFromLocalStorage = (key: string) => {
+        const ringsJSON = localStorage.getItem(key)
+        if (ringsJSON) {
+            return JSON.parse(ringsJSON)
+        }
+        return []
+    }
+    const [rings] = useState<Ring[]>(() => getInitialStateFromLocalStorage("favoriteRings"))
+
     return (
         <>
             <Header />
@@ -21,10 +32,7 @@ const FavoritePage = () => {
                         <h1 className="favorite__title">избранное</h1>
                         <div className="favorite__inner">
                             <ul className="favorite__list">
-                                {dataForCart.map(item => <ProductCart cart={item} />)}
-                                <li className="favorite__item"></li>
-                                <li className="favorite__item"></li>
-                                <li className="favorite__item"></li>
+                                {(rings.length > 0) && rings.map(item => <ProductCart cart={item} />)}
                             </ul>
                             <img className="favorite__img-sale" src={picture} alt="" />
                         </div>

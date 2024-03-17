@@ -55,16 +55,16 @@ const StartPage = () => {
                         <h3 className="catalog__title">КАТАЛОГ</h3>
                         <div className="catalog__menu">
                             <div className='catalog__menu-item'>
-                                <Link to="catalog" className="catalog__menu-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
+                                <Link to="catalog-weddingRings" className="catalog__menu-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <Link to="catalog" className="catalog__menu-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
+                                <Link to="catalog-engagementRings" className="catalog__menu-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <Link to="catalog" className="catalog__menu-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
+                                <Link to="catalog-weddingDuets" className="catalog__menu-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
                             </div>
                             <div className='catalog__menu-item'>
-                                <Link to="catalog" className="catalog__menu-link">НА ЗАКАЗ</Link>
+                                <Link to="make-an-order" className="catalog__menu-link">НА ЗАКАЗ</Link>
                             </div>
                         </div>
                     </div>

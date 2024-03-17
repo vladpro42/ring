@@ -1,12 +1,37 @@
 import Header from '../../components/header'
 import ProductCart from '../../components/ProductCart'
-import { typeDataForCart } from '../../types/types'
 import Footer from '../../components/footer'
 import "./catalog.scss"
 import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
+import { useState } from 'react'
+import usePagination from '../../hooks/UsePagination'
+import { Ring, selectRings } from '../../redux/rings/ringsReducer'
+import { useSelector } from 'react-redux'
 
-const CatalogPage = ({ data }: { data: typeDataForCart }) => {
+type Props = {
+    data: Ring[];
+    title: string;
+    subtitle: string;
+}
+
+const CatalogPage = ({ title, subtitle }: Props) => {
+
+
+    const rings = useSelector(selectRings)
+
+    const [isbtnActive, setIsBtnActive] = useState(false)
+
+    const handleClickBtnAnimation = () => {
+        setIsBtnActive(!isbtnActive)
+    }
+
+    const pagination = usePagination({
+        contentPerPage: 6,
+        count: rings.length
+    })
+
+
     return (
         <>
             <Header />
@@ -17,18 +42,22 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                     <section className='catalog-main__description'>
                         <div className="catalog-main__wrapper">
                             <div className="catalog-main__inner">
-                                <h2 className="catalog-main__title">обручальные кольца</h2>
-                                <p className="catalog-main__text">Эксклюзивные обручальные кольца с оригинальным дизайном от «Арт-Рингз» — отличный выбор для закрепления союза Вашей любви. В такой важный день все должно быть идеально и ключевой деталью являются обручальные кольца для «нее» и «него» — будущих счастливых супругов.</p>
+                                <h2 className="catalog-main__title">{title}</h2>
+                                <p className="catalog-main__text">{subtitle}</p>
 
                                 <div className="catalog-main__options">
-                                    <div className="catalog-main__btn-animation">
+                                    <div onClick={handleClickBtnAnimation} className="catalog-main__btn-animation">
                                         <div className="btn-animation">
-                                            <span></span>
+                                            <span className={isbtnActive ? "btn-animation--unactive" : ""}></span>
                                         </div>
                                         <p className="catalog-main__btn-text">Анимация</p>
                                     </div>
                                     <div className="catalog-main__show">
-                                        Показать: <span>21</span>
+                                        Показать:
+                                        <select>
+                                            <option value=""><span>21</span></option>
+                                        </select>
+
                                     </div>
                                     <div className="catalog-main__sort">
                                         Сортировать:
@@ -77,28 +106,46 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a className='catalog-main__link-sale' href="#">
                                 <img className="catalog-main__sale" src={saleImg} alt="" />
                             </a>
                         </div>
                         <ul className="catalog-main__product-list ">
-                            {data.map((item) => <ProductCart to={`${item.id}`} key={item.id} cart={item} />)}
+                            {
+                                rings
+                                    .slice(pagination.firstContentIndex, pagination.lastContentIndex)
+                                    .map((item) => (
+                                        <ProductCart to={`${item.id}`} key={item.id} cart={item} />
+                                    ))
+                            }
                         </ul>
                         <div className="catalog-main__pagination">
-                            <button className='catalog-main__padination-btn catalog-main__padination-btn--prev'>
+                            <button onClick={() => pagination.prevPage()} className='catalog-main__padination-btn catalog-main__padination-btn--prev'>
                                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13 0.8L7.27692 7L1.46154 0.8" strokeWidth="2" />
                                 </svg>
                                 <span>Предыдущая</span>
                             </button>
+
                             <div className="catalog-main__links">
-                                <a className="catalog-main__link catalog-main__link--active">1</a>
-                                <a className="catalog-main__link">2</a>
-                                <a className="catalog-main__link">3</a>
-                                <a className="catalog-main__link">4</a>
-                                <a className="catalog-main__link">20</a>
+
+                                {
+                                    [...new Array(4)].map((_, index) => <button
+                                        key={index}
+                                        className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
+                                    >
+                                        {index + 1}
+                                    </button>)
+                                }
+                                <button
+                                    className={pagination.page === pagination.totalPages ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
+                                    onClick={() => pagination.setPage(pagination.totalPages)}
+                                >
+                                    {pagination.totalPages}
+                                </button>
                             </div>
-                            <button className='catalog-main__padination-btn'>
+
+                            <button onClick={() => pagination.nextPage()} className='catalog-main__padination-btn'>
                                 <span>Следующая</span>
                                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13 0.8L7.27692 7L1.46154 0.8" strokeWidth="2" />
@@ -113,8 +160,8 @@ const CatalogPage = ({ data }: { data: typeDataForCart }) => {
                             Парные обручальные кольца от «Арт-Рингз» можно недорого <span>купить в Москве</span> или с удобной <span>доставкой в регионы</span>. С радостью ответим на Ваши вопросы по телефонам: +7 (499) 940-87-77.
                         </p>
                     </section>
-                </div>
-            </main>
+                </div >
+            </main >
             <Footer />
         </>
     )

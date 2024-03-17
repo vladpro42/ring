@@ -2,11 +2,13 @@
 
 .catalog-main {
 
+    margin-top: 70px;
+
     &__navigation {
         display: flex;
         align-items: center;
         gap: 0 6px;
-        margin-block: 70px 20px;
+        margin-bottom: 27px;
 
         &-text {
             @extend %osl;
@@ -36,6 +38,7 @@
         font-size: 26px;
         color: var(--color-black);
         margin-bottom: 15px;
+        text-transform: uppercase
     }
 
     &__text {
@@ -48,11 +51,15 @@
 
     &__options {
         display: grid;
-        grid-template-columns: 130px 130px 1fr;
+        grid-template-columns: 130px 142px 1fr;
         grid-template-rows: auto auto;
         row-gap: 50px;
         column-gap: 145px;
         margin-bottom: 70px;
+    }
+
+    &__link-sale {
+        margin-top: 27px;
     }
 
     &__btn-animation {
@@ -70,15 +77,25 @@
         border-radius: 37px;
         display: flex;
         align-items: center;
-
+        transition: background-color 200ms linear;
 
         & span {
-            width: 13px;
-            height: 13px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: var(--color-white);
             margin: 1px;
+            transition: transform 200ms linear;
         }
+
+        & .btn-animation--unactive {
+
+            transform: translateX(14px);
+        }
+    }
+
+    .btn-animation:has(.btn-animation--unactive) {
+        background-color: var(--color-gray);
     }
 
     &__btn-text {
@@ -93,6 +110,10 @@
         color: var(--color-black);
         cursor: pointer;
         user-select: none;
+
+        select {
+            margin-left: 16px;
+        }
 
         & span {
             position: relative;
@@ -242,6 +263,9 @@
 
     &__link {
         cursor: pointer;
+        border: none;
+        background-color: transparent;
+        display: inline-block;
     }
 
     &__link+&__link {

@@ -44,7 +44,9 @@
     }
 
     &__slider {
+        margin-inline: auto;
         margin-bottom: 200px;
+        max-width: 1920px;
     }
 
     .swiper-scrollbar {
