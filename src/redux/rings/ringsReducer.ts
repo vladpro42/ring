@@ -1,11 +1,11 @@
 
-import newItemsSlider1 from "../../assets/images/new-items-1.png"
+/* import newItemsSlider1 from "../../assets/images/new-items-1.png"
 import newItemsSlider2 from "../../assets/images/new-items-2.png"
-import newItemsSlider3 from "../../assets/images/new-items-3.png"
+import newItemsSlider3 from "../../assets/images/new-items-3.png" */
 
 import { createSelector } from "reselect";
 
-import { RootState } from "../rootReducer";
+import { AppDispatch, RootState } from "../rootReducer";
 
 export type Ring = {
     id: number,
@@ -23,7 +23,7 @@ export type RingsState = {
     }
 }
 
-const initialState: RingsState = {
+/* const initialState: RingsState = {
     status: "idle",
     rings: {
         1: {
@@ -54,10 +54,11 @@ const initialState: RingsState = {
             id: 9, raiting: 3, imgSrc: newItemsSlider3, price: 59600, priceSale: 57000
         },
     }
-}
+} */
 
 enum ActionTypes {
     changeFavorite = "rings/changeFavorite",
+    ringsLoaded = 'rings/ringsLoaded'
 }
 
 type ChangeFavorite = {
@@ -65,9 +66,14 @@ type ChangeFavorite = {
     payload: number
 }
 
-type Action = ChangeFavorite
+type RingsLoaded = {
+    type: ActionTypes.ringsLoaded,
+    payload: Ring[]
+}
 
-export const ringsReducer = (state = initialState, action: Action) => {
+type Action = ChangeFavorite | RingsLoaded
+
+export const ringsReducer = (state: RingsState, action: Action) => {
     switch (action.type) {
 
         case ActionTypes.changeFavorite: {
@@ -77,6 +83,24 @@ export const ringsReducer = (state = initialState, action: Action) => {
                     [action.payload]: { ...state.rings[action.payload], favorite: true }
                 }
             }
+        }
+
+        case ActionTypes.ringsLoaded: {
+
+            const newRings: {
+                [id: string | number]: Ring;
+            } = {}
+
+            action.payload.forEach(item => {
+                newRings[item.id] = item
+            })
+
+            return {
+                ...state,
+                status: 'idle',
+                rings: newRings
+            }
+
         }
 
 
@@ -100,3 +124,16 @@ export const changeFavoriteCreator = (id: number): ChangeFavorite => ({
     type: ActionTypes.changeFavorite,
     payload: id
 })
+
+export const fetchRingsCreator = (payload: Ring[]): RingsLoaded => ({
+    type: ActionTypes.ringsLoaded,
+    payload,
+})
+
+
+//thunk func 
+
+export async function fetchRings(dispatch: AppDispatch) {
+    const response = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/rings")
+    dispatch(fetchRingsCreator(await response.json()))
+}

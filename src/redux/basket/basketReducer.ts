@@ -1,6 +1,6 @@
 import { Ring } from "../rings/ringsReducer"
 
-import basket from "../../assets/images/basket-1.png"
+/* import basket from "../../assets/images/basket-1.png" */
 
 import { RootState } from "../rootReducer";
 
@@ -14,32 +14,32 @@ export type BasketRing = {
 }
 
 const initialState: BasketRing[] = [
-    {
-        ring: {
-            id: 1,
-            imgSrc: basket,
-            price: 59600,
-            priceSale: 59600,
-            raiting: 5,
-        },
-        model: 1,
-        defaultCount: 100,
-        sizeFemale: 14,
-        sizeMale: 14,
-    },
-    {
-        ring: {
-            id: 2,
-            imgSrc: basket,
-            price: 59600,
-            priceSale: 59600,
-            raiting: 5,
-        },
-        model: 1,
-        defaultCount: 100,
-        sizeFemale: 14,
-        sizeMale: 14,
-    },
+    /*  {
+         ring: {
+             id: 1,
+             imgSrc: basket,
+             price: 59600,
+             priceSale: 59600,
+             raiting: 5,
+         },
+         model: 1,
+         defaultCount: 100,
+         sizeFemale: 14,
+         sizeMale: 14,
+     },
+     {
+         ring: {
+             id: 2,
+             imgSrc: basket,
+             price: 59600,
+             priceSale: 59600,
+             raiting: 5,
+         },
+         model: 1,
+         defaultCount: 100,
+         sizeFemale: 14,
+         sizeMale: 14,
+     }, */
 ]
 
 enum ActionsTypes {

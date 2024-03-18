@@ -12,17 +12,11 @@ import { useState } from "react";
 import { getItemFromLocalStorage } from "../../utils";
 
 
-/* type Props = {
-    rings: Ring[],
-    setRings: React.Dispatch<React.SetStateAction<Ring[]>>
-} */
-
-const SwiperWithScrollbar = (/* { rings, setRings }: Props */) => {
+const SwiperWithScrollbar = () => {
 
     const [rings, setRings] = useState<Ring[]>(() => getItemFromLocalStorage("recentlyViewed") || [])
 
 
-    console.log(rings)
     useEffect(() => {
         if (rings.length < 4) {
             setRings(prev => [...prev, ...dataForCart])
@@ -39,14 +33,14 @@ const SwiperWithScrollbar = (/* { rings, setRings }: Props */) => {
             className="mySwiper"
         >
             {
-                rings ? rings.map((cart) => {
-                    return (<SwiperSlide key={cart.id}>
+                rings ? rings.map((cart, index) => {
+                    return (<SwiperSlide key={index}>
                         <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                     </SwiperSlide>)
                 })
 
-                    : dataForCart.map((cart) => {
-                        return (<SwiperSlide key={cart.id}>
+                    : dataForCart.map((cart, index) => {
+                        return (<SwiperSlide key={index}>
                             <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                         </SwiperSlide>)
                     })
