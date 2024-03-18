@@ -8,15 +8,21 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import { Ring } from "../../redux/rings/ringsReducer";
 import { useEffect } from "react";
+import { useState } from "react";
+import { getItemFromLocalStorage } from "../../utils";
 
 
-type Props = {
+/* type Props = {
     rings: Ring[],
     setRings: React.Dispatch<React.SetStateAction<Ring[]>>
-}
+} */
 
-const SwiperWithScrollbar = ({ rings, setRings }: Props) => {
+const SwiperWithScrollbar = (/* { rings, setRings }: Props */) => {
 
+    const [rings, setRings] = useState<Ring[]>(() => getItemFromLocalStorage("recentlyViewed") || [])
+
+
+    console.log(rings)
     useEffect(() => {
         if (rings.length < 4) {
             setRings(prev => [...prev, ...dataForCart])
@@ -34,14 +40,14 @@ const SwiperWithScrollbar = ({ rings, setRings }: Props) => {
         >
             {
                 rings ? rings.map((cart) => {
-                    return (<SwiperSlide>
-                        <ProductCart to={`catalog/${cart.id}`} key={cart.id} cart={cart} />
+                    return (<SwiperSlide key={cart.id}>
+                        <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                     </SwiperSlide>)
                 })
 
                     : dataForCart.map((cart) => {
-                        return (<SwiperSlide>
-                            <ProductCart to={`catalog/${cart.id}`} key={cart.id} cart={cart} />
+                        return (<SwiperSlide key={cart.id}>
+                            <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                         </SwiperSlide>)
                     })
             }

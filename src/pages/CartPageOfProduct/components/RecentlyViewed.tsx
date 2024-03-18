@@ -1,11 +1,7 @@
-import { useState } from 'react'
-import { getItemFromLocalStorage } from '../../../utils'
 import SwiperWithScrollbar from '../../../components/SwiperWithScrollbar'
-import { Ring } from '../../../redux/rings/ringsReducer'
 
 const RecentlyViewed = () => {
 
-    const [rings, setRings] = useState<Ring[]>(() => getItemFromLocalStorage("recentlyViewed"))
 
 
 
@@ -16,7 +12,7 @@ const RecentlyViewed = () => {
                     НЕДАВНО ПРОСМОТРЕННЫЕ
                 </h3>
                 <ul className="new-items__slider">
-                    <SwiperWithScrollbar setRings={setRings} rings={rings} />
+                    <SwiperWithScrollbar />
                 </ul>
             </div>
         </section>

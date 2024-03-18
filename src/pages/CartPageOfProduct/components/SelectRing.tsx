@@ -19,8 +19,8 @@ const SelectRing = ({ text }: { text: string }) => {
             <span>Размер ({text})</span>
             <select onChange={(e) => chooseSize(+e.target.value)} className="cart-page__size-select">
                 {
-                    arr.map(item => <option
-
+                    arr.map((item, index) => <option
+                        key={index}
                         className={size === item ? "cart-page__size-item cart-page__size-item--active" : "cart-page__size-item"}
                         value={item}>
                         {item}
