@@ -1,8 +1,8 @@
 
 import { Link } from "react-router-dom"
-import Raiting from "../Raiting"
 import { useAppDispatch } from "../../hooks/redux/hooks"
 import { Ring, changeFavoriteCreator } from "../../redux/rings/ringsReducer"
+import { Rating2 } from "../../components/Raiting/index"
 
 const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
 
@@ -28,11 +28,7 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
         <div className="new-items__slide-item">
             <p className="new-items__slide-article">Арт. {cart.id}</p>
             <div className="raiting">
-                <Raiting
-                    raintingValue={3}
-                    width={15}
-                    height={15}
-                />
+                <Rating2 defaultValue={4.5} precision={0.5} readOnly />
             </div>
         </div>
         <Link className="new-items__link" to={`${to}` ? `${to}` : `catalog/${cart.id}`}>

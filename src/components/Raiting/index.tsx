@@ -1,5 +1,6 @@
 import "./raiting.scss"
 
+
 const Raiting = (
     { raintingValue,
         width,
@@ -16,7 +17,6 @@ const Raiting = (
 
     return (
         <div>
-
             <svg width="0" height="0" viewBox="0 0 32 32">
                 <defs>
                     <linearGradient id="half1" x1="0" x2="100%" y1="0" y2="0%">
@@ -44,15 +44,21 @@ const Raiting = (
             </svg>
             )}
 
-
-
-
-
-
-
-
         </div>
     )
 }
 
 export default Raiting
+
+
+import Rating, { RatingProps } from "@mui/material/Rating"
+
+const Rating2 = (props: RatingProps) => {
+    return (
+        <Rating {...props}></Rating>
+    )
+}
+
+export { Rating2 }
+
+

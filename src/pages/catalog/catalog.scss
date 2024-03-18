@@ -281,12 +281,11 @@
         @extend %osl;
         color: var(--color-black);
         line-height: 25px;
+    }
 
-        & span {
-            color: var(--color-accent);
-            @extend %ossb;
-
-        }
+    &__description--color {
+        color: var(--color-accent);
+        @extend %ossb;
     }
 
     &__description+&__description {
