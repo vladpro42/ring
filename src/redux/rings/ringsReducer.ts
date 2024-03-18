@@ -112,7 +112,11 @@ export const ringsReducer = (state: RingsState, action: Action) => {
 export const selectAllRings = (state: RootState) => state.rings.rings
 
 
-export const selectRings = createSelector(selectAllRings, (rings) => Object.values(rings))
+export const selectRings = createSelector(selectAllRings, (rings) => {
+    if (rings) {
+        return Object.values(rings)
+    }
+})
 
 export const selectRingById = (state: RootState, ringId: number) => {
     return selectAllRings(state)[ringId]
@@ -132,6 +136,8 @@ export const fetchRingsCreator = (payload: Ring[]): RingsLoaded => ({
 
 
 //thunk func 
+
+// Добавить обработку ошибок!!! 
 
 export async function fetchRings(dispatch: AppDispatch) {
     const response = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/rings")

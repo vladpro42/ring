@@ -28,8 +28,9 @@ const CatalogPage = ({ title, subtitle }: Props) => {
 
     const pagination = usePagination({
         contentPerPage: 6,
-        count: rings.length
+        count: rings?.length || 0
     })
+
 
 
     return (
@@ -112,7 +113,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                         </div>
                         <ul className="catalog-main__product-list ">
                             {
-                                rings
+                                rings && rings
                                     .slice(pagination.firstContentIndex, pagination.lastContentIndex)
                                     .map((item) => (
                                         <ProductCart to={`${item.id}`} key={item.id} cart={item} />

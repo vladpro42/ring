@@ -39,6 +39,7 @@ const weddingDuets = {
 
 
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -122,8 +123,17 @@ const router = createBrowserRouter([
     },
 ])
 
+import { useEffect } from 'react'
+import { fetchRings } from './redux/rings/ringsReducer'
+import { useAppDispatch } from './hooks/redux/hooks'
 
 function App() {
+
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        dispatch(fetchRings)
+    }, [dispatch])
+
 
     return (
         <RouterProvider router={router} />
