@@ -111,13 +111,47 @@ export const ringsReducer = (state: RingsState, action: Action) => {
 
 export const selectAllRings = (state: RootState) => state.rings.rings
 
+export const selectSortedRings = (state: RootState) => {
+    if (state.rings.rings) {
+        const arrayRings = Object.values(state.rings.rings)
+        const sort = state.filter.sortByAscendingDescending
+        arrayRings.sort((a, b) => {
+            if (sort == 'asc') {
+                return a.raiting - b.raiting
+            } else {
+                return - a.raiting + b.raiting
+            }
+        })
+        return arrayRings
+    } 
+    return []
+}
 
 export const selectRings = createSelector(selectAllRings, (rings) => {
     if (rings) {
         return Object.values(rings)
     }
+    return []
 })
 
+/* export const selectSortedByAscendingDescendingRings = createSelector(
+    [
+        selectRings
+    ],
+    rings => rings.sort((a, b) => {
+        const store: Store = useStore()
+        const state: RootState = store.getState()
+        const sort = state.filter.sortByAscendingDescending
+
+        if (sort == 'asc') {
+            return a.raiting - b.raiting
+        } else {
+            return - a.raiting + b.raiting
+        }
+
+    })
+)
+ */
 export const selectRingById = (state: RootState, ringId: number) => {
     return selectAllRings(state)[ringId]
 }

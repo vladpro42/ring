@@ -28,7 +28,7 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
         <div className="new-items__slide-item">
             <p className="new-items__slide-article">Арт. {cart.id}</p>
             <div className="raiting">
-                <Rating2 defaultValue={4.5} precision={0.5} readOnly />
+                <Rating2 defaultValue={cart.raiting} precision={0.5} readOnly />
             </div>
         </div>
         <Link className="new-items__link" to={`${to}` ? `${to}` : `catalog/${cart.id}`}>
