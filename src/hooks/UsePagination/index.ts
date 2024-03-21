@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { UsePagination } from "./type";
 
 const usePagination: UsePagination = ({ contentPerPage, count }) => {
     const [page, setPage] = useState(1);
 
+    useEffect(() => {
+        setPage(1)
+    }, [count])
+
     const pageCount = Math.ceil(count / contentPerPage);
     const lastContentIndex = page * contentPerPage;
     const firstContentIndex = lastContentIndex - contentPerPage;
 
-    const changePage = (direction: boolean) => {
+    const changePage = useCallback((direction: boolean) => {
         setPage((state) => {
             // move forward
             if (direction) {
@@ -26,9 +30,9 @@ const usePagination: UsePagination = ({ contentPerPage, count }) => {
                 return state - 1;
             }
         });
-    };
+    }, [pageCount]);
 
-    const setPageSAFE = (num: number) => {
+    const setPageSAFE = useCallback((num: number) => {
         // if number is greater than number of pages, set to last page
         if (num > pageCount) {
             setPage(pageCount);
@@ -38,7 +42,7 @@ const usePagination: UsePagination = ({ contentPerPage, count }) => {
         } else {
             setPage(num);
         }
-    };
+    }, [pageCount])
 
     return {
         totalPages: pageCount,

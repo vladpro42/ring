@@ -2,7 +2,10 @@
 import { RootState } from "../rootReducer";
 import {
     ActionTypes,
+    ByPrice,
     ChangeContentPerPage,
+    ChangeJewel,
+    FilterByPrice,
     FilterState,
     SortByAscendingAndDescending,
     SortByAscendingDescending
@@ -13,9 +16,10 @@ import { Action } from "./filterTypes";
 const initialState: FilterState = {
     contentPerPage: 6,
     sortByAscendingDescending: "des",
-    byPrice: 50000,
+    byPrice: [50000, 0],
     inserts: "with",
     tags: [],
+    jewel: true,
 }
 
 
@@ -30,6 +34,14 @@ export const filterReducer = (state = initialState, action: Action) => {
             return { ...state, sortByAscendingDescending: action.payload }
         }
 
+        case ActionTypes.byPrice: {
+            return { ...state, byPrice: action.payload }
+        }
+
+        case ActionTypes.changeJewel: {
+            return { ...state, jewel: action.payload }
+        }
+
         default:
             return { ...state };
     }
@@ -37,7 +49,11 @@ export const filterReducer = (state = initialState, action: Action) => {
 
 //selectors 
 
-export const selectContentPerPage = (state: RootState) => state.filter.contentPerPage
+export const selectContentPerPage = (state: RootState) => state.filter?.contentPerPage
+export const selectByPrice = (state: RootState) => state.filter.byPrice
+export const selectIsJewel = (state: RootState) => state.filter.jewel
+export const selectSortByAscendingDescending = (state: RootState) => state.filter.sortByAscendingDescending
+
 
 //action creators
 
@@ -51,3 +67,12 @@ export const changeContentPerPageCreator = (value: SortByAscendingAndDescending)
     payload: value
 })
 
+export const filterByPriceCreator = (payload: FilterByPrice): ByPrice => ({
+    type: ActionTypes.byPrice,
+    payload,
+})
+
+export const filterByJewelCreator = (payload: boolean): ChangeJewel => ({
+    type: ActionTypes.changeJewel,
+    payload,
+})

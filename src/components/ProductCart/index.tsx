@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useAppDispatch } from "../../hooks/redux/hooks"
 import { Ring, changeFavoriteCreator } from "../../redux/rings/ringsReducer"
 import { Rating2 } from "../../components/Raiting/index"
+import { memo } from "react"
 
 const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
 
@@ -48,4 +49,4 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
     </li>
 }
 
-export default ProductCart
+export default memo(ProductCart)

@@ -14,6 +14,7 @@ export type Ring = {
     price: number,
     priceSale: number,
     favorite?: boolean,
+    jewel: boolean,
 }
 
 export type RingsState = {
@@ -103,7 +104,6 @@ export const ringsReducer = (state: RingsState, action: Action) => {
 
         }
 
-
         default:
             return { ...state };
     }
@@ -111,7 +111,7 @@ export const ringsReducer = (state: RingsState, action: Action) => {
 
 export const selectAllRings = (state: RootState) => state.rings.rings
 
-export const selectSortedRings = (state: RootState) => {
+/* export const selectSortedRings = (state: RootState) => {
     if (state.rings.rings) {
         const arrayRings = Object.values(state.rings.rings)
         const sort = state.filter.sortByAscendingDescending
@@ -123,9 +123,9 @@ export const selectSortedRings = (state: RootState) => {
             }
         })
         return arrayRings
-    } 
+    }
     return []
-}
+} */
 
 export const selectRings = createSelector(selectAllRings, (rings) => {
     if (rings) {

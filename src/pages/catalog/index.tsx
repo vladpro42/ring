@@ -1,11 +1,7 @@
 import Header from '../../components/header'
 import ProductCart from '../../components/ProductCart'
 import Footer from '../../components/footer'
-import "./catalog.scss"
-import saleImg from "../../assets/images/catalo-sale.jpg"
 import NavigationText from '../../components/NavigationText'
-import usePagination from '../../hooks/UsePagination'
-import { Ring, selectSortedRings } from '../../redux/rings/ringsReducer'
 import Show from './components/Show'
 import BtnAnimation from './components/BtnAnimation'
 import SortRaiting from './components/SortRaiting'
@@ -13,8 +9,19 @@ import SortPrice from './components/SortPrice'
 import SortCompound from './components/SortCompound'
 import SortTags from './components/SortTags'
 import Pagination from './components/Pagination'
-import { selectContentPerPage } from '../../redux/filter/filterReducer'
+
+import "./catalog.scss"
+
+import saleImg from "../../assets/images/catalo-sale.jpg"
+
+import usePagination from '../../hooks/UsePagination'
 import { useAppSelector } from '../../hooks/redux/hooks'
+
+import { Ring, selectRings } from '../../redux/rings/ringsReducer'
+import { selectByPrice, selectContentPerPage, selectIsJewel } from '../../redux/filter/filterReducer'
+import { selectSortByAscendingDescending } from '../../redux/filter/filterReducer'
+import { sortByAscendingAndDescending, filterByJewel, filterByPrice } from "./utils/index"
+
 
 type Props = {
     data: Ring[];
@@ -22,22 +29,26 @@ type Props = {
     subtitle: string;
 }
 
-export function SortByAscendingAndDescending(a: Ring, b: Ring) {
-    return - a.raiting + b.raiting;
-}
 
 const CatalogPage = ({ title, subtitle }: Props) => {
 
-    const rings = useAppSelector(selectSortedRings)
-
-
-
+    const rings = useAppSelector(selectRings)
+    const byPrice = useAppSelector(selectByPrice)
+    const byAscendingDescending = useAppSelector(selectSortByAscendingDescending)
+    const isJewel = useAppSelector(selectIsJewel)
     const contentPerPage = useAppSelector(selectContentPerPage)
+
+    const filteredRings = rings
+        .sort((a, b) => sortByAscendingAndDescending(a, b, byAscendingDescending))
+        .filter(ring => filterByPrice(ring, byPrice))
+        .filter(ring => filterByJewel(ring, isJewel))
 
     const pagination = usePagination({
         contentPerPage: contentPerPage,
-        count: rings?.length || 0
+        count: filteredRings.length
     })
+
+
     if (!rings) {
         return <div>Error</div>
     }
@@ -73,17 +84,14 @@ const CatalogPage = ({ title, subtitle }: Props) => {
 
                         <ul className="catalog-main__product-list ">
                             {
-                                rings && rings
+                                filteredRings
                                     .slice(pagination.firstContentIndex, pagination.lastContentIndex)
-                                    /* .sort(SortByAscendingAndDescending) */
                                     .map((item) => (
                                         <ProductCart to={`${item.id}`} key={item.id} cart={item} />
                                     ))
                             }
                         </ul>
-
                         <Pagination pagination={pagination} />
-
                         <p className="catalog-main__description">
                             Дизайнерские обручальные кольца от производителя хороши тем, что их внешний вид и особенности оформления разнообразны и можно легко подобрать те, которые подойдут именно Вам и Вашей второй половинке. В разделе представлено свыше двухсот готовых моделей обручальных колец — возможно, Вы захотите внести в некоторые из них свои небольшие дополнения или вовсе заказать неповторимую модель: мы создадим <span className='catalog-main__description--color'>уникальный дизайн</span> по Вашему описанию или рисунку, воплотив любые идеи.
                             Можно выбрать любой вид поверхности: глянцевую или матовую, текстурированную, узорчатую… Выполним резные обручальные кольца или с любой гравировкой. Кольца можно дополнить драгоценными камнями, например, бриллиантами — такие парные кольца смотрятся роскошно и эффектно. Всем покупателям колец с фирменной эмблемой Art-Rings мы дарим <span className='catalog-main__description--color'>бриллиант в подарок</span>.

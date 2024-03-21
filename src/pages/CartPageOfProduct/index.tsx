@@ -24,6 +24,7 @@ import { setItemToLocalStorage } from "../../utils"
 
 const CartPageOfProduct = () => {
 
+
     const dispatch = useAppDispatch()
 
     const rings = useSelector(selectRings)

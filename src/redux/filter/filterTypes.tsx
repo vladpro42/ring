@@ -1,12 +1,14 @@
 export type Inserts = "with" | "without"
 export type SortByAscendingAndDescending = 'des' | 'asc'
+export type FilterByPrice = [number, number]
 
 export type FilterState = {
     contentPerPage: number,
     sortByAscendingDescending: SortByAscendingAndDescending,
-    byPrice: number,
+    byPrice: FilterByPrice,
     inserts: Inserts,
     tags: string[],
+    jewel: boolean,
 }
 
 export enum ActionTypes {
@@ -14,7 +16,8 @@ export enum ActionTypes {
     sortByAscendingDescending = 'filter/sortByAscendingDescending',
     byPrice = 'filter/byPrice',
     changeInserts = 'filter/inserts',
-    changeTags = 'filter/tags'
+    changeTags = 'filter/tags',
+    changeJewel = 'filter/jewel'
 }
 
 export type ChangeContentPerPage = {
@@ -27,7 +30,7 @@ export type SortByAscendingDescending = {
 }
 export type ByPrice = {
     type: ActionTypes.byPrice,
-    payload: number
+    payload: FilterByPrice
 }
 export type ChangeInserts = {
     type: ActionTypes.changeInserts,
@@ -38,4 +41,9 @@ export type ChangeTags = {
     payload: string[]
 }
 
-export type Action = ChangeContentPerPage | SortByAscendingDescending | ByPrice | ChangeInserts 
+export type ChangeJewel = {
+    type: ActionTypes.changeJewel,
+    payload: boolean
+}
+
+export type Action = ChangeContentPerPage | SortByAscendingDescending | ByPrice | ChangeInserts | ChangeJewel
