@@ -2,7 +2,7 @@
 
 
 .cart-page {
-
+    margin-top: 70px;
 
     &__section {}
 
@@ -42,6 +42,23 @@
         & span {
             margin-left: 10px;
         }
+    }
+
+    .user__actions-svg {
+        cursor: pointer;
+    }
+
+    .user__actions-svg path {
+        --color-heart: #cccfde;
+        fill: var(--color-heart);
+    }
+
+    .user__actions-svg:hover path {
+        fill: var(--color-hover-accent);
+    }
+
+    .user__actions-svg--active path {
+        fill: var(--color-accent);
     }
 
     &__cart {

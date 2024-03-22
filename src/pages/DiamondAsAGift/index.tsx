@@ -5,6 +5,7 @@ import picture from "../../assets/images/diamond.png"
 import briliant from "../../assets/images/briliant.svg"
 
 import "./diamondAsAGift.scss"
+import { ScrollRestoration } from "react-router-dom"
 
 
 const DiamondAsAGift = () => {
@@ -35,7 +36,7 @@ const DiamondAsAGift = () => {
                     <img className="diamond__img" src={picture} alt="" />
                 </section>
             </main>
-
+            <ScrollRestoration />
             <Footer />
         </>
     )

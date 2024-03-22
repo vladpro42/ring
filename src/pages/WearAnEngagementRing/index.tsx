@@ -4,6 +4,7 @@ import Header from "../../components/header"
 import "./wearAnEngagementRing.scss"
 
 import pic from "../../assets/images/wear.png"
+import { ScrollRestoration } from "react-router-dom"
 
 const WearAnEngagementRing = () => {
     return (
@@ -72,6 +73,7 @@ const WearAnEngagementRing = () => {
                     </div>
                 </section>
             </main>
+            <ScrollRestoration />
             <Footer />
         </>
     )

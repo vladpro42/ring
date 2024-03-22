@@ -1,12 +1,15 @@
 
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useAppDispatch } from "../../hooks/redux/hooks"
-import { Ring, changeFavoriteCreator } from "../../redux/rings/ringsReducer"
+import { Ring } from "../../redux/rings/ringsReducerTypes"
+import { changeFavoriteCreator } from "../../redux/rings/ringsReducer"
 import { Rating2 } from "../../components/Raiting/index"
 import { memo } from "react"
 
-const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
+const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) => {
 
+    const location = useLocation()
+    const url = location.pathname.split('/')[1]
     const dispatch = useAppDispatch()
 
     const handleClickActiveFavorite = (cart: Ring) => {
@@ -32,7 +35,11 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
                 <Rating2 defaultValue={cart.raiting} precision={0.5} readOnly />
             </div>
         </div>
-        <Link className="new-items__link" to={`${to}` ? `${to}` : `catalog/${cart.id}`}>
+        <Link
+            className="new-items__link"
+            to={`${to}` ? `${to}` : `${url}/${cart.id}`}
+            state={url}
+        >
             <img className='new-items__slide-img' src={cart.imgSrc} alt="" />
         </Link>
         <div className="new-items__slide-item">
@@ -47,6 +54,6 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
             <div className="new-items__slide-price">{cart.price} ₽</div>
         </div>
     </li>
-}
+})
 
-export default memo(ProductCart)
+export default ProductCart

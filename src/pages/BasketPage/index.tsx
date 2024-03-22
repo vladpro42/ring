@@ -19,6 +19,7 @@ import {
     selectRingsFromBasket
 } from '../../redux/basket/basketReducer'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks'
+import { ScrollRestoration } from 'react-router-dom'
 
 
 const BasketPage = () => {
@@ -130,7 +131,7 @@ const BasketPage = () => {
                     <img className='basket__sale' src={basketSale} alt="" />
                 </div>
             </section>
-
+            <ScrollRestoration />
             <Footer />
 
         </>

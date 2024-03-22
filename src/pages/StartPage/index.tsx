@@ -6,7 +6,7 @@ import briliant from "../../assets/images/briliant.svg"
 import "slick-carousel/slick/slick.css";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
@@ -79,7 +79,7 @@ const StartPage = () => {
                     </div>
                 </section>
             </main>
-
+            <ScrollRestoration />
             <Footer />
         </>
     )

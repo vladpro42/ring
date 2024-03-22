@@ -4,7 +4,7 @@ import Header from "../../components/header"
 import "./notFoundPage.scss"
 
 import pic from "../../assets/images/notFound.svg"
-import { Link } from "react-router-dom"
+import { Link, ScrollRestoration } from "react-router-dom"
 
 const NotFoundPage = () => {
     return (
@@ -19,6 +19,7 @@ const NotFoundPage = () => {
                     </div>
                 </section>
             </main>
+            <ScrollRestoration />
             <Footer />
         </>
     )

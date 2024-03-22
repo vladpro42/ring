@@ -12,7 +12,6 @@ const SwiperTwo = ({ images }: { images: string[] }) => {
 
                 const arr = item.split("/")
                 const key = arr[arr.length - 1] + index
-                console.log(key)
 
                 return (
                     <SwiperSlide key={key}>

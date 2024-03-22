@@ -6,23 +6,9 @@ import newItemsSlider3 from "../../assets/images/new-items-3.png" */
 import { createSelector } from "reselect";
 
 import { AppDispatch, RootState } from "../rootReducer";
+import { Action, ActionTypes, ChangeFavorite, Ring, RingsLoaded, RingsState, RingsLoading } from "./ringsReducerTypes";
 
-export type Ring = {
-    id: number,
-    raiting: number,
-    imgSrc: string,
-    price: number,
-    priceSale: number,
-    favorite?: boolean,
-    jewel: boolean,
-}
 
-export type RingsState = {
-    status: string,
-    rings: {
-        [id: number | string]: Ring
-    }
-}
 
 /* const initialState: RingsState = {
     status: "idle",
@@ -57,24 +43,13 @@ export type RingsState = {
     }
 } */
 
-enum ActionTypes {
-    changeFavorite = "rings/changeFavorite",
-    ringsLoaded = 'rings/ringsLoaded'
+const initialState: RingsState = {
+    status: 'loading',
+    rings: {}
 }
 
-type ChangeFavorite = {
-    type: ActionTypes.changeFavorite,
-    payload: number
-}
 
-type RingsLoaded = {
-    type: ActionTypes.ringsLoaded,
-    payload: Ring[]
-}
-
-type Action = ChangeFavorite | RingsLoaded
-
-export const ringsReducer = (state: RingsState, action: Action) => {
+export const ringsReducer = (state = initialState, action: Action) => {
     switch (action.type) {
 
         case ActionTypes.changeFavorite: {
@@ -84,6 +59,10 @@ export const ringsReducer = (state: RingsState, action: Action) => {
                     [action.payload]: { ...state.rings[action.payload], favorite: true }
                 }
             }
+        }
+
+        case ActionTypes.ringsLoading: {
+            return { ...state, status: 'loading' }
         }
 
         case ActionTypes.ringsLoaded: {
@@ -111,50 +90,27 @@ export const ringsReducer = (state: RingsState, action: Action) => {
 
 export const selectAllRings = (state: RootState) => state.rings.rings
 
-/* export const selectSortedRings = (state: RootState) => {
-    if (state.rings.rings) {
-        const arrayRings = Object.values(state.rings.rings)
-        const sort = state.filter.sortByAscendingDescending
-        arrayRings.sort((a, b) => {
-            if (sort == 'asc') {
-                return a.raiting - b.raiting
-            } else {
-                return - a.raiting + b.raiting
-            }
-        })
-        return arrayRings
+export const selectArrRings = (state: RootState) => {
+    const rings = selectAllRings(state)
+    if (rings) {
+        return Object.values(rings)
     }
-    return []
-} */
+}
 
 export const selectRings = createSelector(selectAllRings, (rings) => {
     if (rings) {
         return Object.values(rings)
+    } else {
+        return []
     }
-    return []
 })
 
-/* export const selectSortedByAscendingDescendingRings = createSelector(
-    [
-        selectRings
-    ],
-    rings => rings.sort((a, b) => {
-        const store: Store = useStore()
-        const state: RootState = store.getState()
-        const sort = state.filter.sortByAscendingDescending
-
-        if (sort == 'asc') {
-            return a.raiting - b.raiting
-        } else {
-            return - a.raiting + b.raiting
-        }
-
-    })
-)
- */
 export const selectRingById = (state: RootState, ringId: number) => {
     return selectAllRings(state)[ringId]
 }
+
+export const selectRingsStatus = (state: RootState) => state.rings.status
+
 
 //action creators 
 
@@ -168,12 +124,17 @@ export const fetchRingsCreator = (payload: Ring[]): RingsLoaded => ({
     payload,
 })
 
+export const ringsLoadingCreator = (): RingsLoading => ({
+    type: ActionTypes.ringsLoading
+})
+
 
 //thunk func 
 
 // Добавить обработку ошибок!!! 
 
 export async function fetchRings(dispatch: AppDispatch) {
+    dispatch({ type: ActionTypes.ringsLoading })
     const response = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/rings")
     dispatch(fetchRingsCreator(await response.json()))
 }

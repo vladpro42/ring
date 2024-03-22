@@ -6,6 +6,7 @@ import cartProduct4 from "../../../assets/images/cart-product4.jpg"
 import cart360 from "../../../assets/images/cart-360.svg"
 
 import SelectRing from './SelectRing'
+import { memo } from "react"
 
 type Props = {
     imgSrc: string,
@@ -14,7 +15,7 @@ type Props = {
     onClick: () => void
 }
 
-const CartPageCart = ({ imgSrc, price, priceSale, onClick }: Props) => {
+const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
     return (
         <div className="cart-page__cart">
 
@@ -97,6 +98,6 @@ const CartPageCart = ({ imgSrc, price, priceSale, onClick }: Props) => {
             </div>
         </div>
     )
-}
+})
 
 export default CartPageCart

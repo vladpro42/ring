@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { filterByPriceCreator } from "../../../../redux/filter/filterReducer"
+import { FilterByPrice } from "../../../../redux/filter/filterTypes"
 
 const arrayValues = ['до 50 000', '50-70 000', '70-100 000', 'от 100 000']
 
@@ -13,11 +14,14 @@ const SortPrice = () => {
         setIsActive(item)
 
         const { price } = e.currentTarget.dataset
-        const array = price?.split(',').map(item => +item)
-        if (Array.isArray(array)) {
-            //@ts-ignore
-            dispatch(filterByPriceCreator(array))
+        const one = +price.split(',')[0]
+        const two = +price.split(',')[1]
+        const tupleArr: FilterByPrice = [one, two]
+        if (Array.isArray(tupleArr)) {
+
+            dispatch(filterByPriceCreator(tupleArr))
         }
+
     }
 
     return (

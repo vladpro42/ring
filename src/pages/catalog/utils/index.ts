@@ -1,5 +1,5 @@
 import { FilterByPrice, SortByAscendingAndDescending } from "../../../redux/filter/filterTypes";
-import { Ring } from "../../../redux/rings/ringsReducer";
+import { Ring } from "../../../redux/rings/ringsReducerTypes";
 
 export function sortByAscendingAndDescending(a: Ring, b: Ring, byAscendingDescending: SortByAscendingAndDescending) {
     if (byAscendingDescending === "des") {
@@ -11,7 +11,7 @@ export function sortByAscendingAndDescending(a: Ring, b: Ring, byAscendingDescen
 }
 
 export function filterByJewel(ring: Ring, isJewel: boolean) {
-    
+
     if (ring.jewel && isJewel) {
         return true
     } else if (!ring.jewel && !isJewel) {

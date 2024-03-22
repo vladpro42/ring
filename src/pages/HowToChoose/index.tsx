@@ -4,6 +4,7 @@ import Header from "../../components/header"
 import picture from "../../assets/images/howToChoose.png"
 
 import "./howToChoose.scss"
+import { ScrollRestoration } from "react-router-dom"
 
 const HowToChoose = () => {
     return (
@@ -47,7 +48,7 @@ const HowToChoose = () => {
                     </div>
                 </section>
             </main>
-
+            <ScrollRestoration />
             <Footer />
         </>
     )
