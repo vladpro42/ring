@@ -49,7 +49,7 @@ const Header = () => {
                     <nav className="header__nav">
                         <ul className="header__nav-menu">
                             <li className="header__nav-item">
-                                <Link  to="/studio-two" className="header__nav-link">
+                                <Link to="/studio-two" className="header__nav-link">
                                     Студия
                                 </Link>
                             </li>

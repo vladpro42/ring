@@ -24,6 +24,8 @@ import Spinner from "../../components/Spinner"
 
 const CartPageOfProduct = () => {
 
+
+
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();

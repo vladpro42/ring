@@ -90,9 +90,18 @@ export const ringsReducer = (state = initialState, action: Action) => {
 
 export const selectAllRings = (state: RootState) => state.rings.rings
 
+export const selectArrRings = (state: RootState) => {
+    const rings = selectAllRings(state)
+    if (rings) {
+        return Object.values(rings)
+    }
+}
+
 export const selectRings = createSelector(selectAllRings, (rings) => {
     if (rings) {
         return Object.values(rings)
+    } else {
+        return []
     }
 })
 
