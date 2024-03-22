@@ -1,4 +1,4 @@
-import { Ring } from "../rings/ringsReducer"
+import { Ring } from "../rings/ringsReducerTypes"
 
 /* import basket from "../../assets/images/basket-1.png" */
 

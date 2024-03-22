@@ -1,12 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Navigation } from "swiper/modules";
 import ProductCart from '../ProductCart';
-import { dataForCart } from "../../data/data";
 
 import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
-import { Ring } from "../../redux/rings/ringsReducer";
+import { Ring } from "../../redux/rings/ringsReducerTypes";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getItemFromLocalStorage } from "../../utils";
@@ -19,7 +18,7 @@ const SwiperWithScrollbar = () => {
 
     useEffect(() => {
         if (rings.length < 4) {
-            setRings(prev => [...prev, ...dataForCart])
+            setRings(prev => [...prev])
         }
     }, [rings, setRings])
 
@@ -39,11 +38,7 @@ const SwiperWithScrollbar = () => {
                     </SwiperSlide>)
                 })
 
-                    : dataForCart.map((cart, index) => {
-                        return (<SwiperSlide key={index}>
-                            <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
-                        </SwiperSlide>)
-                    })
+                    : null
             }
         </Swiper>
     )
