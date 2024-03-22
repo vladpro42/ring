@@ -1,4 +1,4 @@
-import { Ring } from "../redux/rings/ringsReducer"
+import { Ring } from "../redux/rings/ringsReducerTypes"
 
 export function getItemFromLocalStorage(key: string) {
     const data = localStorage.getItem(key) || ''

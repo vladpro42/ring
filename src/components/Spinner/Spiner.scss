@@ -1,0 +1,24 @@
+@import "../../scss/variable";
+
+.spiner {
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    &__title {
+        @extend %ossb;
+        font-size: 80px;
+        margin-bottom: 15px;
+    }
+
+    .css-18lrjg1-MuiCircularProgress-root {
+        color: var(--color-accent);
+    }
+
+}

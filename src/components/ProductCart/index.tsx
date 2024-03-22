@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom"
 import { useAppDispatch } from "../../hooks/redux/hooks"
-import { Ring, changeFavoriteCreator } from "../../redux/rings/ringsReducer"
+import { Ring } from "../../redux/rings/ringsReducerTypes"
+import { changeFavoriteCreator } from "../../redux/rings/ringsReducer"
 import { Rating2 } from "../../components/Raiting/index"
 import { memo } from "react"
 

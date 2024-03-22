@@ -581,4 +581,9 @@
     font-size: 14px;
     line-height: 1.2;
     color: var(--color-black);
+    transition: opacity 300ms ease-in;
+
+    &:hover {
+        opacity: 0.5;
+    }
 }

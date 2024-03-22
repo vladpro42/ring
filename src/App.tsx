@@ -20,8 +20,6 @@ import Studio2Page from './pages/Studio2'
 import PoliticsPage from './pages/PoliticsPage'
 
 
-import { dataForCart } from './data/data'
-
 const weddingRings = {
     title: "обручальные кольца",
     subtitle: 'Эксклюзивные обручальные кольца с оригинальным дизайном от «Арт-Рингз» — отличный выбор для закрепления союза Вашей любви. В такой важный день все должно быть идеально и ключевой деталью являются обручальные кольца для «нее» и «него» — будущих счастливых супругов.',
@@ -47,7 +45,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/catalog-weddingRings',
-        element: <CatalogPage {...weddingRings} data={dataForCart} />,
+        element: <CatalogPage {...weddingRings} />,
     },
     {
         path: '/catalog-weddingRings/:id',
@@ -55,7 +53,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/catalog-engagementRings',
-        element: <CatalogPage {...engagementRings} data={dataForCart} />,
+        element: <CatalogPage {...engagementRings} />,
     },
     {
         path: '/catalog-engagementRings/:id',
@@ -63,7 +61,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/catalog-weddingDuets',
-        element: <CatalogPage {...weddingDuets} data={dataForCart} />,
+        element: <CatalogPage {...weddingDuets} />,
     },
     {
         path: '/catalog-weddingDuets/:id',

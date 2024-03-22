@@ -17,15 +17,17 @@ import saleImg from "../../assets/images/catalo-sale.jpg"
 import usePagination from '../../hooks/UsePagination'
 import { useAppSelector } from '../../hooks/redux/hooks'
 
-import { Ring, selectRings } from '../../redux/rings/ringsReducer'
+import { selectRings, selectRingsStatus } from '../../redux/rings/ringsReducer'
 import { selectByPrice, selectContentPerPage, selectIsJewel } from '../../redux/filter/filterReducer'
 import { selectSortByAscendingDescending } from '../../redux/filter/filterReducer'
 import { sortByAscendingAndDescending, filterByJewel, filterByPrice } from "./utils/index"
 import { ScrollRestoration } from 'react-router-dom'
+import { Ring } from '../../redux/rings/ringsReducerTypes'
+import Spinner from '../../components/Spinner'
+import { Pagination as My } from '@mui/material'
 
 
 type Props = {
-    data: Ring[];
     title: string;
     subtitle: string;
 }
@@ -33,6 +35,7 @@ type Props = {
 
 const CatalogPage = ({ title, subtitle }: Props) => {
 
+    const status = useAppSelector(selectRingsStatus)
     const rings = useAppSelector(selectRings)
     const byPrice = useAppSelector(selectByPrice)
     const byAscendingDescending = useAppSelector(selectSortByAscendingDescending)
@@ -40,18 +43,17 @@ const CatalogPage = ({ title, subtitle }: Props) => {
     const contentPerPage = useAppSelector(selectContentPerPage)
 
     const filteredRings = rings
-        .sort((a, b) => sortByAscendingAndDescending(a, b, byAscendingDescending))
-        .filter(ring => filterByPrice(ring, byPrice))
-        .filter(ring => filterByJewel(ring, isJewel))
+        .sort((a: Ring, b: Ring): Ring => sortByAscendingAndDescending(a, b, byAscendingDescending))
+        .filter((ring: Ring) => filterByPrice(ring, byPrice))
+        .filter((ring: Ring) => filterByJewel(ring, isJewel))
 
     const pagination = usePagination({
         contentPerPage: contentPerPage,
         count: filteredRings.length
     })
 
-
-    if (!rings) {
-        return <div>Error</div>
+    if (status === 'loading') {
+        return <Spinner />
     }
 
 
@@ -87,11 +89,12 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                             {
                                 filteredRings
                                     .slice(pagination.firstContentIndex, pagination.lastContentIndex)
-                                    .map((item) => (
+                                    .map((item: Ring) => (
                                         <ProductCart to={`${item.id}`} key={item.id} cart={item} />
                                     ))
                             }
                         </ul>
+                        <My count={pagination.totalPages} />
                         <Pagination pagination={pagination} />
                         <p className="catalog-main__description">
                             Дизайнерские обручальные кольца от производителя хороши тем, что их внешний вид и особенности оформления разнообразны и можно легко подобрать те, которые подойдут именно Вам и Вашей второй половинке. В разделе представлено свыше двухсот готовых моделей обручальных колец — возможно, Вы захотите внести в некоторые из них свои небольшие дополнения или вовсе заказать неповторимую модель: мы создадим <span className='catalog-main__description--color'>уникальный дизайн</span> по Вашему описанию или рисунку, воплотив любые идеи.

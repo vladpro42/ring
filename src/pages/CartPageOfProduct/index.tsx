@@ -7,41 +7,29 @@ import CartPageTab from "./components/CartPageTab"
 import RecentlyViewed from "./components/RecentlyViewed"
 
 import { ScrollRestoration, useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
-import { useAppDispatch } from "../../hooks/redux/hooks"
+import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"
 
-import { selectRings } from "../../redux/rings/ringsReducer"
+import { selectRingById } from "../../redux/rings/ringsReducer"
 import { BasketRing, addBasketCreator } from "../../redux/basket/basketReducer"
 
 
 
 import "./cartPageOfProduct.scss"
-import { useEffect } from "react"
-import { setItemToLocalStorage } from "../../utils"
+import { useCallback } from "react"
+import { RootState } from "../../redux/rootReducer"
+import Spinner from "../../components/Spinner"
 
 
 
 
 const CartPageOfProduct = () => {
 
-
     const dispatch = useAppDispatch()
-
-    const rings = useSelector(selectRings)
+    const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();
-    const [ring] = rings.filter(ring => {
-        if (ring.id === Number(id)) {
-            return ring
-        }
-    })
+    const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id)))
 
-    useEffect(() => {
-
-        setItemToLocalStorage('recentlyViewed', ring)
-
-    }, [ring])
-
-    const addBasket = () => {
+    const addBasket = useCallback(() => {
 
         const payload: BasketRing = {
             ring: ring,
@@ -51,6 +39,10 @@ const CartPageOfProduct = () => {
         }
 
         dispatch(addBasketCreator(payload))
+    }, [ring, dispatch])
+
+    if (status === 'loading') {
+        return <Spinner />
     }
 
     return (
