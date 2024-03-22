@@ -6,7 +6,7 @@ const usePagination: UsePagination = ({ contentPerPage, count }) => {
 
     useEffect(() => {
         setPage(1)
-    }, [count])
+    }, [count, contentPerPage])
 
     const pageCount = Math.ceil(count / contentPerPage);
     const lastContentIndex = page * contentPerPage;

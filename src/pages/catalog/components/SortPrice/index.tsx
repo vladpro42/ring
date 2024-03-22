@@ -18,6 +18,7 @@ const SortPrice = () => {
             //@ts-ignore
             dispatch(filterByPriceCreator(array))
         }
+        
     }
 
     return (

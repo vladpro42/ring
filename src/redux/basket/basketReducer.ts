@@ -127,6 +127,7 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
 // selects
 
 export const selectRingsFromBasket = (state: RootState): BasketRing[] => state.basket
+export const selectRingsFromBasketLength = (state: RootState): number => state.basket.length
 
 
 // action creators 
