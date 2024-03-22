@@ -5,7 +5,7 @@ import { Ring, changeFavoriteCreator } from "../../redux/rings/ringsReducer"
 import { Rating2 } from "../../components/Raiting/index"
 import { memo } from "react"
 
-const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
+const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) => {
 
     const dispatch = useAppDispatch()
 
@@ -47,6 +47,6 @@ const ProductCart = ({ cart, to }: { cart: Ring, to?: number | string, }) => {
             <div className="new-items__slide-price">{cart.price} ₽</div>
         </div>
     </li>
-}
+})
 
-export default memo(ProductCart)
+export default ProductCart

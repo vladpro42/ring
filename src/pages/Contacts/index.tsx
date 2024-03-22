@@ -16,6 +16,7 @@ import contact3 from "../../assets/images/contacts-3.jpg"
 
 import "./contact.scss"
 import SwiperTwo from "../../components/SwiperTwo"
+import { ScrollRestoration } from "react-router-dom"
 
 
 const ContactsPage = () => {
@@ -89,7 +90,7 @@ const ContactsPage = () => {
                     </ul>
                 </section>
             </main>
-
+            <ScrollRestoration />
             <Footer />
 
         </>

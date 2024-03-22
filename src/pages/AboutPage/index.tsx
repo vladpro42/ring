@@ -13,6 +13,7 @@ import telegram from "../../assets/images/telegram.svg"
 
 
 import "./aboutPage.scss"
+import { ScrollRestoration } from "react-router-dom"
 
 const AboutPage = () => {
     return (
@@ -81,7 +82,7 @@ const AboutPage = () => {
                     </div>
                 </section>
             </main>
-
+            <ScrollRestoration />
             <Footer />
 
         </>

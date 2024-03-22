@@ -21,6 +21,7 @@ import { Ring, selectRings } from '../../redux/rings/ringsReducer'
 import { selectByPrice, selectContentPerPage, selectIsJewel } from '../../redux/filter/filterReducer'
 import { selectSortByAscendingDescending } from '../../redux/filter/filterReducer'
 import { sortByAscendingAndDescending, filterByJewel, filterByPrice } from "./utils/index"
+import { ScrollRestoration } from 'react-router-dom'
 
 
 type Props = {
@@ -102,6 +103,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                     </section>
                 </div >
             </main >
+            <ScrollRestoration />
             <Footer />
         </>
     )

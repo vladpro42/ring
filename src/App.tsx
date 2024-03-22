@@ -121,6 +121,7 @@ const router = createBrowserRouter([
         path: '/*',
         element: <NotFoundPage />
     },
+
 ])
 
 import { useEffect } from 'react'
@@ -136,7 +137,10 @@ function App() {
 
 
     return (
-        <RouterProvider router={router} />
+        <div>
+            <RouterProvider router={router} >
+            </RouterProvider>
+        </div>
     )
 
 }

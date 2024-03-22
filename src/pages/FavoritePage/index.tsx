@@ -10,6 +10,7 @@ import { Ring } from "../../redux/rings/ringsReducer"
 import "./favoritePage.scss"
 import Pagination from "../../components/Pagination/"
 import { useState } from "react"
+import { ScrollRestoration } from "react-router-dom"
 
 const FavoritePage = () => {
 
@@ -40,6 +41,7 @@ const FavoritePage = () => {
                     <Pagination />
                 </section>
             </main>
+            <ScrollRestoration />
             <Footer />
         </>
     )

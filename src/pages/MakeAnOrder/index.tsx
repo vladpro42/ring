@@ -15,6 +15,7 @@ import "swiper/css"
 import "swiper/css/scrollbar"
 import "swiper/css/navigation"
 import { Navigation, Scrollbar } from "swiper/modules"
+import { ScrollRestoration } from "react-router-dom"
 
 const example = [orderSlider1, orderSlider2, orderSlider3, orderSlider1, orderSlider2, orderSlider3]
 
@@ -120,6 +121,7 @@ const MakeAnOrder = () => {
 
 
             </main>
+            <ScrollRestoration />
             <Footer />
         </>
     )

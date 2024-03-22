@@ -6,7 +6,7 @@ import CartPageCart from "./components/CartPageCart"
 import CartPageTab from "./components/CartPageTab"
 import RecentlyViewed from "./components/RecentlyViewed"
 
-import { useParams } from "react-router-dom"
+import { ScrollRestoration, useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "../../hooks/redux/hooks"
 
@@ -73,6 +73,7 @@ const CartPageOfProduct = () => {
                     </div>
                 </section>
             </main >
+            <ScrollRestoration />
             <Footer />
         </>
     )

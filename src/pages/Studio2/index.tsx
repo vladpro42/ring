@@ -9,6 +9,7 @@ import "swiper/css"
 import "swiper/css/scrollbar"
 import "./studia2.scss"
 import SwiperTwo from "../../components/SwiperTwo"
+import { ScrollRestoration } from "react-router-dom"
 
 const Studio2Page = () => {
 
@@ -56,7 +57,7 @@ const Studio2Page = () => {
                     </ul>
                 </section>
             </main >
-
+            <ScrollRestoration />
             <Footer />
         </>
     )
