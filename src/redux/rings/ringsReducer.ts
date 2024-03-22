@@ -6,7 +6,8 @@ import newItemsSlider3 from "../../assets/images/new-items-3.png" */
 import { createSelector } from "reselect";
 
 import { AppDispatch, RootState } from "../rootReducer";
-import { Action, ActionTypes, ChangeFavorite, Ring, RingsLoaded, RingsState, RingsLoading } from "./ringsReducerTypes";
+import { Action, ActionTypes, ChangeFavorite, RingsLoaded, RingsState, RingsLoading } from "./ringsReducerTypes";
+import { Ring } from "./ringsReducerTypes";
 
 
 
