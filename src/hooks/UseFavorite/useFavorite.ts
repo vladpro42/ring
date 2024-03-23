@@ -4,36 +4,37 @@ import { selectRingById } from "../../redux/rings/ringsReducer";
 import { useAppSelector } from "../redux/hooks";
 import { Ring } from "../../redux/rings/ringsReducerTypes";
 import { getItemFromLocalStorage, setItemToLocalStorage } from "../../utils";
-import { useParams } from "react-router-dom";
+
+export interface UseFavoriteProps {
+    id: number
+}
 
 export interface UseFavoriteReturn {
     isFavorite: boolean,
     toggleAddFavorite: (id: number) => void
 }
 
-export type UseFavorite = () => (UseFavoriteReturn);
+export type UseFavorite = (id: number) => (UseFavoriteReturn);
 
-export const useFavorite: UseFavorite = () => {
-    const params = useParams()
-    const numId = +params.id
+export const useFavorite: UseFavorite = (id) => {
 
     const [isActive, setIsActive] = useState(false)
-    const ring = useAppSelector((state: RootState) => selectRingById(state, numId))
+    const ring = useAppSelector((state: RootState) => selectRingById(state, id))
 
     useEffect(() => {
         const items: Ring[] = getItemFromLocalStorage("favoriteRings") || []
-        if (items.find(ring => ring.id == numId)) {
+        if (items.find(ring => ring.id == id)) {
             setIsActive(true)
         } else {
             setIsActive(false)
         }
-    }, [numId])
+    }, [id])
 
-    const handleClick = useCallback((numId: number) => {
+    const handleClick = useCallback((id: number) => {
 
         const rings: Ring[] = getItemFromLocalStorage('favoriteRings') || []
-        if (rings.find(ring => ring.id == numId)) {
-            const newRings = rings.filter(ring => ring.id != numId)
+        if (rings.find(ring => ring.id == id)) {
+            const newRings = rings.filter(ring => ring.id != id)
             localStorage.setItem('favoriteRings', JSON.stringify(newRings))
             setIsActive(false)
             return

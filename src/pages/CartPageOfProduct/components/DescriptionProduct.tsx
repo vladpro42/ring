@@ -8,35 +8,7 @@ export type DescriptionProductProps = {
 
 const DescriptionProduct = ({ id }: DescriptionProductProps) => {
 
-    const { isFavorite, toggleAddFavorite } = useFavorite()
-
-
-
-    /*  const [isActive, setIsActive] = useState(false) */
-    /* const ring = useAppSelector((state: RootState) => selectRingById(state, id)) */
-
-    /*  useEffect(() => {
-         const items: Ring[] = getItemFromLocalStorage("favoriteRings") || []
-         if (items.find(ring => ring.id === id)) {
-             setIsActive(true)
-         } else {
-             setIsActive(false)
-         }
-     }, [id])
-    */
-
-    /*   const handleClick = (id: number) => {
-     
-          const rings: Ring[] = getItemFromLocalStorage('favoriteRings') || []
-          if (rings.find(ring => ring.id === id)) {
-              const newRings = rings.filter(ring => ring.id !== id)
-              localStorage.setItem('favoriteRings', JSON.stringify(newRings))
-              setIsActive(false)
-              return
-          }
-          setItemToLocalStorage('favoriteRings', ring)
-          setIsActive(true)
-      } */
+    const { isFavorite, toggleAddFavorite } = useFavorite(id)
 
     return (
         <div className="cart-page__description-product">
