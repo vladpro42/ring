@@ -61,6 +61,11 @@
         fill: var(--color-accent);
     }
 
+    .user__actions-span {
+        cursor: pointer;
+        user-select: none;
+    }
+
     &__cart {
         display: flex;
         margin-top: 30px;

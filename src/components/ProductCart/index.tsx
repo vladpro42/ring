@@ -4,7 +4,8 @@ import { useAppDispatch } from "../../hooks/redux/hooks"
 import { Ring } from "../../redux/rings/ringsReducerTypes"
 import { changeFavoriteCreator } from "../../redux/rings/ringsReducer"
 import { Rating2 } from "../../components/Raiting/index"
-import { memo } from "react"
+import { memo, useEffect } from "react"
+import { getItemFromLocalStorage } from "../../utils"
 
 const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) => {
 
@@ -12,18 +13,34 @@ const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) =
     const url = location.pathname.split('/')[1]
     const dispatch = useAppDispatch()
 
+    useEffect(() => {
+        const rings: Ring[] = getItemFromLocalStorage("favoriteRings")
+        if (rings.length > 0 && rings.find(ring => ring.id === cart.id)) {
+            dispatch(changeFavoriteCreator(cart.id))
+        }
+    }, [cart.id, dispatch])
+
     const handleClickActiveFavorite = (cart: Ring) => {
+        // меняем поле favorite 
         dispatch(changeFavoriteCreator(cart.id))
 
         const localStorageData = localStorage.getItem("favoriteRings");
         if (localStorageData) {
             const favoriteRings: Ring[] = JSON.parse(localStorageData)
-            cart.favorite = true
-            favoriteRings.push(cart)
-            localStorage.setItem("favoriteRings", JSON.stringify(favoriteRings))
+            // проверяем если есть в localstorage ничего не делаем    
+            if (favoriteRings.find(ring => ring.id === cart.id)) {
+                const newFavoriteRings = favoriteRings.filter(ring => ring.id !== cart.id)
+                localStorage.setItem("favoriteRings", JSON.stringify(newFavoriteRings))
+            } else {
+                const newCart = { ...cart }
+                newCart.favorite = true
+                favoriteRings.push(newCart)
+                localStorage.setItem("favoriteRings", JSON.stringify(favoriteRings))
+            }
         } else {
-            cart.favorite = true
-            const data = [cart]
+            const newCart = { ...cart }
+            newCart.favorite = true
+            const data = [newCart]
             localStorage.setItem("favoriteRings", JSON.stringify(data))
         }
     }

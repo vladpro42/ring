@@ -57,7 +57,7 @@ export const ringsReducer = (state = initialState, action: Action) => {
             return {
                 ...state, rings: {
                     ...state.rings,
-                    [action.payload]: { ...state.rings[action.payload], favorite: true }
+                    [action.payload]: { ...state.rings[action.payload], favorite: !state.rings[action.payload].favorite }
                 }
             }
         }

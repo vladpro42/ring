@@ -5,7 +5,7 @@ export function getItemFromLocalStorage(key: string) {
     if (data.length > 0 && data) {
         return JSON.parse(data)
     } else {
-        return ''
+        return []
     }
 }
 
