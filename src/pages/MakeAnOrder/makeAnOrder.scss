@@ -26,7 +26,6 @@
         letter-spacing: 2.25px;
         margin-bottom: 10px;
         max-width: 690px;
-
     }
 
     &__sub-title {
@@ -150,6 +149,7 @@
         margin-bottom: 12px;
         font-size: 26px;
         color: var(--color-accent);
+        text-transform: uppercase;
     }
 
     &__item-text,
