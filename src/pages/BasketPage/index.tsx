@@ -10,7 +10,7 @@ import logoBasket from "../../assets/images/logo-basket.png"
 import "./basket.scss"
 
 
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import {
     decrementCountCreator,
     incrementCountCreator,
@@ -32,9 +32,9 @@ const BasketPage = () => {
         dispatch(removeOneCreator(id))
     }
 
-    const handleClickRemoveAll = () => {
+    const handleClickRemoveAll = useCallback(() => {
         dispatch(removeAllCreators())
-    }
+    }, [dispatch])
 
     const handleClickClosePopup = () => {
         setPopup(false)

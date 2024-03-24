@@ -2,18 +2,12 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 
-
 import map from "../../assets/images/map.svg"
 import mail from "../../assets/images/mail.svg"
-import facebook from "../../assets/images/facebook.svg"
-import whatsapp from "../../assets/images/whatsapp.svg"
-import vk from "../../assets/images/vk.svg"
-import instagram from "../../assets/images/instagram.svg"
-import telegram from "../../assets/images/telegram.svg"
-
 
 import "./aboutPage.scss"
 import { ScrollRestoration } from "react-router-dom"
+import UserActionsLinks from "../../components/header/components/UserActionsLinks"
 
 const AboutPage = () => {
     return (
@@ -57,23 +51,7 @@ const AboutPage = () => {
                                             <a href="tel:+74999408777" className="header__item-link">+7 (499) 940-87-77</a>
                                             <a href="tel:+79778412340" className="header__item-link">+7 (977) 841-23-40</a>
                                         </li>
-                                        <li className="header__item user-actions">
-                                            <a href="#" className="header__item-link">
-                                                <img src={facebook} alt="" />
-                                            </a>
-                                            <a href="#" className="header__item-link">
-                                                <img src={vk} alt="" />
-                                            </a>
-                                            <a href="#" className="header__item-link">
-                                                <img src={whatsapp} alt="" />
-                                            </a>
-                                            <a href="#" className="header__item-link">
-                                                <img src={instagram} alt="" />
-                                            </a>
-                                            <a href="#" className="header__item-link">
-                                                <img src={telegram} alt="" />
-                                            </a>
-                                        </li>
+                                        <UserActionsLinks />
                                     </ul>
                                 </div>
                             </div>
