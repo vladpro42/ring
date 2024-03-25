@@ -26,6 +26,7 @@ const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) =
             state={url}
         >
             <img className='new-items__slide-img' src={cart.imgSrc} alt="" />
+            {/* <img className='new-items__slide-img' src="/images/new-items-1.png" alt="" /> */}
         </Link>
         <div className="new-items__slide-item">
             <svg

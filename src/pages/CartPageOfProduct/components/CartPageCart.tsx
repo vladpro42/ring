@@ -5,8 +5,8 @@ import cartProduct3 from "../../../assets/images/cart-product3.jpg"
 import cartProduct4 from "../../../assets/images/cart-product4.jpg"
 import cart360 from "../../../assets/images/cart-360.svg"
 
-import SelectRing from './SelectRing'
 import { memo } from "react"
+import Select from "../../../components/Select/index"
 
 type Props = {
     imgSrc: string,
@@ -16,6 +16,8 @@ type Props = {
 }
 
 const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
+
+
     return (
         <div className="cart-page__cart">
 
@@ -52,9 +54,11 @@ const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
 
                 <div className="cart-page__sizes">
                     <div className="cart-page__selects">
-                        <SelectRing text="жен." />
-                        <SelectRing text="муж." />
-                    </div>
+                        <Select gender="жен" />
+                        <Select gender="муж" />
+                        {/*  <SelectRing text="жен." />
+                        <SelectRing text="муж." /> */}
+                    </div >
 
                     <button onClick={onClick} className="cart-page__btn-buy">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

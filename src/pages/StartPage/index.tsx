@@ -1,5 +1,3 @@
-
-
 import slide1 from "../../assets/images/top-bg.jpg"
 import Slider, { Settings } from 'react-slick'
 import briliant from "../../assets/images/briliant.svg"
@@ -11,7 +9,6 @@ import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
 import SwiperWithScrollbar from "../../components/SwiperWithScrollbar";
-import Select from "../../components/Select";
 
 const StartPage = () => {
 
@@ -32,7 +29,6 @@ const StartPage = () => {
 
     return (
         <>
-            <Select />
 
             <Header />
             <main className='main'>
