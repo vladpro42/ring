@@ -8,7 +8,7 @@ export type DescriptionProductProps = {
 
 const DescriptionProduct = ({ id }: DescriptionProductProps) => {
 
-    const { isFavorite, toggleAddFavorite } = useFavorite(id)
+    const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings',id)
 
     return (
         <div className="cart-page__description-product">

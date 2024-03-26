@@ -11,7 +11,7 @@ const ProductCart = memo(({ cart, to }: { cart: Ring, to?: number | string, }) =
     const url = location.pathname.split('/')[1]
 
 
-    const { isFavorite, toggleAddFavorite } = useFavorite(cart.id)
+    const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', cart.id)
 
     return <li className="new-items__slide">
         <div className="new-items__slide-item">

@@ -1,6 +1,5 @@
-import { Ring } from "../redux/rings/ringsReducerTypes"
 
-export function getItemFromLocalStorage(key: string) {
+export function getItemFromLocalStorage(key: string): number[] {
     const data = localStorage.getItem(key) || ''
     if (data.length > 0 && data) {
         return JSON.parse(data)
@@ -9,27 +8,19 @@ export function getItemFromLocalStorage(key: string) {
     }
 }
 
-export function setItemToLocalStorage(key: string, item: Ring) {
+export function setItemToLocalStorage(key: string, id: number) {
 
-    const data: Ring[] = getItemFromLocalStorage(key)
+    const data: number[] = getItemFromLocalStorage(key)
 
     if (Array.isArray(data) && data) {
-        let flag
-
-        data.forEach(cur => {
-            if (cur.id === item.id) {
-                flag = true
-            } else {
-                flag = false
-            }
-        })
+        const flag = data.includes(id)
 
         if (!flag) {
-            data.push(item)
+            data.push(id)
         }
 
         localStorage.setItem(key, JSON.stringify(data))
     } else {
-        localStorage.setItem(key, JSON.stringify([item]))
+        localStorage.setItem(key, JSON.stringify([id]))
     }
 }
