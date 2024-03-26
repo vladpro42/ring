@@ -52,6 +52,7 @@ const CartPageOfProduct = () => {
         //         }
         //
         //      }
+
         //  }
 
         localStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewedIds))

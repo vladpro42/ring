@@ -14,7 +14,6 @@ import ProductCart from '../../../components/ProductCart'
 const RecentlyViewed = () => {
 
     const [ringIds] = useState<number[]>(() => getItemFromLocalStorage("recentlyViewed"))
-    // const slides = ringIds.map(ringId => useAppSelector((state) => selectRingById(state, ringId)))
     const slides = useAppSelector(state => selectRingByIds(state, ringIds))
 
     console.log(slides)
