@@ -49,6 +49,11 @@
         max-width: 1920px;
     }
 
+    &__slide {
+        width: 640px;
+        height: 510px;
+    }
+
     .swiper-scrollbar {
         position: static;
         max-width: 1330px;

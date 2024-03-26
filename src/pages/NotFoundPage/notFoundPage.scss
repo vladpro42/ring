@@ -2,6 +2,7 @@
 
 .not-found {
 
+    height: calc(95vh - 342px - 342px);
 
     &__section {
         margin-top: 50px;
@@ -28,5 +29,12 @@
         text-transform: uppercase;
         margin-bottom: 150px;
         display: inline-block;
+        transition: background-color 300ms ease-in;
+
+        &:hover {
+            background-color: var(--color-hover-accent);
+        }
     }
+
+
 }

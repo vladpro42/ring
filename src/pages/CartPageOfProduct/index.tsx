@@ -19,12 +19,7 @@ import { useCallback } from "react"
 import { RootState } from "../../redux/rootReducer"
 import Spinner from "../../components/Spinner"
 
-
-
-
 const CartPageOfProduct = () => {
-
-
 
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
@@ -47,6 +42,8 @@ const CartPageOfProduct = () => {
         return <Spinner />
     }
 
+
+
     return (
         <>
             <Header />
@@ -55,7 +52,7 @@ const CartPageOfProduct = () => {
                     <div className="container">
                         <NavigationText />
 
-                        <DescriptionProduct id={ring.id} />
+                        <DescriptionProduct id={+id} />
                         <CartPageCart
                             imgSrc={ring.imgSrc}
                             price={ring.price}

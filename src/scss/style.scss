@@ -4,7 +4,7 @@
 .header {
 
     .header__bg {
-        background: var(--color-blue);
+        background-color: rgb(158, 175, 194, 0.2)
     }
 
     &__items {
@@ -36,6 +36,11 @@
         display: flex;
         align-items: center;
         gap: 0 10px;
+        transition: scale 300ms ease-in;
+
+        &:hover {
+            scale: 1.15;
+        }
     }
 
     .oclock,
@@ -247,6 +252,8 @@
 
     &__slide {
         object-fit: cover;
+        width: 1281px;
+        height: 437px;
     }
 
     .slick-dots {

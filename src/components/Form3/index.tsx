@@ -1,7 +1,7 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, memo, useState } from "react"
 import { Link } from "react-router-dom"
 
-const Form3 = ({ onClick }: { onClick: () => void }) => {
+const Form3 = memo(({ onClick }: { onClick: () => void }) => {
 
     const state = {
         pending: "pending",
@@ -67,6 +67,6 @@ const Form3 = ({ onClick }: { onClick: () => void }) => {
         </>
 
     )
-}
+})
 
 export default Form3

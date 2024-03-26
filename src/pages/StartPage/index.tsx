@@ -1,5 +1,3 @@
-
-
 import slide1 from "../../assets/images/top-bg.jpg"
 import Slider, { Settings } from 'react-slick'
 import briliant from "../../assets/images/briliant.svg"
@@ -31,6 +29,7 @@ const StartPage = () => {
 
     return (
         <>
+
             <Header />
             <main className='main'>
 
