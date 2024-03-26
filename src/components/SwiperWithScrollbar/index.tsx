@@ -15,7 +15,6 @@ const SwiperWithScrollbar = () => {
 
     const [ringIds] = useState<number[]>(() => getItemFromLocalStorage("recentlyViewed") || [1, 2, 3, 4])
     const slides = useAppSelector(state => selectRingByIds(state, ringIds))
-
     return (
         <Swiper
             navigation={true}
@@ -25,7 +24,7 @@ const SwiperWithScrollbar = () => {
             className="mySwiper"
         >
             {
-                slides.map(cart => < SwiperSlide>
+                slides && slides.map(cart => < SwiperSlide>
                     <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                 </SwiperSlide>)
             }

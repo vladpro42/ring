@@ -9,6 +9,9 @@ import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
 import SwiperWithScrollbar from "../../components/SwiperWithScrollbar";
+import { useAppSelector } from "../../hooks/redux/hooks";
+import { selectRingsStatus } from "../../redux/rings/ringsReducer";
+import Spinner from "../../components/Spinner";
 
 const StartPage = () => {
 
@@ -24,8 +27,13 @@ const StartPage = () => {
         slidesToScroll: 1,
         customPaging: () => < div className='slider__dots' >
         </div >
-
     };
+
+    const status = useAppSelector(selectRingsStatus)
+
+    if (status === 'loading') {
+        return <Spinner />
+    }
 
     return (
         <>

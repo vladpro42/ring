@@ -12,8 +12,6 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"
 import { selectRingById } from "../../redux/rings/ringsReducer"
 import { BasketRing, addBasketCreator } from "../../redux/basket/basketReducer"
 
-
-
 import "./cartPageOfProduct.scss"
 import { useCallback, useEffect } from "react"
 import { RootState } from "../../redux/rootReducer"
@@ -21,6 +19,7 @@ import Spinner from "../../components/Spinner"
 import { getItemFromLocalStorage } from "../../utils"
 
 const CartPageOfProduct = () => {
+
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();
@@ -52,7 +51,6 @@ const CartPageOfProduct = () => {
         //         }
         //
         //      }
-
         //  }
 
         localStorage.setItem("recentlyViewed", JSON.stringify(recentlyViewedIds))

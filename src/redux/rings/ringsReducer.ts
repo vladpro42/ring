@@ -111,6 +111,8 @@ export const selectRingById = (state: RootState, ringId: number) => {
 }
 
 export const selectRingByIds = (state: RootState, ringIds: number[]) => {
+    const allRings = selectAllRings(state)
+    console.log(state)
     const result = ringIds.map(id => selectAllRings(state)[id])
     return result
 }
