@@ -16,7 +16,6 @@ const RecentlyViewed = () => {
     const [ringIds] = useState<number[]>(() => getItemFromLocalStorage("recentlyViewed"))
     const slides = useAppSelector(state => selectRingByIds(state, ringIds))
 
-    console.log(slides)
     return (
         <section className='new-items'>
             <div className="container">

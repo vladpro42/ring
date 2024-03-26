@@ -1,11 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CartPageForm from './CartPageForm'
 import { Rating2 } from '../../../components/Raiting'
 
-import reviewImg1 from "../../../assets/images/review-1.jpg"
-import reviewImg2 from "../../../assets/images/review-2.jpg"
-import reviewImg3 from "../../../assets/images/review-3.jpg"
-import reviewImg4 from "../../../assets/images/review-4.jpg"
 import sale from "../../../assets/images/catalo-sale.jpg"
 
 
@@ -15,10 +11,13 @@ type Comments = {
     title: string,
     text: string,
     data: string,
-    imgSrc?: string[]
+    imgSrc?: string[],
+    rating: number
 }
 
-const comments: Comments[] = [
+
+
+/* const comments: Comments[] = [
     {
         id: 1,
         title: "Андрей и Екатерина",
@@ -33,7 +32,7 @@ const comments: Comments[] = [
         data: '29.10.2017',
         imgSrc: []
     },
-]
+] */
 
 const CartPageTab = () => {
 
@@ -55,6 +54,19 @@ const CartPageTab = () => {
         }
         setTab(keyTab.review)
     }
+
+    const getComments = async () => {
+        const json = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/Comments")
+        const comments: Comments[] = await json.json()
+        console.log(comments)
+        return comments
+    }
+
+    const [comments, setComments] = useState<Comments[]>()
+
+    useEffect(() => {
+        getComments().then((data: Comments[]) => setComments(data))
+    }, [])
 
 
     return <div className="cart-page__description">
@@ -94,10 +106,10 @@ const CartPageTab = () => {
             </div>) : <>
                 <div className="cart-page__reviews">
                     {
-                        comments.map(comment => <div className="cart-page__reviews-cart">
+                        comments.map(comment => <div key={comment.id} className="cart-page__reviews-cart">
                             <h4 className="cart-page__reviews-title">{comment.title}</h4>
                             <p className="raiting">
-                                <Rating2 />
+                                <Rating2 defaultValue={comment.rating} precision={0.5} readOnly />
                             </p>
                             <p className="cart-page__reviews-text">{comment.text}</p>
                             <div className="cart-page__reviews-images">
