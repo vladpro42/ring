@@ -17,7 +17,6 @@ type Props = {
 
 const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
 
-
     return (
         <div className="cart-page__cart">
 

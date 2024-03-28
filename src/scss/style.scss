@@ -1,5 +1,6 @@
 @import "./normalize";
 @import "./global";
+@import "./media";
 
 .header {
 
@@ -98,6 +99,10 @@
         align-items: center;
     }
 
+    &__search--mobile {
+        display: none;
+    }
+
     &__search-input {
         border: none;
         border-bottom: 1px solid var(--color-blue);
@@ -153,7 +158,11 @@
 
     &__company {
         text-align: center;
-        margin-block: 45px 40px
+        margin-block: 45px 40px;
+    }
+
+    &__company--mobile {
+        display: none;
     }
 
     &__company-title {

@@ -8,7 +8,7 @@ import { Link, ScrollRestoration } from "react-router-dom";
 import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
-import SwiperWithScrollbar from "../../components/SwiperWithScrollbar";
+import SwiperNewsWithScrollbar from "../../components/SwiperNewsWithScrollbar";
 import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectRingsStatus } from "../../redux/rings/ringsReducer";
 import Spinner from "../../components/Spinner";
@@ -37,7 +37,6 @@ const StartPage = () => {
 
     return (
         <>
-
             <Header />
             <main className='main'>
 
@@ -81,12 +80,13 @@ const StartPage = () => {
                     <div className="container">
                         <h3 className=" new-items__title">НОВИНКИ</h3>
                         <ul className="new-items__slider">
-                            <SwiperWithScrollbar />
+                            <SwiperNewsWithScrollbar />
                         </ul>
                     </div>
                 </section>
-            </main>
-            <ScrollRestoration />
+                <ScrollRestoration />
+            </main >
+
             <Footer />
         </>
     )

@@ -10,7 +10,7 @@ type Props = {
     gender: string,
 }
 
-const Select = ({ gender }: Props) => {
+const Select = ({ gender, }: Props) => {
 
     const [value, setValue] = useState(14)
     const [isActive, setIsActive] = useState(false)
@@ -52,7 +52,11 @@ const Select = ({ gender }: Props) => {
                     className="select__list"
                 >
                     {
-                        arr.map(item => <li onClick={() => handleValueClick(item)} key={item} className={value === item ? "select__item select__item--active" : "select__item"}>
+                        arr.map(item => <li
+                            onClick={() => handleValueClick(item)}
+                            key={item}
+                            className={value === item ? "select__item select__item--active" : "select__item"}
+                        >
                             {item}
                         </li>)
                     }

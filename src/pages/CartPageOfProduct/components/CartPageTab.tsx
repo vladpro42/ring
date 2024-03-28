@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'
-import CartPageForm from './CartPageForm'
 import { Rating2 } from '../../../components/Raiting'
 
 import sale from "../../../assets/images/catalo-sale.jpg"
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import "swiper/css"
+import "swiper/css/navigation"
+import { Navigation } from 'swiper/modules'
+import FormComments from './FormComments'
 
 
-
-type Comments = {
-    id: number,
-    title: string,
+export type Comment = {
+    id?: number,
+    name: string,
     text: string,
     data: string,
     imgSrc?: string[],
@@ -17,22 +21,22 @@ type Comments = {
 
 
 
-/* const comments: Comments[] = [
-    {
-        id: 1,
-        title: "Андрей и Екатерина",
-        text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
-        data: '29.10.2017',
-        imgSrc: [reviewImg1, reviewImg2, reviewImg3, reviewImg4]
-    },
-    {
-        id: 1,
-        title: "Андрей и Екатерина",
-        text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
-        data: '29.10.2017',
-        imgSrc: []
-    },
-] */
+// const comments: Comments[] = [
+//     {
+//         id: 1,
+//         title: "Андрей и Екатерина",
+//         text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
+//         data: '29.10.2017',
+//         imgSrc: [reviewImg1, reviewImg2, reviewImg3, reviewImg4]
+//     },
+//     {
+//         id: 1,
+//         title: "Андрей и Екатерина",
+//         text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
+//         data: '29.10.2017',
+//         imgSrc: []
+//     },
+// ]
 
 const CartPageTab = () => {
 
@@ -57,15 +61,14 @@ const CartPageTab = () => {
 
     const getComments = async () => {
         const json = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/Comments")
-        const comments: Comments[] = await json.json()
-        console.log(comments)
+        const comments: Comment[] = await json.json()
         return comments
     }
 
-    const [comments, setComments] = useState<Comments[]>()
+    const [comments, setComments] = useState<Comment[]>()
 
     useEffect(() => {
-        getComments().then((data: Comments[]) => setComments(data))
+        getComments().then((data: Comment[]) => setComments(data))
     }, [])
 
 
@@ -103,23 +106,29 @@ const CartPageTab = () => {
                 <p className="cart-page__content-text">
                     Такие кольца обязательно понравятся тем, кто ищет что-то классическое и в то же время особенное, не такое, как у всех!
                 </p>
+
             </div>) : <>
                 <div className="cart-page__reviews">
-                    {
-                        comments.map(comment => <div key={comment.id} className="cart-page__reviews-cart">
-                            <h4 className="cart-page__reviews-title">{comment.title}</h4>
-                            <p className="raiting">
-                                <Rating2 defaultValue={comment.rating} precision={0.5} readOnly />
-                            </p>
-                            <p className="cart-page__reviews-text">{comment.text}</p>
-                            <div className="cart-page__reviews-images">
-                                {comment.imgSrc?.map(img => <img src={img} alt='' />)}
-                            </div>
-                            <p className="cart-page__reviews-data">{comment.data}</p>
-                        </div>)
-                    }
+                    <Swiper modules={[Navigation]} navigation slidesPerView={2} spaceBetween={10} >
+                        {
+                            comments.map(comment => <SwiperSlide key={comment.id}>
+                                <div className="cart-page__reviews-cart">
+                                    <h4 className="cart-page__reviews-title">{comment.name}</h4>
+                                    <p className="raiting">
+                                        <Rating2 defaultValue={comment.rating} precision={0.5} readOnly />
+                                    </p>
+                                    <p className="cart-page__reviews-text">{comment.text}</p>
+                                    <div className="cart-page__reviews-images">
+                                        {comment.imgSrc?.map(img => <img key={img} src={img} alt='' />)}
+                                    </div>
+                                    <p className="cart-page__reviews-data">{comment.data}</p>
+                                </div>
+                            </SwiperSlide>
+                            )
+                        }
+                    </Swiper>
                 </div>
-                <CartPageForm />
+                <FormComments />
             </>
         }
     </div>

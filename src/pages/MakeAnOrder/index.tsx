@@ -1,5 +1,6 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
+import Form from "./form/index"
 
 
 import "./makeAnOrder.scss"
@@ -9,17 +10,18 @@ import orderSlider1 from "../../assets/images/order-slider-1.png"
 import orderSlider2 from "../../assets/images/order-slider-2.png"
 import orderSlider3 from "../../assets/images/order-slider-3.png"
 
-import { SwiperSlide, Swiper } from "swiper/react"
 
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "swiper/css/navigation"
+import { SwiperSlide, Swiper } from "swiper/react"
 import { Navigation, Scrollbar } from "swiper/modules"
 import { ScrollRestoration } from "react-router-dom"
 
 const example = [orderSlider1, orderSlider2, orderSlider3, orderSlider1, orderSlider2, orderSlider3]
 
 const MakeAnOrder = () => {
+
     return (
         <>
             <Header />
@@ -41,7 +43,7 @@ const MakeAnOrder = () => {
                                 scrollbar={{ draggable: true }}
                                 modules={[Scrollbar, Navigation]}
                             >
-                                {example.map(item => <SwiperSlide>
+                                {example.map((item, i) => <SwiperSlide key={i}>
                                     <li className="order-page__example-item">
                                         <img className="order-page__example-img" src={item} alt="" />
                                     </li>
@@ -87,38 +89,11 @@ const MakeAnOrder = () => {
                 <section className="order-page__form-section">
                     <div className="container">
                         <div className="order-page__form-wrapper">
-                            <form className="order-page__form">
-                                <h2 className="order-page__form-title">ОСТАВИТЬ ЗАЯВКУ</h2>
-                                <div className="order-page__form-header">
-                                    <label className="order-page__label">
-                                        <span className="order-page__span">Ваше имя</span>
-                                        <input className="order-page__input" type="text" />
-                                    </label>
-                                    {/* compinent from other page  */}
-                                    <label className="cart-page__input-file">
-                                        ЗАГРУЗИТЬ ФОТО
-                                        <input type="file" />
-                                    </label>
-                                </div>
-                                <div className="order-page__block">
-                                    <label className="order-page__label">
-                                        <span className="order-page__span">Ваш e-mail</span>
-                                        <input className="order-page__input" type="text" />
-                                    </label>
-                                    <label className="order-page__label">
-                                        <span className="order-page__span">Ваш телефон</span>
-                                        <input className="order-page__input" type="text" />
-                                    </label>
-                                </div>
-                                <span className="order-page__span">Комментарий</span>
-                                <textarea className="order-page__textarea"></textarea>
-                                <button className="order-page__submit">РАССЧИТАТЬ СТОИМОСТЬ</button>
-                            </form>
+                            <Form />
                             <img className="order-page__sale" src={sale} alt="" />
                         </div>
                     </div>
                 </section>
-
 
             </main>
             <ScrollRestoration />

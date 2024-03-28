@@ -5,16 +5,15 @@ import ProductCart from '../ProductCart';
 import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
-import { useState } from "react";
-import { getItemFromLocalStorage } from "../../utils";
 import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectRingByIds } from "../../redux/rings/ringsReducer";
 
 
-const SwiperWithScrollbar = () => {
+const SwiperNewsWithScrollbar = () => {
 
-    const [ringIds] = useState<number[]>(() => getItemFromLocalStorage("recentlyViewed") || [1, 2, 3, 4])
+    const ringIds = [1, 2, 3, 4]
     const slides = useAppSelector(state => selectRingByIds(state, ringIds))
+
     return (
         <Swiper
             navigation={true}
@@ -32,4 +31,4 @@ const SwiperWithScrollbar = () => {
     )
 }
 
-export default SwiperWithScrollbar
+export default SwiperNewsWithScrollbar

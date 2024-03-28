@@ -104,6 +104,11 @@
         color: var(--color-blue);
         margin-bottom: 6px;
         display: inline-block;
+        transition: 300ms ease-in color;
+    }
+
+    &__popup-span--error {
+        color: var(--color-error-red);
     }
 
     &__popup-input {

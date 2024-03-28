@@ -35,9 +35,6 @@ const weddingDuets = {
     subtitle: '',
 }
 
-
-
-
 const router = createBrowserRouter([
     {
         path: '/',

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const HeaderSearch = () => {
+const HeaderSearch = ({ className }: { className?: string }) => {
 
     const [isFocus, setIsFocus] = useState(false)
 
@@ -12,7 +12,7 @@ const HeaderSearch = () => {
     }
 
     return (
-        <search className='header__search'>
+        <search className={[className, 'header__search'].join(" ")}>
             <input
                 onBlur={handleBlur}
                 onFocus={handleFocus}

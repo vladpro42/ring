@@ -1,7 +1,7 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import NavigationText from '../../components/NavigationText'
-import Form3 from '../../components/Form3'
+import Form3 from './Form3'
 
 import basketSale from "../../assets/images/basket-sale.jpg"
 import basketDelete from "../../assets/images/basket-delete.svg"

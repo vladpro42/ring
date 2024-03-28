@@ -1,6 +1,8 @@
 import footerLogo from '../../assets/images/footer-logo.png'
 import { Link } from 'react-router-dom'
 import UserActionsLinks from '../header/components/UserActionsLinks'
+import ItemListItem from './components/ItemListItem'
+import ItemList from './components/ItemList'
 
 const Footer = () => {
     return (
@@ -39,41 +41,12 @@ const Footer = () => {
 
                     <div className="footer__item">
                         <h4 className="footer__item-title">ПОКУПАТЕЛЯМ</h4>
-                        <ul className="footer__item-list">
-                            <li className="item-list__item">
-                                <Link to="/diamond-as-a-gift" className="item-list__link">Бриллиант в подарок</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/how-to-choose" className="item-list__link">Как выбрать обручальные кольца</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/wear-an-engagement-ring" className="item-list__link">О помолвочных кольцах</Link>
-                            </li>
-                        </ul>
+                        <ItemList />
                     </div>
 
                     <div className="footer__item">
                         <h4 className="footer__item-title">АССОРТИМЕНТ</h4>
-                        <ul className="footer__item-list">
-                            <li className="item-list__item">
-                                <Link to="/catalog" className='item-list__link'>Все обручальные кольца</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/make-an-order" className='item-list__link'>Необычные обручальные кольца</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/catalog" className='item-list__link'>Классические обручальные кольца</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/catalog" className='item-list__link'>Помолвочные кольца</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/catalog" className='item-list__link'>Кольца с лебедями</Link>
-                            </li>
-                            <li className="item-list__item">
-                                <Link to="/catalog" className='item-list__link'>Обручальные кольца парные</Link>
-                            </li>
-                        </ul>
+                        <ItemListItem />
                     </div>
 
 
