@@ -461,6 +461,10 @@
         fill: var(--color-blue);
     }
 
+    &__slide-favotite--mobile {
+        display: none;
+    }
+
     &__slide-favotite--active {
         fill: var(--color-accent)
     }
@@ -603,3 +607,4 @@
         opacity: 0.5;
     }
 }
+

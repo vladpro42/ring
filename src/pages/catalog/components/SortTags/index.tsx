@@ -1,9 +1,23 @@
 
+import { useState } from "react"
+import { arrTagForFilter } from "../../../../assets/data/tagsArr"
+
 const SortTags = () => {
+
+    const [isActive] = useState(0)
+
     return (
         <div className="catalog-main__tegs">
             <h3 className="catalog-main__options-title">ТЕГИ</h3>
             <ul className='catalog-main__tags-list'>
+                {
+                    arrTagForFilter.map((item, index) => <li
+                        key={item}
+                        className={index === isActive ? "catalog-main__tags-item catalog-main__tags-item--active" : "catalog-main__tags-item"}
+                    >
+                        {item}
+                    </li>)
+                }
                 <li className="catalog-main__tags-item">этно</li>
                 <li className="catalog-main__tags-item catalog-main__tags-item--active">отпечатки</li>
                 <li className="catalog-main__tags-item">бесконечность</li>
@@ -20,7 +34,7 @@ const SortTags = () => {
                 <li className="catalog-main__tags-item">сапфиры</li>
             </ul>
             <button className='catalog-main__tags-btn'>показать все</button>
-        </div>
+        </div >
     )
 }
 

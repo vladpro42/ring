@@ -18,6 +18,7 @@ import ItemList from "../footer/components/ItemList"
 import "./header.scss"
 import "../../scss/_media.scss"
 import HeaderCompany from "./components/HeaderCompany"
+import BtnClose from "../../UI/BtnClose"
 
 const Header = () => {
 
@@ -40,11 +41,7 @@ const Header = () => {
                 <div className="container">
                     <div className="modal__inner">
                         <button onClick={handleClose} className="modal__close">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect y="38.3508" width="54.2357" height="2.3327" transform="rotate(-45 0 38.3508)" fill="#020F59" />
-                                <rect x="1.64941" width="54.2357" height="2.3327" transform="rotate(45 1.64941 0)" fill="#020F59" />
-                            </svg>
-
+                            <BtnClose />
                         </button>
                         <img src="/images/logo_modal.png" alt="" />
                         <nav className="modal__nav">

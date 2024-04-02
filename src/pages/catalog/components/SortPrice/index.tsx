@@ -2,8 +2,9 @@ import { useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { filterByPriceCreator } from "../../../../redux/filter/filterReducer"
 import { FilterByPrice } from "../../../../redux/filter/filterTypes"
+import { arrayValues } from "../../../../assets/data/Prices"
 
-const arrayValues = ['до 50 000', '50-70 000', '70-100 000', 'от 100 000']
+
 
 const SortPrice = () => {
 

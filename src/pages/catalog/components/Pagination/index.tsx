@@ -18,7 +18,7 @@ const Pagination = ({ pagination }: Props) => {
                     'catalog-main__padination-btn  catalog-main__padination-btn--prev' :
                     'catalog-main__padination-btn  catalog-main__padination-btn--prev catalog-main__padination-btn--active'}
             >
-                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="14" height="9" viewBox="0 0 width height" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 0.8L7.27692 7L1.46154 0.8" strokeWidth="2" />
                 </svg>
                 <span>Предыдущая</span>
