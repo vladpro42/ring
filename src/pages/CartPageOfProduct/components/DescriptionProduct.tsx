@@ -1,21 +1,21 @@
-import raiting from "../../../assets/images/raiting.svg"
+import { Rating2 } from "../../../components/Raiting"
 import { useFavorite } from "../../../hooks/UseFavorite/useFavorite"
 
 export type DescriptionProductProps = {
-    id: number
+    id: number,
+    rating: number
 }
 
 
-const DescriptionProduct = ({ id }: DescriptionProductProps) => {
-
-    const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings',id)
+const DescriptionProduct = ({ id, rating }: DescriptionProductProps) => {
+    const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', id)
 
     return (
         <div className="cart-page__description-product">
             <p className="cart-page__product-id">Арт. {id}</p>
             <p className="cart-page__product-raiting">
-                <img src={raiting} alt="" />
-                <span>1 отзыв</span>
+                <Rating2 defaultValue={rating} precision={0.5} readOnly />
+                <span className="cart-page__review-count">1 отзыв</span>
             </p>
             <p className="cart-page__product-favorite ">
                 <svg onClick={() => toggleAddFavorite(+id)} className={isFavorite ? "user__actions-svg user__actions-svg--active" : "user__actions-svg"} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

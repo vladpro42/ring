@@ -4,7 +4,6 @@ import NavigationText from "../../components/NavigationText"
 import DescriptionProduct from "./components/DescriptionProduct"
 import CartPageCart from "./components/CartPageCart"
 import CartPageTab from "./components/CartPageTab"
-import RecentlyViewed from "./components/RecentlyViewed"
 
 import { ScrollRestoration, useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"
@@ -69,8 +68,7 @@ const CartPageOfProduct = () => {
                 <section className="cart-page__section">
                     <div className="container">
                         <NavigationText />
-
-                        <DescriptionProduct id={+id} />
+                        <DescriptionProduct id={+id} rating={ring.raiting} />
                         <CartPageCart
                             imgSrc={ring.imgSrc}
                             price={ring.price}
@@ -78,7 +76,7 @@ const CartPageOfProduct = () => {
                             onClick={addBasket}
                         />
                         <CartPageTab />
-                        <RecentlyViewed />
+                        {/*<RecentlyViewed /> */}
                     </div>
                 </section>
             </main >

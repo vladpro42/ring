@@ -302,7 +302,7 @@
         @extend %ossb;
     }
 
-    &__description+&__description {
+    &__description-text+&__description-text {
         margin-top: 5px;
         margin-bottom: 200px;
     }
@@ -373,7 +373,7 @@
 
 .filter-mobile {
     width: 100%;
-    min-height: 1450px;
+    min-height: 2000px;
     padding-top: 29px;
 
     &--active {
@@ -381,7 +381,7 @@
         top: 0;
         left: 0;
         right: 0;
-        bottom: 156px;
+        bottom: 0;
         background-color: var(--color-white);
     }
 
@@ -518,7 +518,7 @@
     }
 }
 
-.filter-mobile {}
+
 
 @media (max-width: 1450px) {}
 
@@ -556,7 +556,14 @@
         display: none;
     }
 
+    .catalog-main__description-text+.catalog-main__description-text {
+        margin-bottom: 50px;
+    }
+
+
+
 }
+
 
 @media (max-width: 768px) {}
 

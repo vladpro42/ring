@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Rating2 } from '../../../components/Raiting'
 
 import sale from "../../../assets/images/catalo-sale.jpg"
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 import "swiper/css"
 import "swiper/css/navigation"
-import { Navigation } from 'swiper/modules'
 import FormComments from './FormComments'
+import Description from './Description'
+import Reviews from './Reviews'
 
 
 export type Comment = {
@@ -71,6 +70,27 @@ const CartPageTab = () => {
         getComments().then((data: Comment[]) => setComments(data))
     }, [])
 
+    const width = document.documentElement.clientWidth < 912
+    console.log(document.documentElement.clientWidth < 912)
+    const PC = keyTab.description === tab ? (<Description />) : <>
+        <Reviews comments={comments} />
+        <FormComments />
+    </>
+
+    const Mobile = <>
+        <Description />
+        <Reviews comments={comments} />
+        <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
+        <FormComments />
+    </>
+
+  
+
+
+    if (!comments) {
+        return <div>Loading...</div>
+    }
+
 
     return <div className="cart-page__description">
         <div className="cart-page__description-btns">
@@ -91,46 +111,12 @@ const CartPageTab = () => {
                 ОТЗЫВЫ (2)
             </button>
         </div>
-        <img className="cart-page__sale-img" src={sale} alt="" />
-        {
-            keyTab.description === tab ? (<div className="cart-page__content">
-                <p className="cart-page__content-text">
-                    Прекрасные обручальные кольца с инкрустацией дорожками бриллиантов в женском кольце.
-                </p>
-                <p className="cart-page__content-text">
-                    Это замечательный образец современной классики. Бриллианты в кольце расположены под углом к шинке. Камни при столь необычном расположении сияют по-особенному. Их блеск заметен лучше всего когда рука находится в движении.
-                </p>
-                <p className="cart-page__content-text">
-                    Мужское кольцо без инкрустации, оно более строгое. Скосы шинки имеют другую, матированную, фактуру. В целом дизайн этих парных колец очень изысканный и современный.
-                </p>
-                <p className="cart-page__content-text">
-                    Такие кольца обязательно понравятся тем, кто ищет что-то классическое и в то же время особенное, не такое, как у всех!
-                </p>
+        <picture>
+            <source srcSet='/images/banner-mobile.jpg' media="(max-width: 992px)" />
+            <img className="cart-page__sale-img" src={sale} alt="" />
+        </picture>
+        {width ? Mobile : PC}
 
-            </div>) : <>
-                <div className="cart-page__reviews">
-                    <Swiper modules={[Navigation]} navigation slidesPerView={2} spaceBetween={10} >
-                        {
-                            comments.map(comment => <SwiperSlide key={comment.id}>
-                                <div className="cart-page__reviews-cart">
-                                    <h4 className="cart-page__reviews-title">{comment.name}</h4>
-                                    <p className="raiting">
-                                        <Rating2 defaultValue={comment.rating} precision={0.5} readOnly />
-                                    </p>
-                                    <p className="cart-page__reviews-text">{comment.text}</p>
-                                    <div className="cart-page__reviews-images">
-                                        {comment.imgSrc?.map(img => <img key={img} src={img} alt='' />)}
-                                    </div>
-                                    <p className="cart-page__reviews-data">{comment.data}</p>
-                                </div>
-                            </SwiperSlide>
-                            )
-                        }
-                    </Swiper>
-                </div>
-                <FormComments />
-            </>
-        }
     </div>
 
 }

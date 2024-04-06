@@ -10,11 +10,12 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import SwiperNewsWithScrollbar from "../../components/SwiperNewsWithScrollbar";
 import { useAppSelector } from "../../hooks/redux/hooks";
-import { selectRingsStatus } from "../../redux/rings/ringsReducer";
+import { selectArrRings, selectRingsStatus } from "../../redux/rings/ringsReducer";
 import Spinner from "../../components/Spinner";
+import { useEffect, useState } from "react";
+import ProductCart from "../../components/ProductCart";
 
 const StartPage = () => {
-
 
     const settings: Settings = {
         arrows: false,
@@ -25,11 +26,22 @@ const StartPage = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        customPaging: () => < div className='slider__dots' >
+        customPaging: () => <div className='slider__dots'>
         </div >
     };
 
     const status = useAppSelector(selectRingsStatus)
+    const rings = useAppSelector(selectArrRings)
+
+    const [isMobile, setIsMobile] = useState(false)
+
+
+    useEffect(() => {
+        if (document.documentElement.clientWidth <= 1000) {
+            setIsMobile(true)
+        }
+    }, [document.documentElement.clientWidth])
+
 
     if (status === 'loading') {
         return <Spinner />
@@ -80,8 +92,16 @@ const StartPage = () => {
                     <div className="container">
                         <h3 className=" new-items__title">НОВИНКИ</h3>
                         <ul className="new-items__slider">
-                            <SwiperNewsWithScrollbar />
+                            {!isMobile ? <SwiperNewsWithScrollbar /> : (rings.map((ring) => <ProductCart cart={ring} key={ring.id} />))}
                         </ul>
+
+                        <Link className="new-items__show-more" to={'/catalog-weddingRings'}>
+                            ПОКАЗАТЬ ЕЩЁ
+                            <svg className="new-items__shape" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 0.8L7.27692 7L1.46154 0.8" stroke="#020F59" strokeWidth="2" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </section>
                 <ScrollRestoration />

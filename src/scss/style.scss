@@ -511,6 +511,29 @@
         left: -4px;
         rotate: -180deg;
     }
+
+    &__show-more {
+        display: none;
+        @extend %ossb;
+        font-size: 14px;
+        color: var(--color-accent);
+        width: 335px;
+        height: 60px;
+        text-align: center;
+        background-color: var(--bg-footer);
+        align-items: center;
+        justify-content: center;
+        transition: color 300ms ease-in;
+
+        &:hover {
+            color: var(--color-hover-accent);
+        }
+    }
+
+    &__shape {
+        margin-left: 10px;
+        display: inline-block;
+    }
 }
 
 .footer {
@@ -607,4 +630,3 @@
         opacity: 0.5;
     }
 }
-

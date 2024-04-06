@@ -19,6 +19,7 @@ import "./header.scss"
 import "../../scss/_media.scss"
 import HeaderCompany from "./components/HeaderCompany"
 import BtnClose from "../../UI/BtnClose"
+import HeaderFooterList from "./components/HeaderFooterList"
 
 const Header = () => {
 
@@ -46,6 +47,7 @@ const Header = () => {
                         <img src="/images/logo_modal.png" alt="" />
                         <nav className="modal__nav">
                             <NavMenu />
+                            <HeaderFooterList className="header__footer-list--mobile" />
                         </nav>
                         <footer className="modal__footer">
                             <ItemListItem />
@@ -54,7 +56,23 @@ const Header = () => {
                                 <ItemList />
                                 <UserActionsLinks />
                             </div>
+                            <div className="modal__contacts--mobile">
+                                <h4 className="modal__contacts-title">КОНТАКТЫ</h4>
+                                <div className="modal__contacts-inner">
+                                    <div className="modal__contacts-column">
+                                        <a href="#" className="modal__contacts-link modal__contacts-link--phone">+7(977) 841 23 40</a>
+                                        <a href="#" className="modal__contacts-link modal__contacts-link--phone">+7(499) 940 87 77</a>
+                                        <a href="#" className="modal__contacts-link modal__contacts-link--email">info@art-rings.ru</a>
+                                    </div>
+                                    <div className="modal__contacts-column">
+                                        <a href="#" className="modal__contacts-link modal__contacts-link--map">Москва, Большой Кисловский переулок, 5-7с1</a>
+                                        <a href="#" className="modal__contacts-link">пн-пт 11:00-20:00</a>
+                                        <a href="#" className="modal__contacts-link">сб, вс 11:00-17:00</a>
+                                    </div>
+                                </div>
+                            </div>
                         </footer>
+
                     </div>
                 </div>
             </Modal>
@@ -107,20 +125,7 @@ const Header = () => {
                             <span className="burger__line"></span>
                         </div>
                         <HeaderCompany className="header__company--mobile" />
-                        <ul className="header__footer-list">
-                            <li className="header__footer-item">
-                                <Link to="../catalog-weddingRings" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
-                            </li>
-                            <li className="header__footer-item">
-                                <Link to="../catalog-engagementRings" className="header__footer-link">ПОМОЛВОЧНЫЕ КОЛЬЦА</Link>
-                            </li>
-                            <li className="header__footer-item">
-                                <Link to="../catalog-weddingDuets" className="header__footer-link">СВАДЕБНЫЕ ДУЭТЫ</Link>
-                            </li>
-                            <li className="header__footer-item">
-                                <Link to="../make-an-order" className="header__footer-link">НА ЗАКАЗ</Link>
-                            </li>
-                        </ul>
+                        <HeaderFooterList />
                         <div className="user__actions">
                             <Link to="/basket" className="user__actions-link">
                                 {lenBasket === 0 ? null : <div className="user__actions-circle">{lenBasket}</div>}
