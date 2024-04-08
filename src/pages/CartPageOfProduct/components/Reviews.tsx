@@ -6,7 +6,6 @@ import { Rating2 } from "../../../components/Raiting"
 import "swiper/css"
 import "swiper/css/navigation"
 import { Comment } from "./CartPageTab"
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 

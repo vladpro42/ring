@@ -10,7 +10,7 @@ import logoBasket from "../../assets/images/logo-basket.png"
 import "./basket.scss"
 
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {
     decrementCountCreator,
     incrementCountCreator,
@@ -57,6 +57,15 @@ const BasketPage = () => {
 
 
     const [popup, setPopup] = useState(false)
+
+    useEffect(() => {
+        if (popup) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "initial"
+        }
+    }, [popup])
+
     const popupHtml = <div onClick={handleClickClosePopup} className="basket__popup">
         <div
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
@@ -85,6 +94,34 @@ const BasketPage = () => {
                     </div>
 
                     <div className="basket__inner">
+
+                        <img className='basket__sale--mobile' srcSet='/images/banner-mobile.jpg' />
+
+                        <ul className='basket__list--mobile'>
+                            {rings?.map(ring => <li className='basket__item--mobile'>
+                                <img className='basket__item-img' src={ring.ring.imgSrc} alt="" />
+                                <div className="basket__item-column">
+                                    <div className="basket__item-prices">
+                                        <p className="basket__item-price">{ring.ring.price}₽</p>
+                                        <p className="basket__item-price basket__item-price--mobile">{ring.ring.priceSale}₽</p>
+                                    </div>
+                                    <p className="basket__item-id">Арт. {ring.ring.id}</p>
+                                    <p className="basket__item-mobile">Модель: <span className='basket__item-mobile--black'>{ring.model}</span></p>
+                                    <div className='basket__counter'>
+                                        <button
+                                            onClick={() => handleClickIncrementCount(ring.ring.id)}
+                                            className='basket__counter-btn basket__counter-btn--plus'>
+                                        </button>
+                                        <p>{ring.defaultCount}</p>
+                                        <button
+                                            onClick={() => handleClickDecrementCount(ring.ring.id)}
+                                            className='basket__counter-btn'>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>)}
+                        </ul>
+
                         <table className='basket__table'>
                             <tr className='basket__tr'>
                                 <td align='center' valign='middle' className='basket__column-name'>Картинка</td>
@@ -128,7 +165,10 @@ const BasketPage = () => {
                             <button onClick={() => setPopup(true)} className='basket__submit'>ОФОРМИТЬ ЗАКАЗ </button>
                         </div>
                     </div>
-                    <img className='basket__sale' src={basketSale} alt="" />
+                    <picture>
+                        <source srcSet='/images/banner-mobile.jpg' media='(max-width: 992px)' />
+                        <img className='basket__sale' src={basketSale} alt="" />
+                    </picture>
                 </div>
             </section>
             <ScrollRestoration />

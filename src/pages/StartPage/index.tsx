@@ -40,7 +40,7 @@ const StartPage = () => {
         if (document.documentElement.clientWidth <= 1000) {
             setIsMobile(true)
         }
-    }, [document.documentElement.clientWidth])
+    }, [])
 
 
     if (status === 'loading') {

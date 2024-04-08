@@ -1,3 +1,4 @@
+
 import { memo, useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -72,107 +73,117 @@ const Form3 = memo(({ onClick }: { onClick: () => void }) => {
         setStatus(Status.fullfield)
     }
 
-    const state2 = <>
+    const state2 = <div className="basket__container--state2">
         <h1 className='basket__send-title'>ВАША ЗАЯВКА ПРИНЯТА!</h1>
         <p className='basket__send-subtitle'>В ближайшее время с вами свяжется оператор для подтверждения заказа.</p>
         <Link onClick={onClick} to="/catalog-weddingRings" className='basket__send-btn'>ВЕРНУТЬСЯ В КАТАЛОГ</Link>
-    </>
+    </div>
 
     const state1 = <>
-        <h1 className='basket__popup-title'>ОСТАВЬТЕ ЗАЯВКУ</h1>
-        <p className="basket__popup-subtitle">И мы свяжемся с вами для уточнения деталей заказа</p>
 
-        <form className='basket__popup-form' action="">
-            <label htmlFor="" className='basket__popup-label'>
-                <span
-                    className={errorValid === ErrorValid.name ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
-                >
-                    Ваше имя
-                </span>
-                <input
-                    onChange={handleChangeName}
-                    value={name}
-                    type="text"
-                    className='basket__popup-input'
-                />
-            </label>
-            <div className="basket__popup-wrap">
-
+        <div className="basket__container--state1">
+            <h1 className='basket__popup-title'>ОСТАВЬТЕ ЗАЯВКУ</h1>
+            <p className="basket__popup-subtitle">И мы свяжемся с вами для уточнения деталей заказа</p>
+            <form className='basket__popup-form' action="">
                 <label htmlFor="" className='basket__popup-label'>
                     <span
-                        className={errorValid === ErrorValid.phoneNumber ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
+                        className={errorValid === ErrorValid.name ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
                     >
-                        Ваш телефон
+                        Ваше имя
                     </span>
                     <input
-                        value={phoneNumber}
-                        onChange={handleChangePhoneNumber}
-                        className='basket__popup-input'
-                        placeholder='+7 (   )'
-                        type="tel"
-                    />
-                </label>
-
-                <label htmlFor="" className='basket__popup-label'>
-                    <span
-                        className={errorValid === ErrorValid.email ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
-                    >
-                        Ваш e-mail
-                    </span>
-                    <input
-                        value={email}
-                        onChange={handleChangeEmail}
+                        onChange={handleChangeName}
+                        placeholder="Ваше имя"
+                        value={name}
                         type="text"
                         className='basket__popup-input'
                     />
                 </label>
-            </div>
+                <div className="basket__popup-wrap">
 
-            <div className="basket__popup-wrap">
-                <label htmlFor="" className='basket__popup-label'>
-                    <span
-                        className={errorValid === ErrorValid.city ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
-                    >
-                        Город
-                    </span>
+                    <label htmlFor="" className='basket__popup-label'>
+                        <span
+                            className={errorValid === ErrorValid.phoneNumber ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
+                        >
+                            Ваш телефон
+                        </span>
+                        <input
+
+                            value={phoneNumber}
+                            onChange={handleChangePhoneNumber}
+                            className='basket__popup-input'
+                            placeholder='+7 (   )'
+                            type="tel"
+                        />
+                    </label>
+
+                    <label htmlFor="" className='basket__popup-label'>
+                        <span
+                            className={errorValid === ErrorValid.email ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
+                        >
+                            Ваш e-mail
+                        </span>
+                        <input
+                            value={email}
+                            onChange={handleChangeEmail}
+                            type="text"
+                            className='basket__popup-input'
+                            placeholder="Ваш e-mail"
+                        />
+                    </label>
+                </div>
+
+                <div className="basket__popup-wrap">
+                    <label htmlFor="" className='basket__popup-label'>
+                        <span
+                            className={errorValid === ErrorValid.city ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
+                        >
+                            Город
+                        </span>
+                        <input
+                            placeholder="Ваш Город"
+                            value={city}
+                            onChange={handleChangeCity}
+                            type="text"
+                            className='basket__popup-input'
+                        />
+                    </label>
+                    <label htmlFor="" className='basket__popup-label'>
+                        <span
+                            className={errorValid === ErrorValid.address ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
+                        >
+                            Адрес
+                        </span>
+                        <input
+                            placeholder="Ваш Адрес"
+                            value={address}
+                            onChange={handleChangeAddress}
+                            type="text"
+                            className='basket__popup-input'
+                        />
+                    </label>
+                </div>
+
+                <div className="basket__popup-checkbox">
                     <input
-                        value={city}
-                        onChange={handleChangeCity}
-                        type="text"
-                        className='basket__popup-input'
+
+                        value={checkbox}
+                        onChange={handleChangeCheckbox}
+                        id="input-checkbox"
+                        className='basket__checkbox-input'
+                        type="checkbox"
                     />
-                </label>
-                <label htmlFor="" className='basket__popup-label'>
-                    <span
-                        className={errorValid === ErrorValid.address ? "basket__popup-span basket__popup-span--error" : "basket__popup-span"}
-                    >
-                        Адрес
-                    </span>
-                    <input
-                        value={address}
-                        onChange={handleChangeAddress}
-                        type="text"
-                        className='basket__popup-input'
-                    />
-                </label>
-            </div>
+                    <label className='basket__custom-input' htmlFor="input-checkbox"></label>
+                    <label className="basket__popup-agree" htmlFor="input-checkbox">Даю согласие на обработку персональных данных</label>
+                </div>
+                <button onClick={handleSubmit} className='basket__popup-submit'>ПЕРЕЗВОНИТЕ МНЕ</button>
 
-            <div className="basket__popup-checkbox">
-                <input
-
-                    value={checkbox}
-                    onChange={handleChangeCheckbox}
-                    id="input-checkbox"
-                    className='basket__checkbox-input'
-                    type="checkbox"
-                />
-                <label className='basket__custom-input' htmlFor="input-checkbox"></label>
-                <label className="basket__popup-agree" htmlFor="input-checkbox">Даю согласие на обработку персональных данных</label>
-            </div>
-            <button onClick={handleSubmit} className='basket__popup-submit'>ПЕРЕЗВОНИТЕ МНЕ</button>
-
-        </form>
+            </form>
+        </div>
     </>
+
+
+
     return (
         <>
             {status === Status.pending ? state1 : state2}
