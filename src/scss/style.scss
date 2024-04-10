@@ -2,10 +2,6 @@
 @import "./global";
 @import "./media";
 
-
-
-
-
 .top {
 
     margin-top: 100px;
@@ -300,85 +296,6 @@
     }
 }
 
-.footer {
-    padding-block: 60px;
-    background-color: #F8F9FD;
-
-    &__items {
-        display: grid;
-        grid-template-columns: 195px 170px 170px 280px 1fr;
-        column-gap: 51px
-    }
-
-    &__item-politics {
-        @extend %osr;
-        font-size: 12px;
-        color: #636465;
-        margin-block: 7px 41px;
-        display: inline-block;
-        max-width: 172px;
-
-        &:hover {
-            border-bottom: 1px solid var(--color-black);
-        }
-    }
-
-    &__item-ip {
-        @extend %osr;
-        font-size: 12px;
-        color: #c6c7ca;
-        margin-bottom: 49px;
-    }
-
-    &__item-link {
-        @extend %osl;
-        font-size: 14px;
-        color: var(--color-black);
-    }
-
-    &__item-title {
-        @extend %osr;
-        font-size: 16px;
-        line-height: 25px;
-        margin-bottom: 15px;
-        color: var(--color-black);
-    }
-
-    &__item-list {
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 280px;
-        gap: 5px 0;
-    }
-
-    &__item-phone {
-        @extend %osr;
-        margin-bottom: 16px;
-        line-height: 22px;
-    }
-
-    &__item-adres {
-        margin-bottom: 4px;
-    }
-
-    &__item-adres,
-    &__item-mail {
-        @extend %osl;
-        line-height: 1.2;
-        font-size: 14px;
-        color: #7c7d7f;
-
-    }
-
-    .user-actions {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 23px;
-    }
-}
 
 .item-list__item {}
 

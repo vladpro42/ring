@@ -4,6 +4,8 @@ import UserActionsLinks from '../header/components/UserActionsLinks'
 import ItemListItem from './components/ItemListItem'
 import ItemList from './components/ItemList'
 
+import "./footer.scss"
+
 const Footer = () => {
     return (
         <footer className="footer">
