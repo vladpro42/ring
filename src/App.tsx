@@ -1,4 +1,5 @@
 import './scss/style.scss'
+import "./pages/StartPage/start-page.scss"
 
 import CatalogPage from './pages/catalog'
 import StartPage from './pages/StartPage'

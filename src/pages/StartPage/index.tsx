@@ -1,19 +1,23 @@
 import slide1 from "../../assets/images/top-bg.jpg"
 import Slider, { Settings } from 'react-slick'
 import briliant from "../../assets/images/briliant.svg"
-import "slick-carousel/slick/slick.css";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import { Link, ScrollRestoration } from "react-router-dom";
+
+import "slick-carousel/slick/slick.css";
 import 'swiper/css/scrollbar'
 import 'swiper/css'
 import 'swiper/css/navigation';
+import "./start-page.scss"
+
 import SwiperNewsWithScrollbar from "../../components/SwiperNewsWithScrollbar";
 import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectArrRings, selectRingsStatus } from "../../redux/rings/ringsReducer";
 import Spinner from "../../components/Spinner";
 import { useEffect, useState } from "react";
 import ProductCart from "../../components/ProductCart";
+
 
 const StartPage = () => {
 

@@ -16,7 +16,6 @@ import ItemListItem from "../footer/components/ItemListItem"
 import ItemList from "../footer/components/ItemList"
 
 import "./header.scss"
-import "../../scss/_media.scss"
 import HeaderCompany from "./components/HeaderCompany"
 import BtnClose from "../../UI/BtnClose"
 import HeaderFooterList from "./components/HeaderFooterList"

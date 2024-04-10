@@ -23,7 +23,7 @@ const SwiperNewsWithScrollbar = () => {
             className="mySwiper"
         >
             {
-                slides && slides.map(cart => < SwiperSlide>
+                slides && slides.map(cart => < SwiperSlide key={cart.id}>
                     <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
                 </SwiperSlide>)
             }
