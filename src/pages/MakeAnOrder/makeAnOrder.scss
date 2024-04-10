@@ -2,6 +2,8 @@
 
 .order-page {
 
+    margin-top: 52px;
+
     &__section {
         background-image: url("../../assets/images/order-bg.jpg");
         background-position: -113px center;
@@ -43,10 +45,21 @@
         @extend %ossb;
         padding-block: 19px;
         width: 410px;
+        transition: background-color 300ms ease-in;
+
+        &:hover {
+            background-color: var(--color-hover-accent);
+        }
     }
 
     &__example {
         margin-bottom: 100px;
+    }
+
+    &__example-list {}
+
+    &__example-item {
+        text-align: center;
     }
 
     &__example-title {
@@ -219,6 +232,10 @@
         width: 100%;
         height: 60px;
         border: 1px solid var(--color-blue);
+
+        &::placeholder {
+            font-size: 0;
+        }
     }
 
     &__header-file {
@@ -247,6 +264,10 @@
         resize: none;
         padding-left: 10px;
         padding-top: 10px;
+
+        &::placeholder {
+            font-size: 0;
+        }
     }
 
     &__submit {
@@ -270,5 +291,204 @@
     &__sale {
         flex-basis: 1 0 294px;
         height: 595px;
+    }
+}
+
+@media (max-width:1400px) {
+    /*   .order-page__sale {
+        display: none;
+    } */
+
+    .order-page__form-wrapper {
+        flex-direction: column;
+        gap: 50px 0;
+    }
+
+    .order-page__sale {
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        order: -1;
+    }
+
+
+}
+
+
+@media (max-width:1250px) {
+    .order-page__section {
+        background-position: center center;
+    }
+
+    .order-page__example-img {
+        width: 335px;
+        height: 335px;
+    }
+}
+
+@media (max-width:1020px) {
+
+    .order-page__example-img {
+        width: 335px;
+        height: 335px;
+    }
+
+    .order-page__form {
+        position: relative;
+        order: 1;
+    }
+
+    .order-page__block {
+        flex-direction: column;
+        gap: 20px 0;
+        align-items: start;
+    }
+
+    .order-page__label {
+        width: 100%;
+    }
+
+    .order-page__block>.order-page__label:nth-child(2) {
+        flex-basis: initial;
+    }
+
+    .order-page__textarea {
+        width: 100%;
+    }
+
+    .order-page__submit {
+        width: 80%;
+    }
+
+    .order-page__form-header .cart-page__input-file {
+        bottom: 0;
+    }
+
+}
+
+
+@media (max-width:700px) {
+
+    .order-page__form-section {
+        margin-bottom: 100px;
+    }
+
+    .order-page {
+        margin-top: 30px;
+    }
+
+    .order-page__todo {
+        margin-bottom: 20px;
+    }
+
+    .order-page__section {
+        background-position: right center;
+        height: 303px;
+        padding-bottom: 37px;
+        margin-bottom: 70px;
+    }
+
+    .order-page__title {
+        font-size: 20px;
+        letter-spacing: 1px;
+        max-width: 221px;
+        margin-bottom: 9px;
+    }
+
+    .order-page__sub-title {
+        font-size: 12px;
+        color: var(--color-black);
+        max-width: 221px;
+        opacity: 0.5;
+        margin-bottom: 30px;
+    }
+
+    .order-page__btn {
+        width: 335px;
+        height: 60px;
+    }
+
+    .order-page__todo-title {
+        margin-bottom: 50px;
+        font-size: 30px;
+    }
+
+    .order-page__item-stage {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .order-page__todo-item {
+        padding: 30px;
+        height: initial;
+    }
+
+    .order-page__item-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .order-page__item-text {
+        font-size: 14px;
+        max-width: 400px;
+    }
+
+    .order-page__item-time {
+        margin-top: 21px;
+        font-size: 12px;
+    }
+
+    .order-page__form-title {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .order-page__span {
+        display: none;
+    }
+
+    .order-page__input {
+        padding-left: 20px;
+    }
+
+    .order-page__input::placeholder {
+        font-size: 14px;
+    }
+
+    .order-page__textarea::placeholder {
+        font-size: 14px;
+    }
+
+    .order-page__textarea {
+        height: 60px;
+        padding: 22px 0 0 20px;
+    }
+}
+
+@media (max-width:460px) {
+    .order-page__section {
+        background-position: -250px center;
+    }
+
+    .order-page__todo {
+        padding-block: 66px 70px;
+    }
+
+    .order-page__todo-title {
+        font-size: 25px;
+    }
+
+    .order-page__todo-item {
+        padding: 43px 30px 38px;
+        height: 300px;
+    }
+
+    .order-page__item-text {
+        max-width: 275px;
+        max-height: 115px;
+    }
+
+    .order-page__submit {
+        width: 250px;
     }
 }

@@ -74,6 +74,7 @@ const Form = () => {
                         Ваше имя
                     </span>
                     <input
+                        placeholder=" Ваше имя"
                         value={name}
                         onChange={handleChangeName}
                         className="order-page__input" type="text" />
@@ -91,6 +92,7 @@ const Form = () => {
                         Ваш e-mail
                     </span>
                     <input
+                        placeholder="Ваш e-mail"
                         value={email}
                         onChange={handleChangeEmail}
                         className="order-page__input" type="text" />
@@ -102,6 +104,7 @@ const Form = () => {
                         Ваш телефон
                     </span>
                     <input
+                        placeholder="Ваш телефон"
                         value={numberPhone}
                         onChange={handleChangeNumberPhone}
                         className="order-page__input" type="text" />
@@ -113,6 +116,7 @@ const Form = () => {
                 Комментарий
             </span>
             <textarea
+                placeholder="Ваш комментарий"
                 value={review}
                 onChange={handleChangeReview}
                 maxLength={2000} className="order-page__textarea"></textarea>

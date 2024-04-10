@@ -14,8 +14,11 @@ import orderSlider3 from "../../assets/images/order-slider-3.png"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "swiper/css/navigation"
+import "swiper/css"
+
+
 import { SwiperSlide, Swiper } from "swiper/react"
-import { Navigation, Scrollbar } from "swiper/modules"
+import { Navigation, Pagination, Scrollbar } from "swiper/modules"
 import { ScrollRestoration } from "react-router-dom"
 
 const example = [orderSlider1, orderSlider2, orderSlider3, orderSlider1, orderSlider2, orderSlider3]
@@ -33,15 +36,29 @@ const MakeAnOrder = () => {
                         <button className="order-page__btn">РАССЧИТАТЬ СТОИМОСТЬ</button>
                     </div>
                 </section>
+
                 <div className="order-page__example">
                     <div className="container">
                         <h2 className="order-page__example-title">ПРИМЕРЫ РАБОТ</h2>
                         <ul className="order-page__example-list">
                             <Swiper
+                                slidesPerView={1}
+                                breakpoints={{
+
+                                    375: {
+                                        scrollbar: false
+                                    },
+
+                                    1000: {
+                                        width: 1000,
+                                        slidesPerView: 3,
+                                        scrollbar: true
+                                    },
+                                }}
+                                pagination={true}
                                 navigation={true}
-                                slidesPerView={3}
                                 scrollbar={{ draggable: true }}
-                                modules={[Scrollbar, Navigation]}
+                                modules={[Scrollbar, Navigation, Pagination]}
                             >
                                 {example.map((item, i) => <SwiperSlide key={i}>
                                     <li className="order-page__example-item">
@@ -89,13 +106,17 @@ const MakeAnOrder = () => {
                 <section className="order-page__form-section">
                     <div className="container">
                         <div className="order-page__form-wrapper">
+
                             <Form />
-                            <img className="order-page__sale" src={sale} alt="" />
+                            <picture>
+                                <source srcSet="/images/banner-mobile.jpg" media="(max-width: 1400px)" />
+                                <img className="order-page__sale" src={sale} alt="" />
+                            </picture>
                         </div>
                     </div>
                 </section>
 
-            </main>
+            </main >
             <ScrollRestoration />
             <Footer />
         </>
