@@ -239,7 +239,7 @@
 }
 
 .modal {
-    --color-bg: #F8F9FD;
+    
 
     .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
         background-color: var(--color-bg) !important;
@@ -368,6 +368,10 @@
     font-size: 14px;
     line-height: 22px;
     width: 156px;
+}
+
+.MuiBackdrop-root .MuiModal-backdrop .css-919eu4 {
+    background-color: var(--bg-footer);
 }
 
 
