@@ -7,8 +7,12 @@ import {
     ChangeJewel,
     FilterByPrice,
     FilterState,
+    SortByAlphabeticalOrder,
     SortByAscendingAndDescending,
-    SortByAscendingDescending
+    SortByAscendingAndDescendingAndDefault,
+    SortByAscendingDescending,
+    SortByPriceValue,
+    SortByRatingValue
 } from "./filterTypes"
 
 import { Action } from "./filterTypes";
@@ -20,6 +24,9 @@ const initialState: FilterState = {
     inserts: "with",
     tags: [],
     jewel: true,
+    sortByPrice: 'default',
+    sortByRating: 'default',
+    sortByAlphabeticalOrder: 'default',
 }
 
 
@@ -42,6 +49,16 @@ export const filterReducer = (state = initialState, action: Action) => {
             return { ...state, jewel: action.payload }
         }
 
+        case ActionTypes.sortByPriceValue: {
+            return { ...state, sortByPrice: action.payload }
+        }
+        case ActionTypes.sortByRatingValue: {
+            return { ...state, sortByRating: action.payload }
+        }
+        case ActionTypes.sortByAlphabeticalOrder: {
+            return { ...state, sortByAlphabeticalOrder: action.payload }
+        }
+
         default:
             return { ...state };
     }
@@ -62,6 +79,7 @@ export const contentPerPageCreator = (value: number): ChangeContentPerPage => ({
     payload: value
 })
 
+// ????
 export const changeContentPerPageCreator = (value: SortByAscendingAndDescending): SortByAscendingDescending => ({
     type: ActionTypes.sortByAscendingDescending,
     payload: value
@@ -74,5 +92,17 @@ export const filterByPriceCreator = (payload: FilterByPrice): ByPrice => ({
 
 export const filterByJewelCreator = (payload: boolean): ChangeJewel => ({
     type: ActionTypes.changeJewel,
+    payload,
+})
+export const sortByPriceValueCreator = (payload: SortByAscendingAndDescendingAndDefault): SortByPriceValue => ({
+    type: ActionTypes.sortByPriceValue,
+    payload,
+})
+export const sortByRatingValueCreator = (payload: SortByAscendingAndDescendingAndDefault): SortByRatingValue => ({
+    type: ActionTypes.sortByRatingValue,
+    payload,
+})
+export const sortByAlphabeticalOrderCreator = (payload: SortByAscendingAndDescendingAndDefault): SortByAlphabeticalOrder => ({
+    type: ActionTypes.sortByAlphabeticalOrder,
     payload,
 })

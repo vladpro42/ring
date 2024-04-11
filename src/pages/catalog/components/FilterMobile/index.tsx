@@ -4,7 +4,7 @@ import { arrayValues } from '../../../../assets/data/Prices'
 import { useState } from 'react'
 import { ScrollRestoration } from 'react-router-dom'
 
-const FilterMobile = ({ onClose }: { onClose: () => void }) => {
+const FilterMobile = ({ onClose, className }: { onClose: () => void, className: string }) => {
 
     const [priceActive, setPriceActive] = useState(0)
     const [tagsActive, setTagsActive] = useState<string[]>([])
@@ -25,7 +25,7 @@ const FilterMobile = ({ onClose }: { onClose: () => void }) => {
     }
 
     return (
-        <div className="filter-mobile filter-mobile--active">
+        <div className={["filter-mobile", className].join(' ')}>
             <div className="filter-mobile__header">
                 <button onClick={onClose} className='filter-mobile__close'>
                     <BtnClose />
