@@ -4,9 +4,11 @@ import {
     ActionTypes,
     ByPrice,
     ChangeContentPerPage,
+    ChangeInserts,
     ChangeJewel,
     FilterByPrice,
     FilterState,
+    Inserts,
     SortByAlphabeticalOrder,
     SortByAscendingAndDescending,
     SortByAscendingAndDescendingAndDefault,
@@ -59,6 +61,10 @@ export const filterReducer = (state = initialState, action: Action) => {
             return { ...state, sortByAlphabeticalOrder: action.payload }
         }
 
+        case ActionTypes.changeInserts: {
+            return { ...state, inserts: action.payload }
+        }
+
         default:
             return { ...state };
     }
@@ -106,5 +112,9 @@ export const sortByRatingValueCreator = (payload: SortByAscendingAndDescendingAn
 })
 export const sortByAlphabeticalOrderCreator = (payload: SortByAscendingAndDescendingAndDefault): SortByAlphabeticalOrder => ({
     type: ActionTypes.sortByAlphabeticalOrder,
+    payload,
+})
+export const changeInsertsCreator = (payload: Inserts): ChangeInserts => ({
+    type: ActionTypes.changeInserts,
     payload,
 })

@@ -1,8 +1,10 @@
 import { arrTagForFilter } from '../../../../assets/data/tagsArr'
 import BtnClose from '../../../../UI/BtnClose'
-import { arrayValues } from '../../../../assets/data/Prices'
+import { ArrayValues2, arrayValues2 } from '../../../../assets/data/Prices'
 import { useState } from 'react'
 import { ScrollRestoration } from 'react-router-dom'
+import { useAppDispatch } from '../../../../hooks/redux/hooks'
+import { changeInsertsCreator, filterByPriceCreator } from '../../../../redux/filter/filterReducer'
 
 const FilterMobile = ({ onClose, className }: { onClose: () => void, className: string }) => {
 
@@ -10,10 +12,14 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
     const [tagsActive, setTagsActive] = useState<string[]>([])
     const [insert, setInsert] = useState(0)
 
-    const handlePriceActiveClick = (index: number) => {
+    const dispatch = useAppDispatch()
+
+    const handlePriceActiveClick = (index: number, item: ArrayValues2) => {
+        dispatch(filterByPriceCreator(item.val))
         setPriceActive(index)
     }
     const handleInsertClick = (index: number) => {
+        dispatch(changeInsertsCreator(index === 0 ? 'with' : 'without'))
         setInsert(index)
     }
     const toggleTagsActive = (tag: string) => {
@@ -46,15 +52,17 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
 
                     <ul className='list-filters list-filters--active'>
                         {
-                            arrayValues.map((item, index) => <li
-                                onClick={() => handlePriceActiveClick(index)}
+                            arrayValues2.map((item, index) => <li
+                                onClick={() => handlePriceActiveClick(index, item)}
                                 className='list-filters__item'
-                                key={item}
+                                key={item.id}
                             >
-                                <p className="list-filters__item-price">{item}</p>
+                                <p className="list-filters__item-price">{item.title}</p>
                                 <div className='list-filters__checkbox'>
                                     <span
-                                        className={priceActive === index ? 'list-filters__checkbox-span list-filters__checkbox-span--active' : 'list-filters__checkbox-span'}
+                                        className={priceActive === index ?
+                                            'list-filters__checkbox-span list-filters__checkbox-span--active' :
+                                            'list-filters__checkbox-span'}
                                     ></span>
                                 </div>
                             </li>)
@@ -118,7 +126,7 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
                 </li>
             </ul>
 
-            <button className='filter-mobile__btn'>СМОТРЕТЬ ТОВАРЫ</button>
+            <button onClick={onClose} className='filter-mobile__btn'>СМОТРЕТЬ ТОВАРЫ</button>
             <ScrollRestoration />
         </div>
     )
