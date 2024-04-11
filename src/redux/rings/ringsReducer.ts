@@ -145,3 +145,4 @@ export async function fetchRings(dispatch: AppDispatch) {
     const response = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/rings")
     dispatch(fetchRingsCreator(await response.json()))
 }
+

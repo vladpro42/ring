@@ -1,4 +1,4 @@
-import { FilterByPrice, SortByAscendingAndDescending } from "../../../redux/filter/filterTypes";
+import { FilterByPrice, SortByAscendingAndDescending, SortByAscendingAndDescendingAndDefault } from "../../../redux/filter/filterTypes";
 import { Ring } from "../../../redux/rings/ringsReducerTypes";
 
 export function sortByAscendingAndDescending(a: Ring, b: Ring, byAscendingDescending: SortByAscendingAndDescending) {
@@ -33,4 +33,27 @@ export function filterByPrice(item: Ring, byPrice: FilterByPrice) {
     }
 
     return item.price > byPrice[0] && item.price < byPrice[1];
+}
+
+export function sortRingsByPrice(a: Ring, b: Ring, sort: SortByAscendingAndDescendingAndDefault) {
+    if (sort === 'asc') {
+        return a.price - b.price
+    } else if (sort === 'des') {
+        return b.price - a.price
+    } else if (sort === 'default') {
+        return
+    }
+    throw Error(' Не допустимое значение sort')
+}
+
+
+export function sortRingsByRating(a: Ring, b: Ring, sort: SortByAscendingAndDescendingAndDefault) {
+    if (sort === 'asc') {
+        return a.raiting - b.raiting
+    } else if (sort === 'des') {
+        return b.raiting - a.raiting
+    } else if (sort === 'default') {
+        return
+    }
+    throw Error(' Не допустимое значение sort')
 }

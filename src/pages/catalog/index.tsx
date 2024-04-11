@@ -18,15 +18,14 @@ import usePagination from '../../hooks/UsePagination'
 import { useAppSelector } from '../../hooks/redux/hooks'
 
 import { selectRings, selectRingsStatus } from '../../redux/rings/ringsReducer'
-import { selectByPrice, selectContentPerPage, selectIsJewel } from '../../redux/filter/filterReducer'
+import { selectByPrice, selectContentPerPage, selectIsJewel, selectSortByPrice, selectSortByRating } from '../../redux/filter/filterReducer'
 import { selectSortByAscendingDescending } from '../../redux/filter/filterReducer'
-import { sortByAscendingAndDescending, filterByJewel, filterByPrice } from "./utils/index"
+import { sortByAscendingAndDescending, filterByJewel, filterByPrice, sortRingsByPrice, sortRingsByRating } from "./utils/index"
 import { ScrollRestoration } from 'react-router-dom'
 import { Ring } from '../../redux/rings/ringsReducerTypes'
 import Spinner from '../../components/Spinner'
 import { useEffect, useState } from 'react'
 import FilterMobile from './components/FilterMobile'
-import SortMobile from './components/SortMobile'
 import SortMobileList from './components/SortMobileList'
 
 
@@ -45,11 +44,16 @@ const CatalogPage = ({ title, subtitle }: Props) => {
     const byAscendingDescending = useAppSelector(selectSortByAscendingDescending)
     const isJewel = useAppSelector(selectIsJewel)
     const contentPerPage = useAppSelector(selectContentPerPage)
+    const sortByPrice = useAppSelector(selectSortByPrice)
+    const sortByRating = useAppSelector(selectSortByRating)
+    //const sortByAlphabeticalOrder = useAppSelector(selectSortByAlphabeticalOrder)
 
     const filteredRings = rings
         .sort((a: Ring, b: Ring) => sortByAscendingAndDescending(a, b, byAscendingDescending))
         .filter((ring: Ring) => filterByPrice(ring, byPrice))
         .filter((ring: Ring) => filterByJewel(ring, isJewel))
+        .sort((a: Ring, b: Ring) => sortRingsByPrice(a, b, sortByPrice))
+        .sort((a: Ring, b: Ring) => sortRingsByRating(a, b, sortByRating))
 
     const pagination = usePagination({
         contentPerPage: contentPerPage,
@@ -92,12 +96,9 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                             <h2 className="catalog-main__title">{title}</h2>
                             <p className="catalog-main__text">{subtitle}</p>
 
-                            <SortMobile
-                                openMobile={handleClickOpenListMobile}
-                                toggleFilter={toggleFilterMobile}
-                            />
                             <SortMobileList
                                 onOpen={handleClickOpenListMobile}
+                                toggleFilter={toggleFilterMobile}
                                 className={isActiveList ?
                                     'sort__mobile-list sort__mobile-list--active' :
                                     'sort__mobile-list'}
