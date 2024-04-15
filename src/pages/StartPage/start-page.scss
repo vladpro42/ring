@@ -35,7 +35,6 @@
         background-color: var(--color-blue);
         width: 10px;
         height: 10px;
-
     }
 
     .slider__dots {
@@ -122,19 +121,19 @@
         background-repeat: no-repeat;
 
         &:nth-child(1) {
-            background-image: url(../assets/images/catalog-1.png);
+            background-image: url("../../assets/images/catalog-1.png");
         }
 
         &:nth-child(2) {
-            background-image: url(../assets/images/catalog-2.png);
+            background-image: url(../../assets/images/catalog-2.png);
         }
 
         &:nth-child(3) {
-            background-image: url(../assets/images/catalog-3.png);
+            background-image: url(../../assets/images/catalog-3.png);
         }
 
         &:nth-child(4) {
-            background-image: url(../assets/images/catalog-4.png);
+            background-image: url(../../assets/images/catalog-4.png);
         }
     }
 
