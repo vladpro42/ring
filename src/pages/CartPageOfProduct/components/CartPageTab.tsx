@@ -71,7 +71,6 @@ const CartPageTab = () => {
     }, [])
 
     const width = document.documentElement.clientWidth < 912
-    console.log(document.documentElement.clientWidth < 912)
     const PC = keyTab.description === tab ? (<Description />) : <>
         <Reviews comments={comments} />
         <FormComments />

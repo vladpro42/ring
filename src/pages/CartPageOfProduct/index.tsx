@@ -5,7 +5,7 @@ import DescriptionProduct from "./components/DescriptionProduct"
 import CartPageCart from "./components/CartPageCart"
 import CartPageTab from "./components/CartPageTab"
 
-import { ScrollRestoration, useParams } from "react-router-dom"
+import { ScrollRestoration, useNavigate, useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"
 
 import { selectRingById } from "../../redux/rings/ringsReducer"
@@ -22,7 +22,8 @@ const CartPageOfProduct = () => {
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();
-    const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id)))
+    const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id))) || null
+    const navigate = useNavigate()
 
     const addBasket = useCallback(() => {
 
@@ -35,6 +36,13 @@ const CartPageOfProduct = () => {
 
         dispatch(addBasketCreator(payload))
     }, [ring, dispatch])
+
+    useEffect(() => {
+        if (!ring) {
+            console.log(true)
+            navigate('/notFounded')
+        }
+    }, [navigate, ring])
 
     useEffect(() => {
         const recentlyViewedIds: number[] = getItemFromLocalStorage("recentlyViewed")
@@ -68,11 +76,11 @@ const CartPageOfProduct = () => {
                 <section className="cart-page__section">
                     <div className="container">
                         <NavigationText />
-                        <DescriptionProduct id={+id} rating={ring.raiting} />
+                        <DescriptionProduct id={+id} rating={ring?.raiting} />
                         <CartPageCart
-                            imgSrc={ring.imgSrc}
-                            price={ring.price}
-                            priceSale={ring.priceSale}
+                            imgSrc={ring?.imgSrc}
+                            price={ring?.price}
+                            priceSale={ring?.priceSale}
                             onClick={addBasket}
                         />
                         <CartPageTab />

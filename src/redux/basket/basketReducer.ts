@@ -3,8 +3,6 @@ import { Ring } from "../rings/ringsReducerTypes"
 /* import basket from "../../assets/images/basket-1.png" */
 
 import { RootState } from "../rootReducer";
-import { dispatch } from "../store"
-
 
 export type BasketRing = {
     ring: Ring,
