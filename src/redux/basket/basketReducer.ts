@@ -3,6 +3,7 @@ import { Ring } from "../rings/ringsReducerTypes"
 /* import basket from "../../assets/images/basket-1.png" */
 
 import { RootState } from "../rootReducer";
+import { dispatch } from "../store"
 
 
 export type BasketRing = {
@@ -85,6 +86,12 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
     switch (action.type) {
 
         case ActionsTypes.add: {
+
+            const is = state.find(item => item.ring.id === action.payload.ring.id)
+
+            if (is) {
+                return incrementCount(state, action.payload.ring.id)
+            }
             return [...state, action.payload]
         }
 
@@ -93,30 +100,16 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
         }
 
         case ActionsTypes.removeOne: {
-            const newState = [...state].filter(item => item.ring.id !== action.payload)
+            const newState = state.filter(item => item.ring.id !== action.payload)
             return newState
         }
 
         case ActionsTypes.decrementCount: {
-            const newState = state.filter(item => {
-                if (item.ring.id === action.payload) {
-                    if (item.defaultCount > 0) {
-                        item.defaultCount--
-                    }
-                }
-                return item
-            })
-            return newState
+            return decrementCount(state, action.payload)
         }
 
         case ActionsTypes.incrementCount: {
-            const newState = state.filter(item => {
-                if (item.ring.id === action.payload) {
-                    item.defaultCount++
-                }
-                return item
-            })
-            return newState
+            return incrementCount(state, action.payload)
         }
 
         default:
@@ -124,6 +117,26 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
     }
 }
 
+function incrementCount(state: BasketRing[], id: number) {
+    return state.map(item => {
+        if (item.ring.id === id) {
+            item.defaultCount++
+        }
+        return item
+    })
+}
+
+function decrementCount(state: BasketRing[], id: number) {
+    const newState = state.map(item => {
+        if (item.ring.id === id) {
+            if (item.defaultCount > 0) {
+                item.defaultCount--
+            }
+        }
+        return item
+    })
+    return newState
+}
 // selects
 
 export const selectRingsFromBasket = (state: RootState): BasketRing[] => state.basket
