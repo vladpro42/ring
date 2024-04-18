@@ -30,6 +30,15 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
         setTagsActive([...tagsActive, tag])
     }
 
+    const resetFilters = () => {
+
+        //default value
+        dispatch(filterByPriceCreator(arrayValues2[0].val))
+        setPriceActive(0)
+        dispatch(changeInsertsCreator('with'))
+        setInsert(0)
+        setTagsActive([])
+    }
     return (
         <div className={["filter-mobile", className].join(' ')}>
             <div className="filter-mobile__header">
@@ -37,7 +46,7 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
                     <BtnClose />
                 </button>
                 <p className="filter-mobile__text">Фильтры</p>
-                <button className='filter-mobile__btn-reset'>Сбросить</button>
+                <button onClick={resetFilters} className='filter-mobile__btn-reset'>Сбросить</button>
             </div>
             <ul className="filter-mobile__list-filters">
                 <li className="filter-mobile__item">
