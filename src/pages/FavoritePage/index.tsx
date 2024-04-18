@@ -5,23 +5,20 @@ import Header from "../../components/header"
 import picture from "../../assets/images/catalo-sale.jpg"
 import ProductCart from "../../components/ProductCart"
 
-import { Ring } from "../../redux/rings/ringsReducerTypes"
 
 import "./favoritePage.scss"
 import Pagination from "../../components/Pagination/"
 import { useState } from "react"
 import { ScrollRestoration } from "react-router-dom"
+import { getItemFromLocalStorage } from "../../utils"
+import { useAppSelector } from "../../hooks/redux/hooks"
+import { selectRingByIds } from "../../redux/rings/ringsReducer"
 
 const FavoritePage = () => {
 
-    const getInitialStateFromLocalStorage = (key: string) => {
-        const ringsJSON = localStorage.getItem(key)
-        if (ringsJSON) {
-            return JSON.parse(ringsJSON)
-        }
-        return []
-    }
-    const [rings] = useState<Ring[]>(() => getInitialStateFromLocalStorage("favoriteRings"))
+
+    const [ringsIds] = useState<number[]>(() => getItemFromLocalStorage("favoriteRings"))
+    const rings = useAppSelector(state => selectRingByIds(state, ringsIds))
 
     return (
         <>

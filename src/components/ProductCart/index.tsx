@@ -5,10 +5,18 @@ import { Rating2 } from "../../components/Raiting/index"
 import { memo } from "react"
 import { useFavorite } from "../../hooks/UseFavorite/useFavorite"
 
-const ProductCart = memo(({ cart, to, className }: { cart: Ring, to?: number | string, className?: string }) => {
+type Props = {
+    cart: Ring,
+    to?: number | string,
+    className?: string
+}
+
+const ProductCart = memo(({ cart, to, className }: Props) => {
 
     const location = useLocation()
     const url = location.pathname.split('/')[1]
+
+    console.log(cart)
 
 
     const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', cart.id)
