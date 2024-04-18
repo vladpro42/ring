@@ -1,6 +1,7 @@
 @import "../../scss/variable";
 
 .header {
+    position: relative;
 
     .header__bg {
         background-color: rgb(158, 175, 194, 0.2)
@@ -111,6 +112,7 @@
         margin-right: 30px;
         height: 20px;
         padding-left: 5px;
+        background: transparent;
     }
 
     &__search-input::placeholder {
@@ -239,7 +241,7 @@
 }
 
 .modal {
-    
+
 
     .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
         background-color: var(--color-bg) !important;
@@ -374,6 +376,47 @@
     background-color: var(--bg-footer);
 }
 
+.search {
+    max-width: 335px;
+    margin: 0 auto;
+
+    &--none {
+        display: none;
+    }
+
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__label {
+        border: 1px solid var(--color-blue);
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        padding: 20px 15px 20px 20px;
+        height: 100%;
+        border: none;
+        outline: none;
+    }
+
+    &__btn-clear {
+        padding-right: 15px;
+    }
+
+    &__btn {
+        border: 1px solid var(--color-blue);
+        border-left: none;
+        height: 100%;
+        padding: 20px 23px;
+        text-transform: uppercase;
+        @extend %osr;
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 1250px) {
     .header__item {
@@ -381,7 +424,7 @@
     }
 
     .header__search--mobile {
-        display: block;
+        display: flex;
     }
 
     .header__inner {

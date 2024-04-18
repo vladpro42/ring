@@ -39,11 +39,11 @@ const RecentlyViewed = () => {
                 </ul>
                 <ul className="new-items__slider--mobile">
 
-                    {slides.map(cart => <ProductCart 
-                    className={'recently-viewed'}
-                    key={cart.id} 
-                    to={`/catalog-weddingRings/${cart.id}`} 
-                    cart={cart} />)}
+                    {slides.map(cart => <ProductCart
+                        className={'recently-viewed'}
+                        key={cart.id}
+                        to={`/catalog-weddingRings/${cart.id}`}
+                        cart={cart} />)}
                 </ul>
             </div>
         </section>
