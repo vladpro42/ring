@@ -16,8 +16,6 @@ const ProductCart = memo(({ cart, to, className }: Props) => {
     const location = useLocation()
     const url = location.pathname.split('/')[1]
 
-    console.log(cart)
-
 
     const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', cart.id)
 

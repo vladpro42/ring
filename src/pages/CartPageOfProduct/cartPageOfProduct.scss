@@ -619,8 +619,6 @@
         display: block;
     }
 
-    .cart-page__reviews-cart {}
-
     .cart-page__reviews {
         flex-direction: column;
         gap: 30px 0;
@@ -701,6 +699,11 @@
 
     .cart-page__reviews-cart--desktop {
         display: none;
+    }
+
+    .new-items__slider--mobile {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 

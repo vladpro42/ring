@@ -18,25 +18,6 @@ export type Comment = {
     rating: number
 }
 
-
-
-// const comments: Comments[] = [
-//     {
-//         id: 1,
-//         title: "Андрей и Екатерина",
-//         text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
-//         data: '29.10.2017',
-//         imgSrc: [reviewImg1, reviewImg2, reviewImg3, reviewImg4]
-//     },
-//     {
-//         id: 1,
-//         title: "Андрей и Екатерина",
-//         text: `Долго искали обручальные кольца. Тут нам не навязывали ничего, мы просто выбрали. Всё приятно. Кольцами очень довольны.`,
-//         data: '29.10.2017',
-//         imgSrc: []
-//     },
-// ]
-
 const CartPageTab = () => {
 
     const keyTab = { description: 'description', review: 'review' }
@@ -71,6 +52,7 @@ const CartPageTab = () => {
     }, [])
 
     const width = document.documentElement.clientWidth < 912
+    
     const PC = keyTab.description === tab ? (<Description />) : <>
         <Reviews comments={comments} />
         <FormComments />
@@ -83,7 +65,7 @@ const CartPageTab = () => {
         <FormComments />
     </>
 
-  
+
 
 
     if (!comments) {
@@ -107,7 +89,7 @@ const CartPageTab = () => {
                     "cart-page__description-btn cart-page__description-btn--active" :
                     "cart-page__description-btn"}
             >
-                ОТЗЫВЫ (2)
+                ОТЗЫВЫ ({comments.length})
             </button>
         </div>
         <picture>
