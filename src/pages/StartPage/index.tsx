@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import "./start-page.scss"
 
 import { useAppSelector } from "../../hooks/redux/hooks";
-import { selectArrRings, selectRingByIds, selectRingsStatus } from "../../redux/rings/ringsReducer";
+import { selectAllRingsMemo, selectByIdsMemo, selectRingsStatus } from "../../redux/rings/ringsReducer";
 import Spinner from "../../components/Spinner";
 import ProductCart from "../../components/ProductCart";
 
@@ -37,13 +37,14 @@ const StartPage = () => {
     };
 
     const status = useAppSelector(selectRingsStatus)
-    const rings = useAppSelector(selectArrRings)
+    const rings = useAppSelector(selectAllRingsMemo)
 
     // Новинки
     const ringIds = [1, 2, 3, 4]
     const [showNewRings, setShowNewRings] = useState(6)
     const isShowNewRings = showNewRings >= rings.length
-    const slides = useAppSelector(state => selectRingByIds(state, ringIds))
+
+    const slides = useAppSelector(state => selectByIdsMemo(state, ringIds))
 
 
     const showMoreNewRing = () => {

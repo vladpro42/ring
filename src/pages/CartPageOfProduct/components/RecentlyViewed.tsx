@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppSelector } from '../../../hooks/redux/hooks'
-import { selectRingByIds } from '../../../redux/rings/ringsReducer'
+import { selectByIdsMemo } from '../../../redux/rings/ringsReducer'
 import { getItemFromLocalStorage } from '../../../utils'
 
 import 'swiper/css/scrollbar'
@@ -14,7 +14,8 @@ import ProductCart from '../../../components/ProductCart'
 const RecentlyViewed = () => {
 
     const [ringIds] = useState<number[]>(() => getItemFromLocalStorage("recentlyViewed"))
-    const slides = useAppSelector(state => selectRingByIds(state, ringIds))
+    const slides = useAppSelector((state) => selectByIdsMemo(state, ringIds))
+
 
     return (
         <section className='new-items'>
