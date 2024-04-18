@@ -551,6 +551,20 @@
     }
 }
 
+.new-items__slider--mobile {
+    justify-content: center;
+}
+
+.recently-viewed {
+    width: auto;
+    height: auto;
+    padding: 10px;
+
+    .new-items__slide-item {
+        grid-template-columns: auto;
+    }
+}
+
 @media (max-width: 1250px) {
     .cart-page__cart {
         display: grid;

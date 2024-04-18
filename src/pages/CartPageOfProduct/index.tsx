@@ -16,12 +16,14 @@ import { useCallback, useEffect } from "react"
 import { RootState } from "../../redux/rootReducer"
 import Spinner from "../../components/Spinner"
 import { getItemFromLocalStorage } from "../../utils"
+import RecentlyViewed from "./components/RecentlyViewed"
 
 const CartPageOfProduct = () => {
 
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();
+    console.log(id)
     const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id))) || null
     const navigate = useNavigate()
 
@@ -84,7 +86,7 @@ const CartPageOfProduct = () => {
                             onClick={addBasket}
                         />
                         <CartPageTab />
-                        {/*<RecentlyViewed /> */}
+                        <RecentlyViewed />
                     </div>
                 </section>
             </main >

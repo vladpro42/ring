@@ -183,6 +183,10 @@
         justify-content: center;
     }
 
+    &__slider--mobile {
+        display: none;
+    }
+
     &__slide-item {
         display: flex;
         justify-content: space-between;
@@ -380,6 +384,8 @@
         justify-content: center;
     }
 
+
+
     .new-items__show-more {
         display: flex;
         margin: 50px auto 100px;
@@ -411,6 +417,15 @@
     .catalog__menu-link {
         padding: 20px 70px;
         width: 334px;
+    }
+
+    .new-items__slider {
+        display: none;
+    }
+
+    .new-items__slider--mobile {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
