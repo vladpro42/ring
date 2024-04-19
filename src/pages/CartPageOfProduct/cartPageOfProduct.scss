@@ -535,6 +535,18 @@
         display: none;
     }
 
+    .cart-page__show-more--disable {
+        color: var(--color-gray);
+
+        & .new-items__shape path {
+            stroke: var(--color-gray);
+        }
+
+        &:hover {
+            color: var(--color-gray)
+        }
+    }
+
     &__form-title {
         @extend %rr;
         font-size: 20px;
@@ -563,6 +575,14 @@
     .new-items__slide-item {
         grid-template-columns: auto;
     }
+}
+
+.db {
+    display: block;
+}
+
+.dn {
+    display: none;
 }
 
 @media (max-width: 1250px) {

@@ -1,6 +1,6 @@
 
-const Description = () => {
-    return (<>
+const Description = ({ className }: { className: string }) => {
+    return (<div className={className}>
         <h4 className="cart-page__content-title">ОПИСАНИЕ</h4>
         <div className="cart-page__content">
             <p className="cart-page__content-text">
@@ -16,7 +16,7 @@ const Description = () => {
                 Такие кольца обязательно понравятся тем, кто ищет что-то классическое и в то же время особенное, не такое, как у всех!
             </p>
         </div>
-    </>
+    </div>
     )
 }
 

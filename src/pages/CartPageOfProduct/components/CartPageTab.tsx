@@ -51,23 +51,6 @@ const CartPageTab = () => {
         getComments().then((data: Comment[]) => setComments(data))
     }, [])
 
-    const width = document.documentElement.clientWidth < 912
-    
-    const PC = keyTab.description === tab ? (<Description />) : <>
-        <Reviews comments={comments} />
-        <FormComments />
-    </>
-
-    const Mobile = <>
-        <Description />
-        <Reviews comments={comments} />
-        <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
-        <FormComments />
-    </>
-
-
-
-
     if (!comments) {
         return <div>Loading...</div>
     }
@@ -96,7 +79,12 @@ const CartPageTab = () => {
             <source srcSet='/images/banner-mobile.jpg' media="(max-width: 992px)" />
             <img className="cart-page__sale-img" src={sale} alt="" />
         </picture>
-        {width ? Mobile : PC}
+
+        <Description className={keyTab.description === tab ? "db" : "dn"} />
+        <Reviews className={keyTab.review === tab ? "db" : "dn"} comments={comments} />
+        <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} />
+        <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
+        <FormComments />
 
     </div>
 
