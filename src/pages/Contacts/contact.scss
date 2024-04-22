@@ -102,3 +102,30 @@
         background-color: var(--color-accent);
     }
 }
+
+@media (max-width: 1250px) {
+    .contact-main .header__bg {
+        display: none;
+    }
+
+    .header__item-link .item-link__map {
+        display: block;
+    }
+
+    .contact-main__img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .contact-main__inner {
+        margin-bottom: 80px;
+    }
+
+    .contact-main {
+        margin-bottom: 100px;
+    }
+}
