@@ -7,7 +7,16 @@ import "swiper/css/scrollbar"
 
 const SwiperTwo = ({ images }: { images: string[] }) => {
     return (
-        <Swiper modules={[Scrollbar]} slidesPerView={3} scrollbar={{ draggable: true }}>
+        <Swiper
+            breakpoints={{
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 0
+                }
+            }}
+            modules={[Scrollbar]}
+            slidesPerView={1}
+            scrollbar={{ draggable: true }}>
             {images.map((item, index) => {
 
                 const arr = item.split("/")
