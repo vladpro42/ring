@@ -82,7 +82,7 @@ const CartPageTab = () => {
 
         <Description className={keyTab.description === tab ? "db" : "dn"} />
         <Reviews className={keyTab.review === tab ? "db" : "dn"} comments={comments} />
-        <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} />
+       {/*  <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} /> */}
         <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
         <FormComments />
 

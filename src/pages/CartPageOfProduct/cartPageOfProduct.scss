@@ -725,6 +725,10 @@
         display: flex;
         flex-wrap: wrap;
     }
+
+    .dn {
+        display: block;
+    }
 }
 
 @media (max-width: 576px) {
