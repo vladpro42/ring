@@ -22,3 +22,25 @@
         margin-top: 14.5px;
     }
 }
+
+@media (max-width: 1000px) {
+    .politics___title {
+        text-align: center;
+    }
+
+    .politics {
+        margin-bottom: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .politics___title {
+        font-size: 20px;
+        line-height: 35px;
+        letter-spacing: 1px;
+    }
+
+    .politics {
+        margin-bottom: 80px;
+    }
+}
