@@ -16,13 +16,14 @@ import { useCallback, useEffect } from "react"
 import { RootState } from "../../redux/rootReducer"
 import Spinner from "../../components/Spinner"
 import { getItemFromLocalStorage } from "../../utils"
+import RecentlyViewed from "./components/RecentlyViewed"
 
 const CartPageOfProduct = () => {
 
     const dispatch = useAppDispatch()
     const status = useAppSelector((state: RootState) => state.rings.status)
     const { id } = useParams();
-    const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id)))
+    const ring = useAppSelector((state: RootState) => selectRingById(state, Number(id))) || null
 
     const addBasket = useCallback(() => {
 
@@ -35,6 +36,8 @@ const CartPageOfProduct = () => {
 
         dispatch(addBasketCreator(payload))
     }, [ring, dispatch])
+
+
 
     useEffect(() => {
         const recentlyViewedIds: number[] = getItemFromLocalStorage("recentlyViewed")
@@ -68,15 +71,15 @@ const CartPageOfProduct = () => {
                 <section className="cart-page__section">
                     <div className="container">
                         <NavigationText />
-                        <DescriptionProduct id={+id} rating={ring.raiting} />
+                        <DescriptionProduct id={+id} rating={ring?.raiting} />
                         <CartPageCart
-                            imgSrc={ring.imgSrc}
-                            price={ring.price}
-                            priceSale={ring.priceSale}
+                            imgSrc={ring?.imgSrc}
+                            price={ring?.price}
+                            priceSale={ring?.priceSale}
                             onClick={addBasket}
                         />
                         <CartPageTab />
-                        {/*<RecentlyViewed /> */}
+                        <RecentlyViewed />
                     </div>
                 </section>
             </main >

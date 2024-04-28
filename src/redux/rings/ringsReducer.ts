@@ -98,6 +98,10 @@ export const selectArrRings = (state: RootState) => {
     }
 }
 
+export const selectAllRingsMemo = createSelector([selectAllRings], (rings) => {
+    return Object.values(rings)
+})
+
 export const selectRings = createSelector(selectAllRings, (rings) => {
     if (rings) {
         return Object.values(rings)
@@ -106,12 +110,20 @@ export const selectRings = createSelector(selectAllRings, (rings) => {
     }
 })
 
+
 export const selectRingById = (state: RootState, ringId: number) => {
     return selectAllRings(state)[ringId]
 }
 
+export const selectRingByIdsMemo = (_: RootState, ids: number[]) => ids
+
+export const selectByIdsMemo = createSelector([selectAllRings, selectRingByIdsMemo], (rings, ids) => {
+    const res = ids.map(id => rings[id])
+    return res
+})
+
 export const selectRingByIds = (state: RootState, ringIds: number[]) => {
-    
+
     const result = ringIds.map(id => selectAllRings(state)[id])
     return result
 }

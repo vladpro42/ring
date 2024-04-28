@@ -85,3 +85,16 @@
     }
 
 }
+
+@media (max-width: 1200px) {
+    .main-about__inner {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header__items {
+        display: none;
+    }
+}
+
+

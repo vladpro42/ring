@@ -1,7 +1,6 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 
-
 import map from "../../assets/images/map.svg"
 import mail from "../../assets/images/mail.svg"
 import facebook from "../../assets/images/facebook.svg"
@@ -43,8 +42,8 @@ const ContactsPage = () => {
                                                 <img src={map} alt="" />
                                                 Москва, Большой Кисловский переулок, 5-7с1
                                             </a>
-                                            <a href="mailto:info@art-rings.ru" className="header__item-link">
-                                                <img src={mail} alt="" />
+                                            <a href="mailto:info@art-rings.ru" className="header__item-link item-link__map">
+                                                <img className="contact-main__img-map" src={mail} alt="" />
                                                 info@art-rings.ru
                                             </a>
                                         </li>

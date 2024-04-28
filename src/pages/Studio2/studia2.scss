@@ -3,8 +3,6 @@
 .studio {
     padding: 100px 0 0;
 
-
-
     &__title {
         @extend %rr;
         font-size: 45px;
@@ -58,5 +56,23 @@
         position: static;
         max-width: 1330px;
         margin: 20px auto 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .studio__inner {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .studio__slide img {
+        width: 100%;
+    }
+
+    .studio__slide {
+        width: initial;
+        height: initial;
     }
 }
