@@ -78,3 +78,73 @@
         max-width: 870px;
     }
 }
+
+@media (max-width: 1200px) {
+    .wear__title {
+        text-align: center;
+    }
+
+    .wear__top {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .wear__text-box {
+        order: 2;
+        max-width: initial;
+    }
+
+    .wear__list-text {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .wear__item {
+        gap: 0 10px;
+    }
+
+    .wear__item-text--down {
+        max-width: initial;
+    }
+
+    .wear__section {
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wear__img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .wear__title {
+        font-size: 20px;
+        line-height: 35px;
+        letter-spacing: 1px;
+    }
+
+    .wear__item {
+        gap: 0 5px;
+    }
+
+    .wear__item span {
+        margin-right: 0;
+    }
+
+    .wear__item-text {
+        font-size: 14px;
+    }
+
+    .wear__text {
+        font-size: 14px;
+    }
+
+    .wear__section {
+        margin-bottom: 80px;
+    }
+}
