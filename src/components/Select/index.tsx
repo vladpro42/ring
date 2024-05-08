@@ -15,7 +15,7 @@ const Select = ({ gender, }: Props) => {
     const [value, setValue] = useState(14)
     const [isActive, setIsActive] = useState(false)
 
-    const offset = useCustomScroll()
+    const { offsetY: offset, offsetYMobile } = useCustomScroll()
 
     const handleValueClick = (item: number) => {
         setValue(item)
@@ -28,6 +28,8 @@ const Select = ({ gender, }: Props) => {
 
     const maxOffSet = 118
     const max = offset <= maxOffSet
+
+    const maxMobile = offsetYMobile <= maxOffSet
 
     return (
         <div className="select">
