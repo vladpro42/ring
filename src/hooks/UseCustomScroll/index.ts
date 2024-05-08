@@ -79,7 +79,7 @@ export const useCustomScroll: UseCustomScroll = () => {
             window.removeEventListener("mouseup", handleSpanMouseUp);
             window.removeEventListener("mousemove", handleSpanMouseMove);
         }
-    }, [handleSpanMouseDown, handleSpanMouseUp, handleSpanMouseMove])
+    }, [handleSpanMouseDown, handleSpanMouseUp, handleSpanMouseMove, handleTouchStart, handleTouchEnd, handleTouchMove])
 
     useEffect(() => {
         window.addEventListener("mousedown", handleSpanMouseDown);
