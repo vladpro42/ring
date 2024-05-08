@@ -1,0 +1,243 @@
+@import "../../scss/variable";
+
+body:has(.burger--active) {
+    overflow-y: hidden;
+}
+
+.burger {
+    overflow-y: scroll;
+    padding-top: 60px;
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-footer);
+    width: 100%;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in;
+
+    &--active {
+        transform: translateX(0%);
+    }
+
+    &__container {
+        max-width: 1350px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__close {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__logo {
+        width: 218px;
+        height: 130px;
+        display: block;
+        margin-inline: auto;
+        margin-bottom: 60px;
+    }
+
+    &__logo-img {
+        width: inherit;
+    }
+
+    &__nav {
+        margin-bottom: 120px;
+    }
+
+    &__nav-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+
+    &__nav-item {}
+
+    &__nav-link {
+        @extend %rr;
+        font-size: 30px;
+        color: var(--color-black);
+    }
+
+    &__mobile-list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px 0;
+        margin-bottom: 20px;
+    }
+
+    &__mobile-item {}
+
+    &__mobile-link {
+
+        @extend %rr;
+        font-size: 22px;
+        color: var(--color-black);
+        opacity: 0.7;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-around;
+        border-top: 2px solid var(--color-blue);
+        padding-top: 60px;
+    }
+
+    &__footer-list {}
+
+    &__footer-list--social {
+        min-height: 120px;
+    }
+
+    &__footer-item {}
+
+    &__footer-item+&__footer-item {
+        margin-top: 5px;
+    }
+
+    &__footer-link {
+        @extend %osr;
+        font-size: 14px;
+        color: var(--color-black);
+    }
+
+    &__footer-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__social-list {
+        display: flex;
+        align-items: center;
+        gap: 0 7px;
+    }
+
+    &__contacts {
+        margin-bottom: 53px;
+        display: none;
+    }
+
+    &__contacts-title {
+        @extend %osr;
+        font-size: 14px;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0 25px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__wrapper-box {}
+
+    &__wrapper-link {
+        @extend %osr;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--color-black);
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    &__wrapper-email {
+        margin-top: 23px;
+        @extend %osl;
+        line-height: 120%;
+        font-size: 12px;
+    }
+
+    &__wrapper-map {
+        @extend %osl;
+        line-height: 120%;
+        font-size: 12px;
+        margin-bottom: 10px;
+        display: inline-block;
+        max-width: 155px;
+    }
+
+    &__wrapper-schedule {
+        line-height: 120%;
+        font-size: 12px;
+        @extend %osl;
+        display: block;
+    }
+
+    &__wrapper-schedule+&__wrapper-schedule {
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .burger__footer {
+        gap: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .burger__logo {
+        width: 98px;
+        height: 58px;
+        margin-bottom: 22px;
+    }
+
+    .burger__close svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .burger__footer-box {
+        width: 100%;
+    }
+
+    .burger__mobile-list {
+        display: flex;
+    }
+
+    .burger__nav-list {
+        display: none;
+    }
+
+    .burger__nav {
+        margin-bottom: 0;
+    }
+
+    .burger__footer {
+        border: none;
+        padding-top: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 25px;
+    }
+
+    .burger__footer-link {
+        font-size: 12px;
+    }
+
+    .burger__footer-list--mobile {
+        width: 95px;
+    }
+
+    .burger__social-list {
+        display: none;
+    }
+
+    .burger__contacts {
+        display: block;
+    }
+}
