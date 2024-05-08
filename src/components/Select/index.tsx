@@ -15,7 +15,7 @@ const Select = ({ gender, }: Props) => {
     const [value, setValue] = useState(14)
     const [isActive, setIsActive] = useState(false)
 
-    const offset = useCustomScroll()
+    const { offsetY: offset } = useCustomScroll()
 
     const handleValueClick = (item: number) => {
         setValue(item)
