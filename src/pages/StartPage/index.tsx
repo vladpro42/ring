@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import "./start-page.scss"
 
 import { useAppSelector } from "../../hooks/redux/hooks";
-import { selectAllRingsMemo, selectByIdsMemo, selectRingsStatus } from "../../redux/rings/ringsReducer";
+import { selectAllRingsMemo, selectByIdsMemo, selectRingsStatus } from "../../redux/rings/ringsSelects";
 import Spinner from "../../components/Spinner";
 import ProductCart from "../../components/ProductCart";
 

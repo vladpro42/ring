@@ -16,8 +16,8 @@ import {
     incrementCountCreator,
     removeAllCreators,
     removeOneCreator,
-    selectRingsFromBasket
-} from '../../redux/basket/basketReducer'
+} from '../../redux/basket/basketActions'
+import { selectRingsFromBasket } from '../../redux/basket/basketSelectors'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/hooks'
 import { ScrollRestoration } from 'react-router-dom'
 

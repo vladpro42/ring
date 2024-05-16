@@ -4,7 +4,7 @@ import { ArrayValues2, arrayValues2 } from '../../../../assets/data/Prices'
 import { useState } from 'react'
 import { ScrollRestoration } from 'react-router-dom'
 import { useAppDispatch } from '../../../../hooks/redux/hooks'
-import { changeInsertsCreator, filterByPriceCreator } from '../../../../redux/filter/filterReducer'
+import { changeInsertsCreator, filterByPriceCreator } from '../../../../redux/filter/filterActions'
 
 const FilterMobile = ({ onClose, className }: { onClose: () => void, className: string }) => {
 

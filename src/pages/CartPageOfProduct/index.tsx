@@ -8,8 +8,9 @@ import CartPageTab from "./components/CartPageTab"
 import { ScrollRestoration, useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"
 
-import { selectRingById } from "../../redux/rings/ringsReducer"
-import { BasketRing, addBasketCreator } from "../../redux/basket/basketReducer"
+import { selectRingById } from "../../redux/rings/ringsSelects"
+import { addBasketCreator } from "../../redux/basket/basketActions"
+import { BasketRing } from "../../redux/basket/basketTypes"
 
 import "./cartPageOfProduct.scss"
 import { useCallback, useEffect } from "react"

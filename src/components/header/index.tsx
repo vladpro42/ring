@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.png"
 
 import { Link } from 'react-router-dom'
 import { useAppSelector } from "../../hooks/redux/hooks"
-import { selectRingsFromBasketLength } from "../../redux/basket/basketReducer"
+import { selectRingsFromBasketLength } from "../../redux/basket/basketSelectors"
 import { getItemFromLocalStorage } from "../../utils"
 import UserActionsLinks from "./components/UserActionsLinks"
 import HeaderSearch from "./components/HeaderSearch"

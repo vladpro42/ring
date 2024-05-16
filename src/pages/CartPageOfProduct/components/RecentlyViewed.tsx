@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppSelector } from '../../../hooks/redux/hooks'
-import { selectByIdsMemo } from '../../../redux/rings/ringsReducer'
+import { selectByIdsMemo } from '../../../redux/rings/ringsSelects'
 import { getItemFromLocalStorage } from '../../../utils'
 
 import 'swiper/css/scrollbar'

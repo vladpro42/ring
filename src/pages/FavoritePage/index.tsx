@@ -12,7 +12,7 @@ import { useState } from "react"
 import { ScrollRestoration } from "react-router-dom"
 import { getItemFromLocalStorage } from "../../utils"
 import { useAppSelector } from "../../hooks/redux/hooks"
-import { selectRingByIds, selectRingsStatus } from "../../redux/rings/ringsReducer"
+import { selectRingByIds, selectRingsStatus } from "../../redux/rings/ringsSelects"
 import usePagination from "../../hooks/UsePagination/index"
 import Spinner from "../../components/Spinner"
 

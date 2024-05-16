@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
-import { changeContentPerPageCreator } from "../../../../redux/filter/filterReducer"
+import { changeContentPerPageCreator } from "../../../../redux/filter/filterActions"
 
 const SortRaiting = () => {
     const dispatch = useAppDispatch()
