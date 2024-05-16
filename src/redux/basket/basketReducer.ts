@@ -1,83 +1,8 @@
-import { Ring } from "../rings/ringsReducerTypes"
-
-/* import basket from "../../assets/images/basket-1.png" */
-
-import { RootState } from "../rootReducer";
-
-export type BasketRing = {
-    ring: Ring,
-    model: number,
-    defaultCount: number,
-    sizeMale?: number,
-    sizeFemale?: number,
-}
-
-const initialState: BasketRing[] = [
-    /*  {
-         ring: {
-             id: 1,
-             imgSrc: basket,
-             price: 59600,
-             priceSale: 59600,
-             raiting: 5,
-         },
-         model: 1,
-         defaultCount: 100,
-         sizeFemale: 14,
-         sizeMale: 14,
-     },
-     {
-         ring: {
-             id: 2,
-             imgSrc: basket,
-             price: 59600,
-             priceSale: 59600,
-             raiting: 5,
-         },
-         model: 1,
-         defaultCount: 100,
-         sizeFemale: 14,
-         sizeMale: 14,
-     }, */
-]
-
-enum ActionsTypes {
-    add = 'basket/addRing',
-    removeOne = 'basket/removeRing',
-    removeAll = 'basket/removeAll',
-    incrementCount = 'basket/incrementCount',
-    decrementCount = 'basket/decrementCount'
-}
+import { decrementCount, incrementCount } from "./basketFeatures";
+import { ActionsTypes, BasketRing, PayloadAction } from "./basketTypes";
 
 
-type AddBasket = {
-    type: ActionsTypes.add,
-    payload: BasketRing,
-}
-
-type RemoveOne = {
-    type: ActionsTypes.removeOne,
-    payload: number
-}
-
-type RemoveAll = {
-    type: ActionsTypes.removeAll,
-}
-
-type incrementCount = {
-    type: ActionsTypes.incrementCount;
-    payload: number
-}
-
-type decrementCount = {
-    type: ActionsTypes.decrementCount;
-    payload: number
-}
-
-
-
-type PayloadAction = AddBasket | RemoveOne | RemoveAll | incrementCount | decrementCount
-
+const initialState: BasketRing[] = []
 
 
 export const basketReducer = (state = initialState, action: PayloadAction) => {
@@ -115,54 +40,6 @@ export const basketReducer = (state = initialState, action: PayloadAction) => {
     }
 }
 
-function incrementCount(state: BasketRing[], id: number) {
-    return state.map(item => {
-        if (item.ring.id === id) {
-            item.defaultCount++
-        }
-        return item
-    })
-}
-
-function decrementCount(state: BasketRing[], id: number) {
-    const newState = state.map(item => {
-        if (item.ring.id === id) {
-            if (item.defaultCount > 0) {
-                item.defaultCount--
-            }
-        }
-        return item
-    })
-    return newState
-}
-// selects
-
-export const selectRingsFromBasket = (state: RootState): BasketRing[] => state.basket
-export const selectRingsFromBasketLength = (state: RootState): number => state.basket.length
 
 
-// action creators 
 
-export const addBasketCreator = (payload: BasketRing) => ({
-    type: ActionsTypes.add,
-    payload
-})
-
-export const removeOneCreator = (payload: number) => ({
-    type: ActionsTypes.removeOne,
-    payload,
-})
-
-export const removeAllCreators = () => ({
-    type: ActionsTypes.removeAll
-})
-
-export const decrementCountCreator = (id: number): decrementCount => ({
-    type: ActionsTypes.decrementCount,
-    payload: id,
-})
-
-export const incrementCountCreator = (id: number): incrementCount => ({
-    type: ActionsTypes.incrementCount,
-    payload: id,
-})

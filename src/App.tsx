@@ -1,24 +1,14 @@
 import './scss/style.scss'
 import "./pages/StartPage/start-page.scss"
 
-import CatalogPage from './pages/catalog'
-import StartPage from './pages/StartPage'
 
-import CartPageOfProduct from './pages/CartPageOfProduct'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import BasketPage from './pages/BasketPage'
-import FavoritePage from './pages/FavoritePage'
-import MakeAnOrder from './pages/MakeAnOrder'
-import HowToChoose from './pages/HowToChoose'
-import DiamondAsAGift from './pages/DiamondAsAGift'
-import ContactsPage from './pages/Contacts'
-import WearAnEngagementRing from './pages/WearAnEngagementRing'
-import AboutPage from './pages/AboutPage'
-import NotFoundPage from './pages/NotFoundPage'
-import Delivery from './pages/Delivery'
-import GuaranteePage from './pages/GaranteePage'
-import Studio2Page from './pages/Studio2'
-import PoliticsPage from './pages/PoliticsPage'
+
+import Pages from "./pages"
+
+import { useEffect } from 'react'
+import { fetchRings } from './redux/rings/ringsThunk'
+import { useAppDispatch } from './hooks/redux/hooks'
 
 
 const weddingRings = {
@@ -39,90 +29,87 @@ const weddingDuets = {
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <StartPage />,
+        element: <Pages.StartPage />,
     },
     {
         path: '/catalog-weddingRings',
-        element: <CatalogPage {...weddingRings} />,
+        element: <Pages.CatalogPage {...weddingRings} />,
     },
     {
         path: '/catalog-weddingRings/:id',
-        element: <CartPageOfProduct />,
+        element: <Pages.CartPageOfProduct />,
     },
     {
         path: '/catalog-engagementRings',
-        element: <CatalogPage {...engagementRings} />,
+        element: <Pages.CatalogPage {...engagementRings} />,
     },
     {
         path: '/catalog-engagementRings/:id',
-        element: <CartPageOfProduct />,
+        element: <Pages.CartPageOfProduct />,
     },
     {
         path: '/catalog-weddingDuets',
-        element: <CatalogPage {...weddingDuets} />,
+        element: <Pages.CatalogPage {...weddingDuets} />,
     },
     {
         path: '/catalog-weddingDuets/:id',
-        element: <CartPageOfProduct />,
+        element: <Pages.CartPageOfProduct />,
     },
     {
         path: '/basket',
-        element: <BasketPage />
+        element: <Pages.BasketPage />
     },
     {
         path: 'favorite',
-        element: <FavoritePage />
+        element: <Pages.FavoritePage />
     },
     {
         path: 'make-an-order',
-        element: <MakeAnOrder />
+        element: <Pages.MakeAnOrder />
     },
     {
         path: 'diamond-as-a-gift',
-        element: <DiamondAsAGift />
+        element: <Pages.DiamondAsAGift />
     },
     {
         path: 'how-to-choose',
-        element: <HowToChoose />
+        element: <Pages.HowToChoose />
     },
     {
         path: 'contacts',
-        element: <ContactsPage />
+        element: <Pages.ContactsPage />
     },
     {
         path: 'wear-an-engagement-ring',
-        element: <WearAnEngagementRing />
+        element: <Pages.WearAnEngagementRing />
     },
     {
         path: 'about',
-        element: <AboutPage />
+        element: <Pages.AboutPage />
     },
     {
         path: 'delivery',
-        element: <Delivery />
+        element: <Pages.Delivery />
     },
     {
         path: 'guarantee',
-        element: <GuaranteePage />
+        element: <Pages.GuaranteePage />
     },
     {
         path: 'studio-two',
-        element: <Studio2Page />
+        element: <Pages.Studio2Page />
     },
     {
         path: 'politics',
-        element: <PoliticsPage />
+        element: <Pages.PoliticsPage />
     },
     {
         path: '/*',
-        element: <NotFoundPage />
+        element: <Pages.NotFoundPage />
     },
 
 ])
 
-import { useEffect } from 'react'
-import { fetchRings } from './redux/rings/ringsReducer'
-import { useAppDispatch } from './hooks/redux/hooks'
 
 function App() {
 
@@ -134,8 +121,7 @@ function App() {
 
     return (
         <div>
-            <RouterProvider router={router} >
-            </RouterProvider>
+            <RouterProvider router={router} />
         </div>
     )
 
