@@ -1,97 +1,98 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { UseCustomScroll } from "./types";
 
-
-
-export type UseCustomScrollProps = {
-    setOffsetY: React.Dispatch<React.SetStateAction<number>>
-    offsetY: number,
-}
-
-export type UseCustomScrollReturn = { offsetY: number, offsetYMobile: number }
-
-
-export type UseCustomScroll = () => UseCustomScrollReturn
-
-export const useCustomScroll: UseCustomScroll = () => {
+const useCustomScroll: UseCustomScroll = (containerRef) => {
     const [offsetY, setOffsetY] = useState(0);
-    const [offsetYMobile, setOffsetYMobile] = useState(0);
 
     const dragging = useRef(false);
-    const draggingMobile = useRef(false);
 
     const previousClientY = useRef(0);
-    const previousClientYMobile = useRef(0);
 
-    const handleSpanMouseDown = useCallback((e: MouseEvent) => {
-        /* e.preventDefault() */
-        previousClientY.current = e.clientY
-        dragging.current = true
-    }, [])
+    const handlePointerDown = useCallback((e: PointerEvent) => {
+        containerRef.current?.setPointerCapture(e.pointerId);
+        previousClientY.current = e.clientY;
+        dragging.current = true;
+    }, [containerRef]);
 
-    const handleSpanMouseMove = useCallback((e: MouseEvent) => {
-        if (!dragging.current) {
-            return
-        }
+    const handlePointerMove = useCallback(
+        (e: PointerEvent) => {
+            if (!dragging.current) {
+                return;
+            }
 
-        setOffsetY(result => {
-            const change = e.clientY - previousClientY.current
+            const change = e.clientY - previousClientY.current;
             previousClientY.current = e.clientY;
-            return result + change
-        })
+            setOffsetY((prevOffset) => prevOffset + change);
+        },
+        [dragging]
+    );
 
-    }, [])
-
-    const handleSpanMouseUp = useCallback(() => {
-        dragging.current = false
-    }, [])
+    const handlePointerUp = useCallback(() => {
+        dragging.current = false;
+    }, []);
 
     const handleTouchStart = useCallback((e: TouchEvent) => {
-        /* e.preventDefault() */
-        previousClientYMobile.current = e.changedTouches[0].clientY
-        draggingMobile.current = true
-    }, [])
+        e.preventDefault();
+        previousClientY.current = e.touches[0].clientY;
+        dragging.current = true;
+    }, []);
+
+    const handleTouchMove = useCallback(
+        (e: TouchEvent) => {
+            e.preventDefault();
+            if (!dragging.current) {
+                return;
+            }
+
+            const touch = e.touches[0];
+            const change = touch.clientY - previousClientY.current;
+            previousClientY.current = touch.clientY;
+            setOffsetY((prevOffset) => prevOffset + change);
+        },
+        [dragging]
+    );
 
     const handleTouchEnd = useCallback(() => {
-        draggingMobile.current = false
-    }, [])
-
-    const handleTouchMove = useCallback((e: TouchEvent) => {
-        if (!draggingMobile.current) {
-            return
-        }
-
-        setOffsetYMobile(result => {
-            const change = e.changedTouches[0].clientY - previousClientYMobile.current
-            console.log('change', change)
-            previousClientYMobile.current = e.changedTouches[0].clientY;
-            return result + change
-        })
-    }, [])
-
+        dragging.current = false;
+    }, []);
 
     useEffect(() => {
-        window.addEventListener("touchstart", handleTouchStart);
-        window.addEventListener("touchend", handleTouchEnd);
-        window.addEventListener("touchmove", handleTouchMove);
+        const container = containerRef.current;
+        if (!container) return;
+
+        container.addEventListener("pointerdown", handlePointerDown);
+        container.addEventListener("pointermove", handlePointerMove);
+        container.addEventListener("pointerup", handlePointerUp);
+        container.addEventListener("pointercancel", handlePointerUp);
+
+        container.addEventListener("touchstart", handleTouchStart, { passive: false });
+        container.addEventListener("touchmove", handleTouchMove, { passive: false });
+        container.addEventListener("touchend", handleTouchEnd);
+        container.addEventListener("touchcancel", handleTouchEnd);
 
         return () => {
-            window.removeEventListener("mousedown", handleSpanMouseDown);
-            window.removeEventListener("mouseup", handleSpanMouseUp);
-            window.removeEventListener("mousemove", handleSpanMouseMove);
-        }
-    }, [handleSpanMouseDown, handleSpanMouseUp, handleSpanMouseMove, handleTouchStart, handleTouchEnd, handleTouchMove])
+            container.removeEventListener("pointerdown", handlePointerDown);
+            container.removeEventListener("pointermove", handlePointerMove);
+            container.removeEventListener("pointerup", handlePointerUp);
+            container.removeEventListener("pointercancel", handlePointerUp);
 
-    useEffect(() => {
-        window.addEventListener("mousedown", handleSpanMouseDown);
-        window.addEventListener("mouseup", handleSpanMouseUp);
-        window.addEventListener("mousemove", handleSpanMouseMove);
-
-        return () => {
-            window.removeEventListener("mousedown", handleSpanMouseDown);
-            window.removeEventListener("mouseup", handleSpanMouseUp);
-            window.removeEventListener("mousemove", handleSpanMouseMove);
+            container.removeEventListener("touchstart", handleTouchStart);
+            container.removeEventListener("touchmove", handleTouchMove);
+            container.removeEventListener("touchend", handleTouchEnd);
+            container.removeEventListener("touchcancel", handleTouchEnd);
         };
-    }, [handleSpanMouseDown, handleSpanMouseUp, handleSpanMouseMove]);
+    }, [
+        containerRef,
+        handlePointerDown,
+        handlePointerMove,
+        handlePointerUp,
+        handleTouchStart,
+        handleTouchMove,
+        handleTouchEnd,
+    ]);
 
-    return { offsetY, offsetYMobile }
+
+    return offsetY;
 }
+
+export { useCustomScroll }
