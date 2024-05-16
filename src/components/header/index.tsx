@@ -87,7 +87,7 @@ const Header = () => {
                         <Link to="/" className="logo">
                             <img src={logo} alt="" />
                         </Link>
-                        <div onClick={handleOpen} className="burger__container">
+                        <div onClick={handleOpen} className="burger__container-box">
                             <span className="burger__line"></span>
                             <span className="burger__line"></span>
                             <span className="burger__line"></span>
