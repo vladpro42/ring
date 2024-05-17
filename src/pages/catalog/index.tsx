@@ -17,9 +17,8 @@ import saleImg from "../../assets/images/catalo-sale.jpg"
 import usePagination from '../../hooks/UsePagination'
 import { useAppSelector } from '../../hooks/redux/hooks'
 
-import { selectRings, selectRingsStatus } from '../../redux/rings/ringsReducer'
-import { selectByPrice, selectContentPerPage, selectIsJewel, selectSortByPrice, selectSortByRating } from '../../redux/filter/filterReducer'
-import { selectSortByAscendingDescending } from '../../redux/filter/filterReducer'
+import { selectRings, selectRingsStatus } from '../../redux/rings/ringsSelects'
+import { selectByPrice, selectContentPerPage, selectIsJewel, selectSortByPrice, selectSortByRating, selectSortByAscendingDescending } from '../../redux/filter/filterSelectors'
 import { sortByAscendingAndDescending, filterByJewel, filterByPrice, sortRingsByPrice, sortRingsByRating } from "./utils/index"
 import { ScrollRestoration } from 'react-router-dom'
 import { Ring } from '../../redux/rings/ringsReducerTypes'

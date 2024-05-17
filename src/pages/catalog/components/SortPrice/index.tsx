@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
-import { filterByPriceCreator } from "../../../../redux/filter/filterReducer"
+import { filterByPriceCreator } from "../../../../redux/filter/filterActions"
 import { FilterByPrice } from "../../../../redux/filter/filterTypes"
 import { arrayValues } from "../../../../assets/data/Prices"
 

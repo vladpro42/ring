@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
-import { filterByJewelCreator } from "../../../../redux/filter/filterReducer"
+import { filterByJewelCreator } from "../../../../redux/filter/filterActions"
 
 const SortCompound = () => {
 

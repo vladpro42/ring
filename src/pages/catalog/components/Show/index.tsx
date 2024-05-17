@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
-import { contentPerPageCreator } from "../../../../redux/filter/filterReducer"
+import { contentPerPageCreator } from "../../../../redux/filter/filterActions"
 
 
 

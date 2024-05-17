@@ -4,7 +4,7 @@ import {
     sortByAlphabeticalOrderCreator,
     sortByPriceValueCreator,
     sortByRatingValueCreator
-} from "../../../../redux/filter/filterReducer"
+} from "../../../../redux/filter/filterActions"
 import { SortByAscendingAndDescendingAndDefault } from "../../../../redux/filter/filterTypes"
 
 type Props = {

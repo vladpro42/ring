@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import "./select.scss"
 import { useCustomScroll } from "../../hooks/UseCustomScroll"
 import 'overlayscrollbars/overlayscrollbars.css';
@@ -15,7 +15,8 @@ const Select = ({ gender, }: Props) => {
     const [value, setValue] = useState(14)
     const [isActive, setIsActive] = useState(false)
 
-    const { offsetY: offset } = useCustomScroll()
+    const containerRef = useRef<HTMLDivElement>(null);
+    const offset = useCustomScroll(containerRef)
 
     const handleValueClick = (item: number) => {
         setValue(item)
@@ -40,8 +41,12 @@ const Select = ({ gender, }: Props) => {
                 </svg>
             </button>
 
-            <div className={isActive ? "select__list-container select__list-container-active" : "select__list-container"}>
+            <div ref={containerRef} className={isActive ? "select__list-container select__list-container-active" : "select__list-container"}>
                 <ul
+                    // style={{
+                    //     transform: `translateY(${-offset * 0.6}px)`
+                    // }}
+
                     style={{
                         transform: offset <= 0 ?
                             'translateY(${0}px)'
@@ -71,7 +76,28 @@ const Select = ({ gender, }: Props) => {
                                     `translateY(${offset}px)`
                                     : `translateY(${maxOffSet}px)`
                         }}
-                        className="select__scroll"></span>
+
+                        className="select__scroll"
+                        onPointerDown={(event) => {
+                            const span: HTMLElement = document.querySelector(".select__scroll")
+                            span.setPointerCapture(event.pointerId)
+                            span.onpointermove = (event) => {
+                                let newTop = event.clientY - document.querySelector(".select__scroll-bar").getBoundingClientRect().top
+                                console.log(event.clientY, document.querySelector(".select__scroll-bar").getBoundingClientRect().top)
+                                if (newTop > 118) {
+                                    newTop = 118
+                                } else if (newTop < 0) {
+                                    newTop = 0
+                                }
+                                span.style.top = `${newTop}px`
+                            }
+                            span.onpointerup = function () {
+                                this.onpointerdown = null
+                                this.onpointerup = null
+                            }
+                        }}
+
+                    ></span>
 
                 </div>
             </div>
