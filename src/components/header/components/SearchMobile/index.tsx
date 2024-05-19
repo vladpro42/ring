@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const SearchMobile = ({ className }: { className: string }) => {
+const SearchMobile = ({ className, }: { className: string }) => {
 
 
     const [inputId, setInputId] = useState("")
@@ -31,6 +31,7 @@ const SearchMobile = ({ className }: { className: string }) => {
                     value={inputId}
                     onChange={handleChange}
                     type="number"
+                    placeholder="Введите артикул"
                 />
                 <button onClick={() => setInputId("")} className="search__btn-clear">
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
