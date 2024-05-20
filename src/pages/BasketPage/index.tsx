@@ -98,7 +98,7 @@ const BasketPage = () => {
                         <img className='basket__sale--mobile' srcSet='/images/banner-mobile.jpg' />
 
                         <ul className='basket__list--mobile'>
-                            {rings?.map(ring => <li className='basket__item--mobile'>
+                            {rings?.map(ring => <li key={ring.ring.id} className='basket__item--mobile'>
                                 <img className='basket__item-img' src={ring.ring.imgSrc} alt="" />
                                 <div className="basket__item-column">
                                     <div className="basket__item-prices">
@@ -123,13 +123,16 @@ const BasketPage = () => {
                         </ul>
 
                         <table className='basket__table'>
-                            <tr className='basket__tr'>
-                                <td align='center' valign='middle' className='basket__column-name'>Картинка</td>
-                                <td align='center' valign='middle' className='basket__column-name'>Название</td>
-                                <td align='center' valign='middle' className='basket__column-name'>Модель</td>
-                                <td align='center' valign='middle' className='basket__column-name'>Кол-во</td>
-                                <td align='center' valign='middle' className='basket__column-name'>Цена</td>
-                            </tr>
+                            <thead>
+                                <tr className='basket__tr'>
+                                    <td align='center' valign='middle' className='basket__column-name'>Картинка</td>
+                                    <td align='center' valign='middle' className='basket__column-name'>Название</td>
+                                    <td align='center' valign='middle' className='basket__column-name'>Модель</td>
+                                    <td align='center' valign='middle' className='basket__column-name'>Кол-во</td>
+                                    <td align='center' valign='middle' className='basket__column-name'>Цена</td>
+                                </tr>
+                            </thead>
+                            <tbody>
                             {
                                 rings?.map(ring => <tr key={ring.ring.id} className='basket__tr'>
                                     <td align='center' valign='middle' className='basket__td'>
@@ -158,6 +161,7 @@ const BasketPage = () => {
                                     </td>
                                 </tr>)
                             }
+                            </tbody>
                         </table>
 
                         <div className="basket__price-box">
