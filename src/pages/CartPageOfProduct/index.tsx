@@ -1,9 +1,12 @@
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import NavigationText from "../../components/NavigationText"
-import DescriptionProduct from "./components/DescriptionProduct"
-import CartPageCart from "./components/CartPageCart"
-import CartPageTab from "./components/CartPageTab"
+
+import {
+    Header,
+    Footer,
+    NavigationText,
+    DescriptionProduct,
+    CartPageCart,
+    CartPageTab
+} from "./components/index"
 
 import { ScrollRestoration, useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/hooks"

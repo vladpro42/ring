@@ -1,12 +1,8 @@
 
-import cartProduct1 from "../../../assets/images/cart-product1.jpg"
-import cartProduct2 from "../../../assets/images/cart-product2.jpg"
-import cartProduct3 from "../../../assets/images/cart-product3.jpg"
-import cartProduct4 from "../../../assets/images/cart-product4.jpg"
-import cart360 from "../../../assets/images/cart-360.svg"
 
-import { memo } from "react"
+import { memo, useState } from "react"
 import Select from "../../../components/Select/index"
+import { SwiperSlider } from "./SwiperSlider"
 
 type Props = {
     imgSrc: string,
@@ -17,32 +13,19 @@ type Props = {
 
 const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
 
+    const [src, setSrc] = useState(imgSrc)
+
+    const onClickImg = (e: React.MouseEvent<HTMLImageElement>) => {
+        setSrc(e.currentTarget.src)
+    }
+
     return (
         <div className="cart-page__cart">
-
             <div className="cart-page__image-slider">
-                <button className="cart-page__slider-btn cart-page__slider-btn--prev">
-                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 0.8L7.27692 7L1.46154 0.8" stroke="#020F59" strokeWidth="2" />
-                    </svg>
-
-                </button>
-                <div className="cart-page__image-slides">
-                    <img src={cart360} alt="" />
-                    <img src={cartProduct1} alt="" />
-                    <img src={cartProduct2} alt="" />
-                    <img src={cartProduct3} alt="" />
-                    <img src={cartProduct4} alt="" />
-                </div>
-                <button className="cart-page__slider-btn">
-                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 0.8L7.27692 7L1.46154 0.8" stroke="#020F59" strokeWidth="2" />
-                    </svg>
-
-                </button>
             </div>
+            <SwiperSlider onCLick={onClickImg} />
 
-            <img className="cart-page__image-product" src={imgSrc} alt="" />
+            <img className="cart-page__image-product" src={src} alt="" />
 
             <div className="cart-page__user-actions">
 
@@ -55,8 +38,6 @@ const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
                     <div className="cart-page__selects">
                         <Select gender="жен" />
                         <Select gender="муж" />
-                        {/*  <SelectRing text="жен." />
-                        <SelectRing text="муж." /> */}
                     </div >
 
                     <button onClick={onClick} className="cart-page__btn-buy">
