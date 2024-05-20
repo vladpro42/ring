@@ -8,7 +8,7 @@ import { selectRingsFromBasketLength } from "../../redux/basket/basketSelectors"
 import { getItemFromLocalStorage } from "../../utils"
 import UserActionsLinks from "./components/UserActionsLinks"
 import HeaderSearch from "./components/HeaderSearch"
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import NavMenu from "./components/NavMenu"
 
 import "./header.scss"
@@ -67,40 +67,6 @@ const Header = () => {
         {title}
         {actions}
     </>
-
-
-
-    useEffect(() => {
-        if (isSearch) {
-            console.log("open")
-        } else {
-            console.log("clsoe")
-        }
-    }, [isSearch])
-
-    const nodeRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new MutationObserver((mutations) => {
-            // Обработка мутаций
-            for (const mutation of mutations) {
-                console.log(mutation)
-            }
-            console.log(mutations)
-        });
-
-        // Убедитесь, что targetRef.current является корректным DOM-узлом
-        if (nodeRef.current) {
-            observer.observe(nodeRef.current, { childList: true, attributes: true });
-        }
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
-
-
-
 
     return (
         <>
