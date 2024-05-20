@@ -207,6 +207,7 @@
         align-items: center;
         justify-content: center;
         gap: 26px;
+        order: 1;
     }
 
     .user__actions-link {
@@ -256,19 +257,19 @@
 
 .search__box {}
 
-// .search__animate {
-//     animation: search__animate 1s ease;
-// }
+.search__animate {
+    animation: search__animate 1s ease;
+}
 
-// @keyframes search__animate {
-//     0% {
-//         transform: translateX(-100vw);
-//     }
+@keyframes search__animate {
+    0% {
+        transform: translateX(-100vw);
+    }
 
-//     100% {
-//         transform: translateX(0px);
-//     }
-// }
+    100% {
+        transform: translateX(0px);
+    }
+}
 
 .animate {
     // transform: translateX(-100vw);

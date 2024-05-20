@@ -3,7 +3,6 @@ import Footer from "../../components/footer"
 import Header from "../../components/header"
 
 import picture from "../../assets/images/catalo-sale.jpg"
-import ProductCart from "../../components/ProductCart"
 
 
 import "./favoritePage.scss"
@@ -15,6 +14,7 @@ import { useAppSelector } from "../../hooks/redux/hooks"
 import { selectRingByIds, selectRingsStatus } from "../../redux/rings/ringsSelects"
 import usePagination from "../../hooks/UsePagination/index"
 import Spinner from "../../components/Spinner"
+import { CartOfProduct } from "../../components/CartOfProduct"
 
 const FavoritePage = () => {
 
@@ -38,7 +38,7 @@ const FavoritePage = () => {
                         <h1 className="favorite__title">избранное</h1>
                         <div className="favorite__inner">
                             <ul className="favorite__list">
-                                {(rings.length > 0) && rings.map(item => <ProductCart key={item.id} cart={item} />)}
+                                {(rings.length > 0) && rings.map(item => <CartOfProduct cart={item} key={item.id} />)}
                             </ul>
                             <img className="favorite__img-sale" src={picture} alt="" />
                         </div>

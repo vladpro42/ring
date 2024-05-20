@@ -16,7 +16,6 @@ import HeaderCompany from "./components/HeaderCompany"
 import HeaderFooterList from "./components/HeaderFooterList"
 import SearchMobile from "./components/SearchMobile"
 import BurgerMenu from "../BurgerMenu"
-import { CSSTransition } from "react-transition-group"
 
 const Header = () => {
 
@@ -31,7 +30,7 @@ const Header = () => {
     const [isSearch, setIsSearch] = useState(false)
     const [animate, setAnimate] = useState(false)
 
-    
+
 
     const burger = <div onClick={handleOpen} className="burger__container-box">
         <span className="burger__line"></span>
@@ -167,13 +166,11 @@ const Header = () => {
                         </Link>
 
 
-                        {
-                            animate ? <CSSTransition unmountOnExit nodeRef={nodeRef} in={animate} timeout={300} classNames={"animate"}>
-                                <div /* ref={nodeRef} */ className="search__box">
-                                    <SearchMobile className={animate ? 'search__animate' : 'search--none'} />
-                                </div>
-                            </CSSTransition> : header
-                        }
+
+                        {animate ? <div className="search__box">
+                            <SearchMobile className={animate ? 'search__animate' : 'search--none'} />
+                        </div>
+                            : header}
 
                         <HeaderFooterList />
                     </div>

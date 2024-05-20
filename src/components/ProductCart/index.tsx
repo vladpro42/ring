@@ -4,6 +4,7 @@ import { Ring } from "../../redux/rings/ringsReducerTypes"
 import { Rating2 } from "../../components/Raiting/index"
 import { memo } from "react"
 import { useFavorite } from "../../hooks/UseFavorite/useFavorite"
+import styles from "./index.module.scss"
 
 type Props = {
     cart: Ring,
@@ -19,7 +20,7 @@ const ProductCart = memo(({ cart, to, className }: Props) => {
 
     const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', cart.id)
 
-    return <li className={[className, "new-items__slide"].join(' ')}>
+    return <li className={[className, "new-items__slide", styles.cart].join(' ')}>
         <div className="new-items__slide-item">
             <p className="new-items__slide-article">Арт. {cart.id}</p>
             <div className="raiting">
