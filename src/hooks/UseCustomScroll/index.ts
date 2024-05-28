@@ -9,6 +9,8 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
     const previousClientY = useRef(0);
 
     const handlePointerDown = useCallback((e: PointerEvent) => {
+        if (e.target instanceof HTMLLIElement) return;
+
         containerRef.current?.setPointerCapture(e.pointerId);
         previousClientY.current = e.clientY;
         dragging.current = true;
@@ -19,6 +21,7 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
             if (!dragging.current) {
                 return;
             }
+            e.preventDefault()
 
             const change = e.clientY - previousClientY.current;
             previousClientY.current = e.clientY;
@@ -32,6 +35,8 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
     }, []);
 
     const handleTouchStart = useCallback((e: TouchEvent) => {
+        if (e.target instanceof HTMLLIElement) return;
+
         e.preventDefault();
         previousClientY.current = e.touches[0].clientY;
         dragging.current = true;

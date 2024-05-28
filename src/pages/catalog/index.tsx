@@ -1,5 +1,4 @@
 import Header from '../../components/header'
-import ProductCart from '../../components/ProductCart'
 import Footer from '../../components/footer'
 import NavigationText from '../../components/NavigationText'
 import Show from './components/Show'
@@ -26,6 +25,7 @@ import Spinner from '../../components/Spinner'
 import { useEffect, useState } from 'react'
 import FilterMobile from './components/FilterMobile'
 import SortMobileList from './components/SortMobileList'
+import { CartOfProduct } from '../../components/CartOfProduct'
 
 
 type Props = {
@@ -127,7 +127,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                             filteredRings
                                 .slice(pagination.firstContentIndex, pagination.lastContentIndex)
                                 .map((item: Ring) => (
-                                    <ProductCart to={`${item.id}`} key={item.id} cart={item} />
+                                    <CartOfProduct cart={item} key={item.id} />
                                 ))
                         }
                     </ul>

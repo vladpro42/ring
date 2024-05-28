@@ -14,11 +14,11 @@ import "./start-page.scss"
 import { useAppSelector } from "../../hooks/redux/hooks";
 import { selectAllRingsMemo, selectByIdsMemo, selectRingsStatus } from "../../redux/rings/ringsSelects";
 import Spinner from "../../components/Spinner";
-import ProductCart from "../../components/ProductCart";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Navigation } from "swiper/modules";
 import { useState } from "react";
+import { CartOfProduct } from "../../components/CartOfProduct";
 
 
 const StartPage = () => {
@@ -113,7 +113,8 @@ const StartPage = () => {
                             >
                                 {
                                     slides && slides.map(cart => < SwiperSlide key={cart.id}>
-                                        <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
+                                        <CartOfProduct cart={cart} />
+
                                     </SwiperSlide>)
                                 }
                             </Swiper >
@@ -122,7 +123,7 @@ const StartPage = () => {
                         <ul className="new-items__slider-mobile">
                             {rings.map((ring, index) => {
                                 if (index < showNewRings) {
-                                    return <ProductCart className="new-items__slide-mobile" cart={ring} key={ring.id} />
+                                    return <CartOfProduct cart={ring} key={ring.id} />
                                 } else {
                                     return
                                 }

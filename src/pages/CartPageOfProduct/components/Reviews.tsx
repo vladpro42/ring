@@ -23,8 +23,6 @@ const Reviews = ({ comments, className }: { comments: Comment[], className: stri
 
     const isDisable = showComments >= comments.length
 
-    console.log(isDisable)
-
     const MobileComments = comments.map((comment: Comment, index) => {
 
         if (index < showComments) {

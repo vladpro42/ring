@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Navigation } from "swiper/modules";
-import ProductCart from '../../../components/ProductCart'
+import { CartOfProduct } from '../../../components/CartOfProduct'
 
 const RecentlyViewed = () => {
 
@@ -33,7 +33,7 @@ const RecentlyViewed = () => {
                     >
                         {
                             slides.map(cart => < SwiperSlide key={cart.id}>
-                                <ProductCart to={`/catalog-weddingRings/${cart.id}`} cart={cart} />
+                                <CartOfProduct cart={cart} />
                             </SwiperSlide>)
                         }
                     </Swiper >
@@ -42,11 +42,7 @@ const RecentlyViewed = () => {
 
                     {slides.map((cart, index) => {
                         if (index < 3) {
-                            return <ProductCart
-                                className={'recently-viewed'}
-                                key={cart.id}
-                                to={`/catalog-weddingRings/${cart.id}`}
-                                cart={cart} />
+                            return <CartOfProduct key={cart.id} cart={cart} />
                         }
                     })}
                 </ul>

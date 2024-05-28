@@ -1,0 +1,137 @@
+@import "../../scss/variable.scss";
+
+.cart {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 430px;
+    height: 430px;
+    padding: 35px;
+}
+
+.cart__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart__id {
+    @extend %osr;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(black);
+    opacity: 0.7;
+}
+
+
+.link {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.img {
+    margin: 20px 0 15px 0;
+    width: 280px;
+    height: 280px;
+}
+
+.cart__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.favotite {
+    cursor: pointer;
+}
+
+.favorite_mobile {
+    display: none;
+}
+
+.favotite__path {
+    stroke: var(--color-accent);
+}
+
+.favotite__path_active {
+    fill: var(--color-accent);
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 0 22px;
+}
+
+.price_sale {
+    font-size: 14px;
+    line-height: 19px;
+    @extend %osr;
+    color: var(--color-blue);
+    text-decoration: line-through;
+}
+
+.price {
+    @extend %ossb;
+    line-height: 22px;
+    color: #AC3121;
+}
+
+@media (max-width: 376px) {
+
+    .favorite_mobile {
+        display: block;
+        cursor: pointer;
+    }
+
+    .favotite {
+        width: 18px;
+        height: 18px;
+    }
+
+    .cart__header .raiting span{
+        font-size: initial;
+    }
+
+    .favorite_pc {
+        display: none;
+    }
+
+    .cart__header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 10px;
+        padding-left: 10px;
+    }
+
+    .cart {
+        width: 155px;
+        height: 281px;
+        padding: 0;
+    }
+
+    .img {
+        margin: 20px 0 15px 0;
+        width: 155px;
+        height: 155px;
+        margin: 10px 0;
+    }
+
+    .cart__footer {
+        padding-left: 12px;
+    }
+
+    .prices {
+        justify-content: center;
+    }
+
+    .price_sale {
+        order: 1;
+    }
+
+
+}
