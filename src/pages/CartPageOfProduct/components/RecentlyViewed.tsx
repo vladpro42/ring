@@ -21,7 +21,7 @@ const RecentlyViewed = () => {
         <section className='new-items'>
             <div className="container">
                 {
-                    slides.length === 0 && <h3 className="new-items__title">
+                    slides.length > 0 && <h3 className="new-items__title">
                         НЕДАВНО ПРОСМОТРЕННЫЕ
                     </h3>
                 }
