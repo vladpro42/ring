@@ -7,10 +7,12 @@ import { FavotiteBtn } from './components/FavoriteBtn'
 import { memo } from 'react'
 
 type Props = {
-    cart: Ring
+    cart: Ring,
+    url?: string
 }
 
-export const CartOfProduct = memo(({ cart }: Props) => {
+export const CartOfProduct = memo(({ cart, url: urlNews }: Props) => {
+
 
     const url = useLocation().pathname.split('/')[1]
 
@@ -34,7 +36,7 @@ export const CartOfProduct = memo(({ cart }: Props) => {
             </div>
             <Link
                 className={styles.link}
-                to={`/${url}/${cart.id}`}
+                to={`/${urlNews ? urlNews : url}/${cart.id}`}
                 state={url}
             >
                 <img className={styles.img} src={cart.imgSrc} alt="" />
