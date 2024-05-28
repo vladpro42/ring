@@ -113,7 +113,7 @@ const StartPage = () => {
                             >
                                 {
                                     slides && slides.map(cart => < SwiperSlide key={cart.id}>
-                                        <CartOfProduct cart={cart} />
+                                        <CartOfProduct url={'catalog-engagementRings'} cart={cart} />
 
                                     </SwiperSlide>)
                                 }

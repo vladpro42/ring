@@ -20,9 +20,11 @@ const RecentlyViewed = () => {
     return (
         <section className='new-items'>
             <div className="container">
-                <h3 className="new-items__title">
-                    НЕДАВНО ПРОСМОТРЕННЫЕ
-                </h3>
+                {
+                    slides.length === 0 && <h3 className="new-items__title">
+                        НЕДАВНО ПРОСМОТРЕННЫЕ
+                    </h3>
+                }
                 <ul className="new-items__slider">
                     <Swiper
                         navigation={true}
