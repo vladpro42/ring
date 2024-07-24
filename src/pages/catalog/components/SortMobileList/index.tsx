@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import {
     sortByAlphabeticalOrderCreator,
@@ -20,7 +20,7 @@ const SortMobileList = ({ className, onOpen, toggleFilter }: Props) => {
 
     const dispatch = useAppDispatch()
 
-    const sortByPrice = (e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
+    const sortByPrice = useCallback((e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
 
         // Сбросить другие сортировки
         dispatch(sortByRatingValueCreator('default'))
@@ -31,8 +31,8 @@ const SortMobileList = ({ className, onOpen, toggleFilter }: Props) => {
 
         setSelect(e.currentTarget.getAttribute('data-value'))
         onOpen()
-    }
-    const sortByRating = (e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
+    }, [dispatch,onOpen])
+    const sortByRating = useCallback((e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
 
         // Сбросить другие сортировки
         dispatch(sortByAlphabeticalOrderCreator('default'))
@@ -43,9 +43,9 @@ const SortMobileList = ({ className, onOpen, toggleFilter }: Props) => {
 
         setSelect(e.currentTarget.getAttribute('data-value'))
         onOpen()
-    }
+    }, [dispatch, onOpen])
 
-    const sortByAlphabeticalOrder = (e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
+    const sortByAlphabeticalOrder = useCallback((e: React.MouseEvent, sort: SortByAscendingAndDescendingAndDefault) => {
 
         // Сбросить другие сортировки
         dispatch(sortByRatingValueCreator('default'))
@@ -56,9 +56,9 @@ const SortMobileList = ({ className, onOpen, toggleFilter }: Props) => {
 
         setSelect(e.currentTarget.getAttribute('data-value'))
         onOpen()
-    }
+    }, [dispatch, onOpen])
 
-    const setDefaultSort = (e: React.MouseEvent) => {
+    const setDefaultSort = useCallback((e: React.MouseEvent) => {
 
         // Сбросить все сортировки
         dispatch(sortByPriceValueCreator('default'))
@@ -67,7 +67,7 @@ const SortMobileList = ({ className, onOpen, toggleFilter }: Props) => {
 
         setSelect(e.currentTarget.getAttribute('data-value'))
         onOpen()
-    }
+    }, [dispatch, onOpen])
 
 
     return (

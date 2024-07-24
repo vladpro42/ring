@@ -1,8 +1,8 @@
 
-import { useState } from "react"
+import { memo, useState } from "react"
 import { arrTagForFilter } from "../../../../assets/data/tagsArr"
 
-const SortTags = () => {
+const SortTags = memo(() => {
 
     const [isActive] = useState(0)
 
@@ -36,6 +36,6 @@ const SortTags = () => {
             <button className='catalog-main__tags-btn'>показать все</button>
         </div >
     )
-}
+})
 
 export default SortTags

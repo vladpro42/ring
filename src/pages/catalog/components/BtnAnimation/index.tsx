@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 const BtnAnimation = () => {
     const [isbtnActive, setIsBtnActive] = useState(false)
 
-    const handleClickBtnAnimation = () => {
+    const handleClickBtnAnimation = useCallback(() => {
         setIsBtnActive(!isbtnActive)
-    }
+    }, [isbtnActive])
 
     return (
         <div onClick={handleClickBtnAnimation} className="catalog-main__btn-animation">

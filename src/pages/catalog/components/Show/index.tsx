@@ -1,15 +1,16 @@
+import { memo, useCallback } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { contentPerPageCreator } from "../../../../redux/filter/filterActions"
 
 
 
-const Show = () => {
+const Show = memo(() => {
 
     const dispatch = useAppDispatch()
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         dispatch(contentPerPageCreator(+e.currentTarget.value))
-    }
+    }, [dispatch])
 
     return (
         <div className="catalog-main__show">
@@ -22,6 +23,6 @@ const Show = () => {
             </select>
         </div>
     )
-}
+})
 
 export default Show
