@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 
 import sale from "../../../assets/images/catalo-sale.jpg"
 
@@ -18,26 +18,27 @@ export type Comment = {
     rating: number
 }
 
-const CartPageTab = () => {
+const keyTab = { description: 'description', review: 'review' }
 
-    const keyTab = { description: 'description', review: 'review' }
+const CartPageTab = memo(() => {
+
     const [tab, setTab] = useState(keyTab.description)
 
-    const handleClickDescription = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickDescription = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
         if (!e.currentTarget.classList.contains("cart-page__description-btn--active")) {
             e.currentTarget.classList.add("cart-page__description-btn--active")
         }
         setTab(keyTab.description)
-    }
+    }, [])
 
-    const handleClickReview = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickReview = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
         if (!e.currentTarget.classList.contains("cart-page__description-btn--active")) {
             e.currentTarget.classList.add("cart-page__description-btn--active")
         }
         setTab(keyTab.review)
-    }
+    }, [])
 
     const getComments = async () => {
         const json = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/Comments")
@@ -82,11 +83,12 @@ const CartPageTab = () => {
 
         <Description className={keyTab.description === tab ? "db" : "dn"} />
         <Reviews className={keyTab.review === tab ? "db" : "dn"} comments={comments} />
-       {/*  <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} /> */}
+        {/*  <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} /> */}
         <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
         <FormComments />
 
     </div>
 
-}
+})
+
 export default CartPageTab

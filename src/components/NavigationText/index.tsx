@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom"
 import "../../pages/catalog/catalog.scss"
-import { useState } from "react"
+import { memo, useState } from "react"
 
 
-const NavigationText = () => {
+const NavigationText = memo(() => {
 
     const location = useLocation()
     const pathNameArr = location.pathname.split('/')
@@ -38,6 +38,6 @@ const NavigationText = () => {
             }
         </div>
     )
-}
+})
 
 export default NavigationText

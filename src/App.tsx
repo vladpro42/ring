@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Pages from "./pages"
 
-import { useEffect } from 'react'
+import {  useEffect } from 'react'
 import { fetchRings } from './redux/rings/ringsThunk'
 import { useAppDispatch } from './hooks/redux/hooks'
 

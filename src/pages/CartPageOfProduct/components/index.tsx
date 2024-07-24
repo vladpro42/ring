@@ -5,6 +5,7 @@ import NavigationText from "../../../components/NavigationText"
 import DescriptionProduct from "./DescriptionProduct"
 import CartPageCart from "./CartPageCart"
 import CartPageTab from "./CartPageTab"
+import CartPage from "./CartPage"
 
 export {
     Header,
@@ -12,5 +13,6 @@ export {
     NavigationText,
     DescriptionProduct,
     CartPageCart,
-    CartPageTab
+    CartPageTab,
+    CartPage
 }
