@@ -13,7 +13,6 @@ const AboutPage = () => {
     return (
         <>
             <Header />
-
             <main className="main-about">
                 <section className="main-about__section">
                     <div className="container">

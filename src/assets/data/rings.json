@@ -1,0 +1,178 @@
+[
+    {
+        "id": 1,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-1.png",
+        "price": 59000,
+        "priceSale": 45000,
+        "jewel": false
+    },
+    {
+        "id": 2,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-2.png",
+        "price": 95000,
+        "priceSale": 90000,
+        "jewel": true
+    },
+    {
+        "id": 3,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-3.png",
+        "price": 55500,
+        "priceSale": 52000,
+        "jewel": true
+    },
+    {
+        "id": 4,
+        "raiting": 1.5,
+        "imgSrc": "/images/new-items-4.jpg",
+        "price": 37900,
+        "priceSale": 32000,
+        "jewel": true
+    },
+    {
+        "id": 5,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-5.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true
+    },
+    {
+        "id": 6,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-6.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false
+    },
+    {
+        "id": 7,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-7.jpg",
+        "price": 150000,
+        "priceSale": 32000,
+        "jewel": false
+    },
+    {
+        "id": 8,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-8.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true
+    },
+    {
+        "id": 9,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-9.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false
+    },
+    {
+        "id": 10,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-10.jpg",
+        "price": 42000,
+        "priceSale": 40000,
+        "jewel": false
+    },
+    {
+        "id": 11,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-6.jpg",
+        "price": 32500,
+        "priceSale": 32000,
+        "jewel": true
+    },
+    {
+        "id": 12,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-1.png",
+        "price": 59000,
+        "priceSale": 45000,
+        "jewel": false
+    },
+    {
+        "id": 13,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-2.png",
+        "price": 95000,
+        "priceSale": 90000,
+        "jewel": true
+    },
+    {
+        "id": 14,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-3.png",
+        "price": 55500,
+        "priceSale": 52000,
+        "jewel": true
+    },
+    {
+        "id": 15,
+        "raiting": 1.5,
+        "imgSrc": "/images/new-items-4.jpg",
+        "price": 37900,
+        "priceSale": 32000,
+        "jewel": true
+    },
+    {
+        "id": 16,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-5.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true
+    },
+    {
+        "id": 17,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-6.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false
+    },
+    {
+        "id": 18,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-7.jpg",
+        "price": 150000,
+        "priceSale": 32000,
+        "jewel": false
+    },
+    {
+        "id": 19,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-8.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true
+    },
+    {
+        "id": 20,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-9.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false
+    },
+    {
+        "id": 21,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-10.jpg",
+        "price": 42000,
+        "priceSale": 40000,
+        "jewel": false
+    },
+    {
+        "id": 22,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-6.jpg",
+        "price": 32500,
+        "priceSale": 32000,
+        "jewel": true
+    }
+]

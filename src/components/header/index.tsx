@@ -8,7 +8,7 @@ import { selectRingsFromBasketLength } from "../../redux/basket/basketSelectors"
 import { getItemFromLocalStorage } from "../../utils"
 import UserActionsLinks from "./components/UserActionsLinks"
 import HeaderSearch from "./components/HeaderSearch"
-import { useState } from "react"
+import { memo, useState } from "react"
 import NavMenu from "./components/NavMenu"
 
 import "./header.scss"
@@ -17,7 +17,7 @@ import HeaderFooterList from "./components/HeaderFooterList"
 import SearchMobile from "./components/SearchMobile"
 import BurgerMenu from "../BurgerMenu"
 
-const Header = () => {
+const Header = memo(() => {
 
     const lenBasket = useAppSelector(selectRingsFromBasketLength)
     const lenFavorite = getItemFromLocalStorage("favoriteRings").length
@@ -146,6 +146,6 @@ const Header = () => {
 
         </>
     )
-}
+})
 
 export default Header
