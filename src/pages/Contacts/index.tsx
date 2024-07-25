@@ -17,10 +17,10 @@ import "./contact.scss"
 import SwiperTwo from "../../components/SwiperTwo"
 import { ScrollRestoration } from "react-router-dom"
 
+const images = [contact1, contact2, contact3, contact1, contact2, contact3]
 
 const ContactsPage = () => {
 
-    const images = [contact1, contact2, contact3, contact1, contact2, contact3]
 
     return (
         <>

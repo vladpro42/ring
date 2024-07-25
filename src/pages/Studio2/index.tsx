@@ -1,23 +1,22 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
+import SwiperTwo from "../../components/SwiperTwo"
+
+import "./studia2.scss"
+
+
+import { ScrollRestoration } from "react-router-dom"
 
 import studio1 from "../../assets/images/studio-1.jpg"
 import studio2 from "../../assets/images/studio-2.jpg"
 import studio3 from "../../assets/images/studio-3.jpg"
 
-import "swiper/css"
-import "swiper/css/scrollbar"
-import "./studia2.scss"
-import SwiperTwo from "../../components/SwiperTwo"
-import { ScrollRestoration } from "react-router-dom"
+const images = [studio1, studio2, studio3, studio1, studio2, studio3]
 
 const Studio2Page = () => {
-
-    const images = [studio1, studio2, studio3, studio1, studio2, studio3]
     return (
         <>
             <Header />
-
             <main className="main__studio-two">
                 <section className="studio">
                     <div className="container">
