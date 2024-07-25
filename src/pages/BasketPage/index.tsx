@@ -7,7 +7,7 @@ import logoBasket from "../../assets/images/logo-basket.png"
 import "./basket.scss"
 
 
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import {
     removeAllCreators,
 } from '../../redux/basket/basketActions'

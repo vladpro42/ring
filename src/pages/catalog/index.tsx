@@ -27,7 +27,6 @@ const CatalogPage = ({ title, subtitle }: Props) => {
 
     //const sortByAlphabeticalOrder = useAppSelector(selectSortByAlphabeticalOrder)
 
-
     const [isFilterMobile, setIsFilterMobile] = useState(false)
 
     useEffect(() => {
@@ -41,6 +40,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
     const toggleFilterMobile = () => {
         setIsFilterMobile(!isFilterMobile)
     }
+
 
     if (status === 'loading') {
         return <Spinner />

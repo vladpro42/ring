@@ -6,9 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Pages from "./pages"
 
-import {  useEffect } from 'react'
+import { useEffect } from 'react'
 import { fetchRings } from './redux/rings/ringsThunk'
-import { useAppDispatch } from './hooks/redux/hooks'
+import { useAppDispatch, useAppSelector } from './hooks/redux/hooks'
+import { selectRingsStatus } from './redux/rings/ringsSelects'
+import Spinner from './components/Spinner'
 
 
 const weddingRings = {
@@ -118,6 +120,12 @@ function App() {
         dispatch(fetchRings)
     }, [dispatch])
 
+
+    const status = useAppSelector(selectRingsStatus)
+
+    if (status === 'loading') {
+        return <Spinner />
+    }
 
     return (
         <div>
