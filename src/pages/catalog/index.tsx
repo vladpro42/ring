@@ -1,7 +1,7 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import NavigationText from '../../components/NavigationText'
-import Show from './components/Show'
+import Select from './components/Show'
 import BtnAnimation from './components/BtnAnimation'
 import SortRaiting from './components/SortRaiting'
 import SortPrice from './components/SortPrice'
@@ -32,6 +32,15 @@ type Props = {
     title: string;
     subtitle: string;
 }
+
+
+export type Option = { value: string, label: string }
+export const options: Option[] = [
+    { value: "6", label: "6" },
+    { value: "12", label: "12" },
+    { value: "15", label: "15" },
+    { value: "21", label: "21" },
+];
 
 
 const CatalogPage = ({ title, subtitle }: Props) => {
@@ -106,7 +115,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
 
                             <div className="catalog-main__options">
                                 <BtnAnimation />
-                                <Show />
+                                <Select defaultValue={options[0].value} options={options} placeholder='Выберите значение' />
                                 <SortRaiting />
                                 <SortPrice />
                                 <SortCompound />
@@ -122,7 +131,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                         </a>
                     </div>
 
-                    <ul className="catalog-main__product-list">
+                    <div className="catalog-main__product-list">
                         {
                             filteredRings
                                 .slice(pagination.firstContentIndex, pagination.lastContentIndex)
@@ -130,7 +139,7 @@ const CatalogPage = ({ title, subtitle }: Props) => {
                                     <CartOfProduct cart={item} key={item.id} />
                                 ))
                         }
-                    </ul>
+                    </div>
                     <Pagination pagination={pagination} />
                     <p className="catalog-main__description-text">
                         Дизайнерские обручальные кольца от производителя хороши тем, что их внешний вид и особенности оформления разнообразны и можно легко подобрать те, которые подойдут именно Вам и Вашей второй половинке. В разделе представлено свыше двухсот готовых моделей обручальных колец — возможно, Вы захотите внести в некоторые из них свои небольшие дополнения или вовсе заказать неповторимую модель: мы создадим <span className='catalog-main__description--color'>уникальный дизайн</span> по Вашему описанию или рисунку, воплотив любые идеи.

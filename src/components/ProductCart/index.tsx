@@ -39,7 +39,7 @@ const ProductCart = memo(({ cart, to, className }: Props) => {
             to={`${to}` ? `${to}` : `${url}/${cart.id}`}
             state={url}
         >
-            <img className='new-items__slide-img' src={cart.imgSrc} alt="" />
+            <img className='new-items__slide-img' src="/images/new-items-2.png" alt="" />
         </Link>
         <div className="new-items__slide-item">
             <svg

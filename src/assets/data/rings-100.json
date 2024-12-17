@@ -1,0 +1,1288 @@
+[
+    {
+        "id": 1,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-1.png",
+        "price": 59000,
+        "priceSale": 45000,
+        "jewel": false,
+        "tags": [
+            "этно",
+            "отпечатки",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 2,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-2.png",
+        "price": 95000,
+        "priceSale": 90000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "широкие"
+        ]
+    },
+    {
+        "id": 3,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-3.png",
+        "price": 55500,
+        "priceSale": 52000,
+        "jewel": true,
+        "tags": [
+            "эмаль",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 4,
+        "raiting": 1.5,
+        "imgSrc": "/images/new-items-4.jpg",
+        "price": 37900,
+        "priceSale": 32000,
+        "jewel": true,
+        "tags": [
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 5,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-5.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true,
+        "tags": [
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 6,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-6.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "однотонные"
+        ]
+    },
+    {
+        "id": 7,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-7.jpg",
+        "price": 150000,
+        "priceSale": 32000,
+        "jewel": false,
+        "tags": [
+            "бесконечность",
+            "широкие"
+        ]
+    },
+    {
+        "id": 8,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-8.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true,
+        "tags": [
+            "этно",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 9,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-9.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 10,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-10.jpg",
+        "price": 42000,
+        "priceSale": 40000,
+        "jewel": false,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "косичка"
+        ]
+    },
+    {
+        "id": 11,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-11.jpg",
+        "price": 32500,
+        "priceSale": 32000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "бриллианты"
+        ]
+    },
+    {
+        "id": 12,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-12.png",
+        "price": 59000,
+        "priceSale": 45000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "однотонные",
+            "широкие"
+        ]
+    },
+    {
+        "id": 13,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-13.png",
+        "price": 95000,
+        "priceSale": 90000,
+        "jewel": true,
+        "tags": [
+            "этно",
+            "эмаль",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 14,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-14.png",
+        "price": 55500,
+        "priceSale": 52000,
+        "jewel": true,
+        "tags": [
+            "отпечатки",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 15,
+        "raiting": 1.5,
+        "imgSrc": "/images/new-items-15.jpg",
+        "price": 37900,
+        "priceSale": 32000,
+        "jewel": true,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "косичка"
+        ]
+    },
+    {
+        "id": 16,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-16.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "бриллианты",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 17,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-17.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false,
+        "tags": [
+            "однотонные",
+            "широкие"
+        ]
+    },
+    {
+        "id": 18,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-18.jpg",
+        "price": 150000,
+        "priceSale": 32000,
+        "jewel": false,
+        "tags": [
+            "этно",
+            "эмаль",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 19,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-19.jpg",
+        "price": 54000,
+        "priceSale": 45000,
+        "jewel": true,
+        "tags": [
+            "отпечатки",
+            "бесконечность",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 20,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-20.jpg",
+        "price": 59600,
+        "priceSale": 49000,
+        "jewel": false,
+        "tags": [
+            "необычные",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 21,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-21.jpg",
+        "price": 42000,
+        "priceSale": 40000,
+        "jewel": false,
+        "tags": [
+            "бриллианты",
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 22,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-22.jpg",
+        "price": 32500,
+        "priceSale": 32000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 23,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-23.jpg",
+        "price": 62000,
+        "priceSale": 58000,
+        "jewel": true,
+        "tags": [
+            "комбинированные",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 24,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-24.jpg",
+        "price": 78000,
+        "priceSale": 70000,
+        "jewel": false,
+        "tags": [
+            "этно",
+            "косичка"
+        ]
+    },
+    {
+        "id": 25,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-25.jpg",
+        "price": 45000,
+        "priceSale": 42000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "отпечатки"
+        ]
+    },
+    {
+        "id": 26,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-26.jpg",
+        "price": 89000,
+        "priceSale": 85000,
+        "jewel": true,
+        "tags": [
+            "бесконечность",
+            "бриллианты"
+        ]
+    },
+    {
+        "id": 27,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-27.jpg",
+        "price": 35000,
+        "priceSale": 30000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "однотонные",
+            "широкие"
+        ]
+    },
+    {
+        "id": 28,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-28.jpg",
+        "price": 52000,
+        "priceSale": 48000,
+        "jewel": true,
+        "tags": [
+            "эмаль",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 29,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-29.jpg",
+        "price": 67000,
+        "priceSale": 63000,
+        "jewel": false,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "косичка"
+        ]
+    },
+    {
+        "id": 30,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-30.jpg",
+        "price": 120000,
+        "priceSale": 110000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "бриллианты",
+            "этно"
+        ]
+    },
+    {
+        "id": 31,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-31.jpg",
+        "price": 58000,
+        "priceSale": 55000,
+        "jewel": true,
+        "tags": [
+            "отпечатки",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 32,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-32.jpg",
+        "price": 72000,
+        "priceSale": 68000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 33,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-33.jpg",
+        "price": 41000,
+        "priceSale": 38000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "эмаль",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 34,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-34.jpg",
+        "price": 95000,
+        "priceSale": 90000,
+        "jewel": true,
+        "tags": [
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 35,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-35.jpg",
+        "price": 55000,
+        "priceSale": 50000,
+        "jewel": false,
+        "tags": [
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 36,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-36.jpg",
+        "price": 82000,
+        "priceSale": 78000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "отпечатки"
+        ]
+    },
+    {
+        "id": 37,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-37.jpg",
+        "price": 61000,
+        "priceSale": 57000,
+        "jewel": false,
+        "tags": [
+            "бесконечность",
+            "широкие"
+        ]
+    },
+    {
+        "id": 38,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-38.jpg",
+        "price": 130000,
+        "priceSale": 120000,
+        "jewel": true,
+        "tags": [
+            "сапфиры",
+            "однотонные",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 39,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-39.jpg",
+        "price": 38000,
+        "priceSale": 35000,
+        "jewel": false,
+        "tags": [
+            "комбинированные",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 40,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-40.jpg",
+        "price": 75000,
+        "priceSale": 70000,
+        "jewel": true,
+        "tags": [
+            "необычные",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 41,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-41.jpg",
+        "price": 63000,
+        "priceSale": 59000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "широкие"
+        ]
+    },
+    {
+        "id": 42,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-42.jpg",
+        "price": 79000,
+        "priceSale": 75000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 43,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-43.jpg",
+        "price": 43000,
+        "priceSale": 40000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "эмаль",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 44,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-44.jpg",
+        "price": 98000,
+        "priceSale": 93000,
+        "jewel": true,
+        "tags": [
+            "необычные",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 45,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-45.jpg",
+        "price": 57000,
+        "priceSale": 53000,
+        "jewel": false,
+        "tags": [
+            "косичка",
+            "растительный орнамент",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 46,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-46.jpg",
+        "price": 85000,
+        "priceSale": 80000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "широкие"
+        ]
+    },
+    {
+        "id": 47,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-47.jpg",
+        "price": 64000,
+        "priceSale": 60000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "бесконечность",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 48,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-48.jpg",
+        "price": 135000,
+        "priceSale": 128000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 49,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-49.jpg",
+        "price": 39000,
+        "priceSale": 36000,
+        "jewel": false,
+        "tags": [
+            "комбинированные",
+            "косичка"
+        ]
+    },
+    {
+        "id": 50,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-50.jpg",
+        "price": 77000,
+        "priceSale": 73000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 51,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-51.jpg",
+        "price": 65000,
+        "priceSale": 61000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 52,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-52.jpg",
+        "price": 81000,
+        "priceSale": 77000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "эмаль",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 53,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-53.jpg",
+        "price": 44000,
+        "priceSale": 41000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "необычные",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 54,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-54.jpg",
+        "price": 99000,
+        "priceSale": 94000,
+        "jewel": true,
+        "tags": [
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 55,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-55.jpg",
+        "price": 58000,
+        "priceSale": 54000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "широкие",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 56,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-56.jpg",
+        "price": 86000,
+        "priceSale": 81000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 57,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-57.jpg",
+        "price": 66000,
+        "priceSale": 62000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 58,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-58.jpg",
+        "price": 140000,
+        "priceSale": 133000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "комбинированные",
+            "косичка"
+        ]
+    },
+    {
+        "id": 59,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-59.jpg",
+        "price": 40000,
+        "priceSale": 37000,
+        "jewel": false,
+        "tags": [
+            "растительный орнамент",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 60,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-60.jpg",
+        "price": 78000,
+        "priceSale": 74000,
+        "jewel": true,
+        "tags": [
+            "широкие",
+            "бесконечность",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 60,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-60.jpg",
+        "price": 78000,
+        "priceSale": 74000,
+        "jewel": true,
+        "tags": [
+            "широкие",
+            "бесконечность",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 61,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-61.jpg",
+        "price": 67000,
+        "priceSale": 63000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 62,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-62.jpg",
+        "price": 83000,
+        "priceSale": 79000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "необычные",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 63,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-63.jpg",
+        "price": 45000,
+        "priceSale": 42000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 64,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-64.jpg",
+        "price": 101000,
+        "priceSale": 96000,
+        "jewel": true,
+        "tags": [
+            "сапфиры",
+            "широкие",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 65,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-65.jpg",
+        "price": 59000,
+        "priceSale": 55000,
+        "jewel": false,
+        "tags": [
+            "бесконечность",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 66,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-66.jpg",
+        "price": 87000,
+        "priceSale": 82000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "этно",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 67,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-67.jpg",
+        "price": 68000,
+        "priceSale": 64000,
+        "jewel": false,
+        "tags": [
+            "отпечатки",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 68,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-68.jpg",
+        "price": 145000,
+        "priceSale": 138000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 69,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-69.jpg",
+        "price": 41000,
+        "priceSale": 38000,
+        "jewel": false,
+        "tags": [
+            "эмаль",
+            "бесконечность",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 70,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-70.jpg",
+        "price": 79000,
+        "priceSale": 75000,
+        "jewel": true,
+        "tags": [
+            "необычные",
+            "комбинированные",
+            "этно"
+        ]
+    },
+    {
+        "id": 71,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-71.jpg",
+        "price": 69000,
+        "priceSale": 65000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "отпечатки",
+            "косичка"
+        ]
+    },
+    {
+        "id": 72,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-72.jpg",
+        "price": 85000,
+        "priceSale": 81000,
+        "jewel": false,
+        "tags": [
+            "растительный орнамент",
+            "однотонные",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 73,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-73.jpg",
+        "price": 46000,
+        "priceSale": 43000,
+        "jewel": true,
+        "tags": [
+            "широкие",
+            "эмаль",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 74,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-74.jpg",
+        "price": 103000,
+        "priceSale": 98000,
+        "jewel": true,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 75,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-75.jpg",
+        "price": 60000,
+        "priceSale": 56000,
+        "jewel": false,
+        "tags": [
+            "этно",
+            "бриллианты",
+            "отпечатки"
+        ]
+    },
+    {
+        "id": 76,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-76.jpg",
+        "price": 88000,
+        "priceSale": 83000,
+        "jewel": true,
+        "tags": [
+            "косичка",
+            "растительный орнамент",
+            "однотонные"
+        ]
+    },
+    {
+        "id": 77,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-77.jpg",
+        "price": 70000,
+        "priceSale": 66000,
+        "jewel": false,
+        "tags": [
+            "сапфиры",
+            "широкие",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 78,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-78.jpg",
+        "price": 150000,
+        "priceSale": 143000,
+        "jewel": true,
+        "tags": [
+            "бесконечность",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 79,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-79.jpg",
+        "price": 42000,
+        "priceSale": 39000,
+        "jewel": false,
+        "tags": [
+            "комбинированные",
+            "этно",
+            "бриллианты"
+        ]
+    },
+    {
+        "id": 80,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-80.jpg",
+        "price": 80000,
+        "priceSale": 76000,
+        "jewel": true,
+        "tags": [
+            "отпечатки",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 81,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-81.jpg",
+        "price": 71000,
+        "priceSale": 67000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 82,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-82.jpg",
+        "price": 89000,
+        "priceSale": 84000,
+        "jewel": false,
+        "tags": [
+            "эмаль",
+            "бесконечность",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 83,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-83.jpg",
+        "price": 47000,
+        "priceSale": 44000,
+        "jewel": true,
+        "tags": [
+            "необычные",
+            "комбинированные",
+            "этно"
+        ]
+    },
+    {
+        "id": 84,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-84.jpg",
+        "price": 105000,
+        "priceSale": 100000,
+        "jewel": true,
+        "tags": [
+            "бриллианты",
+            "отпечатки",
+            "косичка"
+        ]
+    },
+    {
+        "id": 85,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-85.jpg",
+        "price": 61000,
+        "priceSale": 57000,
+        "jewel": false,
+        "tags": [
+            "растительный орнамент",
+            "однотонные",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 86,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-86.jpg",
+        "price": 90000,
+        "priceSale": 85000,
+        "jewel": true,
+        "tags": [
+            "широкие",
+            "эмаль",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 87,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-87.jpg",
+        "price": 72000,
+        "priceSale": 68000,
+        "jewel": false,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "комбинированные"
+        ]
+    },
+    {
+        "id": 88,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-88.jpg",
+        "price": 155000,
+        "priceSale": 148000,
+        "jewel": true,
+        "tags": [
+            "этно",
+            "бриллианты",
+            "отпечатки"
+        ]
+    },
+    {
+        "id": 89,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-89.jpg",
+        "price": 43000,
+        "priceSale": 40000,
+        "jewel": false,
+        "tags": [
+            "косичка",
+            "растительный орнамент",
+            "однотонные"
+        ]
+    },
+    {
+        "id": 90,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-90.jpg",
+        "price": 81000,
+        "priceSale": 77000,
+        "jewel": true,
+        "tags": [
+            "сапфиры",
+            "широкие",
+            "эмаль"
+        ]
+    },
+    {
+        "id": 91,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-91.jpg",
+        "price": 73000,
+        "priceSale": 69000,
+        "jewel": true,
+        "tags": [
+            "бесконечность",
+            "подвижные",
+            "необычные"
+        ]
+    },
+    {
+        "id": 92,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-92.jpg",
+        "price": 91000,
+        "priceSale": 86000,
+        "jewel": false,
+        "tags": [
+            "комбинированные",
+            "этно",
+            "бриллианты"
+        ]
+    },
+    {
+        "id": 93,
+        "raiting": 2.5,
+        "imgSrc": "/images/new-items-93.jpg",
+        "price": 48000,
+        "priceSale": 45000,
+        "jewel": true,
+        "tags": [
+            "отпечатки",
+            "косичка",
+            "растительный орнамент"
+        ]
+    },
+    {
+        "id": 94,
+        "raiting": 4.5,
+        "imgSrc": "/images/new-items-94.jpg",
+        "price": 107000,
+        "priceSale": 102000,
+        "jewel": true,
+        "tags": [
+            "однотонные",
+            "сапфиры",
+            "широкие"
+        ]
+    },
+    {
+        "id": 95,
+        "raiting": 3,
+        "imgSrc": "/images/new-items-95.jpg",
+        "price": 62000,
+        "priceSale": 58000,
+        "jewel": false,
+        "tags": [
+            "эмаль",
+            "бесконечность",
+            "подвижные"
+        ]
+    },
+    {
+        "id": 96,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-96.jpg",
+        "price": 92000,
+        "priceSale": 87000,
+        "jewel": true,
+        "tags": [
+            "необычные",
+            "комбинированные",
+            "этно"
+        ]
+    },
+    {
+        "id": 97,
+        "raiting": 3.5,
+        "imgSrc": "/images/new-items-97.jpg",
+        "price": 74000,
+        "priceSale": 70000,
+        "jewel": false,
+        "tags": [
+            "бриллианты",
+            "отпечатки",
+            "косичка"
+        ]
+    },
+    {
+        "id": 98,
+        "raiting": 5,
+        "imgSrc": "/images/new-items-98.jpg",
+        "price": 160000,
+        "priceSale": 153000,
+        "jewel": true,
+        "tags": [
+            "растительный орнамент",
+            "однотонные",
+            "сапфиры"
+        ]
+    },
+    {
+        "id": 99,
+        "raiting": 2,
+        "imgSrc": "/images/new-items-99.jpg",
+        "price": 44000,
+        "priceSale": 41000,
+        "jewel": false,
+        "tags": [
+            "широкие",
+            "эмаль",
+            "бесконечность"
+        ]
+    },
+    {
+        "id": 100,
+        "raiting": 4,
+        "imgSrc": "/images/new-items-100.jpg",
+        "price": 93000,
+        "priceSale": 88000,
+        "jewel": true,
+        "tags": [
+            "подвижные",
+            "необычные",
+            "комбинированные"
+        ]
+    }
+]
