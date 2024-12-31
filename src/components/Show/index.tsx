@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
-import { useAppDispatch } from "../../../../hooks/redux/hooks"
-import { contentPerPageCreator } from "../../../../redux/filter/filterActions"
-import { Option } from "../.."
+import { useAppDispatch } from "../../hooks/redux/hooks.ts"
+import { contentPerPageCreator } from "../../redux/filter/filterActions.ts"
+import { Option } from "../../pages/catalog"
 
 export type CustomSelectProps = {
     options: Option[]
@@ -29,7 +29,7 @@ const Select = ({ options, placeholder = "Выберите значение", de
     const handleOptionClick = (value) => {
         setSelectedValue(value);
         setIsOpen(false);
-        handleChange(Number(selectedValue))
+        handleChange(Number(value))
     };
 
     useEffect(() => {

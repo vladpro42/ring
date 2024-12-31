@@ -2,7 +2,7 @@
 import {
     Header,
     Footer,
-    NavigationText,
+    BreadCrumbs,
     DescriptionProduct,
     CartPageCart,
     CartPageTab
@@ -74,7 +74,7 @@ const CartPageOfProduct = () => {
             <main className="cart-page">
                 <section className="cart-page__section">
                     <div className="container">
-                        <NavigationText />
+                        <BreadCrumbs />
                         <DescriptionProduct id={+id} rating={ring?.raiting} />
                         <CartPageCart
                             imgSrc={ring?.imgSrc}

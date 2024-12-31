@@ -1,6 +1,6 @@
 import Header from "../../../components/header"
 import Footer from "../../../components/footer"
-import NavigationText from "../../../components/NavigationText"
+import BreadCrumbs from "../../../components/BreadCrumbs"
 
 import DescriptionProduct from "./DescriptionProduct"
 import CartPageCart from "./CartPageCart"
@@ -9,7 +9,7 @@ import CartPageTab from "./CartPageTab"
 export {
     Header,
     Footer,
-    NavigationText,
+    BreadCrumbs,
     DescriptionProduct,
     CartPageCart,
     CartPageTab

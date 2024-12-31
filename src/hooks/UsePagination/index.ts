@@ -12,6 +12,10 @@ const usePagination: UsePagination = ({ contentPerPage, count }) => {
     const lastContentIndex = page * contentPerPage;
     const firstContentIndex = lastContentIndex - contentPerPage;
 
+    const clickPagination = ( num: number) => {
+        setPage(num)
+    }
+
     const changePage = useCallback((direction: boolean) => {
         setPage((state) => {
             // move forward
@@ -48,6 +52,7 @@ const usePagination: UsePagination = ({ contentPerPage, count }) => {
         totalPages: pageCount,
         nextPage: () => changePage(true),
         prevPage: () => changePage(false),
+        handleClickPagination: clickPagination,
         setPage: setPageSAFE,
         firstContentIndex,
         lastContentIndex,

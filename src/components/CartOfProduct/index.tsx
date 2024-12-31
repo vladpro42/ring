@@ -36,9 +36,9 @@ export const CartOfProduct = memo(({ cart, url: urlNews }: Props) => {
                 className={styles.link}
                 to={`/${urlNews ? urlNews : url}/${cart.id}`}
                 state={url}
-            >   
-            <span className={styles.span}>Перейти по ссылке </span>
-                <img className={styles.img} src="images/new-items-2.png" alt="" />
+            >
+                <span className={styles.span}>Перейти по ссылке </span>
+                <img className={styles.img} src={cart.imgSrc} alt="" />
             </Link>
             <div className={styles.cart__footer}>
                 <FavotiteBtn className={styles.favorite_pc} id={cart.id} toggleAddFavorite={toggleAddFavorite} isFavorite={isFavorite} />

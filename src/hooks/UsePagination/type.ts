@@ -7,6 +7,7 @@ export interface UsePaginationReturn {
     totalPages: number;
     firstContentIndex: number;
     lastContentIndex: number;
+    handleClickPagination: (num: number) => void;
     nextPage: () => void;
     prevPage: () => void;
     setPage: (page: number) => void;

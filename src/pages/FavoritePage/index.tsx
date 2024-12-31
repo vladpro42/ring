@@ -1,4 +1,4 @@
-import NavigationText from "../../components/NavigationText"
+import NavigationText from "../../components/BreadCrumbs"
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 
@@ -6,7 +6,7 @@ import picture from "../../assets/images/catalo-sale.jpg"
 
 
 import "./favoritePage.scss"
-import Pagination from "../catalog/components/Pagination/index"
+import Pagination from "../../components/Pagination/index"
 import { useState } from "react"
 import { ScrollRestoration } from "react-router-dom"
 import { getItemFromLocalStorage } from "../../utils"

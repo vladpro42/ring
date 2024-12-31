@@ -3,7 +3,7 @@ import "../../pages/catalog/catalog.scss"
 import { useState } from "react"
 
 
-const NavigationText = () => {
+const BreadCrumbs = () => {
 
     const location = useLocation()
     const pathNameArr = location.pathname.split('/')
@@ -40,4 +40,4 @@ const NavigationText = () => {
     )
 }
 
-export default NavigationText
+export default BreadCrumbs
