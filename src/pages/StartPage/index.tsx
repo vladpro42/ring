@@ -18,7 +18,6 @@ const StartPage = () => {
 
     return (
         <>
-            <RingViewer />
             <Header />
             <main className='main'>
                 <Top />

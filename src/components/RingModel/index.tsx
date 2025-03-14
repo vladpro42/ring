@@ -1,13 +1,10 @@
-import React, { Suspense } from "react";
+import  { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import "../../../global";
-import d3 from "../../assets/scene.gltf"
-console.log(d3)
 
 function RingModel() {
   // Загрузите модель с помощью useGLTF
-  const { scene } = useGLTF(d3);
+  const { scene } = useGLTF('/scene.gltf');
 
   // Масштабируйте и разместите модель в сцене
   return <primitive object={scene} scale={1} position={[0, 0, 0]} />;

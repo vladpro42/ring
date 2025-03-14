@@ -1,7 +1,6 @@
 import { useRef, useState } from "react"
 import "./select.scss"
 import { useCustomScroll } from "../../hooks/UseCustomScroll"
-import 'overlayscrollbars/overlayscrollbars.css';
 
 
 const arr: number[] = new Array(15).fill(14).map((item, index) => item = item + (index) * 0.25)
