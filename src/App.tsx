@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         element: <Pages.StartPage />,
     },
     {
-        path: '/catalog-weddingRings',
+        path: '/catalog',
         element: <Pages.CatalogPage {...weddingRings} />,
     },
     {
