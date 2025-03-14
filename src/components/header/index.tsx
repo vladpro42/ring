@@ -86,8 +86,8 @@ const Header = memo(() => {
                                 </a>
                             </li>
                             <li className="header__item oclock">
-                                <p className="header__item-link">пн-пт 11:00-20:00</p>
-                                <p className="header__item-link">сб, вс 11:00-17:00</p>
+                                <p className="header__item-text">пн-пт 11:00-20:00</p>
+                                <p className="header__item-text">сб, вс 11:00-17:00</p>
                             </li>
                             <li className="header__item phone">
                                 <a href="tel:+74999408777" className="header__item-link">+7 (499) 940-87-77</a>
@@ -127,11 +127,9 @@ const Header = memo(() => {
 
 
                     <div className={isSearch ? "header__footer header__footer--active" : "header__footer"}>
-                        <Link to="/" className="logo">
+                        {/*<Link to="/" className="logo">
                             <img src={logo} alt="" />
-                        </Link>
-
-
+                        </Link>*/}
 
                         {animate ? <div className="search__box">
                             <SearchMobile className={animate ? 'search__animate' : 'search--none'} />

@@ -4,23 +4,38 @@
 
     margin-top: 70px;
 
-    &__navigation {
-        display: flex;
-        align-items: center;
-        gap: 0 6px;
-        margin-bottom: 27px;
+    
+&__navigation {
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+    margin-bottom: 27px;
 
-        &-text {
-            @extend %osl;
-            line-height: 1.2;
-            font-size: 14px;
-            color: var(--color-gray);
+    &-text {
+        @extend %osl;
+        line-height: 1.2;
+        font-size: 14px;
+        color: var(--color-gray);
+        position: relative;
+        &::after { 
+           content: "";
+           position: absolute;
+           bottom: 0px;
+           left: 0;
+           right: 12px;
+           height: 2px;
+           background-color: transparent;
+
         }
-
-        &-text span {
-            margin-left: 10px;
+        &:hover::after {
+            background-color: #ddd;
         }
     }
+
+    &-text span {
+        margin-left: 10px;
+    }
+}
 
     &__description {}
 

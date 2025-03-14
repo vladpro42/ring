@@ -17,7 +17,7 @@ const Footer = () => {
                         </Link>
                         <Link to="/politics" className="footer__item-politics">Политика конфиденциальности</Link>
                         <p className="footer__item-ip">ИНН 672208547140</p>
-                        <a href="mailto:bondarev.vlad.01@gmail.com" className="footer__item-link">Разработка сайта bondarev.vlad.01@gmail.com</a>
+                        <a href="mailto:bondarev.vlad.01@gmail.com" className="footer__item-link">Разработка сайта<span>bondarev.vlad.01@gmail.com</span></a>
                     </div>
 
                     <div className="footer__item">
@@ -63,7 +63,7 @@ const Footer = () => {
                             </li>
 
                             <li className="item-list__item">
-                                <a href="#" className="footer__item-adres">Москва, Большой Кисловский переулок, 5-7с1</a>
+                                <a href="#" className="footer__item-address">Москва, Большой Кисловский переулок, 5-7с1</a>
                             </li>
                             <li className="item-list__item">
                                 <a href="mailto:info@art-rings.ru" className="footer__item-mail">info@art-rings.ru</a>

@@ -18,9 +18,10 @@
         margin-block: 7px 41px;
         display: inline-block;
         max-width: 172px;
+        border-bottom: 1px solid transparent;
 
         &:hover {
-            border-bottom: 1px solid var(--color-black);
+            border-color: var(--color-black);
         }
     }
 
@@ -35,6 +36,14 @@
         @extend %osl;
         font-size: 14px;
         color: var(--color-black);
+
+        & span {
+            margin-left: 5px;
+        }
+
+        &:hover span { 
+            text-decoration: underline; 
+        }
     }
 
     &__item-title {
@@ -58,19 +67,26 @@
         @extend %osr;
         margin-bottom: 16px;
         line-height: 22px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    &__item-adres {
+    &__item-address {
         margin-bottom: 4px;
+
+       
     }
 
-    &__item-adres,
+    &__item-address,
     &__item-mail {
         @extend %osl;
         line-height: 1.2;
         font-size: 14px;
         color: #7c7d7f;
-
+        padding: 5px 0;
+        &:hover { text-decoration: underline;}
     }
 
     .user-actions {
@@ -78,6 +94,20 @@
         align-items: center;
         flex-direction: row;
         margin-top: 23px;
+
+        & .header__item-link {
+            width: 40px;
+            height: 40px;
+           
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover { 
+                background-color: #ddd;
+            }
+        }
     }
 }
 
@@ -88,9 +118,10 @@
     line-height: 1.2;
     color: var(--color-black);
     transition: opacity 300ms ease-in;
-
+    padding: 5px 0;
     &:hover {
-        opacity: 0.5;
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 }
 
