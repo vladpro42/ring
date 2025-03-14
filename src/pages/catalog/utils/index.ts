@@ -19,6 +19,13 @@ export function filterByJewel(ring: Ring, isJewel: boolean) {
     }
 }
 
+export function filterByTags(ring: Ring, tags: string[]) {
+    if (tags.length === 0) {
+        return true;
+    }
+    return tags.every((tag) => ring.tags.includes(tag)) 
+}
+
 export function filterByPrice(item: Ring, byPrice: FilterByPrice) {
     if (byPrice[0] == null && byPrice[1] == null) {
         throw Error("Hello world!")

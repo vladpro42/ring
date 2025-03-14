@@ -7,4 +7,5 @@ export const selectSortByAscendingDescending = (state: RootState) => state.filte
 export const selectSortByPrice = (state: RootState) => state.filter.sortByPrice
 export const selectSortByRating = (state: RootState) => state.filter.sortByRating
 export const selectSortByAlphabeticalOrder = (state: RootState) => state.filter.sortByAlphabeticalOrder
+export const selectFilterByTags = (state: RootState) => state.filter.tags
 

@@ -218,21 +218,20 @@
         @extend %osr;
         color: var(--color-accent);
         background-color: transparent;
-        padding: 0;
+        padding: 5px;
         position: relative;
         cursor: pointer;
 
-        &::after {
-            content: "";
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: cover;
-            background-image: url(../../assets/images/shape.svg);
-            width: 14px;
-            height: 9px;
-            position: absolute;
-            right: -24px;
-            top: 7px;
+        &:hover { background-color: #ddd;}
+
+        img {
+            margin-left: 5px;
+            transition: rotate 300ms;
+        }
+
+        img.active {
+            transition: rotate 300ms;
+            rotate: 180deg;
         }
     }
 
@@ -253,6 +252,7 @@
     }
 
     &__padination-btn {
+        padding: 7px;
         @extend %osl;
         line-height: 25px;
         background: transparent;
@@ -264,6 +264,10 @@
         justify-content: center;
         gap: 0 7px;
         cursor: pointer;
+
+        border: 1px solid var(--color-accent);
+        border-radius: 4px;
+        &:hover { background-color: #ddd;}
 
         svg {
             rotate: -90deg;
@@ -278,6 +282,9 @@
 
 
     &__padination-btn--active {
+
+
+
         color: var(--color-accent);
 
         & svg {
@@ -296,8 +303,14 @@
     &__links {}
 
     &__link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
-        border: none;
+        border: 1px solid var(--color-accent);
+        border-radius: 4px;
         background-color: transparent;
         display: inline-block;
     }

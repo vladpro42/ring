@@ -2,6 +2,8 @@
 import { ActionTypes, FilterState, } from "./filterTypes"
 import { Action } from "./filterTypes";
 
+
+
 const initialState: FilterState = {
     contentPerPage: 6,
     sortByAscendingDescending: "des",
@@ -46,6 +48,10 @@ export const filterReducer = (state = initialState, action: Action) => {
 
         case ActionTypes.changeInserts: {
             return { ...state, inserts: action.payload }
+        }
+        
+        case ActionTypes.changeTags: {
+            return {...state, tags: action.payload}
         }
 
         default:

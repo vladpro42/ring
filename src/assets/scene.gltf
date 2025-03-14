@@ -1,0 +1,411 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        0.09341723471879959,
+        0.18683448433876038,
+        0.09341723471879959
+      ],
+      "min": [
+        -0.09341723471879959,
+        0.0,
+        -0.09341723471879959
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 720,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        0.8506509065628052,
+        0.8506509065628052,
+        0.8506509065628052
+      ],
+      "min": [
+        -0.8506509065628052,
+        -0.8506509065628052,
+        -0.8506509065628052
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        1.0,
+        0.5000002980232239,
+        1.0,
+        -1.0
+      ],
+      "min": [
+        -1.0,
+        -0.5000002384185791,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 60,
+      "max": [
+        1.0,
+        0.75
+      ],
+      "min": [
+        0.0,
+        0.25
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 108,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1440,
+      "componentType": 5126,
+      "count": 5151,
+      "max": [
+        0.11000000685453415,
+        0.01980314962565899,
+        0.10999999940395355
+      ],
+      "min": [
+        -0.10999996215105057,
+        -0.0001573999907122925,
+        -0.10999994724988937
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 63252,
+      "componentType": 5126,
+      "count": 5151,
+      "max": [
+        1.0,
+        0.9981288909912109,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.9981290102005005,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 960,
+      "componentType": 5126,
+      "count": 5151,
+      "max": [
+        0.9981290102005005,
+        0.9999992251396179,
+        0.9981289505958557,
+        -1.0
+      ],
+      "min": [
+        -0.9981290102005005,
+        -1.0,
+        -0.9981289505958557,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 480,
+      "componentType": 5126,
+      "count": 5151,
+      "max": [
+        0.08931899815797806,
+        0.9980080127716064
+      ],
+      "min": [
+        0.00017800000205170363,
+        0.0019919872283935547
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 432,
+      "componentType": 5125,
+      "count": 30000,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "jeilocreativedesignworld (https://sketchfab.com/jeilocreativedesignworld)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/ring-643e5e0289dc433f84f3a2accd7571af",
+      "title": "Ring"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 120432,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 41688,
+      "byteOffset": 120432,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 125064,
+      "byteOffset": 162120,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 83376,
+      "byteOffset": 287184,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 370560,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Clean_Gold_8_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Clean_Gold_8",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.760525,
+          0.327778,
+          1.0
+        ],
+        "roughnessFactor": 0.109804
+      }
+    },
+    {
+      "name": "Clean_Gold_9",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.760525,
+          0.327778,
+          1.0
+        ],
+        "roughnessFactor": 0.109804
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4,
+        6
+      ],
+      "name": "Group_1"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1.108726599653908,
+        -0.03871760048364123,
+        -0.0,
+        0.0,
+        0.01904135753961788,
+        0.5452729336006975,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.4160277843475342,
+        0.0,
+        0.013858682475984097,
+        0.3608960211277008,
+        -0.007525700144469738,
+        1.0
+      ],
+      "name": "Dodecahedron_2"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_5"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        0.0002959382034373867,
+        -1.7456994555987442,
+        0.00849462054167328,
+        0.0,
+        4.799297194166898,
+        0.0008175557172711917,
+        0.0008135950421889678,
+        0.0,
+        -0.00029738474897995036,
+        0.008494573608188727,
+        1.7457001708455147,
+        0.0,
+        -0.032156284898519516,
+        0.2123233675956726,
+        -3.872125944326399e-06,
+        1.0
+      ],
+      "name": "Torus_3"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_7"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9729,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

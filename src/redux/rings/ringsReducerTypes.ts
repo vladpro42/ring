@@ -6,6 +6,7 @@ export type Ring = {
     priceSale: number,
     favorite?: boolean,
     jewel: boolean,
+    tags: string[],
 }
 
 export type RingsState = {

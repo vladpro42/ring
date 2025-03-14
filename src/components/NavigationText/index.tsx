@@ -25,7 +25,7 @@ const NavigationText = memo(() => {
     return (
         <div className="catalog-main__navigation">
             <Link to='/' className='catalog-main__navigation-text'>Главная<span>›</span></Link>
-            <Link to='/catalog-weddingRings' className='catalog-main__navigation-text'>Каталог<span>›</span></Link>
+            <Link to='/catalog' className='catalog-main__navigation-text'>Каталог<span>›</span></Link>
             {
                 pathNameArr.length === 3 ? <Link
                     to={location.pathname}

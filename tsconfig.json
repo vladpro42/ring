@@ -5,7 +5,7 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "path/to/your/custom/types"
+      "./src"
     ],
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -30,9 +30,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src/**/*", "global.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
