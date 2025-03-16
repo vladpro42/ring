@@ -1,178 +1,442 @@
 [
     {
-        "id": 1,
-        "raiting": 3,
-        "imgSrc": "/images/new-items-1.png",
-        "price": 59000,
-        "priceSale": 45000,
-        "jewel": false
+      "id": "1",
+      "raiting": 3,
+      "imgSrc": "/images/new-items-1.png",
+      "price": 59000,
+      "priceSale": 45000,
+      "jewel": false,
+      "isNew": 1,
+      "article": 1001,
+      "tags": [
+        "этно",
+        "однотонные",
+        "эмаль"
+      ],
+      "url": "/product/1",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Этно стиль: однотонные украшения с эмалью"
     },
     {
-        "id": 2,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-2.png",
-        "price": 95000,
-        "priceSale": 90000,
-        "jewel": true
+      "id": "2",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-2.png",
+      "price": 95000,
+      "priceSale": 90000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1002,
+      "tags": [
+        "бесконечность",
+        "подвижные",
+        "бриллианты"
+      ],
+      "url": "/product/2",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Подвижные украшения с бриллиантами в стиле бесконечность"
     },
     {
-        "id": 3,
-        "raiting": 3,
-        "imgSrc": "/images/new-items-3.png",
-        "price": 55500,
-        "priceSale": 52000,
-        "jewel": true
+      "id": "3",
+      "raiting": 3,
+      "imgSrc": "/images/new-items-3.png",
+      "price": 55500,
+      "priceSale": 52000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1003,
+      "tags": [
+        "этно",
+        "растительный орнамент",
+        "сапфиры"
+      ],
+      "url": "/product/3",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с растительным орнаментом и сапфирами"
     },
     {
-        "id": 4,
-        "raiting": 1.5,
-        "imgSrc": "/images/new-items-4.jpg",
-        "price": 37900,
-        "priceSale": 32000,
-        "jewel": true
+      "id": "4",
+      "raiting": 1.5,
+      "imgSrc": "/images/new-items-4.jpg",
+      "price": 37900,
+      "priceSale": 32000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1004,
+      "tags": [
+        "однотонные",
+        "широкие",
+        "эмаль"
+      ],
+      "url": "/product/4",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные широкие украшения с эмалью"
     },
     {
-        "id": 5,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-5.jpg",
-        "price": 54000,
-        "priceSale": 45000,
-        "jewel": true
+      "id": "5",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-5.jpg",
+      "price": 54000,
+      "priceSale": 45000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1005,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "бриллианты"
+      ],
+      "url": "/product/5",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с бриллиантами в стиле бесконечность"
     },
     {
-        "id": 6,
-        "raiting": 5,
-        "imgSrc": "/images/new-items-6.jpg",
-        "price": 59600,
-        "priceSale": 49000,
-        "jewel": false
+      "id": "6",
+      "raiting": 5,
+      "imgSrc": "/images/new-items-6.jpg",
+      "price": 59600,
+      "priceSale": 49000,
+      "jewel": false,
+      "isNew": 0,
+      "article": 1006,
+      "tags": [
+        "этно",
+        "косичка",
+        "растительный орнамент"
+      ],
+      "url": "/product/6",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с косичкой и растительным орнаментом"
     },
     {
-        "id": 7,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-7.jpg",
-        "price": 150000,
-        "priceSale": 32000,
-        "jewel": false
+      "id": "7",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-7.jpg",
+      "price": 150000,
+      "priceSale": 32000,
+      "jewel": false,
+      "isNew": 1,
+      "article": 1007,
+      "tags": [
+        "однотонные",
+        "широкие",
+        "эмаль"
+      ],
+      "url": "/product/7",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные широкие украшения с эмалью"
     },
     {
-        "id": 8,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-8.jpg",
-        "price": 54000,
-        "priceSale": 45000,
-        "jewel": true
+      "id": "8",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-8.jpg",
+      "price": 54000,
+      "priceSale": 45000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1008,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "сапфиры"
+      ],
+      "url": "/product/8",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с сапфирами в стиле бесконечность"
     },
     {
-        "id": 9,
-        "raiting": 3.5,
-        "imgSrc": "/images/new-items-9.jpg",
-        "price": 59600,
-        "priceSale": 49000,
-        "jewel": false
+      "id": "9",
+      "raiting": 3.5,
+      "imgSrc": "/images/new-items-9.jpg",
+      "price": 59600,
+      "priceSale": 49000,
+      "jewel": false,
+      "isNew": 1,
+      "article": 1009,
+      "tags": [
+        "этно",
+        "подвижные",
+        "растительный орнамент"
+      ],
+      "url": "/product/9",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с подвижными элементами и растительным орнаментом"
     },
     {
-        "id": 10,
-        "raiting": 2.5,
-        "imgSrc": "/images/new-items-10.jpg",
-        "price": 42000,
-        "priceSale": 40000,
-        "jewel": false
+      "id": "10",
+      "raiting": 2.5,
+      "imgSrc": "/images/new-items-10.jpg",
+      "price": 42000,
+      "priceSale": 40000,
+      "jewel": false,
+      "isNew": 0,
+      "article": 1010,
+      "tags": [
+        "однотонные",
+        "узкие",
+        "эмаль"
+      ],
+      "url": "/product/10",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные узкие украшения с эмалью"
     },
     {
-        "id": 11,
-        "raiting": 2.5,
-        "imgSrc": "/images/new-items-6.jpg",
-        "price": 32500,
-        "priceSale": 32000,
-        "jewel": true
+      "id": "11",
+      "raiting": 2.5,
+      "imgSrc": "/images/new-items-6.jpg",
+      "price": 32500,
+      "priceSale": 32000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1011,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "бриллианты"
+      ],
+      "url": "/product/11",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с бриллиантами в стиле бесконечность"
     },
     {
-        "id": 12,
-        "raiting": 3,
-        "imgSrc": "/images/new-items-1.png",
-        "price": 59000,
-        "priceSale": 45000,
-        "jewel": false
+      "id": "12",
+      "raiting": 3,
+      "imgSrc": "/images/new-items-1.png",
+      "price": 59000,
+      "priceSale": 45000,
+      "jewel": false,
+      "isNew": 0,
+      "article": 1012,
+      "tags": [
+        "этно",
+        "косичка",
+        "растительный орнамент"
+      ],
+      "url": "/product/12",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с косичкой и растительным орнаментом"
     },
     {
-        "id": 13,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-2.png",
-        "price": 95000,
-        "priceSale": 90000,
-        "jewel": true
+      "id": "13",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-2.png",
+      "price": 95000,
+      "priceSale": 90000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1013,
+      "tags": [
+        "однотонные",
+        "широкие",
+        "эмаль"
+      ],
+      "url": "/product/13",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные широкие украшения с эмалью"
     },
     {
-        "id": 14,
-        "raiting": 3,
-        "imgSrc": "/images/new-items-3.png",
-        "price": 55500,
-        "priceSale": 52000,
-        "jewel": true
+      "id": "14",
+      "raiting": 3,
+      "imgSrc": "/images/new-items-3.png",
+      "price": 55500,
+      "priceSale": 52000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1014,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "сапфиры"
+      ],
+      "url": "/product/14",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с сапфирами в стиле бесконечность"
     },
     {
-        "id": 15,
-        "raiting": 1.5,
-        "imgSrc": "/images/new-items-4.jpg",
-        "price": 37900,
-        "priceSale": 32000,
-        "jewel": true
+      "id": "15",
+      "raiting": 1.5,
+      "imgSrc": "/images/new-items-4.jpg",
+      "price": 37900,
+      "priceSale": 32000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1015,
+      "tags": [
+        "этно",
+        "подвижные",
+        "растительный орнамент"
+      ],
+      "url": "/product/15",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с подвижными элементами и растительным орнаментом"
     },
     {
-        "id": 16,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-5.jpg",
-        "price": 54000,
-        "priceSale": 45000,
-        "jewel": true
+      "id": "16",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-5.jpg",
+      "price": 54000,
+      "priceSale": 45000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1016,
+      "tags": [
+        "однотонные",
+        "узкие",
+        "эмаль"
+      ],
+      "url": "/product/16",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные узкие украшения с эмалью"
     },
     {
-        "id": 17,
-        "raiting": 5,
-        "imgSrc": "/images/new-items-6.jpg",
-        "price": 59600,
-        "priceSale": 49000,
-        "jewel": false
+      "id": "17",
+      "raiting": 5,
+      "imgSrc": "/images/new-items-6.jpg",
+      "price": 59600,
+      "priceSale": 49000,
+      "jewel": false,
+      "isNew": 1,
+      "article": 1017,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "бриллианты"
+      ],
+      "url": "/product/17",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с бриллиантами в стиле бесконечность"
     },
     {
-        "id": 18,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-7.jpg",
-        "price": 150000,
-        "priceSale": 32000,
-        "jewel": false
+      "id": "18",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-7.jpg",
+      "price": 150000,
+      "priceSale": 32000,
+      "jewel": false,
+      "isNew": 0,
+      "article": 1018,
+      "tags": [
+        "этно",
+        "косичка",
+        "растительный орнамент"
+      ],
+      "url": "/product/18",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с косичкой и растительным орнаментом"
     },
     {
-        "id": 19,
-        "raiting": 4.5,
-        "imgSrc": "/images/new-items-8.jpg",
-        "price": 54000,
-        "priceSale": 45000,
-        "jewel": true
+      "id": "19",
+      "raiting": 4.5,
+      "imgSrc": "/images/new-items-8.jpg",
+      "price": 54000,
+      "priceSale": 45000,
+      "jewel": true,
+      "isNew": 1,
+      "article": 1019,
+      "tags": [
+        "однотонные",
+        "широкие",
+        "эмаль"
+      ],
+      "url": "/product/19",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные широкие украшения с эмалью"
     },
     {
-        "id": 20,
-        "raiting": 3.5,
-        "imgSrc": "/images/new-items-9.jpg",
-        "price": 59600,
-        "priceSale": 49000,
-        "jewel": false
+      "id": "20",
+      "raiting": 3.5,
+      "imgSrc": "/images/new-items-9.jpg",
+      "price": 59600,
+      "priceSale": 49000,
+      "jewel": false,
+      "isNew": 0,
+      "article": 1020,
+      "tags": [
+        "бесконечность",
+        "необычные",
+        "сапфиры"
+      ],
+      "url": "/product/20",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 2,
+      "h1": "Необычные украшения с сапфирами в стиле бесконечность"
     },
     {
-        "id": 21,
-        "raiting": 2.5,
-        "imgSrc": "/images/new-items-10.jpg",
-        "price": 42000,
-        "priceSale": 40000,
-        "jewel": false
+      "id": "21",
+      "raiting": 2.5,
+      "imgSrc": "/images/new-items-10.jpg",
+      "price": 42000,
+      "priceSale": 40000,
+      "jewel": false,
+      "isNew": 1,
+      "article": 1021,
+      "tags": [
+        "этно",
+        "подвижные",
+        "растительный орнамент"
+      ],
+      "url": "/product/21",
+      "isFavorite": 0,
+      "isBasket": 0,
+      "categoryId": 3,
+      "h1": "Этно украшения с подвижными элементами и растительным орнаментом"
     },
     {
-        "id": 22,
-        "raiting": 2.5,
-        "imgSrc": "/images/new-items-6.jpg",
-        "price": 32500,
-        "priceSale": 32000,
-        "jewel": true
+      "id": "22",
+      "raiting": 2.5,
+      "imgSrc": "/images/new-items-6.jpg",
+      "price": 32500,
+      "priceSale": 32000,
+      "jewel": true,
+      "isNew": 0,
+      "article": 1022,
+      "tags": [
+        "однотонные",
+        "узкие",
+        "эмаль"
+      ],
+      "url": "/product/22",
+      "isFavorite": 1,
+      "isBasket": 0,
+      "categoryId": 1,
+      "h1": "Однотонные узкие украшения с эмалью"
     }
-]
+  ]

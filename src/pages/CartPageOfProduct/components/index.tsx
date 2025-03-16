@@ -5,6 +5,7 @@ import BreadCrumbs from "../../../components/BreadCrumbs"
 import DescriptionProduct from "./DescriptionProduct"
 import CartPageCart from "./CartPageCart"
 import CartPageTab from "./CartPageTab"
+import CartPage from "./CartPage"
 
 export {
     Header,
@@ -12,5 +13,6 @@ export {
     BreadCrumbs,
     DescriptionProduct,
     CartPageCart,
-    CartPageTab
+    CartPageTab,
+    CartPage
 }

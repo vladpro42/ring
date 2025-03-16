@@ -1,11 +1,9 @@
 import map from "../../assets/images/map.svg"
 import mail from "../../assets/images/mail.svg"
-import logo from "../../assets/images/logo.png"
 
 import { Link } from 'react-router-dom'
 import { useAppSelector } from "../../hooks/redux/hooks"
 import { selectRingsFromBasketLength } from "../../redux/basket/basketSelectors"
-import { getItemFromLocalStorage } from "../../utils"
 import UserActionsLinks from "./components/UserActionsLinks"
 import HeaderSearch from "./components/HeaderSearch"
 import { memo, useState } from "react"
@@ -16,11 +14,14 @@ import HeaderCompany from "./components/HeaderCompany"
 import HeaderFooterList from "./components/HeaderFooterList"
 import SearchMobile from "./components/SearchMobile"
 import BurgerMenu from "../BurgerMenu"
+import { selectCountIsFavorite } from "../../redux/rings/ringsSelects"
 
 const Header = memo(() => {
 
     const lenBasket = useAppSelector(selectRingsFromBasketLength)
-    const lenFavorite = getItemFromLocalStorage("favoriteRings").length
+   // const lenFavorite = getItemFromLocalStorage("favoriteRings").length
+
+    const lenFavorite = useAppSelector(selectCountIsFavorite)
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -86,8 +87,8 @@ const Header = memo(() => {
                                 </a>
                             </li>
                             <li className="header__item oclock">
-                                <p className="header__item-link">пн-пт 11:00-20:00</p>
-                                <p className="header__item-link">сб, вс 11:00-17:00</p>
+                                <p className="header__item-text">пн-пт 11:00-20:00</p>
+                                <p className="header__item-text">сб, вс 11:00-17:00</p>
                             </li>
                             <li className="header__item phone">
                                 <a href="tel:+74999408777" className="header__item-link">+7 (499) 940-87-77</a>
@@ -127,11 +128,9 @@ const Header = memo(() => {
 
 
                     <div className={isSearch ? "header__footer header__footer--active" : "header__footer"}>
-                        <Link to="/" className="logo">
+                        {/*<Link to="/" className="logo">
                             <img src={logo} alt="" />
-                        </Link>
-
-
+                        </Link>*/}
 
                         {animate ? <div className="search__box">
                             <SearchMobile className={animate ? 'search__animate' : 'search--none'} />

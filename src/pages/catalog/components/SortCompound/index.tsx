@@ -1,17 +1,17 @@
-import { useState } from "react"
+import { memo, useCallback, useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { filterByJewelCreator } from "../../../../redux/filter/filterActions"
 
-const SortCompound = () => {
+const SortCompound = memo(() => {
 
     const [isActive, setIsActive] = useState(0)
     const dispatch = useAppDispatch()
 
-    const handleClick = (index: number) => {
+    const handleClick = useCallback((index: number) => {
         setIsActive(index)
         const payload = index === 0
         dispatch(filterByJewelCreator(payload))
-    }
+    }, [dispatch])
 
     return (
         <div className="catalog-main__compound">
@@ -32,6 +32,6 @@ const SortCompound = () => {
             </ul>
         </div>
     )
-}
+})
 
 export default SortCompound

@@ -37,7 +37,7 @@ const HeaderSearch = ({ className }: { className?: string }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
-                type="number"
+                type="text"
                 className='header__search-input'
                 placeholder='Поиск украшений'
             />

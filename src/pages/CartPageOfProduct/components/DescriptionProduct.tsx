@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { Rating2 } from "../../../components/Raiting"
 import { useFavorite } from "../../../hooks/UseFavorite/useFavorite"
 
@@ -7,7 +8,7 @@ export type DescriptionProductProps = {
 }
 
 
-const DescriptionProduct = ({ id, rating }: DescriptionProductProps) => {
+const DescriptionProduct = memo(({ id, rating }: DescriptionProductProps) => {
     const { isFavorite, toggleAddFavorite } = useFavorite('favoriteRings', id)
 
     return (
@@ -26,6 +27,6 @@ const DescriptionProduct = ({ id, rating }: DescriptionProductProps) => {
             </p>
         </div>
     )
-}
+})
 
 export default DescriptionProduct

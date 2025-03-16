@@ -4,7 +4,6 @@ html {
     scrollbar-color: var(--color-accent);
 }
 
-
 .select {
 
     position: relative;
@@ -54,16 +53,21 @@ html {
     }
 
     &__list {
-        padding-left: 15px;
         display: flex;
-        gap: 3px 0;
         flex-direction: column;
         flex-basis: 100%;
+        overflow: auto;
     }
 
     &__item {
         width: 100%;
-
+        padding-left: 15px;
+        padding-block: 3px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-hover-accent);
+            color: #fff;
+        }
         &:first-child {
             margin-top: 5px;
         }
@@ -76,7 +80,7 @@ html {
 
     &__scroll-bar {
         background-color: var(--color-blue);
-        width: 3px;
+        width: 4px;
         display: flex;
         justify-content: center;
         margin-right: 6px;
@@ -85,7 +89,7 @@ html {
     }
 
     &__scroll {
-        width: 3px;
+        width: 4px;
         height: 58px;
         display: inline-block;
         background-color: var(--color-accent);

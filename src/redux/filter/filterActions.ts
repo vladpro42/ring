@@ -1,4 +1,4 @@
-import { ActionTypes, ByPrice, ChangeContentPerPage, ChangeInserts, ChangeJewel, FilterByPrice, Inserts, SortByAlphabeticalOrder, SortByAscendingAndDescending, SortByAscendingAndDescendingAndDefault, SortByAscendingDescending, SortByPriceValue, SortByRatingValue } from "./filterTypes"
+import { ActionTypes, ByPrice, ChangeContentPerPage, ChangeInserts, ChangeJewel, ChangeTags, FilterByPrice, Inserts, SortByAlphabeticalOrder, SortByAscendingAndDescending, SortByAscendingAndDescendingAndDefault, SortByAscendingDescending, SortByPriceValue, SortByRatingValue } from "./filterTypes"
 
 export const contentPerPageCreator = (value: number): ChangeContentPerPage => ({
     type: ActionTypes.changeContentPerPage,
@@ -32,5 +32,10 @@ export const sortByAlphabeticalOrderCreator = (payload: SortByAscendingAndDescen
 })
 export const changeInsertsCreator = (payload: Inserts): ChangeInserts => ({
     type: ActionTypes.changeInserts,
+    payload,
+})
+
+export const filterByTagsCreator = (payload: string[]): ChangeTags => ({
+    type: ActionTypes.changeTags,
     payload,
 })

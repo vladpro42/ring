@@ -1,0 +1,32 @@
+
+
+.select {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    border-radius: 6px;
+    border: 2px solid var(--color-accent);
+
+   
+}
+
+
+
+.options {
+    padding: 5px 0;
+    background-color: #fff;
+    
+   
+    color: var(--color-accent);
+}
+
+.options:hover {
+    background-color: #bbb;
+}
+
+.select {
+    
+}

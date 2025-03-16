@@ -1,12 +1,12 @@
-import { arrTagForFilter } from '../../../../assets/data/tagsArr'
 import BtnClose from '../../../../UI/BtnClose'
 import { ArrayValues2, arrayValues2 } from '../../../../assets/data/Prices'
-import { useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { ScrollRestoration } from 'react-router-dom'
 import { useAppDispatch } from '../../../../hooks/redux/hooks'
-import { changeInsertsCreator, filterByPriceCreator } from '../../../../redux/filter/filterActions'
+import { changeInsertsCreator, filterByPriceCreator, filterByTagsCreator } from '../../../../redux/filter/filterActions'
+import {tags2} from "../../../../assets/tags.tsx";
 
-const FilterMobile = ({ onClose, className }: { onClose: () => void, className: string }) => {
+const FilterMobile = memo(({ onClose, className }: { onClose: () => void, className: string }) => {
 
     const [priceActive, setPriceActive] = useState(0)
     const [tagsActive, setTagsActive] = useState<string[]>([])
@@ -14,31 +14,35 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
 
     const dispatch = useAppDispatch()
 
-    const handlePriceActiveClick = (index: number, item: ArrayValues2) => {
+    const handlePriceActiveClick = useCallback((index: number, item: ArrayValues2) => {
         dispatch(filterByPriceCreator(item.val))
         setPriceActive(index)
-    }
-    const handleInsertClick = (index: number) => {
+    }, [dispatch])
+
+    const handleInsertClick = useCallback((index: number) => {
         dispatch(changeInsertsCreator(index === 0 ? 'with' : 'without'))
         setInsert(index)
-    }
-    const toggleTagsActive = (tag: string) => {
+    }, [dispatch])
+
+    const toggleTagsActive = useCallback((tag: string) => {
         if (tagsActive.includes(tag)) {
             setTagsActive(tagsActive.filter(item => item !== tag))
             return
         }
         setTagsActive([...tagsActive, tag])
-    }
 
-    const resetFilters = () => {
+        dispatch(filterByTagsCreator([...tagsActive, tag]));
+    }, [tagsActive, dispatch])
 
+    const resetFilters = useCallback(() => {
         //default value
         dispatch(filterByPriceCreator(arrayValues2[0].val))
         setPriceActive(0)
         dispatch(changeInsertsCreator('with'))
         setInsert(0)
         setTagsActive([])
-    }
+        dispatch(filterByTagsCreator([]));
+    }, [dispatch])
     return (
         <div className={["filter-mobile", className].join(' ')}>
             <div className="filter-mobile__header">
@@ -116,10 +120,10 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
                 <li className="filter-mobile__open-menu">
                     <ul className='list-filters list-filters--active'>
                         {
-                            arrTagForFilter.map((item) => <li
+                            tags2.map((item, index) => <li
                                 onClick={() => toggleTagsActive(item)}
                                 className='list-filters__item'
-                                key={item}
+                                key={item + index}
                             >
                                 <p className="list-filters__item-price">{item}</p>
                                 <div
@@ -139,6 +143,6 @@ const FilterMobile = ({ onClose, className }: { onClose: () => void, className: 
             <ScrollRestoration />
         </div>
     )
-}
+})
 
 export default FilterMobile

@@ -1,64 +1,47 @@
-import { useCallback, useEffect, useState } from "react";
-import { UsePagination } from "./type";
+import { useState } from "react";
 
-const usePagination: UsePagination = ({ contentPerPage, count }) => {
-    const [page, setPage] = useState(1);
+export interface UsePaginationProps {
+  contentPerPage: number;
+  count: number;
+}
 
-    useEffect(() => {
-        setPage(1)
-    }, [count, contentPerPage])
+export interface UsePaginationReturn {
+  page: number;
+  totalPages: number;
+  firstContentIndex: number;
+  lastContentIndex: number;
+  nextPage: () => void;
+  prevPage: () => void;
+  setPage: (page: number) => void;
+}
 
-    const pageCount = Math.ceil(count / contentPerPage);
-    const lastContentIndex = page * contentPerPage;
-    const firstContentIndex = lastContentIndex - contentPerPage;
+ const usePagination = ({
+  contentPerPage,
+  count,
+}: UsePaginationProps): UsePaginationReturn => {
+  const [page, setPage] = useState(1);
 
-    const clickPagination = ( num: number) => {
-        setPage(num)
-    }
+  const totalPages = Math.ceil(count / contentPerPage);
 
-    const changePage = useCallback((direction: boolean) => {
-        setPage((state) => {
-            // move forward
-            if (direction) {
-                // if page is the last page, do nothing
-                if (state === pageCount) {
-                    return state;
-                }
-                return state + 1;
-                // go back
-            } else {
-                // if page is the first page, do nothing
-                if (state === 1) {
-                    return state;
-                }
-                return state - 1;
-            }
-        });
-    }, [pageCount]);
+  const lastContentIndex = page * contentPerPage;
+  const firstContentIndex = lastContentIndex - contentPerPage;
 
-    const setPageSAFE = useCallback((num: number) => {
-        // if number is greater than number of pages, set to last page
-        if (num > pageCount) {
-            setPage(pageCount);
-            // if number is less than 1, set page to first page
-        } else if (num < 1) {
-            setPage(1);
-        } else {
-            setPage(num);
-        }
-    }, [pageCount])
+  const nextPage = () => {
+    setPage((prev) => (prev < totalPages ? prev + 1 : prev));
+  };
 
-    return {
-        totalPages: pageCount,
-        nextPage: () => changePage(true),
-        prevPage: () => changePage(false),
-        handleClickPagination: clickPagination,
-        setPage: setPageSAFE,
-        firstContentIndex,
-        lastContentIndex,
-        page,
-    };
+  const prevPage = () => {
+    setPage((prev) => (prev > 1 ? prev - 1 : prev));
+  };
+
+  return {
+    page,
+    totalPages,
+    firstContentIndex,
+    lastContentIndex,
+    nextPage,
+    prevPage,
+    setPage,
+  };
 };
-
-
 export default usePagination;

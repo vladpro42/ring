@@ -5,7 +5,8 @@ import { Ring } from "./ringsReducerTypes";
 
 const initialState: RingsState = {
     status: 'loading',
-    rings: {}
+    rings: {},
+    error: null
 }
 
 
@@ -16,7 +17,26 @@ export const ringsReducer = (state = initialState, action: Action) => {
             return {
                 ...state, rings: {
                     ...state.rings,
-                    [action.payload]: { ...state.rings[action.payload], favorite: !state.rings[action.payload].favorite }
+                    [action.payload]: { ...state.rings[action.payload], favorite: !state.rings[action.payload].isFavorite }
+                }
+            }
+        }
+
+        case ActionTypes.getRing: {
+            return {
+               [action.payload.id]: action.payload
+            }
+        }
+
+        case ActionTypes.updateRing: {
+            return {
+                ...state, 
+                rings: {
+                    ...state.rings,
+                    [action.payload.id]: {
+                        ...state.rings[action.payload.id],
+                        ...action.payload,
+                    }
                 }
             }
         }

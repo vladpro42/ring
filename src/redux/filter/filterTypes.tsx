@@ -72,4 +72,4 @@ export type Action = ChangeContentPerPage |
     ChangeJewel |
     SortByPriceValue |
     SortByRatingValue |
-    SortByAlphabeticalOrder
+    SortByAlphabeticalOrder | ChangeTags 

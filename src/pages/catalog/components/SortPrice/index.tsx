@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { memo, useCallback, useState } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { filterByPriceCreator } from "../../../../redux/filter/filterActions"
 import { FilterByPrice } from "../../../../redux/filter/filterTypes"
@@ -6,12 +6,12 @@ import { arrayValues } from "../../../../assets/data/Prices"
 
 
 
-const SortPrice = () => {
+const SortPrice = memo(() => {
 
     const [isActive, setIsActive] = useState('до 50 000')
     const dispatch = useAppDispatch()
 
-    const handleClick = (e: React.MouseEvent<HTMLLIElement>, item: string) => {
+    const handleClick = useCallback((e: React.MouseEvent<HTMLLIElement>, item: string) => {
         setIsActive(item)
 
         const { price } = e.currentTarget.dataset
@@ -19,11 +19,10 @@ const SortPrice = () => {
         const two = +price.split(',')[1]
         const tupleArr: FilterByPrice = [one, two]
         if (Array.isArray(tupleArr)) {
-
             dispatch(filterByPriceCreator(tupleArr))
         }
 
-    }
+    }, [dispatch])
 
     return (
         <div className="catalog-main__price">
@@ -60,6 +59,6 @@ const SortPrice = () => {
             </ul>
         </div>
     )
-}
+})
 
 export default SortPrice

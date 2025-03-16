@@ -1,16 +1,17 @@
+import { memo, useCallback } from "react"
 import { useAppDispatch } from "../../../../hooks/redux/hooks"
 import { changeContentPerPageCreator } from "../../../../redux/filter/filterActions"
 
-const SortRaiting = () => {
+const SortRaiting = memo(() => {
     const dispatch = useAppDispatch()
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = e.currentTarget.value
         if (value === 'asc' || value === "des") {
             dispatch(changeContentPerPageCreator(value))
         }
         return
-    }
+    }, [dispatch])
 
     return (
         <div className="catalog-main__sort">
@@ -21,6 +22,6 @@ const SortRaiting = () => {
             </select>
         </div>
     )
-}
+})
 
 export default SortRaiting

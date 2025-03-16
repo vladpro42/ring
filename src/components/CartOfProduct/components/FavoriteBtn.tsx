@@ -1,21 +1,46 @@
+import { useAppDispatch } from "../../../hooks/redux/hooks"
+import { updateRingCreator } from "../../../redux/rings/ringsAction"
+import { Ring } from "../../../redux/rings/ringsReducerTypes"
+import { url } from "../../../redux/rings/ringsThunk"
 import styles from "../index.module.scss"
 
 type Props = {
     id: number,
-    toggleAddFavorite: (id: number) => void,
-    isFavorite: boolean,
+    isFavorite: number,
     className?: string,
 }
 
-export const FavotiteBtn = ({ id, toggleAddFavorite, isFavorite, className }: Props) => {
-    return <svg
-        onClick={() => toggleAddFavorite(id)}
-        className={[styles.favotite, className].join(' ')}
-        width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" fill="#FFF" />
-        <path
-            className={[styles.favotite__path, isFavorite ? styles.favotite__path_active : ''].join(' ')}
-            d="M20.8401 4.61012C20.3294 4.09912 19.7229 3.69376 19.0555 3.4172C18.388 3.14064 17.6726 2.99829 16.9501 2.99829C16.2276 2.99829 15.5122 3.14064 14.8448 3.4172C14.1773 3.69376 13.5709 4.09912 13.0601 4.61012L12.0001 5.67012L10.9401 4.61012C9.90843 3.57842 8.50915 2.99883 7.05012 2.99883C5.59109 2.99883 4.19181 3.57842 3.16012 4.61012C2.12843 5.64181 1.54883 7.04108 1.54883 8.50012C1.54883 9.95915 2.12843 11.3584 3.16012 12.3901L4.22012 13.4501L12.0001 21.2301L19.7801 13.4501L20.8401 12.3901C21.3511 11.8794 21.7565 11.2729 22.033 10.6055C22.3096 9.93801 22.4519 9.2226 22.4519 8.50012C22.4519 7.77763 22.3096 7.06222 22.033 6.39476C21.7565 5.7273 21.3511 5.12087 20.8401 4.61012Z"
-        />
-    </svg>
+export const FavotiteBtn = ({ id, isFavorite, className }: Props) => {
+
+    const dispatch = useAppDispatch()
+
+    
+    const toggleFavoriteBtn = async ( id: number) => {
+        const finalUrl = url + `/${id}`
+        try {
+            const response = await fetch(finalUrl, {
+                method: 'put', 
+                body: JSON.stringify({isFavorite: isFavorite == 1 ? 0 : 1}),
+                headers: {'content-type':'application/json'},
+            });
+            if(!response.ok) {
+                throw new Error(`Не удалось отправить ${url} с id ${id}`)
+            }
+
+            const ring: Ring = await response.json();
+            console.log(ring)
+            dispatch(updateRingCreator(ring))
+            
+        } catch (error) {
+            console.log(error)
+        }
+
+        console.log(isFavorite)
+    }
+
+
+    return <button className={`${styles.favoriteBtn} ${className ? className : ''}`}
+        onClick={() => toggleFavoriteBtn(id)}>
+        <img className={`${styles.svg} ${isFavorite ? styles.active : ''}`} src="/svg/heart.svg" alt="" />
+    </button>
 }

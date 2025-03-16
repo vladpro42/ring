@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 
 import sale from "../../../assets/images/catalo-sale.jpg"
 
 import "swiper/css"
 import "swiper/css/navigation"
-import FormComments from './FormComments'
 import Description from './Description'
 import Reviews from './Reviews'
+import FormComments2 from "./FormComments2.tsx";
 
 
 export type Comment = {
@@ -14,30 +14,31 @@ export type Comment = {
     name: string,
     text: string,
     data: string,
-    imgSrc?: string[],
+    imgSrc: string,
     rating: number
 }
 
-const CartPageTab = () => {
+const keyTab = { description: 'description', review: 'review' }
 
-    const keyTab = { description: 'description', review: 'review' }
+const CartPageTab = memo(({ringId}: {ringId: number}) => {
+
     const [tab, setTab] = useState(keyTab.description)
 
-    const handleClickDescription = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickDescription = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
         if (!e.currentTarget.classList.contains("cart-page__description-btn--active")) {
             e.currentTarget.classList.add("cart-page__description-btn--active")
         }
         setTab(keyTab.description)
-    }
+    }, [])
 
-    const handleClickReview = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClickReview = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 
         if (!e.currentTarget.classList.contains("cart-page__description-btn--active")) {
             e.currentTarget.classList.add("cart-page__description-btn--active")
         }
         setTab(keyTab.review)
-    }
+    }, [])
 
     const getComments = async () => {
         const json = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/Comments")
@@ -81,12 +82,14 @@ const CartPageTab = () => {
         </picture>
 
         <Description className={keyTab.description === tab ? "db" : "dn"} />
-        <Reviews className={keyTab.review === tab ? "db" : "dn"} comments={comments} />
-       {/*  <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} /> */}
+        {!comments.length ? <div className='cart-page__error-text'>Отзывов еще нет.</div> : <Reviews className={keyTab.review === tab ? "db" : "dn"} comments={comments} />}
+        
+        {/*  <Reviews className={keyTab.review === tab ? "" : ""} comments={comments} /> */}
         <h3 className="cart-page__form-title">НАПИСАТЬ ОТЗЫВ</h3>
-        <FormComments />
+        <FormComments2 ringId={ringId}/>
 
     </div>
 
-}
+})
+
 export default CartPageTab

@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom"
 import "../../pages/catalog/catalog.scss"
-import { useState } from "react"
+import { memo, useState } from "react"
 
 
-const BreadCrumbs = () => {
+const NavigationText = memo(() => {
 
     const location = useLocation()
     const pathNameArr = location.pathname.split('/')
@@ -25,7 +25,7 @@ const BreadCrumbs = () => {
     return (
         <div className="catalog-main__navigation">
             <Link to='/' className='catalog-main__navigation-text'>Главная<span>›</span></Link>
-            <Link to='/catalog-weddingRings' className='catalog-main__navigation-text'>Каталог<span>›</span></Link>
+            <Link to='/catalog' className='catalog-main__navigation-text'>Каталог<span>›</span></Link>
             {
                 pathNameArr.length === 3 ? <Link
                     to={location.pathname}
@@ -38,6 +38,6 @@ const BreadCrumbs = () => {
             }
         </div>
     )
-}
+})
 
 export default BreadCrumbs

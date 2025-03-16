@@ -3,10 +3,32 @@ import { UseCustomScroll } from "./types";
 
 const useCustomScroll: UseCustomScroll = (containerRef) => {
     const [offsetY, setOffsetY] = useState(0);
+    const [maxOffset, setMaxOffset] = useState(0);
 
     const dragging = useRef(false);
-
     const previousClientY = useRef(0);
+
+    // Обновляем максимальное значение offsetY при изменении размеров контейнера
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const updateMaxOffset = () => {
+            const scrollHeight = container.scrollHeight; // Полная высота содержимого
+            const clientHeight = container.clientHeight; // Видимая высота контейнера
+            setMaxOffset(scrollHeight - clientHeight); // Максимальное значение offsetY
+        };
+
+        updateMaxOffset(); // Инициализация
+
+        // Обновляем при изменении размеров контейнера
+        const resizeObserver = new ResizeObserver(updateMaxOffset);
+        resizeObserver.observe(container);
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, [containerRef]);
 
     const handlePointerDown = useCallback((e: PointerEvent) => {
         if (e.target instanceof HTMLLIElement) return;
@@ -18,16 +40,19 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
 
     const handlePointerMove = useCallback(
         (e: PointerEvent) => {
-            if (!dragging.current) {
-                return;
-            }
-            e.preventDefault()
+            if (!dragging.current) return;
+
+            e.preventDefault();
 
             const change = e.clientY - previousClientY.current;
             previousClientY.current = e.clientY;
-            setOffsetY((prevOffset) => prevOffset + change);
+
+            setOffsetY((prevOffset) => {
+                const newOffset = prevOffset + change;
+                return Math.max(0, Math.min(newOffset, maxOffset)); // Ограничиваем offsetY
+            });
         },
-        [dragging]
+        [maxOffset]
     );
 
     const handlePointerUp = useCallback(() => {
@@ -44,17 +69,20 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
 
     const handleTouchMove = useCallback(
         (e: TouchEvent) => {
+            if (!dragging.current) return;
+
             e.preventDefault();
-            if (!dragging.current) {
-                return;
-            }
 
             const touch = e.touches[0];
             const change = touch.clientY - previousClientY.current;
             previousClientY.current = touch.clientY;
-            setOffsetY((prevOffset) => prevOffset + change);
+
+            setOffsetY((prevOffset) => {
+                const newOffset = prevOffset + change;
+                return Math.max(0, Math.min(newOffset, maxOffset)); // Ограничиваем offsetY
+            });
         },
-        [dragging]
+        [maxOffset]
     );
 
     const handleTouchEnd = useCallback(() => {
@@ -96,8 +124,7 @@ const useCustomScroll: UseCustomScroll = (containerRef) => {
         handleTouchEnd,
     ]);
 
-
     return offsetY;
-}
+};
 
-export { useCustomScroll }
+export { useCustomScroll };

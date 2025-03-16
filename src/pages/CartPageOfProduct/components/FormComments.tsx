@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/* import { useState } from 'react'
 import { Rating2 } from '../../../components/Raiting'
 import { Comment } from './CartPageTab';
 
@@ -7,63 +7,52 @@ enum Status {
     name = 'name',
     review = 'review',
 }
-
 const FormComments = () => {
-
     const [name, setName] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(0)
-
     const [status, setStatus] = useState("")
-
     const [statusFetch, setStatusFetch] = useState<Response>()
-
     const isValidForm = status === ''
-
     const handleChangeRating = (_: React.SyntheticEvent, value: number) => {
         setRating(value)
         setStatus('')
     }
-
     const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.currentTarget.value)
         setStatus('')
     }
-
     const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setReview(e.currentTarget.value)
         setStatus('')
     }
-
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-
         if (name.trim() === '') {
             setStatus(Status.name)
-            return
-        }
 
+        }
         if (review.trim() === '') {
             setStatus(Status.review)
-            return
-        }
 
+        }
         if (rating === 0) {
             setStatus(Status.rating)
-            return
         }
 
+        if(!status.length) {
+            return;
+        }
         const date = new Date()
         const num = date.getDay()
         const month = date.getMonth()
         const year = date.getFullYear()
-
-
-
         const payload: Comment = {
-            name: name.trim(), text: review.trim(), rating, imgSrc: [], data: `${num}.${month}.${year}`
+            name: name.trim(),
+            text: review.trim(),
+            rating, imgSrc: [],
+            data: `${num}.${month}.${year}`
         }
-
         const response = await fetch("https://65f83983b4f842e808873cd9.mockapi.io/Comments", {
             method: 'post',
             headers: {
@@ -71,13 +60,10 @@ const FormComments = () => {
             },
             body: JSON.stringify(payload),
         })
-
         setStatusFetch(response)
-
         setName('')
         setReview('')
         handleChangeRating(e, 0)
-
     }
 
     return (
@@ -128,3 +114,4 @@ const FormComments = () => {
 }
 
 export default FormComments
+*/

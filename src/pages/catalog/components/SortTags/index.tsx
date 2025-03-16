@@ -1,41 +1,57 @@
+import { memo, useState, useCallback } from "react";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux/hooks";
+import { ActionTypes } from "../../../../redux/filter/filterTypes";
+import { selectFilterByTags } from "../../../../redux/filter/filterSelectors";
 
-import { useState } from "react"
-import { arrTagForFilter } from "../../../../assets/data/tagsArr"
+import shape from "../../../../assets/images/shape.svg"
+import {tags2} from "../../../../assets/tags.tsx"
+const SortTags = memo(() => {
+    const dispatch = useAppDispatch();
+    const tags = useAppSelector(selectFilterByTags);
+    const [selectedTags, setSelectedTags] = useState<string[]>(tags);
 
-const SortTags = () => {
+    const handleTagChange = useCallback((tag: string) => {
+        const newTags = selectedTags.includes(tag)
+            ? selectedTags.filter((t) => t !== tag)
+            : [...selectedTags, tag];
 
-    const [isActive] = useState(0)
+        setSelectedTags(newTags);
+        dispatch({
+            type: ActionTypes.changeTags,
+            payload: newTags,
+        });
+    }, [dispatch, selectedTags]);
+
+
+    const [isShowMore, setIsShowMore] = useState(false);
+    const maxElements = isShowMore ? tags2.length : 5;
+
+     
 
     return (
         <div className="catalog-main__tegs">
             <h3 className="catalog-main__options-title">ТЕГИ</h3>
             <ul className='catalog-main__tags-list'>
-                {
-                    arrTagForFilter.map((item, index) => <li
-                        key={item}
-                        className={index === isActive ? "catalog-main__tags-item catalog-main__tags-item--active" : "catalog-main__tags-item"}
-                    >
-                        {item}
-                    </li>)
-                }
-                <li className="catalog-main__tags-item">этно</li>
-                <li className="catalog-main__tags-item catalog-main__tags-item--active">отпечатки</li>
-                <li className="catalog-main__tags-item">бесконечность</li>
-                <li className="catalog-main__tags-item">однотонные</li>
-                <li className="catalog-main__tags-item">эмаль</li>
-                <li className="catalog-main__tags-item">подвижные</li>
-                <li className="catalog-main__tags-item">необычные</li>
-                <li className="catalog-main__tags-item">широкие</li>
-                <li className="catalog-main__tags-item">косичка</li>
-                <li className="catalog-main__tags-item">комбинированные</li>
-                <li className="catalog-main__tags-item">узкие</li>
-                <li className="catalog-main__tags-item">растительный орнамент</li>
-                <li className="catalog-main__tags-item">бриллианты</li>
-                <li className="catalog-main__tags-item">сапфиры</li>
+                {tags2.slice(0, maxElements).map((item, index) => {
+                    const isActive = selectedTags.includes(item);
+                    const className = isActive ? 'catalog-main__tags-item--active' : '';
+                    return (
+                        <li
+                            key={item + index}
+                            onClick={() => handleTagChange(item)}
+                            className={`catalog-main__tags-item ${className}`}
+                        >
+                            {item}
+                        </li>
+                    );
+                })}
             </ul>
-            <button className='catalog-main__tags-btn'>показать все</button>
-        </div >
-    )
-}
+            <button onClick={() => setIsShowMore(prev => !prev)} className='catalog-main__tags-btn'>
+                {!isShowMore ? 'показать все' : 'скрыть'}
+                <img className={`${isShowMore ? 'active' : ''}`} src={shape} alt="" />
+            </button>
+        </div>
+    );
+});
 
-export default SortTags
+export default SortTags;
