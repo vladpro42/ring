@@ -16,17 +16,15 @@ export interface Ring {
     h1: string;
     favorite?: boolean;
 }
+
 export type RingObject = {
     [id: number | string]: Ring;
 };
 
-export type RingsState = {
-    status: string,
-    // rings: {
-    //     [id: number | string]: Ring
-    // }
-    rings: RingObject
-    error: string | null,
+export interface RingsState {
+    rings: RingObject;
+    status: string;
+    error: string | null;
 }
 
 export enum ActionTypes {

@@ -5,6 +5,7 @@ import {
     selectNewRingsMemo,
 } from "../../../../redux/rings/ringsSelects";
 import {  useAppSelector } from "../../../../hooks/redux/hooks";
+import {Ring} from "../../../../redux/rings/ringsReducerTypes.ts";
 
 const swiperConfig = {
     navigation: true,
@@ -74,7 +75,7 @@ export default function NewItemsSlider() {
                     <Swiper
                         {...swiperConfig}
                     >
-                        {newsRings.map(cart => (
+                        {newsRings.map( (cart: Ring) => (
                             <SwiperSlide key={cart.id}>
                                 <CartOfProduct className={"main-page__cart"} url={'catalog-engagementRings'} cart={cart} />
                             </SwiperSlide>

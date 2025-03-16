@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useRef, useState } from "react";
 import { useAppDispatch } from "../../../../hooks/redux/hooks";
 import { contentPerPageCreator } from "../../../../redux/filter/filterActions";
 import styles from "./show.module.css";

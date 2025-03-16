@@ -19,11 +19,9 @@ import {
     sortRingsByRating
 } from "../../pages/catalog/utils";
 
-
-
 export const useFilteredRings = (): Ring[] => {
 
-    const rings = useAppSelector(selectRings)
+    const rings: Ring[] = useAppSelector(selectRings) as Ring[];
     const byPrice = useAppSelector(selectByPrice)
     const byAscendingDescending = useAppSelector(selectSortByAscendingDescending)
     const isJewel = useAppSelector(selectIsJewel)

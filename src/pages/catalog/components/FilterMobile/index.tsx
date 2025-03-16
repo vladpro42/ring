@@ -4,7 +4,7 @@ import { memo, useCallback, useState } from 'react'
 import { ScrollRestoration } from 'react-router-dom'
 import { useAppDispatch } from '../../../../hooks/redux/hooks'
 import { changeInsertsCreator, filterByPriceCreator, filterByTagsCreator } from '../../../../redux/filter/filterActions'
-import { tags2 } from '../SortTags'
+import {tags2} from "../../../../assets/tags.tsx";
 
 const FilterMobile = memo(({ onClose, className }: { onClose: () => void, className: string }) => {
 
@@ -32,7 +32,7 @@ const FilterMobile = memo(({ onClose, className }: { onClose: () => void, classN
         setTagsActive([...tagsActive, tag])
 
         dispatch(filterByTagsCreator([...tagsActive, tag]));
-    }, [tagsActive])
+    }, [tagsActive, dispatch])
 
     const resetFilters = useCallback(() => {
         //default value
