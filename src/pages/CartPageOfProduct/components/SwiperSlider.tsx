@@ -17,16 +17,16 @@ const images = [
     { src: cartProduct2, alt: "Product image 2" },
 ];*/
 const images2 = [
-    { src: '/images/new-items-2.png', alt: "Product image 1" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
-    { src: '/images/new-items-2.png', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 1" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
+    { src: '/images/new-items-2.jpg', alt: "Product image 2" },
 ];
 export const SwiperSlider = ({ onClick }: Props) => {
     return (
