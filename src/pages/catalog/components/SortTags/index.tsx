@@ -1,4 +1,4 @@
-import { memo, useState, useCallback, useEffect } from "react";
+import { memo, useState, useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux/hooks";
 import { ActionTypes } from "../../../../redux/filter/filterTypes";
 import { selectFilterByTags } from "../../../../redux/filter/filterSelectors";
@@ -22,6 +22,7 @@ export const tags = [
     { id: 14, name: 'необычные' },
     { id: 15, name: 'сапфиры' },
 ]
+
 export const tags2 = tags.map(item => item.name)
 const SortTags = memo(() => {
     const dispatch = useAppDispatch();

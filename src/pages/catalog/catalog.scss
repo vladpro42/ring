@@ -1,5 +1,8 @@
 @import "../../scss/variable";
 
+
+
+._cart_1vyh4_15.catalog__cart { width: calc(100%/3);}
 .catalog-main {
 
     margin-top: 70px;
@@ -560,6 +563,9 @@
     .catalog-main__text {
         margin-bottom: 37px;
     }
+
+    .catalog-main__product-list { justify-content: space-between;}
+    ._cart_1vyh4_15.catalog__cart { width: calc(100%/2 - 15px);}
 
     .catalog-main__wrapper {}
 

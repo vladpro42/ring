@@ -41,6 +41,8 @@ export default function CatalogMainDescription({ subtitle, title, toggleFilterMo
         count: filteredRings.length
     })
 
+
+
     return <section className='catalog-main__description'>
         <div className="catalog-main__wrapper">
             <div className="catalog-main__inner">

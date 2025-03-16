@@ -1,6 +1,5 @@
 import map from "../../assets/images/map.svg"
 import mail from "../../assets/images/mail.svg"
-import logo from "../../assets/images/logo.png"
 
 import { Link } from 'react-router-dom'
 import { useAppSelector } from "../../hooks/redux/hooks"

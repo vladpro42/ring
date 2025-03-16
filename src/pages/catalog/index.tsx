@@ -5,15 +5,10 @@ import NavigationText from '../../components/NavigationText'
 import "./catalog.scss"
 
 
-import { useAppSelector } from '../../hooks/redux/hooks'
-
-import { selectRingsStatus } from '../../redux/rings/ringsSelects'
-import { ScrollRestoration } from 'react-router-dom'
-import Spinner from '../../components/Spinner'
-import { useEffect, useState } from 'react'
+import {ScrollRestoration} from 'react-router-dom'
+import {useEffect, useState} from 'react'
 import FilterMobile from './components/FilterMobile'
 import CatalogMainDescription from './components/CatalogMainDescription'
-
 
 type Props = {
     title: string;
@@ -21,9 +16,7 @@ type Props = {
 }
 
 
-const CatalogPage = ({ title, subtitle }: Props) => {
-
-    const status = useAppSelector(selectRingsStatus)
+const CatalogPage = ({title, subtitle}: Props) => {
 
     //const sortByAlphabeticalOrder = useAppSelector(selectSortByAlphabeticalOrder)
 
@@ -41,25 +34,19 @@ const CatalogPage = ({ title, subtitle }: Props) => {
         setIsFilterMobile(!isFilterMobile)
     }
 
-
-    if (status === 'loading') {
-        return <Spinner />
-    }
-
     return <>
-        <Header />
+        <Header/>
         <main className="catalog-main">
             <div className="container">
-                <NavigationText />
+                <NavigationText/>
 
-                <CatalogMainDescription title={title} subtitle={subtitle} toggleFilterMobile={toggleFilterMobile} />
-            </div >
-        </main >
-        <ScrollRestoration />
-        <FilterMobile className={isFilterMobile ? 'filter-mobile--active' : null} onClose={toggleFilterMobile} />
-        <Footer />
+                <CatalogMainDescription title={title} subtitle={subtitle} toggleFilterMobile={toggleFilterMobile}/>
+            </div>
+        </main>
+        <ScrollRestoration/>
+        <FilterMobile className={isFilterMobile ? 'filter-mobile--active' : null} onClose={toggleFilterMobile}/>
+        <Footer/>
     </>
-
 
 
 }

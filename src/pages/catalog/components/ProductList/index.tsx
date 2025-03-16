@@ -15,7 +15,7 @@ const ProductList = memo(({ rings, pagination }: Props) => {
             rings
                 .slice(pagination.firstContentIndex, pagination.lastContentIndex)
                 .map((item: Ring) => (
-                    <CartOfProduct cart={item} key={item.id} />
+                    <CartOfProduct className={'catalog__cart'} cart={item} key={item.id} />
                 ))
         }
     </ul>

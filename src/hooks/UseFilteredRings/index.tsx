@@ -21,7 +21,7 @@ import {
 
 
 
-export const useFilteredRings = () => {
+export const useFilteredRings = (): Ring[] => {
 
     const rings = useAppSelector(selectRings)
     const byPrice = useAppSelector(selectByPrice)
@@ -32,7 +32,7 @@ export const useFilteredRings = () => {
     const tags = useAppSelector(selectFilterByTags)
 
 
-    const filteredRings = useMemo(
+     const filteredRings: Ring[] = useMemo(
         () => rings
             .sort((a: Ring, b: Ring) => sortByAscendingAndDescending(a, b, byAscendingDescending))
             .filter((ring: Ring) => filterByPrice(ring, byPrice))
@@ -42,7 +42,5 @@ export const useFilteredRings = () => {
             .sort((a: Ring, b: Ring) => sortRingsByRating(a, b, sortByRating)
             ), [byAscendingDescending, byPrice, isJewel, rings, sortByPrice, sortByRating, tags]
     )
-
     return filteredRings
-
 }

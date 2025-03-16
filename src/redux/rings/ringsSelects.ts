@@ -1,7 +1,18 @@
 import { createSelector } from "reselect"
 import { RootState } from "../rootReducer"
+import {RingObject} from "./ringsReducerTypes.ts";
 
-export const selectAllRings = (state: RootState) => state.rings.rings
+export const selectAllRings = (state: RootState): RingObject => state.rings.rings;
+
+export const selectNewsRings = (state: RootState) => {
+    const rings = selectAllRings(state);
+
+    return Object.values(rings).filter(ring => ring.isNew === 1)
+}
+
+export const selectNewRingsMemo = createSelector(selectAllRings, rings => {
+    return Object.values(rings).filter(ring => ring.isNew === 1)
+})
 
 export const selectArrRings = (state: RootState) => {
     const rings = selectAllRings(state)

@@ -5,12 +5,9 @@ import "./pages/StartPage/start-page.scss"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Pages from "./pages"
-
-import { useEffect } from 'react'
-import { fetchRings } from './redux/rings/ringsThunk'
-import { useAppDispatch, useAppSelector } from './hooks/redux/hooks'
-import { selectRingsStatus } from './redux/rings/ringsSelects'
-import Spinner from './components/Spinner'
+import {useAppDispatch} from "./hooks/redux/hooks.ts";
+import {useEffect} from "react";
+import {fetchRings} from "./redux/rings/ringsThunk.ts";
 
 
 const weddingRings = {
@@ -38,7 +35,7 @@ const router = createBrowserRouter([
         element: <Pages.CatalogPage {...weddingRings} />,
     },
     {
-        path: '/catalog-weddingRings/:id',
+        path: '/product/:id',
         element: <Pages.CartPageOfProduct />,
     },
     {
@@ -115,17 +112,16 @@ const router = createBrowserRouter([
 
 function App() {
 
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
+    // const status = useAppSelector(selectRingsStatus);
+
     useEffect(() => {
-        dispatch(fetchRings)
-    }, [dispatch])
+        dispatch(fetchRings);
+    }, [dispatch]);
 
-
-    const status = useAppSelector(selectRingsStatus)
-
-    if (status === 'loading') {
-        return <Spinner />
-    }
+    // if(status == 'loading') {
+    //     return <Spinner />
+    // }
 
     return (
         <div>

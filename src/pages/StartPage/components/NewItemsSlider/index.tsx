@@ -1,65 +1,87 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Navigation } from "swiper/modules";
 import { CartOfProduct } from "../../../../components/CartOfProduct";
+import {
+    selectNewRingsMemo,
+} from "../../../../redux/rings/ringsSelects";
+import {  useAppSelector } from "../../../../hooks/redux/hooks";
 
-import { selectAllRingsMemo, selectByIdsMemo } from "../../../../redux/rings/ringsSelects";
-import { useAppSelector } from "../../../../hooks/redux/hooks";
-import { useState } from "react";
-
-
-const ringIds = [1, 2, 3, 4]
+const swiperConfig = {
+    navigation: true,
+    slidesPerView: 3,
+    scrollbar: { draggable: true },
+    modules: [Scrollbar, Navigation],
+    className: "mySwiper",
+    breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+  };
 
 export default function NewItemsSlider() {
+    const newsRings = useAppSelector(selectNewRingsMemo);
+    // const dispatch = useAppDispatch();
+    //
+    // useEffect(() => {
+    //     dispatch(fetchNewsRings); // Исправлено: добавлены скобки
+    // }, [dispatch]);
+    //
+    // const status = useAppSelector(selectRingsStatus);
+    // const newsRings = useAppSelector(selectArrRings);
+    //
+    // if (status === 'loading') {
+    //     return <Spinner />;
+    // }
+    //
+    // if (newsRings.length === 0) {
+    //     return <div>Нет новинок</div>;
+    // }
+    // const [rings, setRings] = useState([])
 
-    const rings = useAppSelector(selectAllRingsMemo)
+    // useEffect( () => {
+    //     async function getRings(){
+    //         const url = "https://65f83983b4f842e808873cd9.mockapi.io/rings"
+    //         const fullUrl = new URL(url);
+    //         fullUrl.searchParams.append('isNew', '1');
+    //         const response = await fetch(fullUrl);
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! Status: ${response.status}`)
+    //         }
 
-    const [showNewRings, setShowNewRings] = useState(6)
+    //         const rings: Ring[] = await response.json();
+    //         setRings(rings)
+    //     }
+    //     getRings()
+    // }, []);
 
-    const isShowNewRings = showNewRings >= rings.length
 
-    const slides = useAppSelector(state => selectByIdsMemo(state, ringIds))
 
-    const showMoreNewRing = () => {
-        if (showNewRings < rings.length) {
-            setShowNewRings(showNewRings + 3)
-            return
-        }
-        return
-    }
-
-    return <section className='new-items'>
-        <div className="container">
-            <h3 className=" new-items__title">НОВИНКИ</h3>
-            <ul className="new-items__slider">
-                <Swiper
-                    navigation={true}
-                    slidesPerView={3}
-                    scrollbar={{ draggable: true }}
-                    modules={[Scrollbar, Navigation]}
-                    className="mySwiper"
-                >
-                    {
-                        slides && slides.map(cart => (
+    return (
+        <section className='new-items'>
+            <div className="container">
+                <h3 className="new-items__title">НОВИНКИ</h3>
+                <ul className="new-items__slider">
+                    <Swiper
+                        {...swiperConfig}
+                    >
+                        {newsRings.map(cart => (
                             <SwiperSlide key={cart.id}>
-                                <CartOfProduct url={'catalog-engagementRings'} cart={cart} />
+                                <CartOfProduct className={"main-page__cart"} url={'catalog-engagementRings'} cart={cart} />
                             </SwiperSlide>
-                        )
-                        )
-                    }
-                </Swiper >
-            </ul>
-
-            <ul className="new-items__slider-mobile">
-                {rings.map((ring, index) => {
-                    if (index < showNewRings) {
-                        return <CartOfProduct cart={ring} key={ring.id} />
-                    } else {
-                        return
-                    }
-                })}
-            </ul>
-
-            <button onClick={showMoreNewRing}
+                        ))}
+                    </Swiper>
+                </ul>
+                {/* <button onClick={showMoreNewRing}
                 className={isShowNewRings ? "new-items__show-more new-items__show-more--disable" : "new-items__show-more"}
             >
                 ПОКАЗАТЬ ЕЩЁ
@@ -67,7 +89,8 @@ export default function NewItemsSlider() {
                     <path d="M13 0.8L7.27692 7L1.46154 0.8" stroke="#020F59" strokeWidth="2" />
                 </svg>
 
-            </button>
-        </div>
-    </section>
+            </button> */}
+            </div>
+        </section>
+    );
 }

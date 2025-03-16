@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 function RingModel() {
   // Загрузите модель с помощью useGLTF
-  const { scene } = useGLTF('/scene.gltf');
+  const { scene } = useGLTF('/microphone/scene.gltf');
 
   // Масштабируйте и разместите модель в сцене
   return <primitive object={scene} scale={1} position={[0, 0, 0]} />;
