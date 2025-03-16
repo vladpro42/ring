@@ -1,27 +1,15 @@
 import { useState } from "react";
+import { UsePaginationProps, UsePaginationReturn } from "./type";
 
-export interface UsePaginationProps {
-  contentPerPage: number;
-  count: number;
-}
 
-export interface UsePaginationReturn {
-  page: number;
-  totalPages: number;
-  firstContentIndex: number;
-  lastContentIndex: number;
-  nextPage: () => void;
-  prevPage: () => void;
-  setPage: (page: number) => void;
-}
 
- const usePagination = ({
+const usePagination = ({
   contentPerPage,
   count,
 }: UsePaginationProps): UsePaginationReturn => {
   const [page, setPage] = useState(1);
 
-  const totalPages = Math.ceil(count / contentPerPage);
+  const totalPages = Math.ceil(count / (contentPerPage || 1));
 
   const lastContentIndex = page * contentPerPage;
   const firstContentIndex = lastContentIndex - contentPerPage;
@@ -44,4 +32,5 @@ export interface UsePaginationReturn {
     setPage,
   };
 };
+
 export default usePagination;

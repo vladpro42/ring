@@ -14,8 +14,8 @@ const Pagination = ({ pagination }: Props) => {
         onClick={() => pagination.prevPage()}
         className={
           left
-            ? "catalog-main__padination-btn catalog-main__padination-btn--prev"
-            : "catalog-main__padination-btn catalog-main__padination-btn--prev catalog-main__padination-btn--active"
+            ? "catalog-main__pagination-btn catalog-main__pagination-btn--prev"
+            : "catalog-main__pagination-btn catalog-main__pagination-btn--prev catalog-main__pagination-btn--active"
         }
         disabled={left}
       >
@@ -34,7 +34,7 @@ const Pagination = ({ pagination }: Props) => {
       <div className="catalog-main__links">
         {[...new Array(pagination.totalPages)].map((_, index) => (
           <button
-            key={index}
+            key={index + 1}
             className={
               pagination.page === index + 1
                 ? "catalog-main__link catalog-main__link--active"
@@ -51,8 +51,8 @@ const Pagination = ({ pagination }: Props) => {
         onClick={() => pagination.nextPage()}
         className={
           !right
-            ? "catalog-main__padination-btn catalog-main__padination-btn--active"
-            : "catalog-main__padination-btn"
+            ? "catalog-main__pagination-btn catalog-main__pagination-btn--active"
+            : "catalog-main__pagination-btn"
         }
         disabled={right}
       >

@@ -28,7 +28,7 @@ const Pagination = ({ pagination }: Props) => {
 
                 {
                     [...new Array(pagination.totalPages)].map((_, index) => <button
-                        onClick={() => pagination.handleClickPagination(index + 1)}
+                        onClick={() => pagination.setPage(index + 1)}
                         key={index}
                         className={pagination.page === index + 1 ? "catalog-main__link catalog-main__link--active" : "catalog-main__link"}
                     >
