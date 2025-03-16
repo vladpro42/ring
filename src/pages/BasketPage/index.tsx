@@ -1,9 +1,5 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-<<<<<<< HEAD
-import NavigationText from '../../components/BreadCrumbs'
-=======
->>>>>>> dev
 import Form3 from './Form3'
 
 import logoBasket from "../../assets/images/logo-basket.png"

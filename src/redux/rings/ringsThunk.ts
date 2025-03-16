@@ -1,28 +1,7 @@
 
 import { AppDispatch } from "../rootReducer"
-<<<<<<< HEAD
-import { fetchRingsCreator } from "./ringsAction"
-import { ActionTypes } from "./ringsReducerTypes"
-import rings from "../../assets/data/rings-100.json"
-
-const ringsArr = Array.from(rings);
-let count = 1
-
-const newsRingsArr = ringsArr.map(ring => {
-    ring.imgSrc = "/images/new-items-" + count + ".jpg"
-    if (count == 10) {
-        count = 1
-        return ring
-    } 
-    count++
-    return ring
-})
-
-
-=======
 import { fetchNewsRingsCreator, fetchRingsCreator, ringsError } from "./ringsAction"
 import { ActionTypes, Ring } from "./ringsReducerTypes"
->>>>>>> dev
 
 // Добавить обработку ошибок!!! 
 
@@ -38,16 +17,8 @@ export async function fetchRings(dispatch: AppDispatch) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-<<<<<<< HEAD
-        const data = await response.json()
-
-       // dispatch(fetchRingsCreator(data))
-        dispatch(fetchRingsCreator(newsRingsArr))
-
-=======
         const data: Ring[] = await response.json();
         dispatch(fetchRingsCreator(data));
->>>>>>> dev
     } catch (error) {
         console.error("Error fetching rings:", error);
         // Обработка ошибки, например, dispatch({ type: ActionTypes.ringsError, payload: error.message });
