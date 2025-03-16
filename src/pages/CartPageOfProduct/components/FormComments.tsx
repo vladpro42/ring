@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/* import { useState } from 'react'
 import { Rating2 } from '../../../components/Raiting'
 import { Comment } from './CartPageTab';
 
@@ -114,3 +114,4 @@ const FormComments = () => {
 }
 
 export default FormComments
+*/

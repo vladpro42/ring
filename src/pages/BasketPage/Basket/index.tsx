@@ -105,7 +105,7 @@ const Basket = ({ handleClickRemoveAll, handlePopupClick }: Props) => {
                                         </button>
                                     </div>
                                 </td>
-                                <td align='center' valign='middle' className='basket__td'>{ring.ring.price} ₽</td>
+                                <td align='center' valign='middle' className='basket__td'>{ring.ring.priceSale} ₽</td>
                                 <td align='center' valign='middle' className='basket__td'>
                                     <button onClick={() => handleClickRemoveOne(ring.ring.id)} className='basket__delete-btn'>
                                         <img src={basketDelete} alt="" />

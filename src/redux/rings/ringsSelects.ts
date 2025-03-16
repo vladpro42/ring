@@ -11,6 +11,16 @@ export const selectNewsRings = (state: RootState) => {
     return Object.values(rings).filter((ring: Ring) => ring.isNew === 1);
 };
 
+
+export const selectisFavoriteRings = (state: RootState) => {
+    const rings = selectAllRings(state);
+    return Object.values(rings).filter((ring: Ring) => ring.isFavorite === 1);
+};
+export const selectCountIsFavorite = (state: RootState) => {
+    const rings = selectisFavoriteRings(state)
+    return rings.length
+};
+
 export const selectNewRingsMemo = createSelector(selectAllRings, rings => {
     return Object.values(rings).filter((ring: Ring) => ring.isNew === 1);
 });

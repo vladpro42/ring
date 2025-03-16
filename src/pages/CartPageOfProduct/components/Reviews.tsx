@@ -33,17 +33,14 @@ const Reviews = ({ comments, className }: { comments: Comment[], className: stri
                 </p>
                 <p className="cart-page__reviews-text">{comment.text}</p>
                 <div className="cart-page__reviews-images">
-                    {comment.imgSrc?.map(img => <img key={img} src={img} alt='' />)}
+                    {comment.imgSrc ?<img src={comment.imgSrc} alt="" /> : ""}
                 </div>
                 <p className="cart-page__reviews-data">{comment.data}</p>
             </div>)
         }
     })
 
-
-
-
-    const SwiperComments = <Swiper modules={[Navigation]} navigation slidesPerView={2} spaceBetween={10} >
+    const SwiperComments = <Swiper modules={[Navigation]} navigation slidesPerView={comments.length > 1 ? 2 : 1} spaceBetween={10} >
         {
             comments.map((comment: Comment) => <SwiperSlide key={comment.id}>
                 <div className="cart-page__reviews-cart cart-page__reviews-cart--desktop">
@@ -53,7 +50,7 @@ const Reviews = ({ comments, className }: { comments: Comment[], className: stri
                     </p>
                     <p className="cart-page__reviews-text">{comment.text}</p>
                     <div className="cart-page__reviews-images">
-                        {comment.imgSrc?.map(img => <img key={img} src={img} alt='' />)}
+                        {comment.imgSrc ?<img src={comment.imgSrc} alt="" /> : ""}
                     </div>
                     <p className="cart-page__reviews-data">{comment.data}</p>
                 </div>

@@ -1,5 +1,10 @@
 @import "../../scss/variable";
 
+
+.favorite-cart  { width: calc(100% /4 - 15px); height: auto;}
+
+.favorite-cart ._link_1vyh4_68 { height: auto;}
+
 .favorite {
     &__section {}
 
@@ -66,4 +71,17 @@
         }
 
     }
+
+    .favorite-cart { width: calc(100% /3 - 15px); height: auto;}
+}
+
+@media (max-width: 768px) {
+   
+    .favorite-cart { width: calc(100% /2 - 15px); height: auto;}
+}
+
+
+@media (max-width: 450px) {
+   
+    .favorite-cart { width: calc(100% ); height: auto;}
 }

@@ -54,7 +54,7 @@ export default function CartPageOfProduct() {
                 priceSale={ring?.priceSale}
                 onClick={addBasket}
             />
-            <CartPageTab />
+            <CartPageTab ringId={ring.id}/>
             <RecentlyViewed />
         </div>
     </section>

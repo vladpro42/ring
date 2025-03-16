@@ -4,7 +4,6 @@ import mail from "../../assets/images/mail.svg"
 import { Link } from 'react-router-dom'
 import { useAppSelector } from "../../hooks/redux/hooks"
 import { selectRingsFromBasketLength } from "../../redux/basket/basketSelectors"
-import { getItemFromLocalStorage } from "../../utils"
 import UserActionsLinks from "./components/UserActionsLinks"
 import HeaderSearch from "./components/HeaderSearch"
 import { memo, useState } from "react"
@@ -15,11 +14,14 @@ import HeaderCompany from "./components/HeaderCompany"
 import HeaderFooterList from "./components/HeaderFooterList"
 import SearchMobile from "./components/SearchMobile"
 import BurgerMenu from "../BurgerMenu"
+import { selectCountIsFavorite } from "../../redux/rings/ringsSelects"
 
 const Header = memo(() => {
 
     const lenBasket = useAppSelector(selectRingsFromBasketLength)
-    const lenFavorite = getItemFromLocalStorage("favoriteRings").length
+   // const lenFavorite = getItemFromLocalStorage("favoriteRings").length
+
+    const lenFavorite = useAppSelector(selectCountIsFavorite)
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
