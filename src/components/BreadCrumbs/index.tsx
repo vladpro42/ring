@@ -40,4 +40,4 @@ const NavigationText = memo(() => {
     )
 })
 
-export default BreadCrumbs
+export default NavigationText
