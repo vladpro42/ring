@@ -77,8 +77,6 @@ export default function CatalogMainDescription({ subtitle, title, toggleFilterMo
         </div>
 
         <ProductList rings={filteredRings} pagination={pagination} />
-
-
         <Pagination pagination={pagination} />
 
         <p className="catalog-main__description-text">

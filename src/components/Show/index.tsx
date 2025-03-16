@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react"
 import { useAppDispatch } from "../../hooks/redux/hooks.ts"
 import { contentPerPageCreator } from "../../redux/filter/filterActions.ts"
-import { Option } from "../../pages/catalog"
+import { Option } from "../../assets/Options.ts" 
 
 export type CustomSelectProps = {
     options: Option[]
     placeholder: string | 'Выберите значение',
     defaultValue: string | '',
 }
-
 
 const Select = ({ options, placeholder = "Выберите значение", defaultValue = '' }: CustomSelectProps) => {
 

@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import NavigationText from "../../../components/NavigationText";
+import NavigationText from "../../../components/BreadCrumbs";
 import CartPageCart from "./CartPageCart";
 import CartPageTab from "./CartPageTab";
 import DescriptionProduct from "./DescriptionProduct";

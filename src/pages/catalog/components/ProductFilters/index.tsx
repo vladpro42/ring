@@ -4,15 +4,11 @@ import SortRaiting from "../SortRaiting";
 import SortPrice from "../SortPrice";
 import SortCompound from "../SortCompound";
 import SortTags from "../SortTags";
+import { options } from "../../../../assets/Options";
 
 
-export type Option = { value: string, label: string }
-export const options: Option[] = [
-    { value: "6", label: "6" },
-    { value: "12", label: "12" },
-    { value: "15", label: "15" },
-    { value: "21", label: "21" },
-];
+
+
 
 export const ProductFilters = () => {
 
