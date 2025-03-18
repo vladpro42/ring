@@ -13,12 +13,12 @@ const SearchMobile = ({ className, }: { className: string }) => {
     }
 
     const handleClick = () => {
-        navigate(`/catalog-weddingRings/${inputId}`)
+        navigate(`/product/${inputId}`)
     }
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
-            navigate(`/catalog-weddingRings/${inputId}`)
+            navigate(`/product/${inputId}`)
         }
     }
 

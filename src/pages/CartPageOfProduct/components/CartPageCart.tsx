@@ -12,20 +12,18 @@ type Props = {
 const CartPageCart = memo(({ imgSrc, price, priceSale, onClick }: Props) => {
     const [src, setSrc] = useState(imgSrc);
 
-    // Синхронизация src с imgSrc
     useEffect(() => {
         setSrc(imgSrc);
     }, [imgSrc]);
-
-    // Обработчик клика по изображению
     const onClickImg = useCallback((e: React.MouseEvent<HTMLImageElement>) => {
+        console.log(e.currentTarget.src)
         setSrc(e.currentTarget.src);
     }, []);
 
     return (
         <div className="cart-page__cart">
             <div className="cart-page__image-slider">
-                <SwiperSlider onClick={onClickImg} />
+                <SwiperSlider imgSrc={imgSrc} onClick={onClickImg} />
             </div>
             <div className={"cart-page__image-container"}>
             <img className="cart-page__image-product" src={src} alt="" />

@@ -22,6 +22,7 @@
     align-items: center;
     border-bottom: 1px solid var(--color-blue);
     padding-bottom: 5px;
+    gap: 10px;
   }
 
 
@@ -74,12 +75,26 @@
 
   .swiper-slide {
     position: relative;
+    cursor: pointer;
   }
 
   .inner-left__swiper .swiper-slide::after {
     content: "";
     display: block;
     padding-bottom: 100%;
+    
+  }
+
+  .inner-left__swiper .swiper-slide:hover::before {
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  .inner-left__swiper .swiper-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
   }
 
   .left-slider-img {
@@ -151,7 +166,6 @@
     }
 
     .user__actions-span {
-      cursor: pointer;
       user-select: none;
     }
 
@@ -409,6 +423,7 @@
 
     &__description {
       position: relative;
+      margin-top: 40px;
     }
 
     &__description-btns {

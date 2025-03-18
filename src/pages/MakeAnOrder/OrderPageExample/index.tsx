@@ -17,15 +17,23 @@ const example = [orderSlider1, orderSlider2, orderSlider3, orderSlider1, orderSl
 
 const breakpoints = {
 
-    375: {
-        scrollbar: false
+    320: {
+        scrollbar: false,
+        slidesPerView: 1,
     },
 
-    1000: {
-        width: 1000,
-        slidesPerView: 3,
-        scrollbar: true
+    500: {
+        scrollbar: true,
+        slidesPerView:2,
+        spaceBetween: `10px`
     },
+
+    992: {
+        scrollbar: true,
+        slidesPerView:3,
+    },
+
+    
 }
 
 const scrollbar = { draggable: true }
@@ -40,7 +48,6 @@ export default memo(function OrderPageExample() {
                 <Swiper
                     slidesPerView={1}
                     breakpoints={breakpoints}
-                    pagination={true}
                     navigation={true}
                     scrollbar={scrollbar}
                     modules={modules}

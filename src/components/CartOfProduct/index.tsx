@@ -36,8 +36,8 @@ export const CartOfProduct = memo(({ cart, className}: Props) => {
             </Link>
             <div className={styles.footer}>
                 <div className={styles.prices}>
-                    <p className={styles.sale}>{cart.priceSale ? cart.priceSale + '₽' : ''}</p>
-                    <p className={styles.price}>{cart.price} ₽</p>
+                    <p className={styles.price}>{cart.priceSale ? cart.priceSale + '₽' : ''}</p>
+                    <p className={styles.sale}>{cart.price} ₽</p>
                 </div>
             </div>
         </li >

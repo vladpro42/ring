@@ -28,14 +28,12 @@ export const FavotiteBtn = ({ id, isFavorite, className }: Props) => {
             }
 
             const ring: Ring = await response.json();
-            console.log(ring)
             dispatch(updateRingCreator(ring))
             
         } catch (error) {
             console.log(error)
         }
 
-        console.log(isFavorite)
     }
 
 

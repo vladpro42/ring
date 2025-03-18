@@ -1,5 +1,7 @@
 @import "../../scss/variable.scss";
 
+.main-page__cart { width: 100%;}
+
 .cart {
     box-sizing: border-box;
     display: flex;
@@ -88,10 +90,6 @@
   cursor: pointer;
 }
 
-.favorite_mobile {
-  display: none;
-}
-
 .favotite__path {
   stroke: var(--color-accent);
 }
@@ -131,7 +129,12 @@
         padding: 20px;
         width: calc( (100% ) / 2 - 15px);
     }
+
+   
+    
 }
+
+
 
 
 @media (max-width: 768px) {

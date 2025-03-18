@@ -5,18 +5,11 @@ import "swiper/css/navigation";
 
 type Props = {
     onClick: (e: React.MouseEvent<HTMLImageElement>) => void;
+    imgSrc ?: string,
 };
-/*
-const images = [
-    { src: cart360, alt: "360-degree view" },
-    { src: cartProduct1, alt: "Product image 1" },
-    { src: cartProduct2, alt: "Product image 2" },
-    { src: cartProduct3, alt: "Product image 3" },
-    { src: cartProduct4, alt: "Product image 4" },
-    { src: cartProduct1, alt: "Product image 1" },
-    { src: cartProduct2, alt: "Product image 2" },
-];*/
+
 const images2 = [
+    { src: '/images/new-items-2.jpg', alt: "Product image 1" },
     { src: '/images/new-items-2.jpg', alt: "Product image 1" },
     { src: '/images/new-items-2.jpg', alt: "Product image 2" },
     { src: '/images/new-items-2.jpg', alt: "Product image 2" },
@@ -28,7 +21,7 @@ const images2 = [
     { src: '/images/new-items-2.jpg', alt: "Product image 2" },
     { src: '/images/new-items-2.jpg', alt: "Product image 2" },
 ];
-export const SwiperSlider = ({ onClick }: Props) => {
+export const SwiperSlider = ({ imgSrc, onClick }: Props) => {
     return (
         <div className="inner-left__swiper">
             <button className="cart-page__slider-btn cart-page__slider-btn--prev">
@@ -41,14 +34,23 @@ export const SwiperSlider = ({ onClick }: Props) => {
                 <Swiper
                     className={'cart-page__left-slider'}
                     slidesPerView={5}
+                    spaceBetween={`10px`}
                     direction="vertical"
                     navigation={{
                         prevEl: ".cart-page__slider-btn--prev",
                         nextEl: ".cart-page__slider-btn--next",
                     }}
                     modules={[Navigation]}
-                    loop={true} // Добавьте, если нужно зациклить слайдер
+                    // loop={true} 
                 >
+                     <SwiperSlide>
+                            <img
+                                className={"left-slider-img"}
+                                onClick={onClick}
+                                src={imgSrc}
+                                alt={`product main pic`}
+                            />
+                        </SwiperSlide>
                     {images2.map((image, index) => (
                         <SwiperSlide key={index}>
                             <img

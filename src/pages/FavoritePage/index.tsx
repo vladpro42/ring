@@ -14,7 +14,6 @@ const FavoritePage = () => {
 
     const status = useAppSelector(selectRingsStatus)
 
-
     if (status === 'loading') {
         return <Spinner />
     }
