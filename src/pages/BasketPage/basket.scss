@@ -298,6 +298,10 @@
         position: relative;
         cursor: pointer;
 
+        &:hover {
+            background-color: #ddd;
+        }
+
         &::after {
             content: "";
             background-image: url(../../assets/images/minus.svg);

@@ -60,6 +60,23 @@
 
     &__example-item {
         text-align: center;
+        position: relative;
+
+      &::after {
+        content: "";
+        padding-bottom: 100%;
+        display: block;
+      }
+
+      img { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &__example-title {

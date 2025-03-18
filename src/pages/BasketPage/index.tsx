@@ -19,7 +19,6 @@ import Popup from '../../UI/Popup'
 
 const BasketPage = () => {
 
-
     const [isPopup, setIsPropup] = useState(false)
     const dispatch = useAppDispatch()
 
