@@ -90,7 +90,7 @@
 
     &__popup-wrap {
         display: flex;
-        align-items: center;
+        align-items: start;
         margin-top: 20px;
     }
 
@@ -108,6 +108,9 @@
     }
 
     &__popup-span--error {
+        margin-top: 5px;
+        display: block;
+        font-size: 14px;
         color: var(--color-error-red);
     }
 
