@@ -10,33 +10,30 @@ import orderSlider3 from "../../../assets/images/order-slider-3.png"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "swiper/css/navigation"
-import "swiper/css"
 import { memo } from "react"
+import { ScrollbarOptions } from "swiper/types"
 
 const example = [orderSlider1, orderSlider2, orderSlider3, orderSlider1, orderSlider2, orderSlider3]
 
 const breakpoints = {
 
     320: {
-        scrollbar: false,
         slidesPerView: 1,
     },
 
     500: {
-        scrollbar: true,
-        slidesPerView:2,
+        slidesPerView: 2,
         spaceBetween: `10px`
     },
 
     992: {
-        scrollbar: true,
-        slidesPerView:3,
+        slidesPerView: 3,
     },
 
-    
+
 }
 
-const scrollbar = { draggable: true }
+const scrollbar: ScrollbarOptions = { draggable: true, }
 const modules = [Scrollbar, Navigation, Pagination]
 
 
