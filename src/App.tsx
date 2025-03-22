@@ -5,9 +5,10 @@ import "./pages/StartPage/start-page.scss"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Pages from "./pages"
-import {useAppDispatch} from "./hooks/redux/hooks.ts";
-import {useEffect} from "react";
-import {fetchRings} from "./redux/rings/ringsThunk.ts";
+import { useAppDispatch } from "./hooks/redux/hooks.ts";
+import { useEffect } from "react";
+import { fetchRings } from "./redux/rings/ringsThunk.ts";
+import { BASKET, DIAMOND_AS_A_GIFT, FAVORITE, HOW_TO_CHOOSE, MAKE_AN_ORDER, PRODUCT } from './utils/routes.ts';
 
 
 const weddingRings = {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         element: <Pages.CatalogPage {...weddingRings} />,
     },
     {
-        path: '/product/:id',
+        path: `/${PRODUCT}/:id`,
         element: <Pages.CartPageOfProduct />,
     },
     {
@@ -55,23 +56,23 @@ const router = createBrowserRouter([
         element: <Pages.CartPageOfProduct />,
     },
     {
-        path: '/basket',
+        path: `/${BASKET}`,
         element: <Pages.BasketPage />
     },
     {
-        path: 'favorite',
+        path: `/${FAVORITE}`,
         element: <Pages.FavoritePage />
     },
     {
-        path: 'make-an-order',
+        path: `/${MAKE_AN_ORDER}`,
         element: <Pages.MakeAnOrder />
     },
     {
-        path: 'diamond-as-a-gift',
+        path: `/${DIAMOND_AS_A_GIFT}`,
         element: <Pages.DiamondAsAGift />
     },
     {
-        path: 'how-to-choose',
+        path: `/${HOW_TO_CHOOSE}`,
         element: <Pages.HowToChoose />
     },
     {
