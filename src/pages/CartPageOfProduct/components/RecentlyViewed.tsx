@@ -28,6 +28,19 @@ const RecentlyViewed = () => {
                 <ul className="new-items__slider">
                     <Swiper
                         navigation={true}
+                        breakpoints={
+                            {
+                                300: {
+                                    slidesPerView: 1
+                                },
+                                450: {
+                                    slidesPerView: 2
+                                },
+                                660: {
+                                    slidesPerView: 3
+                                }
+                            }
+                        }
                         slidesPerView={slides.length <= 3 ? slides.length : 3}
                         scrollbar={{ draggable: true }}
                         modules={[Scrollbar, Navigation]}
@@ -35,19 +48,19 @@ const RecentlyViewed = () => {
                     >
                         {
                             slides.map(cart => < SwiperSlide key={cart.id}>
-                                <CartOfProduct cart={cart} />
+                                <CartOfProduct className="cart-page__product-item" cart={cart} />
                             </SwiperSlide>)
                         }
                     </Swiper >
                 </ul>
-                <ul className="new-items__slider--mobile">
+                {/*<ul className="new-items__slider--mobile">
 
                     {slides.map((cart, index) => {
                         if (index < 3) {
                             return <CartOfProduct key={cart.id} cart={cart} />
                         }
                     })}
-                </ul>
+                </ul>*/ }
             </div>
         </section>
     )

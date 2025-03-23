@@ -29,9 +29,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: row;
+
         .header__item-link {
             padding: 4px;
         }
+
         .header__item-link:hover {
             background-color: #ddd;
             border-radius: 50%;
@@ -99,7 +101,7 @@
 
         &:hover {
             color: var(--color-accent);
-            text-decoration: underline ;
+            text-decoration: underline;
             text-decoration-color: var(--color-gay);
         }
     }
@@ -146,6 +148,7 @@
         display: grid;
         grid-template-columns: 60px 1fr 10%;
         margin-bottom: 20px;
+
 
         /*grid-template-columns: 149px 31px 1fr 74px;*/
     }
@@ -213,7 +216,8 @@
         font-weight: 500;
         color: var(--color-black);
         transition: color 300ms ease;
-        
+        text-transform: uppercase;
+
 
         &:hover {
             color: var(--color-accent);
@@ -225,7 +229,6 @@
         display: flex;
         align-items: center;
         justify-content: end;
-        gap: 26px;
         order: 1;
     }
 
@@ -237,9 +240,11 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+
         &:hover {
             background-color: #ddd;
         }
+
     }
 
     .user__actions-circle {
@@ -247,8 +252,8 @@
         font-size: 8px;
         --color-red: #FF0000;
         position: absolute;
-        right: 0px;
-        top: 0px;
+        right: 4px;
+        top: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -263,7 +268,7 @@
         transition: all 300ms linear;
     }
 
-    .user__actions-link:hover rect { 
+    .user__actions-link:hover rect {
         fill: #ddd;
     }
 
@@ -409,6 +414,8 @@
     .header__footer {
         display: flex;
         justify-content: space-between;
+        margin-top: 10px;
+        ;
     }
 
     .new-items__slide {
@@ -484,6 +491,26 @@
 
     .header__items {
         gap: 0;
+    }
+
+    .header__footer {
+        justify-content: start;
+    }
+
+    .header__company--mobile {
+        flex-grow: 1;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__company-title {
+        text-align: center;
+    }
+
+    .header__company-subtitle {
+        text-align: center;
     }
 }
 

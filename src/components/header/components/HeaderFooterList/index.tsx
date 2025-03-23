@@ -4,6 +4,9 @@ const HeaderFooterList = ({ className }: { className?: string }) => {
     return (
         <ul className={[className, "header__footer-list"].join(" ")}>
             <li className="header__footer-item">
+                <Link to="../" className="header__footer-link">ГЛАВНАЯ</Link>
+            </li>
+            <li className="header__footer-item">
                 <Link to="../catalog" className="header__footer-link">ОБРУЧАЛЬНЫЕ КОЛЬЦА</Link>
             </li>
             <li className="header__footer-item">

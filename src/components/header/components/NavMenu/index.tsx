@@ -5,8 +5,8 @@ const NavMenu = memo(() => {
     return (
         <ul className="header__nav-menu">
             <li className="header__nav-item">
-                <Link to="/studio-two" className="header__nav-link">
-                    Студия
+                <Link to="/" className="header__nav-link">
+                    Главная
                 </Link>
             </li>
             <li className="header__nav-item">
