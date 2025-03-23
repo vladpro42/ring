@@ -24,3 +24,14 @@ export function setItemToLocalStorage(key: string, id: number) {
         localStorage.setItem(key, JSON.stringify([id]))
     }
 }
+
+
+
+export const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = (error) => reject(error);
+    });
+};
